@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2F4BA6C15D9338500A43AF1 /* MYTVSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4BA6B15D9338500A43AF1 /* MYTVSwitchViewController.m */; };
+		B2F4BA6F15D933B000A43AF1 /* MYTVBlueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F4BA6E15D933B000A43AF1 /* MYTVBlueViewController.m */; };
+		B2F4BA7115D933F500A43AF1 /* SwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F4BA7015D933F500A43AF1 /* SwitchView.xib */; };
+		B2F4BA7315D9341B00A43AF1 /* BlueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F4BA7215D9341B00A43AF1 /* BlueView.xib */; };
 		B2F7456015D9086B00198B6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F7455F15D9086B00198B6C /* UIKit.framework */; };
 		B2F7456215D9086B00198B6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F7456115D9086B00198B6C /* Foundation.framework */; };
 		B2F7456415D9086B00198B6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F7456315D9086B00198B6C /* CoreGraphics.framework */; };
@@ -16,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B2F4BA6A15D9338500A43AF1 /* MYTVSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYTVSwitchViewController.h; sourceTree = "<group>"; };
+		B2F4BA6B15D9338500A43AF1 /* MYTVSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYTVSwitchViewController.m; sourceTree = "<group>"; };
+		B2F4BA6D15D933B000A43AF1 /* MYTVBlueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYTVBlueViewController.h; sourceTree = "<group>"; };
+		B2F4BA6E15D933B000A43AF1 /* MYTVBlueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYTVBlueViewController.m; sourceTree = "<group>"; };
+		B2F4BA7015D933F500A43AF1 /* SwitchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchView.xib; sourceTree = "<group>"; };
+		B2F4BA7215D9341B00A43AF1 /* BlueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BlueView.xib; path = ../BlueView.xib; sourceTree = "<group>"; };
 		B2F7455B15D9086B00198B6C /* View Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "View Switcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F7455F15D9086B00198B6C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B2F7456115D9086B00198B6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +83,12 @@
 			isa = PBXGroup;
 			children = (
 				B2F7456E15D9086B00198B6C /* MYTVAppDelegate.h */,
+				B2F4BA6A15D9338500A43AF1 /* MYTVSwitchViewController.h */,
+				B2F4BA7015D933F500A43AF1 /* SwitchView.xib */,
+				B2F4BA6D15D933B000A43AF1 /* MYTVBlueViewController.h */,
+				B2F4BA7215D9341B00A43AF1 /* BlueView.xib */,
+				B2F4BA6E15D933B000A43AF1 /* MYTVBlueViewController.m */,
+				B2F4BA6B15D9338500A43AF1 /* MYTVSwitchViewController.m */,
 				B2F7456F15D9086B00198B6C /* MYTVAppDelegate.m */,
 				B2F7456615D9086B00198B6C /* Supporting Files */,
 			);
@@ -141,6 +157,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2F7456A15D9086B00198B6C /* InfoPlist.strings in Resources */,
+				B2F4BA7115D933F500A43AF1 /* SwitchView.xib in Resources */,
+				B2F4BA7315D9341B00A43AF1 /* BlueView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +171,8 @@
 			files = (
 				B2F7456C15D9086B00198B6C /* main.m in Sources */,
 				B2F7457015D9086B00198B6C /* MYTVAppDelegate.m in Sources */,
+				B2F4BA6C15D9338500A43AF1 /* MYTVSwitchViewController.m in Sources */,
+				B2F4BA6F15D933B000A43AF1 /* MYTVBlueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +276,7 @@
 				B2F7457515D9086B00198B6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

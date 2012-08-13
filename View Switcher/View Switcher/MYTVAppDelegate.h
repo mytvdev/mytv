@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class MYTVSwithViewController;
+
 @interface MYTVAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) MYTVSwithViewController *switchViewController;
 
 @end

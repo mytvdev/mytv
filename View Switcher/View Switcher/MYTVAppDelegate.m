@@ -7,7 +7,7 @@
 //
 
 #import "MYTVAppDelegate.h"
-
+#import "MYTVSwitchViewController.h"
 @implementation MYTVAppDelegate
 
 @synthesize window = _window;
