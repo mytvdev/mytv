@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B21D9F3315DA8196001C11B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F3215DA8196001C11B7 /* Foundation.framework */; };
+		B21D9F3915DA8196001C11B7 /* MyTV_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F3815DA8196001C11B7 /* MyTV_IOS.m */; };
+		B21D9F4115DA8196001C11B7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F4015DA8196001C11B7 /* SenTestingKit.framework */; };
+		B21D9F4315DA8196001C11B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F4215DA8196001C11B7 /* UIKit.framework */; };
+		B21D9F4415DA8196001C11B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F3215DA8196001C11B7 /* Foundation.framework */; };
+		B21D9F4715DA8196001C11B7 /* libMyTV.IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F2F15DA8196001C11B7 /* libMyTV.IOS.a */; };
+		B21D9F4D15DA8196001C11B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B21D9F4B15DA8196001C11B7 /* InfoPlist.strings */; };
+		B21D9F5015DA8196001C11B7 /* MyTV_IOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F4F15DA8196001C11B7 /* MyTV_IOSTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B21D9F4515DA8196001C11B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B21D9F2615DA8196001C11B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B21D9F2E15DA8196001C11B7;
+			remoteInfo = MyTV.IOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B21D9F2F15DA8196001C11B7 /* libMyTV.IOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMyTV.IOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21D9F3215DA8196001C11B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B21D9F3615DA8196001C11B7 /* MyTV.IOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyTV.IOS-Prefix.pch"; sourceTree = "<group>"; };
+		B21D9F3715DA8196001C11B7 /* MyTV_IOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTV_IOS.h; sourceTree = "<group>"; };
+		B21D9F3815DA8196001C11B7 /* MyTV_IOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTV_IOS.m; sourceTree = "<group>"; };
+		B21D9F3F15DA8196001C11B7 /* MyTV.IOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTV.IOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21D9F4015DA8196001C11B7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B21D9F4215DA8196001C11B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B21D9F4A15DA8196001C11B7 /* MyTV.IOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyTV.IOSTests-Info.plist"; sourceTree = "<group>"; };
+		B21D9F4C15DA8196001C11B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B21D9F4E15DA8196001C11B7 /* MyTV_IOSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTV_IOSTests.h; sourceTree = "<group>"; };
+		B21D9F4F15DA8196001C11B7 /* MyTV_IOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTV_IOSTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B21D9F2C15DA8196001C11B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B21D9F3315DA8196001C11B7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B21D9F3B15DA8196001C11B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B21D9F4115DA8196001C11B7 /* SenTestingKit.framework in Frameworks */,
+				B21D9F4315DA8196001C11B7 /* UIKit.framework in Frameworks */,
+				B21D9F4415DA8196001C11B7 /* Foundation.framework in Frameworks */,
+				B21D9F4715DA8196001C11B7 /* libMyTV.IOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B21D9F2415DA8196001C11B7 = {
+			isa = PBXGroup;
+			children = (
+				B21D9F3415DA8196001C11B7 /* MyTV.IOS */,
+				B21D9F4815DA8196001C11B7 /* MyTV.IOSTests */,
+				B21D9F3115DA8196001C11B7 /* Frameworks */,
+				B21D9F3015DA8196001C11B7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B21D9F3015DA8196001C11B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B21D9F2F15DA8196001C11B7 /* libMyTV.IOS.a */,
+				B21D9F3F15DA8196001C11B7 /* MyTV.IOSTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B21D9F3115DA8196001C11B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B21D9F3215DA8196001C11B7 /* Foundation.framework */,
+				B21D9F4015DA8196001C11B7 /* SenTestingKit.framework */,
+				B21D9F4215DA8196001C11B7 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B21D9F3415DA8196001C11B7 /* MyTV.IOS */ = {
+			isa = PBXGroup;
+			children = (
+				B21D9F3715DA8196001C11B7 /* MyTV_IOS.h */,
+				B21D9F3815DA8196001C11B7 /* MyTV_IOS.m */,
+				B21D9F3515DA8196001C11B7 /* Supporting Files */,
+			);
+			path = MyTV.IOS;
+			sourceTree = "<group>";
+		};
+		B21D9F3515DA8196001C11B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B21D9F3615DA8196001C11B7 /* MyTV.IOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B21D9F4815DA8196001C11B7 /* MyTV.IOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				B21D9F4E15DA8196001C11B7 /* MyTV_IOSTests.h */,
+				B21D9F4F15DA8196001C11B7 /* MyTV_IOSTests.m */,
+				B21D9F4915DA8196001C11B7 /* Supporting Files */,
+			);
+			path = MyTV.IOSTests;
+			sourceTree = "<group>";
+		};
+		B21D9F4915DA8196001C11B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B21D9F4A15DA8196001C11B7 /* MyTV.IOSTests-Info.plist */,
+				B21D9F4B15DA8196001C11B7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B21D9F2D15DA8196001C11B7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B21D9F2E15DA8196001C11B7 /* MyTV.IOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B21D9F5315DA8196001C11B7 /* Build configuration list for PBXNativeTarget "MyTV.IOS" */;
+			buildPhases = (
+				B21D9F2B15DA8196001C11B7 /* Sources */,
+				B21D9F2C15DA8196001C11B7 /* Frameworks */,
+				B21D9F2D15DA8196001C11B7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyTV.IOS;
+			productName = MyTV.IOS;
+			productReference = B21D9F2F15DA8196001C11B7 /* libMyTV.IOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B21D9F3E15DA8196001C11B7 /* MyTV.IOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B21D9F5615DA8196001C11B7 /* Build configuration list for PBXNativeTarget "MyTV.IOSTests" */;
+			buildPhases = (
+				B21D9F3A15DA8196001C11B7 /* Sources */,
+				B21D9F3B15DA8196001C11B7 /* Frameworks */,
+				B21D9F3C15DA8196001C11B7 /* Resources */,
+				B21D9F3D15DA8196001C11B7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B21D9F4615DA8196001C11B7 /* PBXTargetDependency */,
+			);
+			name = MyTV.IOSTests;
+			productName = MyTV.IOSTests;
+			productReference = B21D9F3F15DA8196001C11B7 /* MyTV.IOSTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B21D9F2615DA8196001C11B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = B21D9F2915DA8196001C11B7 /* Build configuration list for PBXProject "MyTV.IOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B21D9F2415DA8196001C11B7;
+			productRefGroup = B21D9F3015DA8196001C11B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B21D9F2E15DA8196001C11B7 /* MyTV.IOS */,
+				B21D9F3E15DA8196001C11B7 /* MyTV.IOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B21D9F3C15DA8196001C11B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B21D9F4D15DA8196001C11B7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B21D9F3D15DA8196001C11B7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B21D9F2B15DA8196001C11B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B21D9F3915DA8196001C11B7 /* MyTV_IOS.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B21D9F3A15DA8196001C11B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B21D9F5015DA8196001C11B7 /* MyTV_IOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B21D9F4615DA8196001C11B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B21D9F2E15DA8196001C11B7 /* MyTV.IOS */;
+			targetProxy = B21D9F4515DA8196001C11B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B21D9F4B15DA8196001C11B7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B21D9F4C15DA8196001C11B7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B21D9F5115DA8196001C11B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B21D9F5215DA8196001C11B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B21D9F5415DA8196001C11B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MyTV_IOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyTV.IOS/MyTV.IOS-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B21D9F5515DA8196001C11B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MyTV_IOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyTV.IOS/MyTV.IOS-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B21D9F5715DA8196001C11B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyTV.IOS/MyTV.IOS-Prefix.pch";
+				INFOPLIST_FILE = "MyTV.IOSTests/MyTV.IOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B21D9F5815DA8196001C11B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyTV.IOS/MyTV.IOS-Prefix.pch";
+				INFOPLIST_FILE = "MyTV.IOSTests/MyTV.IOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B21D9F2915DA8196001C11B7 /* Build configuration list for PBXProject "MyTV.IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B21D9F5115DA8196001C11B7 /* Debug */,
+				B21D9F5215DA8196001C11B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B21D9F5315DA8196001C11B7 /* Build configuration list for PBXNativeTarget "MyTV.IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B21D9F5415DA8196001C11B7 /* Debug */,
+				B21D9F5515DA8196001C11B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B21D9F5615DA8196001C11B7 /* Build configuration list for PBXNativeTarget "MyTV.IOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B21D9F5715DA8196001C11B7 /* Debug */,
+				B21D9F5815DA8196001C11B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B21D9F2615DA8196001C11B7 /* Project object */;
+}
