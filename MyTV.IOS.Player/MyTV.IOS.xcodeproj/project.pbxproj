@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B23C032A15DBDCB2000132C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23C032915DBDCB2000132C3 /* UIKit.framework */; };
+		B23C032C15DBDCB2000132C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23C032B15DBDCB2000132C3 /* Foundation.framework */; };
+		B23C032E15DBDCB2000132C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23C032D15DBDCB2000132C3 /* CoreGraphics.framework */; };
+		B23C033415DBDCB2000132C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B23C033215DBDCB2000132C3 /* InfoPlist.strings */; };
+		B23C033615DBDCB2000132C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B23C033515DBDCB2000132C3 /* main.m */; };
+		B23C033A15DBDCB2000132C3 /* MYTVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B23C033915DBDCB2000132C3 /* MYTVAppDelegate.m */; };
+		B23C033D15DBDCB2000132C3 /* MYTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23C033C15DBDCB2000132C3 /* MYTVViewController.m */; };
+		B23C034015DBDCB2000132C3 /* MYTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23C033E15DBDCB2000132C3 /* MYTVViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B23C032515DBDCB2000132C3 /* MyTV.IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTV.IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23C032915DBDCB2000132C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B23C032B15DBDCB2000132C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B23C032D15DBDCB2000132C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B23C033115DBDCB2000132C3 /* MyTV.IOS-Info.plist */ = {isa = PBXFileReference; path = "MyTV.IOS-Info.plist"; sourceTree = "<group>"; };
+		B23C033315DBDCB2000132C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B23C033515DBDCB2000132C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B23C033715DBDCB2000132C3 /* MyTV.IOS-Prefix.pch */ = {isa = PBXFileReference; path = "MyTV.IOS-Prefix.pch"; sourceTree = "<group>"; };
+		B23C033815DBDCB2000132C3 /* MYTVAppDelegate.h */ = {isa = PBXFileReference; path = MYTVAppDelegate.h; sourceTree = "<group>"; };
+		B23C033915DBDCB2000132C3 /* MYTVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYTVAppDelegate.m; sourceTree = "<group>"; };
+		B23C033B15DBDCB2000132C3 /* MYTVViewController.h */ = {isa = PBXFileReference; path = MYTVViewController.h; sourceTree = "<group>"; };
+		B23C033C15DBDCB2000132C3 /* MYTVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYTVViewController.m; sourceTree = "<group>"; };
+		B23C033F15DBDCB2000132C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MYTVViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B23C032215DBDCB2000132C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23C032A15DBDCB2000132C3 /* UIKit.framework in Frameworks */,
+				B23C032C15DBDCB2000132C3 /* Foundation.framework in Frameworks */,
+				B23C032E15DBDCB2000132C3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B23C031A15DBDCB2000132C3 = {
+			isa = PBXGroup;
+			children = (
+				B23C032F15DBDCB2000132C3 /* MyTV.IOS */,
+				B23C032815DBDCB2000132C3 /* Frameworks */,
+				B23C032615DBDCB2000132C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B23C032615DBDCB2000132C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B23C032515DBDCB2000132C3 /* MyTV.IOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B23C032815DBDCB2000132C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B23C032915DBDCB2000132C3 /* UIKit.framework */,
+				B23C032B15DBDCB2000132C3 /* Foundation.framework */,
+				B23C032D15DBDCB2000132C3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B23C032F15DBDCB2000132C3 /* MyTV.IOS */ = {
+			isa = PBXGroup;
+			children = (
+				B23C033815DBDCB2000132C3 /* MYTVAppDelegate.h */,
+				B23C033915DBDCB2000132C3 /* MYTVAppDelegate.m */,
+				B23C033B15DBDCB2000132C3 /* MYTVViewController.h */,
+				B23C033C15DBDCB2000132C3 /* MYTVViewController.m */,
+				B23C033E15DBDCB2000132C3 /* MYTVViewController.xib */,
+				B23C033015DBDCB2000132C3 /* Supporting Files */,
+			);
+			path = MyTV.IOS;
+			sourceTree = "<group>";
+		};
+		B23C033015DBDCB2000132C3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B23C033115DBDCB2000132C3 /* MyTV.IOS-Info.plist */,
+				B23C033215DBDCB2000132C3 /* InfoPlist.strings */,
+				B23C033515DBDCB2000132C3 /* main.m */,
+				B23C033715DBDCB2000132C3 /* MyTV.IOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B23C032415DBDCB2000132C3 /* MyTV.IOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B23C034315DBDCB2000132C3 /* Build configuration list for PBXNativeTarget "MyTV.IOS" */;
+			buildPhases = (
+				B23C032115DBDCB2000132C3 /* Sources */,
+				B23C032215DBDCB2000132C3 /* Frameworks */,
+				B23C032315DBDCB2000132C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyTV.IOS;
+			productName = MyTV.IOS;
+			productReference = B23C032515DBDCB2000132C3 /* MyTV.IOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B23C031C15DBDCB2000132C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = B23C031F15DBDCB2000132C3 /* Build configuration list for PBXProject "MyTV.IOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B23C031A15DBDCB2000132C3;
+			productRefGroup = B23C032615DBDCB2000132C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B23C032415DBDCB2000132C3 /* MyTV.IOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B23C032315DBDCB2000132C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23C033415DBDCB2000132C3 /* InfoPlist.strings in Resources */,
+				B23C034015DBDCB2000132C3 /* MYTVViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B23C032115DBDCB2000132C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23C033615DBDCB2000132C3 /* main.m in Sources */,
+				B23C033A15DBDCB2000132C3 /* MYTVAppDelegate.m in Sources */,
+				B23C033D15DBDCB2000132C3 /* MYTVViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B23C033215DBDCB2000132C3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B23C033315DBDCB2000132C3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B23C033E15DBDCB2000132C3 /* MYTVViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B23C033F15DBDCB2000132C3 /* en */,
+			);
+			name = MYTVViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B23C034115DBDCB2000132C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B23C034215DBDCB2000132C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B23C034415DBDCB2000132C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyTV.IOS/MyTV.IOS-Prefix.pch";
+				INFOPLIST_FILE = "MyTV.IOS/MyTV.IOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B23C034515DBDCB2000132C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyTV.IOS/MyTV.IOS-Prefix.pch";
+				INFOPLIST_FILE = "MyTV.IOS/MyTV.IOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B23C031F15DBDCB2000132C3 /* Build configuration list for PBXProject "MyTV.IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23C034115DBDCB2000132C3 /* Debug */,
+				B23C034215DBDCB2000132C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23C034315DBDCB2000132C3 /* Build configuration list for PBXNativeTarget "MyTV.IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B23C034415DBDCB2000132C3 /* Debug */,
+				B23C034515DBDCB2000132C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B23C031C15DBDCB2000132C3 /* Project object */;
+}
