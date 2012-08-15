@@ -376,6 +376,7 @@
 				DSTROOT = /tmp/MyTV_IOS.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTV.IOS/MyTV.IOS-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -388,6 +389,7 @@
 				DSTROOT = /tmp/MyTV_IOS.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTV.IOS/MyTV.IOS-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -443,6 +445,7 @@
 				B21D9F5515DA8196001C11B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B21D9F5615DA8196001C11B7 /* Build configuration list for PBXNativeTarget "MyTV.IOSTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +454,7 @@
 				B21D9F5815DA8196001C11B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
