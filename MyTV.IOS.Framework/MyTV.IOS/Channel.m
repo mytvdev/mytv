@@ -1,15 +1,13 @@
 //
-//  MyTV_IOS.h
+//  Channel.m
 //  MyTV.IOS
 //
 //  Created by Johnny on 8/14/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Channel.h"
 
-@interface MyTV_IOS : NSObject
-
-
+@implementation Channel
 
 @end

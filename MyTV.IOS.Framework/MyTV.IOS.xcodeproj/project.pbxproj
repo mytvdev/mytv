@@ -15,6 +15,16 @@
 		B21D9F4715DA8196001C11B7 /* libMyTV.IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F2F15DA8196001C11B7 /* libMyTV.IOS.a */; };
 		B21D9F4D15DA8196001C11B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B21D9F4B15DA8196001C11B7 /* InfoPlist.strings */; };
 		B21D9F5015DA8196001C11B7 /* MyTV_IOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F4F15DA8196001C11B7 /* MyTV_IOSTests.m */; };
+		B21D9F5E15DA83F8001C11B7 /* Linking.h in Headers */ = {isa = PBXBuildFile; fileRef = B21D9F5C15DA83F8001C11B7 /* Linking.h */; };
+		B21D9F5F15DA83F8001C11B7 /* Linking.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F5D15DA83F8001C11B7 /* Linking.m */; };
+		B21D9F6215DA966B001C11B7 /* Episode.h in Headers */ = {isa = PBXBuildFile; fileRef = B21D9F6015DA966B001C11B7 /* Episode.h */; };
+		B21D9F6315DA966B001C11B7 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F6115DA966B001C11B7 /* Episode.m */; };
+		B21D9F6615DAA1C3001C11B7 /* Channel.h in Headers */ = {isa = PBXBuildFile; fileRef = B21D9F6415DAA1C3001C11B7 /* Channel.h */; };
+		B21D9F6715DAA1C3001C11B7 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F6515DAA1C3001C11B7 /* Channel.m */; };
+		B21D9F6A15DAA5CB001C11B7 /* Program.h in Headers */ = {isa = PBXBuildFile; fileRef = B21D9F6815DAA5CB001C11B7 /* Program.h */; };
+		B21D9F6B15DAA5CB001C11B7 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F6915DAA5CB001C11B7 /* Program.m */; };
+		B21D9F6E15DAA5F0001C11B7 /* ItemBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B21D9F6C15DAA5F0001C11B7 /* ItemBase.h */; };
+		B21D9F6F15DAA5F0001C11B7 /* ItemBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F6D15DAA5F0001C11B7 /* ItemBase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +50,16 @@
 		B21D9F4C15DA8196001C11B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B21D9F4E15DA8196001C11B7 /* MyTV_IOSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTV_IOSTests.h; sourceTree = "<group>"; };
 		B21D9F4F15DA8196001C11B7 /* MyTV_IOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTV_IOSTests.m; sourceTree = "<group>"; };
+		B21D9F5C15DA83F8001C11B7 /* Linking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Linking.h; sourceTree = "<group>"; };
+		B21D9F5D15DA83F8001C11B7 /* Linking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Linking.m; sourceTree = "<group>"; };
+		B21D9F6015DA966B001C11B7 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Episode.h; sourceTree = "<group>"; };
+		B21D9F6115DA966B001C11B7 /* Episode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Episode.m; sourceTree = "<group>"; };
+		B21D9F6415DAA1C3001C11B7 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		B21D9F6515DAA1C3001C11B7 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
+		B21D9F6815DAA5CB001C11B7 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		B21D9F6915DAA5CB001C11B7 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
+		B21D9F6C15DAA5F0001C11B7 /* ItemBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemBase.h; sourceTree = "<group>"; };
+		B21D9F6D15DAA5F0001C11B7 /* ItemBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemBase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +117,8 @@
 		B21D9F3415DA8196001C11B7 /* MyTV.IOS */ = {
 			isa = PBXGroup;
 			children = (
+				B21D9F5A15DA8278001C11B7 /* Collections */,
+				B21D9F5915DA8258001C11B7 /* Items */,
 				B21D9F3715DA8196001C11B7 /* MyTV_IOS.h */,
 				B21D9F3815DA8196001C11B7 /* MyTV_IOS.m */,
 				B21D9F3515DA8196001C11B7 /* Supporting Files */,
@@ -131,6 +153,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B21D9F5915DA8258001C11B7 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				B21D9F5C15DA83F8001C11B7 /* Linking.h */,
+				B21D9F5D15DA83F8001C11B7 /* Linking.m */,
+				B21D9F6015DA966B001C11B7 /* Episode.h */,
+				B21D9F6115DA966B001C11B7 /* Episode.m */,
+				B21D9F6415DAA1C3001C11B7 /* Channel.h */,
+				B21D9F6515DAA1C3001C11B7 /* Channel.m */,
+				B21D9F6815DAA5CB001C11B7 /* Program.h */,
+				B21D9F6915DAA5CB001C11B7 /* Program.m */,
+				B21D9F6C15DAA5F0001C11B7 /* ItemBase.h */,
+				B21D9F6D15DAA5F0001C11B7 /* ItemBase.m */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
+		B21D9F5A15DA8278001C11B7 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Collections;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -138,6 +184,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21D9F5E15DA83F8001C11B7 /* Linking.h in Headers */,
+				B21D9F6215DA966B001C11B7 /* Episode.h in Headers */,
+				B21D9F6615DAA1C3001C11B7 /* Channel.h in Headers */,
+				B21D9F6A15DAA5CB001C11B7 /* Program.h in Headers */,
+				B21D9F6E15DAA5F0001C11B7 /* ItemBase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +290,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B21D9F3915DA8196001C11B7 /* MyTV_IOS.m in Sources */,
+				B21D9F5F15DA83F8001C11B7 /* Linking.m in Sources */,
+				B21D9F6315DA966B001C11B7 /* Episode.m in Sources */,
+				B21D9F6715DAA1C3001C11B7 /* Channel.m in Sources */,
+				B21D9F6B15DAA5CB001C11B7 /* Program.m in Sources */,
+				B21D9F6F15DAA5F0001C11B7 /* ItemBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

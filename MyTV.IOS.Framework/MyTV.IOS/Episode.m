@@ -1,15 +1,14 @@
 //
-//  MyTV_IOS.h
+//  Episode.m
 //  MyTV.IOS
 //
 //  Created by Johnny on 8/14/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Episode.h"
+#import "ItemBase.h"
 
-@interface MyTV_IOS : NSObject
-
-
+@implementation Episode
 
 @end
