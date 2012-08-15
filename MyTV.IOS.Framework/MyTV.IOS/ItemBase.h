@@ -9,24 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface ItemBase : NSObject
-{
-    int Id;
-    char Title;
-    char Description;
-    char Type;
-    char Logo;
-}
 
-- (void) SetId: (int) x;
-- (void) SetTitle: (char) x;
-- (void) SetDescription: (char) x;
-- (void) SetType: (char) x;
-- (void) SetLogo: (char) x;
+@property int Id;
+@property NSString *Title, *Description, *Type, *Logo;
 
-- (int) GetId;
-- (char) GetTitle;
-- (char) GetDescription;
-- (char) GetType;
-- (char) GetLogo;
 
 @end

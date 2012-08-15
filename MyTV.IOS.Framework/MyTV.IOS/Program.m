@@ -11,4 +11,6 @@
 
 @implementation Program
 
+@synthesize Category, Duration, Director, Guest, ExpiresIn, Presenter, Price, ProgramExpiresIn, ProgramId, ProgramPrice, TrailerFileName, ReleaseDate, Rating,Award, EpisodeCount, Language, PackagePurchased, Season;
+
 @end

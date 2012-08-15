@@ -10,4 +10,6 @@
 
 @implementation Channel
 
+@synthesize Id, BigDescription, BigLogo, EndDate, Name, SmallDescription, SmallLogo, StartDate;
+
 @end

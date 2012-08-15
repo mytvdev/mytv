@@ -10,34 +10,6 @@
 
 @implementation Linking
 
-- (void) SetCustomerId: (int) x;
-{
-    CustomerId = x;
-}
-
-- (void) SetPinCode: (int)x;
-{
-    PinCode = x;
-}
-
-- (void) SetBillingId: (int)x;
-{
-    BillingId = x;
-}
-
-- (int) GetCustomerId;
-{
-    return CustomerId;
-}
-
-- (int) GetPinCode;
-{
-    return PinCode;
-}
-
-- (int) GetBillingId;
-{
-    return BillingId;
-}
+@synthesize BillingId, CustomerId, PinCode;
 
 @end
