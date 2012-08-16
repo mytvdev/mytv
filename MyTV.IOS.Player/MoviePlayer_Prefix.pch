@@ -1,0 +1,11 @@
+/*
+
+    File: MoviePlayer_Prefix.pch 
+Abstract:  MoviePlayer Prefix file.
+
+*/
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#endif
