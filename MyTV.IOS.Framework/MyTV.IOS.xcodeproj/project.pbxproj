@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370FBDEA15DE40900078E783 /* DataFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 370FBDE815DE40900078E783 /* DataFetcher.h */; };
+		370FBDEB15DE40900078E783 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 370FBDE915DE40900078E783 /* DataFetcher.m */; };
 		B21D9F3315DA8196001C11B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F3215DA8196001C11B7 /* Foundation.framework */; };
 		B21D9F3915DA8196001C11B7 /* MyTV_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F3815DA8196001C11B7 /* MyTV_IOS.m */; };
 		B21D9F4115DA8196001C11B7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F4015DA8196001C11B7 /* SenTestingKit.framework */; };
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		370FBDE815DE40900078E783 /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
+		370FBDE915DE40900078E783 /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
+		37F7B37E15E4CE2D00CEC1DD /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		B21D9F2F15DA8196001C11B7 /* libMyTV.IOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMyTV.IOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21D9F3215DA8196001C11B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B21D9F3615DA8196001C11B7 /* MyTV.IOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyTV.IOS-Prefix.pch"; sourceTree = "<group>"; };
@@ -85,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		370FBDE615DE402E0078E783 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				370FBDE815DE40900078E783 /* DataFetcher.h */,
+				370FBDE915DE40900078E783 /* DataFetcher.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		B21D9F2415DA8196001C11B7 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +131,8 @@
 		B21D9F3415DA8196001C11B7 /* MyTV.IOS */ = {
 			isa = PBXGroup;
 			children = (
+				37F7B37E15E4CE2D00CEC1DD /* Logging.h */,
+				370FBDE615DE402E0078E783 /* Helper */,
 				B21D9F5A15DA8278001C11B7 /* Collections */,
 				B21D9F5915DA8258001C11B7 /* Items */,
 				B21D9F3715DA8196001C11B7 /* MyTV_IOS.h */,
@@ -189,6 +205,7 @@
 				B21D9F6615DAA1C3001C11B7 /* Channel.h in Headers */,
 				B21D9F6A15DAA5CB001C11B7 /* Program.h in Headers */,
 				B21D9F6E15DAA5F0001C11B7 /* ItemBase.h in Headers */,
+				370FBDEA15DE40900078E783 /* DataFetcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +312,7 @@
 				B21D9F6715DAA1C3001C11B7 /* Channel.m in Sources */,
 				B21D9F6B15DAA5CB001C11B7 /* Program.m in Sources */,
 				B21D9F6F15DAA5F0001C11B7 /* ItemBase.m in Sources */,
+				370FBDEB15DE40900078E783 /* DataFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +395,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTV.IOS/MyTV.IOS-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -390,6 +409,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTV.IOS/MyTV.IOS-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

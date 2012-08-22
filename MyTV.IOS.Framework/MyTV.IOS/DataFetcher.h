@@ -10,4 +10,10 @@
 
 @interface DataFetcher : NSObject
 
+@property NSObject* callbackObject;
+@property SEL callbackSelector;
+
++(void)Get:(NSString *)url withCallback:(NSObject *)callbackObject usingSelector:(SEL)callbackSelector;
+
 @end
+
