@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		370FBDEA15DE40900078E783 /* DataFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 370FBDE815DE40900078E783 /* DataFetcher.h */; };
 		370FBDEB15DE40900078E783 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 370FBDE915DE40900078E783 /* DataFetcher.m */; };
+		37C7794615E6779900A56851 /* RestService.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C7794415E6779900A56851 /* RestService.h */; };
+		37C7794715E6779900A56851 /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7794515E6779900A56851 /* RestService.m */; };
 		B21D9F3315DA8196001C11B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F3215DA8196001C11B7 /* Foundation.framework */; };
 		B21D9F3915DA8196001C11B7 /* MyTV_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F3815DA8196001C11B7 /* MyTV_IOS.m */; };
 		B21D9F4115DA8196001C11B7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F4015DA8196001C11B7 /* SenTestingKit.framework */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		370FBDE815DE40900078E783 /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		370FBDE915DE40900078E783 /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
+		37C7794415E6779900A56851 /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestService.h; sourceTree = "<group>"; };
+		37C7794515E6779900A56851 /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestService.m; sourceTree = "<group>"; };
 		37F7B37E15E4CE2D00CEC1DD /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		B21D9F2F15DA8196001C11B7 /* libMyTV.IOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMyTV.IOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21D9F3215DA8196001C11B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +99,8 @@
 			children = (
 				370FBDE815DE40900078E783 /* DataFetcher.h */,
 				370FBDE915DE40900078E783 /* DataFetcher.m */,
+				37C7794415E6779900A56851 /* RestService.h */,
+				37C7794515E6779900A56851 /* RestService.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 				B21D9F6A15DAA5CB001C11B7 /* Program.h in Headers */,
 				B21D9F6E15DAA5F0001C11B7 /* ItemBase.h in Headers */,
 				370FBDEA15DE40900078E783 /* DataFetcher.h in Headers */,
+				37C7794615E6779900A56851 /* RestService.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +320,7 @@
 				B21D9F6B15DAA5CB001C11B7 /* Program.m in Sources */,
 				B21D9F6F15DAA5F0001C11B7 /* ItemBase.m in Sources */,
 				370FBDEB15DE40900078E783 /* DataFetcher.m in Sources */,
+				37C7794715E6779900A56851 /* RestService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

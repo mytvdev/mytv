@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Logging.h"
+#import "DataFetcher.h"
 
 @interface RestService : NSObject
+
++(void)SendLinkingRequest:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andCallback:(NSObject *)callbackObject usingSelector:(SEL)callbackSelector;
 
 @end
