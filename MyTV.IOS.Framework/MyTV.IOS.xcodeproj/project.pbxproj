@@ -254,7 +254,7 @@
 		B21D9F2615DA8196001C11B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = B21D9F2915DA8196001C11B7 /* Build configuration list for PBXProject "MyTV.IOS" */;
 			compatibilityVersion = "Xcode 3.2";
