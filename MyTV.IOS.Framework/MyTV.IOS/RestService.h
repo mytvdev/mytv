@@ -12,6 +12,7 @@
 
 @interface RestService : NSObject
 
-+(void)SendLinkingRequest:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andCallback:(NSObject *)callbackObject usingSelector:(SEL)callbackSelector;
++(void)SendLinkingRequest:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId andCallback:(NSObject *)callbackObject usingSelector:(SEL)callbackSelector;
+
 
 @end
