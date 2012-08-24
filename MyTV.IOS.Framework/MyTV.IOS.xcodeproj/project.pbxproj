@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		370FBDEA15DE40900078E783 /* DataFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 370FBDE815DE40900078E783 /* DataFetcher.h */; };
 		370FBDEB15DE40900078E783 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 370FBDE915DE40900078E783 /* DataFetcher.m */; };
+		371BB12B15E77FD400C85694 /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 371BB12515E77FD400C85694 /* TBXML.h */; };
+		371BB12C15E77FD400C85694 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 371BB12615E77FD400C85694 /* TBXML.m */; };
+		371BB12D15E77FD400C85694 /* TBXML+Compression.h in Headers */ = {isa = PBXBuildFile; fileRef = 371BB12715E77FD400C85694 /* TBXML+Compression.h */; };
+		371BB12E15E77FD400C85694 /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = 371BB12815E77FD400C85694 /* TBXML+Compression.m */; };
+		371BB12F15E77FD400C85694 /* TBXML+HTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 371BB12915E77FD400C85694 /* TBXML+HTTP.h */; };
+		371BB13015E77FD400C85694 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 371BB12A15E77FD400C85694 /* TBXML+HTTP.m */; };
 		37C7794615E6779900A56851 /* RestService.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C7794415E6779900A56851 /* RestService.h */; };
 		37C7794715E6779900A56851 /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7794515E6779900A56851 /* RestService.m */; };
 		B21D9F3315DA8196001C11B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F3215DA8196001C11B7 /* Foundation.framework */; };
@@ -44,6 +50,12 @@
 /* Begin PBXFileReference section */
 		370FBDE815DE40900078E783 /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		370FBDE915DE40900078E783 /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
+		371BB12515E77FD400C85694 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		371BB12615E77FD400C85694 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		371BB12715E77FD400C85694 /* TBXML+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+Compression.h"; sourceTree = "<group>"; };
+		371BB12815E77FD400C85694 /* TBXML+Compression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+Compression.m"; sourceTree = "<group>"; };
+		371BB12915E77FD400C85694 /* TBXML+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+HTTP.h"; sourceTree = "<group>"; };
+		371BB12A15E77FD400C85694 /* TBXML+HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+HTTP.m"; sourceTree = "<group>"; };
 		37C7794415E6779900A56851 /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestService.h; sourceTree = "<group>"; };
 		37C7794515E6779900A56851 /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestService.m; sourceTree = "<group>"; };
 		37F7B37E15E4CE2D00CEC1DD /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
@@ -105,6 +117,19 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		371BB12315E77F8600C85694 /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				371BB12515E77FD400C85694 /* TBXML.h */,
+				371BB12615E77FD400C85694 /* TBXML.m */,
+				371BB12715E77FD400C85694 /* TBXML+Compression.h */,
+				371BB12815E77FD400C85694 /* TBXML+Compression.m */,
+				371BB12915E77FD400C85694 /* TBXML+HTTP.h */,
+				371BB12A15E77FD400C85694 /* TBXML+HTTP.m */,
+			);
+			name = TBXML;
+			sourceTree = "<group>";
+		};
 		B21D9F2415DA8196001C11B7 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +162,7 @@
 		B21D9F3415DA8196001C11B7 /* MyTV.IOS */ = {
 			isa = PBXGroup;
 			children = (
+				371BB12315E77F8600C85694 /* TBXML */,
 				37F7B37E15E4CE2D00CEC1DD /* Logging.h */,
 				370FBDE615DE402E0078E783 /* Helper */,
 				B21D9F5A15DA8278001C11B7 /* Collections */,
@@ -213,6 +239,9 @@
 				B21D9F6E15DAA5F0001C11B7 /* ItemBase.h in Headers */,
 				370FBDEA15DE40900078E783 /* DataFetcher.h in Headers */,
 				37C7794615E6779900A56851 /* RestService.h in Headers */,
+				371BB12B15E77FD400C85694 /* TBXML.h in Headers */,
+				371BB12D15E77FD400C85694 /* TBXML+Compression.h in Headers */,
+				371BB12F15E77FD400C85694 /* TBXML+HTTP.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +350,9 @@
 				B21D9F6F15DAA5F0001C11B7 /* ItemBase.m in Sources */,
 				370FBDEB15DE40900078E783 /* DataFetcher.m in Sources */,
 				37C7794715E6779900A56851 /* RestService.m in Sources */,
+				371BB12C15E77FD400C85694 /* TBXML.m in Sources */,
+				371BB12E15E77FD400C85694 /* TBXML+Compression.m in Sources */,
+				371BB13015E77FD400C85694 /* TBXML+HTTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +405,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 			};
@@ -390,6 +423,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
