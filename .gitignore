@@ -7,3 +7,5 @@ MyTV.IOS.Framework/MyTV.IOS.xcodeproj/project.xcworkspace/xcuserdata/omarayoub-s
 *.xcbkptlist
 
 MyTV.IOS.Framework/MyTV.IOS.xcodeproj/xcuserdata/omarayoub-salloum.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
+
+.DS_Store
