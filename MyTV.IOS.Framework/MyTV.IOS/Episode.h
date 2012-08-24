@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ItemBase.m"
+#import "ItemBase.h"
 
 @interface Episode : ItemBase
 
