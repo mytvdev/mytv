@@ -23,7 +23,13 @@
 }
 
 +(void)Get:url usingCallback:(DataProcessorCallback)callback {
-    DLog("%@", [NSString stringWithFormat:@"DataFetcher::Get:withCallback:usingSelector url is %@", url]);
+    DLog("%@", [NSString stringWithFormat:@"url is %@", url]);
+    
+    DataFetcher *fetcher = [DataFetcher new];
+    [fetcher setDataCallback:callback];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [NSURLConnection connectionWithRequest:request delegate:fetcher];
     
 }
 

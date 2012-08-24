@@ -14,7 +14,7 @@ typedef void (^DataProcessorCallback)(NSData*, NSError*);
 
 @property NSObject* callbackObject;
 @property SEL callbackSelector;
-@property (unsafe_unretained) DataProcessorCallback dataCallback;
+@property (strong) DataProcessorCallback dataCallback;
 
 +(void)Get:(NSString *)url withCallback:(NSObject *)callbackObject usingSelector:(SEL)callbackSelector;
 +(void)Get:(NSString *)url usingCallback:(DataProcessorCallback) callback;
