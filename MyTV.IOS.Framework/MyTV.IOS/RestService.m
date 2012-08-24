@@ -7,7 +7,9 @@
 //
 
 #import "RestService.h"
-
+#import "TBXML.h"
+#import "ScanHelper.h"
+#import "Linking.h"
 
 @implementation RestService
 
@@ -35,7 +37,26 @@
                 }
                 else
                 {
-                    [callbackObject performSelector:callbackSelector withObject:@"success" withObject:NULL];
+                    Linking *object = [Linking new];
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *customer = [TBXML childElementNamed:@"customer" parentElement:root];
+                    if (customer == NULL) {
+                        [callbackObject performSelector:callbackSelector withObject:NULL withObject:NULL];
+                    }
+                    else {
+                        TBXMLElement *pin = [TBXML childElementNamed:@"PinCode" parentElement:customer];
+                        TBXMLElement *customerid = [TBXML childElementNamed:@"Id" parentElement:customer];
+                        TBXMLElement *billingid = [TBXML childElementNamed:@"BillingId" parentElement:customer];
+                        if(pin != NULL)
+                            object.PinCode = [ScanHelper getIntFromNSString:[TBXML textForElement:pin]];
+                        if(customerid != NULL)
+                            object.CustomerId = [ScanHelper getIntFromNSString:[TBXML textForElement:customerid]];
+                        if(billingid != NULL)
+                            object.BillingId = [ScanHelper getIntFromNSString:[TBXML textForElement:billingid]];
+                        [callbackObject performSelector:callbackSelector withObject:object withObject:NULL];
+                        
+                    }
+                    
                 }
                 
             }
@@ -43,5 +64,6 @@
     }];
     
 }
+
 
 @end
