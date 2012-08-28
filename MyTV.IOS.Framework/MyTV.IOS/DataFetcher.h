@@ -15,6 +15,7 @@ typedef void (^DataProcessorCallback)(NSData*, NSError*);
 @property NSObject* callbackObject;
 @property SEL callbackSelector;
 @property (strong) DataProcessorCallback dataCallback;
+@property BOOL hasReceivedData;
 
 +(void)Get:(NSString *)url withCallback:(NSObject *)callbackObject usingSelector:(SEL)callbackSelector;
 +(void)Get:(NSString *)url usingCallback:(DataProcessorCallback) callback;

@@ -45,6 +45,15 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     DLog(@"Connection Did Finish Loading");
+    if(!self.hasReceivedData) {
+        DLog(@"Connection has received empty document, submitting null values to callback");
+        if(self.callbackObject != NULL) {
+            [self.callbackObject performSelector:self.callbackSelector withObject:NULL withObject:NULL];
+        }
+        else {
+            self.dataCallback(NULL, NULL);
+        }
+    }
 }
 
 
