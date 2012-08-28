@@ -167,4 +167,55 @@
     
 }
 
++(void)RequestGetChannelUrl:(NSString *)baseUrl ofChannel:(NSString *)channelId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVodUrlCallBack)callback{
+    
+    NSString* linkingRequestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=watchchannel&deviceid=%@&devicetypeid=%@&channelid=%@", deviceId, deviceTypeId, channelId]];
+    
+    [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            error = [NSError errorWithDomain:NSPOSIXErrorDomain code:[@"1" integerValue] userInfo:@{NSLocalizedDescriptionKey: @"Webservice Failure"}];
+                            callback(NULL, error);
+                        }
+                        else
+                        {
+                            TBXMLElement *url = [TBXML childElementNamed:@"URL" parentElement:root];
+                            if (url == NULL) {
+                                callback(NULL, NULL);
+                            }
+                            else {
+                                NSString* playurl =  [TBXML textForElement:url];
+                                callback(playurl, NULL);
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }];
+}
+
 @end
