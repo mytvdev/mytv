@@ -14,6 +14,7 @@
 typedef void (^RSLinkingCallBack) (Linking*, NSError*);
 typedef void (^RSGetVodUrlCallBack) (NSString*, NSError*);
 typedef RSGetVodUrlCallBack RSGetChannelURlCallback;
+typedef void (^RSGetProgramUrlsCallBack)(NSArray /* NSString */ *, NSError*);
 
 @interface RestService : NSObject
 
@@ -25,5 +26,6 @@ typedef RSGetVodUrlCallBack RSGetChannelURlCallback;
 
 +(void)RequestGetChannelUrl:(NSString *)baseUrl ofChannel:(NSString *)channelId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelURlCallback)callback;
 
++(void)RequestGetProgramEpisodesUrls:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgramUrlsCallBack)callback;
 
 @end

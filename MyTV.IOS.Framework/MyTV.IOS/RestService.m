@@ -236,4 +236,60 @@
     }];
 }
 
++(void)RequestGetProgramEpisodesUrls:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVodUrlCallBack)callback {
+    
+    
+    NSString* linkingRequestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=GetVODToWatchFromProgram&deviceid=%@&devicetypeid=%@&ProgramId=%@", deviceId, deviceTypeId, programId]];
+    
+    [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            error = [NSError errorWithDomain:NSPOSIXErrorDomain code:[@"1" integerValue] userInfo:@{NSLocalizedDescriptionKey: @"Webservice Failure"}];
+                            callback(NULL, error);
+                        }
+                        else
+                        {
+                            NSMutableArray* urls = [NSMutableArray new];
+                            
+                            TBXMLElement *urlEl = [TBXML childElementNamed:@"URL" parentElement:root];
+                            if(urlEl != NULL) {
+                                do {
+                                    NSString* url = [TBXML textForElement:urlEl];
+                                    [urls addObject:url];
+                                    urlEl = [TBXML nextSiblingNamed:@"URL" searchFromElement:urlEl];
+                                } while (urlEl != NULL);
+                            }
+                            
+                            callback([NSArray arrayWithArray:urls], NULL);
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }];
+}
+
 @end
