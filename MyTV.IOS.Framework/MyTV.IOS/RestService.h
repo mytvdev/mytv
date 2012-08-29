@@ -10,11 +10,13 @@
 #import "Logging.h"
 #import "DataFetcher.h"
 #import "Linking.h"
+#import "Channel.h"
 
 typedef void (^RSLinkingCallBack) (Linking*, NSError*);
 typedef void (^RSGetVodUrlCallBack) (NSString*, NSError*);
 typedef RSGetVodUrlCallBack RSGetChannelURlCallback;
 typedef void (^RSGetProgramUrlsCallBack)(NSArray /* NSString */ *, NSError*);
+typedef void (^RSGetAllChannelCallBack) (NSArray /* Channel */ *, NSError*);
 
 @interface RestService : NSObject
 
@@ -27,5 +29,7 @@ typedef void (^RSGetProgramUrlsCallBack)(NSArray /* NSString */ *, NSError*);
 +(void)RequestGetChannelUrl:(NSString *)baseUrl ofChannel:(NSString *)channelId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelURlCallback)callback;
 
 +(void)RequestGetProgramEpisodesUrls:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgramUrlsCallBack)callback;
+
++(void)RequestGetAllChannels:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetAllChannelCallBack)callback;
 
 @end
