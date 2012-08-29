@@ -555,5 +555,59 @@
     
 }
 
++(void)RequestGetPreregistrationCode:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPreregistrationCode)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=preregistration&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
+    
+    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            error = [NSError errorWithDomain:NSPOSIXErrorDomain code:[@"1" integerValue] userInfo:@{NSLocalizedDescriptionKey: @"Webservice Failure"}];
+                            callback(NULL, error);
+                        }
+                        else
+                        {
+                            TBXMLElement *root = document.rootXMLElement;
+                            TBXMLElement *regCode = [TBXML childElementNamed:@"regCode" parentElement:root];
+                            if (regCode == NULL) {
+                                callback(NULL, NULL);
+                            }
+                            else {
+                                NSString* regcodevalue =  [TBXML textForElement:regCode];
+                                callback(regcodevalue, NULL);
+                            }
+                            
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }];
+    
+}
+
 
 @end
