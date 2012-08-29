@@ -54,18 +54,29 @@
             self.dataCallback(NULL, NULL);
         }
     }
+    else {
+        if(self.callbackObject != NULL) {
+            [self.callbackObject performSelector:self.callbackSelector withObject:[NSData dataWithData:self.receievedData] withObject:NULL];
+        }
+        else {
+            self.dataCallback([NSData dataWithData:self.receievedData] , NULL);
+        }
+    }
 }
 
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     DLog("%@", data);
-    if(self.callbackObject != NULL) {
-        [self.callbackObject performSelector:self.callbackSelector withObject:data withObject:NULL];
+    self.hasReceivedData = TRUE;
+    if(data != NULL) {
+        if(self.receievedData == NULL) {
+            self.receievedData = [NSMutableData new];
+        }
+        [self.receievedData appendData:data];
     }
-    else {
-        self.dataCallback(data, NULL);
-    }
+    
 }
+
 
 
 
