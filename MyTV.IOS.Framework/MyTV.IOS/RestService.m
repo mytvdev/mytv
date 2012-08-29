@@ -337,12 +337,79 @@
                                 [channel setName:[TBXML textForElement:xmlTitle]];
                                 [channel setBigDescription:[TBXML textForElement:xmlDescription]];
                                 [channel setSmallDescription:[TBXML textForElement:xmlDescription]];
-                                [channel setBigDescription:channel.SmallDescription];
                                 [channel setStartDate:[TBXML textForElement:xmlStartDate]];
                                 [channel setEndDate:[TBXML textForElement:xmlEndDate]];
                                 [channel setSmallLogo:[TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail]];
+                                [channel setBigLogo:[TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail]];
                                 [channels addObject:channel];
                                 item = [TBXML nextSiblingNamed:@"item" searchFromElement:item];
+                            } while (item != NULL);
+                        }
+                        
+                        callback([NSArray arrayWithArray:channels], NULL);
+                        
+                    }
+                    
+                }
+            }
+        }
+    }];
+    
+}
+
++(void)RequestGetSubscribedChannels:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getchannels&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
+    
+    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *channelRootEl = [TBXML childElementNamed:@"channels" parentElement:root];
+                    if(channelRootEl == NULL) {
+                        DLog(@"No channels element found in response xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        
+                        NSMutableArray* channels = [NSMutableArray new];
+                        
+                        TBXMLElement *item = [TBXML childElementNamed:@"channel" parentElement:channelRootEl];
+                        if(item != NULL) {
+                            do {
+                                Channel *channel = [Channel new];
+                                TBXMLElement *xmlId = [TBXML childElementNamed:@"Id" parentElement:item];
+                                TBXMLElement *xmlTitle = [TBXML childElementNamed:@"Name" parentElement:item];
+                                TBXMLElement *xmlSmallDesc = [TBXML childElementNamed:@"SmallDescription" parentElement:item];
+                                TBXMLElement *xmlBigDesc = [TBXML childElementNamed:@"BigDescription" parentElement:item];
+                                TBXMLElement *xmlSmallLogo = [TBXML childElementNamed:@"SmallLogoPath" parentElement:item];
+                                TBXMLElement *xmlBigLogo = [TBXML childElementNamed:@"BigLogoPath" parentElement:item];
+                                TBXMLElement *xmlStartDate = [TBXML childElementNamed:@"StartDate" parentElement:item];
+                                TBXMLElement *xmlEndDate = [TBXML childElementNamed:@"EndDate" parentElement:item];
+                                
+                                [channel setId:[[TBXML textForElement:xmlId] intValue]];
+                                [channel setName:[TBXML textForElement:xmlTitle]];
+                                [channel setBigDescription:[TBXML textForElement:xmlBigDesc]];
+                                [channel setSmallDescription:[TBXML textForElement:xmlSmallDesc]];
+                                [channel setStartDate:[TBXML textForElement:xmlStartDate]];
+                                [channel setEndDate:[TBXML textForElement:xmlEndDate]];
+                                [channel setSmallLogo:[TBXML textForElement:xmlSmallLogo]];
+                                [channel setBigLogo:[TBXML textForElement:xmlBigLogo]];
+                                [channels addObject:channel];
+                                item = [TBXML nextSiblingNamed:@"channel" searchFromElement:item];
                             } while (item != NULL);
                         }
                         
