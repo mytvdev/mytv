@@ -424,4 +424,69 @@
     
 }
 
++(void)RequestGetChannels:(NSString *)baseUrl ofPackage:(NSString *)packageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetAllChannelCallBack)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getmytvchannels&deviceid=%@&devicetypeid=%@&packageid=%@", deviceId, deviceTypeId, packageId]];
+    
+    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *channelRootEl = [TBXML childElementNamed:@"channel" parentElement:root];
+                    if(channelRootEl == NULL) {
+                        DLog(@"No channel element found in rss xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        
+                        NSMutableArray* channels = [NSMutableArray new];
+                        
+                        TBXMLElement *item = [TBXML childElementNamed:@"item" parentElement:channelRootEl];
+                        if(item != NULL) {
+                            do {
+                                Channel *channel = [Channel new];
+                                TBXMLElement *xmlId = [TBXML childElementNamed:@"id" parentElement:item];
+                                TBXMLElement *xmlTitle = [TBXML childElementNamed:@"title" parentElement:item];
+                                TBXMLElement *xmlDescription = [TBXML childElementNamed:@"description" parentElement:item];
+                                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"thumbnail" parentElement:item];
+                                TBXMLElement *xmlStartDate = [TBXML childElementNamed:@"StartDate" parentElement:item];
+                                TBXMLElement *xmlEndDate = [TBXML childElementNamed:@"EndDate" parentElement:item];
+                                
+                                [channel setId:[[TBXML textForElement:xmlId] intValue]];
+                                [channel setName:[TBXML textForElement:xmlTitle]];
+                                [channel setBigDescription:[TBXML textForElement:xmlDescription]];
+                                [channel setSmallDescription:[TBXML textForElement:xmlDescription]];
+                                [channel setStartDate:[TBXML textForElement:xmlStartDate]];
+                                [channel setEndDate:[TBXML textForElement:xmlEndDate]];
+                                [channel setSmallLogo:[TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail]];
+                                [channel setBigLogo:[TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail]];
+                                [channels addObject:channel];
+                                item = [TBXML nextSiblingNamed:@"item" searchFromElement:item];
+                            } while (item != NULL);
+                        }
+                        
+                        callback([NSArray arrayWithArray:channels], NULL);
+                        
+                    }
+                    
+                }
+            }
+        }
+    }];
+    
+}
+
 @end
