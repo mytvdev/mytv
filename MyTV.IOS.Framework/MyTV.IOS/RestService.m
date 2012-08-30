@@ -1059,5 +1059,151 @@
     }];
 }
 
++(DataFetcher *)BuyRequest:(NSString *)baseUrl Package:(NSString *)packageId usingBilling:(NSString *)billingId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSBuyRequest)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=buypackage&deviceid=%@&devicetypeid=%@&billingid=%@&packageid=%@", deviceId, deviceTypeId, billingId, packageId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            TBXMLElement *message = [TBXML childElementNamed:@"AuthenticationMessage" parentElement:root];
+                            if(message != NULL) {
+                                callback([TBXML textForElement:message], NULL);
+                            }
+                            else {
+                                callback(NULL, NULL);
+                            }
+                        }
+                        else
+                        {
+                            callback(@"success", NULL);
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }];
+}
+
++(DataFetcher *)BuyRequest:(NSString *)baseUrl Program:(NSString *)programId usingBilling:(NSString *)billingId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSBuyRequest)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=buypackage&deviceid=%@&devicetypeid=%@&billingid=%@&programid=%@", deviceId, deviceTypeId, billingId, programId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            TBXMLElement *message = [TBXML childElementNamed:@"AuthenticationMessage" parentElement:root];
+                            if(message != NULL) {
+                                callback([TBXML textForElement:message], NULL);
+                            }
+                            else {
+                                callback(NULL, NULL);
+                            }
+                        }
+                        else
+                        {
+                            callback(@"success", NULL);
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }];
+}
+
++(DataFetcher *)BuyRequest:(NSString *)baseUrl VOD:(NSString *)episodeId usingBilling:(NSString *)billingId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSBuyRequest)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=buyvod&deviceid=%@&devicetypeid=%@&billingid=%@&episodeid=%@", deviceId, deviceTypeId, billingId, episodeId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            TBXMLElement *message = [TBXML childElementNamed:@"AuthenticationMessage" parentElement:root];
+                            if(message != NULL) {
+                                callback([TBXML textForElement:message], NULL);
+                            }
+                            else {
+                                callback(NULL, NULL);
+                            }
+                        }
+                        else
+                        {
+                            callback(@"success", NULL);
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }];
+}
 
 @end

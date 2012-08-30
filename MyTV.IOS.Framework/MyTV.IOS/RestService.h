@@ -19,6 +19,7 @@
 typedef void (^RSLinkingCallBack) (Linking*, NSError*);
 typedef void (^RSGetVodUrlCallBack) (NSString*, NSError*);
 typedef RSGetVodUrlCallBack RSGetChannelURlCallback;
+typedef RSGetVodUrlCallBack RSBuyRequest;
 typedef void (^RSGetProgramUrlsCallBack)(NSArray /* NSString */ *, NSError*);
 typedef void (^RSGetAllChannelCallBack) (NSArray /* Channel */ *, NSError*);
 typedef RSGetAllChannelCallBack RSGetChannelCallBack;
@@ -66,5 +67,11 @@ typedef void (^RSGetPurchaseInforamtion) (PurchaseInformation*, NSError*);
 +(DataFetcher *)RequestIsPurchased:(NSString *)baseUrl thisProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPurchaseInforamtion)callback;
 
 +(DataFetcher *)RequestIsPurchased:(NSString *)baseUrl thisVodPackage:(NSString *)vodPackageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPurchaseInforamtion)callback;
+
++(DataFetcher *)BuyRequest:(NSString *)baseUrl VOD:(NSString *)episodeId usingBilling:(NSString *)billingId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSBuyRequest)callback;
+
++(DataFetcher *)BuyRequest:(NSString *)baseUrl Program:(NSString *)programId usingBilling:(NSString *)billingId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSBuyRequest)callback;
+
++(DataFetcher *)BuyRequest:(NSString *)baseUrl Package:(NSString *)packageId usingBilling:(NSString *)billingId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSBuyRequest)callback;
 
 @end
