@@ -11,6 +11,7 @@
 #import "DataFetcher.h"
 #import "Linking.h"
 #import "Channel.h"
+#import "VODPackage.h"
 
 typedef void (^RSLinkingCallBack) (Linking*, NSError*);
 typedef void (^RSGetVodUrlCallBack) (NSString*, NSError*);
@@ -19,6 +20,7 @@ typedef void (^RSGetProgramUrlsCallBack)(NSArray /* NSString */ *, NSError*);
 typedef void (^RSGetAllChannelCallBack) (NSArray /* Channel */ *, NSError*);
 typedef RSGetAllChannelCallBack RSGetChannelCallBack;
 typedef void (^RSGetPreregistrationCode) (NSString*, NSError*);
+typedef void (^RSGetVODPackages) (NSArray /* VODPackage */ *, NSError*);
 
 @interface RestService : NSObject
 
@@ -41,5 +43,7 @@ typedef void (^RSGetPreregistrationCode) (NSString*, NSError*);
 +(void)RequestGetChannels:(NSString *)baseUrl ofVODPackage:(NSString *)packageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback;
 
 +(void)RequestGetPreregistrationCode:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPreregistrationCode)callback;
+
++(void)RequestGetVODPackages:(NSString *)baseUrl ofBouquet:(NSString *)bouquetId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVODPackages)callback;
 
 @end
