@@ -10,15 +10,15 @@
 
 @implementation DataFetcher
 
-+(void)Get:url usingCallback:(DataProcessorCallback)callback {
++(DataFetcher *)Get:url usingCallback:(DataProcessorCallback)callback {
     DLog("%@", [NSString stringWithFormat:@"url is %@", url]);
     
     DataFetcher *fetcher = [DataFetcher new];
     [fetcher setDataCallback:callback];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-    [NSURLConnection connectionWithRequest:request delegate:fetcher];
-    
+    [fetcher setConnection:[NSURLConnection connectionWithRequest:request delegate:fetcher]];
+    return fetcher;
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -28,6 +28,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     DLog(@"Connection Did Finish Loading");
+    self.hasFinishedLoading = TRUE;
     if(!self.hasReceivedData) {
         DLog(@"Connection has received empty document, submitting null values to callback");
         self.dataCallback(NULL, NULL);
