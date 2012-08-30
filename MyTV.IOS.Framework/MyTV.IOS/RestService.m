@@ -13,11 +13,11 @@
 @implementation RestService
 
 
-+(void)SendLinkingRequest:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSLinkingCallBack)callback {
++(DataFetcher *)SendLinkingRequest:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSLinkingCallBack)callback {
     
     NSString* linkingRequestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=linking&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
-    [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -72,11 +72,11 @@
     
 }
 
-+(void)RequestGetVODUrl:(NSString *)baseUrl ofVideo:(NSString *)videoId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVodUrlCallBack)callback {
++(DataFetcher *)RequestGetVODUrl:(NSString *)baseUrl ofVideo:(NSString *)videoId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVodUrlCallBack)callback {
     
     NSString* linkingRequestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=watchvod&deviceid=%@&devicetypeid=%@&episodeid=%@", deviceId, deviceTypeId, videoId]];
     
-    [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -126,11 +126,11 @@
     
 }
 
-+(void)RequestGetChannelUrl:(NSString *)baseUrl ofChannel:(NSString *)channelId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelURlCallback)callback{
++(DataFetcher *)RequestGetChannelUrl:(NSString *)baseUrl ofChannel:(NSString *)channelId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelURlCallback)callback{
     
     NSString* linkingRequestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=watchchannel&deviceid=%@&devicetypeid=%@&channelid=%@", deviceId, deviceTypeId, channelId]];
     
-    [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -177,12 +177,12 @@
     }];
 }
 
-+(void)RequestGetProgramEpisodesUrls:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVodUrlCallBack)callback {
++(DataFetcher *)RequestGetProgramEpisodesUrls:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVodUrlCallBack)callback {
     
     
     NSString* linkingRequestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=GetVODToWatchFromProgram&deviceid=%@&devicetypeid=%@&ProgramId=%@", deviceId, deviceTypeId, programId]];
     
-    [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -233,11 +233,11 @@
     }];
 }
 
-+(void)RequestGetAllChannels:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetAllChannelCallBack)callback {
++(DataFetcher *)RequestGetAllChannels:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetAllChannelCallBack)callback {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getchannel&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
-    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -298,11 +298,11 @@
     
 }
 
-+(void)RequestGetSubscribedChannels:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
++(DataFetcher *)RequestGetSubscribedChannels:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getchannels&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
-    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -365,11 +365,11 @@
     
 }
 
-+(void)RequestGetChannels:(NSString *)baseUrl ofPackage:(NSString *)packageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
++(DataFetcher *)RequestGetChannels:(NSString *)baseUrl ofPackage:(NSString *)packageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getmytvchannels&deviceid=%@&devicetypeid=%@&packageid=%@", deviceId, deviceTypeId, packageId]];
     
-    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -431,11 +431,11 @@
 }
 
 
-+(void)RequestGetChannels:(NSString *)baseUrl ofVODPackage:(NSString *)packageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
++(DataFetcher *)RequestGetChannels:(NSString *)baseUrl ofVODPackage:(NSString *)packageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getvodpackagecontent&contenttypeid=3&deviceid=%@&devicetypeid=%@&vodpackageid=%@", deviceId, deviceTypeId, packageId]];
     
-    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -496,11 +496,11 @@
     
 }
 
-+(void)RequestGetPreregistrationCode:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPreregistrationCode)callback {
++(DataFetcher *)RequestGetPreregistrationCode:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPreregistrationCode)callback {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=preregistration&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
-    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -550,11 +550,11 @@
     
 }
 
-+(void)RequestGetVODPackages:(NSString *)baseUrl ofBouquet:(NSString *)bouquetId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
++(DataFetcher *)RequestGetVODPackages:(NSString *)baseUrl ofBouquet:(NSString *)bouquetId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getvodpackage&deviceid=%@&devicetypeid=%@&BouquetId=%@", deviceId, deviceTypeId, bouquetId]];
     
-    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -619,11 +619,11 @@
     
 }
 
-+(void)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback{
++(DataFetcher *)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback{
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=myvod&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
-    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -728,11 +728,11 @@
     
 }
 
-+(void)RequestGetVOD:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback {
++(DataFetcher *)RequestGetVOD:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getepisodes&deviceid=%@&devicetypeid=%@&programid=%@", deviceId, deviceTypeId, programId]];
     
-    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
