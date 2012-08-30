@@ -10,18 +10,6 @@
 
 @implementation DataFetcher
 
-
-+(void)Get:(NSString *)url withCallback:(NSObject *)callbackObject usingSelector:(SEL)callbackSelector {
-    DLog("%@", [NSString stringWithFormat:@"DataFetcher::Get:withCallback:usingSelector url is %@", url]);
-    
-    DataFetcher *fetcher = [DataFetcher new];
-    [fetcher setCallbackObject:callbackObject];
-    [fetcher setCallbackSelector:callbackSelector];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-    [NSURLConnection connectionWithRequest:request delegate:fetcher];
-}
-
 +(void)Get:url usingCallback:(DataProcessorCallback)callback {
     DLog("%@", [NSString stringWithFormat:@"url is %@", url]);
     
@@ -35,32 +23,19 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     DLog(@"Connection has failed as expected");
-    if(self.callbackObject != NULL) {
-        [self.callbackObject performSelector:self.callbackSelector withObject:NULL withObject:error];
-    }
-    else {
-        self.dataCallback(NULL, error);
-    }
+    self.dataCallback(NULL, error);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     DLog(@"Connection Did Finish Loading");
     if(!self.hasReceivedData) {
         DLog(@"Connection has received empty document, submitting null values to callback");
-        if(self.callbackObject != NULL) {
-            [self.callbackObject performSelector:self.callbackSelector withObject:NULL withObject:NULL];
-        }
-        else {
-            self.dataCallback(NULL, NULL);
-        }
+        self.dataCallback(NULL, NULL);
+        
     }
     else {
-        if(self.callbackObject != NULL) {
-            [self.callbackObject performSelector:self.callbackSelector withObject:[NSData dataWithData:self.receievedData] withObject:NULL];
-        }
-        else {
-            self.dataCallback([NSData dataWithData:self.receievedData] , NULL);
-        }
+        self.dataCallback([NSData dataWithData:self.receievedData] , NULL);
+        
     }
 }
 

@@ -27,7 +27,6 @@ typedef void (^RSGetVOD) (NSArray /* Video, Program */ *, NSError*);
 
 @interface RestService : NSObject
 
-+(void)SendLinkingRequest:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId andCallback:(NSObject *)callbackObject usingSelector:(SEL)callbackSelector;
 
 +(void)SendLinkingRequest:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSLinkingCallBack)callback;
 

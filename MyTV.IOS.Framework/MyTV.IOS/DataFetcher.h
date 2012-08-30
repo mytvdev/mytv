@@ -12,13 +12,10 @@ typedef void (^DataProcessorCallback)(NSData*, NSError*);
 
 @interface DataFetcher : NSObject
 
-@property NSObject* callbackObject;
-@property SEL callbackSelector;
 @property (strong) DataProcessorCallback dataCallback;
 @property BOOL hasReceivedData;
 @property NSMutableData* receievedData;
 
-+(void)Get:(NSString *)url withCallback:(NSObject *)callbackObject usingSelector:(SEL)callbackSelector;
 +(void)Get:(NSString *)url usingCallback:(DataProcessorCallback) callback;
 
 @end
