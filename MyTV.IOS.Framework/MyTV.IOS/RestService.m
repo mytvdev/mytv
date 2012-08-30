@@ -678,6 +678,115 @@
     
 }
 
++(void)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback{
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=myvod&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
+    
+    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    [RestService ProcessVideoItemsTags:root usingCallBack:callback];
+                }
+            }
+        }
+    }];
+}
+
++(void)ProcessVideoItemsTags:(TBXMLElement *)root usingCallBack:(RSGetVOD)callback {
+    TBXMLElement *itemsRoot = [TBXML childElementNamed:@"channel" parentElement:root];
+    if(itemsRoot == NULL) {
+        DLog(@"No VOD items root found in xml. Passing NULL parameters to callback");
+        callback(NULL, NULL);
+    }
+    else {
+        
+        NSMutableArray* videos = [NSMutableArray new];
+        
+        TBXMLElement *item = [TBXML childElementNamed:@"item" parentElement:itemsRoot];
+        if(item != NULL) {
+            do {
+                id video = [RestService GetVideoItem:item];
+                if(video != NULL) {
+                    [videos addObject:video];
+                }
+                item = [TBXML nextSiblingNamed:@"item" searchFromElement:item];
+            } while (item != NULL);
+        }
+        callback([NSArray arrayWithArray:videos], NULL);
+        
+    }
+}
+
++(NSObject *)GetVideoItem:(TBXMLElement *)item {
+    
+    TBXMLElement *xmlId = [TBXML childElementNamed:@"id" parentElement:item];
+    TBXMLElement *xmlTitle = [TBXML childElementNamed:@"title" parentElement:item];
+    TBXMLElement *xmlDescription = [TBXML childElementNamed:@"description" parentElement:item];
+    TBXMLElement *xmlPrice = [TBXML childElementNamed:@"Price" parentElement:item];
+    TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"thumbnail" parentElement:item];
+    TBXMLElement *xmlDirector = [TBXML childElementNamed:@"Director" parentElement:item];
+    TBXMLElement *xmlGuests = [TBXML childElementNamed:@"Guests" parentElement:item];
+    TBXMLElement *xmlCategory = [TBXML childElementNamed:@"category" parentElement:item];
+    TBXMLElement *xmlRating = [TBXML childElementNamed:@"Rating" parentElement:item];
+    TBXMLElement *xmlLanguage = [TBXML childElementNamed:@"language" parentElement:item];
+    TBXMLElement *xmlProgramPurchased = [TBXML childElementNamed:@"PackagePurchased" parentElement:item];
+    TBXMLElement *xmlCanBuyEpisode = [TBXML childElementNamed:@"CanBuyEpisode" parentElement:item];
+    
+    NSString *type = [TBXML textForElement:[TBXML childElementNamed:@"type" parentElement:item]];
+    
+    if([type compare:@"video" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
+        Episode *video = [Episode new];
+        [video setId:[[TBXML textForElement:xmlId] intValue]];
+        video.Title = [TBXML textForElement:xmlTitle];
+        video.Description = [TBXML textForElement:xmlDescription];
+        video.Price = [TBXML textForElement:xmlPrice];
+        video.Thumbnail = [TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail];
+        video.Director = [TBXML textForElement:xmlDirector];
+        video.Guest = [TBXML textForElement:xmlGuests];
+        video.Category = [TBXML textForElement:xmlCategory];
+        video.Rating = [TBXML textForElement:xmlRating];
+        video.Language = [TBXML textForElement:xmlLanguage];
+        video.CanBuyEpisode = [TBXML textForElement:xmlCanBuyEpisode];
+        
+        return video;
+    }
+    else if([type compare:@"program" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
+        MyTVProgram *video = [MyTVProgram new];
+        [video setId:[[TBXML textForElement:xmlId] intValue]];
+        video.Title = [TBXML textForElement:xmlTitle];
+        video.Description = [TBXML textForElement:xmlDescription];
+        video.Price = [TBXML textForElement:xmlPrice];
+        video.Thumbnail = [TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail];
+        video.Director = [TBXML textForElement:xmlDirector];
+        video.Guest = [TBXML textForElement:xmlGuests];
+        video.Category = [TBXML textForElement:xmlCategory];
+        video.Rating = [TBXML textForElement:xmlRating];
+        video.Language = [TBXML textForElement:xmlLanguage];
+        video.ProgramPrice = video.Price;
+        video.ProgramPurchased = [TBXML textForElement:xmlProgramPurchased];
+        
+        return video;
+    }
+    else {
+        return NULL;
+    }
+    
+}
+
 
 
 @end

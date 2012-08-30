@@ -10,4 +10,6 @@
 
 @implementation VODPackage
 
+@synthesize Description, EndDate, Id, Price, StartDate, Thumbnail, Title, VODPackageTypeId;
+
 @end

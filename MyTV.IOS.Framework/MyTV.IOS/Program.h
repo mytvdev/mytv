@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "ItemBase.h"
 
-@interface Program : ItemBase
+@interface MyTVProgram : ItemBase
 
 
-@property NSString *Duration, *Director, *Guest, *Category, *Price, *ProgramPrice, *Rating, *ProgramId, *ReleaseDate, *ExpiresIn, *ProgramExpiresIn, *TrailerFileName, *Presenter, *EpisodeCount, *Language, *Season, *Award, *PackagePurchased;
+@property NSString *Duration, *Director, *Guest, *Category, *Price, *ProgramPrice, *Rating, *ProgramId, *ReleaseDate, *ExpiresIn, *ProgramExpiresIn, *TrailerFileName, *Presenter, *EpisodeCount, *Language, *Season, *Award, *PackagePurchased, *ProgramPurchased, *Thumbnail;
 
 @end

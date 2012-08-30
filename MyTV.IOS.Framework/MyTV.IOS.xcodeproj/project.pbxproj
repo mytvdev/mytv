@@ -17,6 +17,8 @@
 		371BB13015E77FD400C85694 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 371BB12A15E77FD400C85694 /* TBXML+HTTP.m */; };
 		371BB14415E7C5B200C85694 /* ScanHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 371BB14215E7C5B200C85694 /* ScanHelper.h */; };
 		371BB14515E7C5B200C85694 /* ScanHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 371BB14315E7C5B200C85694 /* ScanHelper.m */; };
+		3745CC3215EE449300CCF4C0 /* VODPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3745CC3015EE449300CCF4C0 /* VODPackage.h */; };
+		3745CC3315EE449300CCF4C0 /* VODPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3745CC3115EE449300CCF4C0 /* VODPackage.m */; };
 		37C7794615E6779900A56851 /* RestService.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C7794415E6779900A56851 /* RestService.h */; };
 		37C7794715E6779900A56851 /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7794515E6779900A56851 /* RestService.m */; };
 		B21D9F3315DA8196001C11B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F3215DA8196001C11B7 /* Foundation.framework */; };
@@ -60,6 +62,8 @@
 		371BB12A15E77FD400C85694 /* TBXML+HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+HTTP.m"; sourceTree = "<group>"; };
 		371BB14215E7C5B200C85694 /* ScanHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanHelper.h; sourceTree = "<group>"; };
 		371BB14315E7C5B200C85694 /* ScanHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanHelper.m; sourceTree = "<group>"; };
+		3745CC3015EE449300CCF4C0 /* VODPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VODPackage.h; sourceTree = "<group>"; };
+		3745CC3115EE449300CCF4C0 /* VODPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VODPackage.m; sourceTree = "<group>"; };
 		37C7794415E6779900A56851 /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestService.h; sourceTree = "<group>"; };
 		37C7794515E6779900A56851 /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestService.m; sourceTree = "<group>"; };
 		37F7B37E15E4CE2D00CEC1DD /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 				B21D9F6915DAA5CB001C11B7 /* Program.m */,
 				B21D9F6C15DAA5F0001C11B7 /* ItemBase.h */,
 				B21D9F6D15DAA5F0001C11B7 /* ItemBase.m */,
+				3745CC3015EE449300CCF4C0 /* VODPackage.h */,
+				3745CC3115EE449300CCF4C0 /* VODPackage.m */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				371BB12D15E77FD400C85694 /* TBXML+Compression.h in Headers */,
 				371BB12F15E77FD400C85694 /* TBXML+HTTP.h in Headers */,
 				371BB14415E7C5B200C85694 /* ScanHelper.h in Headers */,
+				3745CC3215EE449300CCF4C0 /* VODPackage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +368,7 @@
 				371BB12E15E77FD400C85694 /* TBXML+Compression.m in Sources */,
 				371BB13015E77FD400C85694 /* TBXML+HTTP.m in Sources */,
 				371BB14515E7C5B200C85694 /* ScanHelper.m in Sources */,
+				3745CC3315EE449300CCF4C0 /* VODPackage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
