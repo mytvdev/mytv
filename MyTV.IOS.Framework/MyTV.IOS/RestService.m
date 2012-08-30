@@ -787,6 +787,34 @@
     
 }
 
++(void)RequestGetVOD:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getepisodes&deviceid=%@&devicetypeid=%@&programid=%@", deviceId, deviceTypeId, programId]];
+    
+    [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    [RestService ProcessVideoItemsTags:root usingCallBack:callback];
+                }
+            }
+        }
+    }];
+}
+
 
 
 @end
