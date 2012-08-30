@@ -53,7 +53,13 @@
     
 }
 
-
+-(BOOL) cancelPendingRequest {
+    if(!self.hasFinishedLoading) {
+        [self.connection cancel];
+        return TRUE;
+    }
+    return FALSE;
+}
 
 
 @end

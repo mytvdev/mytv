@@ -18,6 +18,7 @@ typedef void (^DataProcessorCallback)(NSData*, NSError*);
 @property NSURLConnection* connection;
 
 +(DataFetcher *)Get:(NSString *)url usingCallback:(DataProcessorCallback) callback;
+-(BOOL)cancelPendingRequest;
 
 @end
 
