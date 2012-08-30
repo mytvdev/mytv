@@ -24,6 +24,7 @@ typedef RSGetAllChannelCallBack RSGetChannelCallBack;
 typedef void (^RSGetPreregistrationCode) (NSString*, NSError*);
 typedef void (^RSGetVODPackages) (NSArray /* VODPackage */ *, NSError*);
 typedef void (^RSGetVOD) (NSArray /* Video, Program */ *, NSError*);
+typedef void (^RSGetBoolean) (BOOL, NSError*);
 
 @interface RestService : NSObject
 
@@ -51,5 +52,11 @@ typedef void (^RSGetVOD) (NSArray /* Video, Program */ *, NSError*);
 +(DataFetcher *)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback;
 
 +(DataFetcher *)RequestGetVOD:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback;
+
++(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisEpisode:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback;
+
++(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback;
+
++(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisChannel:(NSString *)channelId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback;
 
 @end

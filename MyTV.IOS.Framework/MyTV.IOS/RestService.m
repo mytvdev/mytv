@@ -177,7 +177,7 @@
     }];
 }
 
-+(DataFetcher *)RequestGetProgramEpisodesUrls:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVodUrlCallBack)callback {
++(DataFetcher *)RequestGetProgramEpisodesUrls:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgramUrlsCallBack)callback {
     
     
     NSString* linkingRequestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=GetVODToWatchFromProgram&deviceid=%@&devicetypeid=%@&ProgramId=%@", deviceId, deviceTypeId, programId]];
@@ -757,5 +757,160 @@
 }
 
 
++(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisEpisode:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=canplayepisode&deviceid=%@&devicetypeid=%@&episodeid=%@", deviceId, deviceTypeId, episodeId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(FALSE, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(FALSE, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(FALSE, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(FALSE, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            error = [NSError errorWithDomain:NSPOSIXErrorDomain code:[@"1" integerValue] userInfo:@{NSLocalizedDescriptionKey: @"Webservice Failure"}];
+                            callback(FALSE, error);
+                        }
+                        else
+                        {
+                            TBXMLElement *canplayEl = [TBXML childElementNamed:@"CanPlayEpisode" parentElement:root];
+                            if (canplayEl == NULL) {
+                                callback(FALSE, NULL);
+                            }
+                            else {
+                                NSString* canplay =  [TBXML textForElement:canplayEl];
+                                callback([canplay boolValue], NULL);
+                            }
+                            
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }];
+}
+
++(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=canplayepisode&deviceid=%@&devicetypeid=%@&programid=%@", deviceId, deviceTypeId, programId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(FALSE, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(FALSE, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(FALSE, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(FALSE, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            error = [NSError errorWithDomain:NSPOSIXErrorDomain code:[@"1" integerValue] userInfo:@{NSLocalizedDescriptionKey: @"Webservice Failure"}];
+                            callback(FALSE, error);
+                        }
+                        else
+                        {
+                            TBXMLElement *canplayEl = [TBXML childElementNamed:@"CanPlayProgram" parentElement:root];
+                            if (canplayEl == NULL) {
+                                callback(FALSE, NULL);
+                            }
+                            else {
+                                NSString* canplay =  [TBXML textForElement:canplayEl];
+                                callback([canplay boolValue], NULL);
+                            }
+                            
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }];
+}
+
++(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisChannel:(NSString *)channelId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=canplayepisode&deviceid=%@&devicetypeid=%@&channelid=%@", deviceId, deviceTypeId, channelId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(FALSE, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(FALSE, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(FALSE, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(FALSE, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            error = [NSError errorWithDomain:NSPOSIXErrorDomain code:[@"1" integerValue] userInfo:@{NSLocalizedDescriptionKey: @"Webservice Failure"}];
+                            callback(FALSE, error);
+                        }
+                        else
+                        {
+                            TBXMLElement *canplayEl = [TBXML childElementNamed:@"CanPlayChannel" parentElement:root];
+                            if (canplayEl == NULL) {
+                                callback(FALSE, NULL);
+                            }
+                            else {
+                                NSString* canplay =  [TBXML textForElement:canplayEl];
+                                callback([canplay boolValue], NULL);
+                            }
+                            
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }];
+}
 
 @end
