@@ -12,4 +12,6 @@
 
 + (int)getIntFromNSString:(NSString *)string;
 
++ (NSDate *)getDateFromNSString:(NSString *)string;
+
 @end

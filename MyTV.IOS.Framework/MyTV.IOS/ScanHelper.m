@@ -17,4 +17,12 @@
     return value;
 }
 
++(NSDate *)getDateFromNSString:(NSString *)string {
+    if(string == NULL || [string compare:@""] == NSOrderedSame) return NULL;
+    NSDateFormatter *dateFormat = [NSDateFormatter new];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSDate *date = [dateFormat dateFromString:string];
+    return date;
+}
+
 @end

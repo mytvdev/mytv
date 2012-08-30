@@ -913,4 +913,151 @@
     }];
 }
 
++(DataFetcher *)RequestIsPurchased:(NSString *)baseUrl thisEpisode:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPurchaseInforamtion)callback {
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=isvodpurchased&deviceid=%@&devicetypeid=%@&episodeid=%@", deviceId, deviceTypeId, episodeId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            error = [NSError errorWithDomain:NSPOSIXErrorDomain code:[@"1" integerValue] userInfo:@{NSLocalizedDescriptionKey: @"Webservice Failure"}];
+                            callback(NULL, error);
+                        }
+                        else
+                        {
+                            PurchaseInformation *info = [PurchaseInformation new];
+                            TBXMLElement *isvodel = [TBXML childElementNamed:@"IsVODPurchased" parentElement:root];
+                            TBXMLElement *expiryel = [TBXML childElementNamed:@"ExpiryDate" parentElement:root];
+                            info.isPurchased = [[TBXML textForElement:isvodel] boolValue];
+                            info.expiryDate = [ScanHelper getDateFromNSString:[TBXML textForElement:expiryel]];
+                            callback(info, NULL);
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }];
+}
+
++(DataFetcher *)RequestIsPurchased:(NSString *)baseUrl thisProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPurchaseInforamtion)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=isprogrampurchased&deviceid=%@&devicetypeid=%@&programid=%@", deviceId, deviceTypeId, programId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            error = [NSError errorWithDomain:NSPOSIXErrorDomain code:[@"1" integerValue] userInfo:@{NSLocalizedDescriptionKey: @"Webservice Failure"}];
+                            callback(NULL, error);
+                        }
+                        else
+                        {
+                            PurchaseInformation *info = [PurchaseInformation new];
+                            TBXMLElement *isvodel = [TBXML childElementNamed:@"IsProgramPurchased" parentElement:root];
+                            TBXMLElement *expiryel = [TBXML childElementNamed:@"ExpiryDate" parentElement:root];
+                            info.isPurchased = [[TBXML textForElement:isvodel] boolValue];
+                            info.expiryDate = [ScanHelper getDateFromNSString:[TBXML textForElement:expiryel]];
+                            callback(info, NULL);
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }];
+}
+
++(DataFetcher *)RequestIsPurchased:(NSString *)baseUrl thisVodPackage:(NSString *)vodPackageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPurchaseInforamtion)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=isvodpackagepurchased&deviceid=%@&devicetypeid=%@&vodpackageid=%@", deviceId, deviceTypeId, vodPackageId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSString *status = [TBXML textForElement:statusEl];
+                        if ([status compare:@"failure"] == NSOrderedSame) {
+                            error = [NSError errorWithDomain:NSPOSIXErrorDomain code:[@"1" integerValue] userInfo:@{NSLocalizedDescriptionKey: @"Webservice Failure"}];
+                            callback(NULL, error);
+                        }
+                        else
+                        {
+                            PurchaseInformation *info = [PurchaseInformation new];
+                            TBXMLElement *isvodel = [TBXML childElementNamed:@"IsVODPackagePurchased" parentElement:root];
+                            TBXMLElement *expiryel = [TBXML childElementNamed:@"ExpiryDate" parentElement:root];
+                            info.isPurchased = [[TBXML textForElement:isvodel] boolValue];
+                            info.expiryDate = [ScanHelper getDateFromNSString:[TBXML textForElement:expiryel]];
+                            callback(info, NULL);
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }];
+}
+
+
 @end

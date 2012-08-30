@@ -14,6 +14,7 @@
 #import "VODPackage.h"
 #import "Episode.h"
 #import "Program.h"
+#import "PurchaseInformation.h"
 
 typedef void (^RSLinkingCallBack) (Linking*, NSError*);
 typedef void (^RSGetVodUrlCallBack) (NSString*, NSError*);
@@ -25,6 +26,7 @@ typedef void (^RSGetPreregistrationCode) (NSString*, NSError*);
 typedef void (^RSGetVODPackages) (NSArray /* VODPackage */ *, NSError*);
 typedef void (^RSGetVOD) (NSArray /* Video, Program */ *, NSError*);
 typedef void (^RSGetBoolean) (BOOL, NSError*);
+typedef void (^RSGetPurchaseInforamtion) (PurchaseInformation*, NSError*);
 
 @interface RestService : NSObject
 
@@ -58,5 +60,11 @@ typedef void (^RSGetBoolean) (BOOL, NSError*);
 +(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback;
 
 +(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisChannel:(NSString *)channelId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback;
+
++(DataFetcher *)RequestIsPurchased:(NSString *)baseUrl thisEpisode:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPurchaseInforamtion)callback;
+
++(DataFetcher *)RequestIsPurchased:(NSString *)baseUrl thisProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPurchaseInforamtion)callback;
+
++(DataFetcher *)RequestIsPurchased:(NSString *)baseUrl thisVodPackage:(NSString *)vodPackageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPurchaseInforamtion)callback;
 
 @end
