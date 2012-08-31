@@ -17,6 +17,8 @@
 #import "PurchaseInformation.h"
 #import "Genre.h"
 #import "ProgramType.h"
+#import "MyTVPackage.h"
+#import "VODPackage.h"
 
 typedef void (^RSLinkingCallBack) (Linking*, NSError*);
 typedef void (^RSGetVodUrlCallBack) (NSString*, NSError*);
@@ -33,6 +35,7 @@ typedef void (^RSGetPurchaseInforamtion) (PurchaseInformation*, NSError*);
 typedef void (^RSGetEpisode) (Episode*, NSError*);
 typedef void (^RSGetGenres) (NSArray /* Genre */ *, NSError*);
 typedef void (^RSGetProgramTypes) (NSArray /* ProgramType */ *, NSError*);
+typedef void (^RSGetPackages) (NSArray /* MyTVPackage, VODPackage */ *, NSError*);
 
 @interface RestService : NSObject
 
@@ -88,5 +91,7 @@ typedef void (^RSGetProgramTypes) (NSArray /* ProgramType */ *, NSError*);
 +(DataFetcher *)RequestGenres:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenres)callback;
 
 +(DataFetcher *)RequestProgramTypes:(NSString *)baseUrl ofGenre:(NSString *)genreId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgramTypes)callback;
+
++(DataFetcher *)RequestGetPackages:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgramTypes)callback;
 
 @end

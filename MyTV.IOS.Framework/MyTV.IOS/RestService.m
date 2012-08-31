@@ -1426,5 +1426,81 @@
     }];
 }
 
++(DataFetcher *)RequestGetPackages:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgramTypes)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getmytvpackages&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *channelRootEl = [TBXML childElementNamed:@"channel" parentElement:root];
+                    if(channelRootEl == NULL) {
+                        DLog(@"No channel element found in rss xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        
+                        NSMutableArray* packages = [NSMutableArray new];
+                        
+                        TBXMLElement *item = [TBXML childElementNamed:@"item" parentElement:channelRootEl];
+                        if(item != NULL) {
+                            do {
+                                
+                                TBXMLElement *xmlId = [TBXML childElementNamed:@"id" parentElement:item];
+                                TBXMLElement *xmlTitle = [TBXML childElementNamed:@"title" parentElement:item];
+                                TBXMLElement *xmlDescription = [TBXML childElementNamed:@"description" parentElement:item];
+                                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"thumbnail" parentElement:item];
+                                TBXMLElement *xmlStartDate = [TBXML childElementNamed:@"StartDate" parentElement:item];
+                                TBXMLElement *xmlEndDate = [TBXML childElementNamed:@"EndDate" parentElement:item];
+                                TBXMLElement *xmlType = [TBXML childElementNamed:@"type" parentElement:item];
+                                if([[TBXML textForElement:xmlType] compare:@"livepackage"]){
+                                    MyTVPackage *package = [MyTVPackage new];
+                                    [package setId:[TBXML textForElement:xmlId]];
+                                    [package setTitle:[TBXML textForElement:xmlTitle]];
+                                    [package setDescription:[TBXML textForElement:xmlDescription]];
+                                    [package setStartDate:[TBXML textForElement:xmlStartDate]];
+                                    [package setEndDate:[TBXML textForElement:xmlEndDate]];
+                                    [package setThumbnail:[TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail]];
+                                    [packages addObject:package];
+                                }
+                                else {
+                                    VODPackage *package = [VODPackage new];
+                                    [package setId:[TBXML textForElement:xmlId]];
+                                    [package setTitle:[TBXML textForElement:xmlTitle]];
+                                    [package setDescription:[TBXML textForElement:xmlDescription]];
+                                    [package setStartDate:[TBXML textForElement:xmlStartDate]];
+                                    [package setEndDate:[TBXML textForElement:xmlEndDate]];
+                                    [package setThumbnail:[TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail]];
+                                    [packages addObject:package];
+                                }
+                                
+                                item = [TBXML nextSiblingNamed:@"item" searchFromElement:item];
+                            } while (item != NULL);
+                        }
+                        
+                        callback([NSArray arrayWithArray:packages], NULL);
+                        
+                    }
+                }
+            }
+        }
+    }];
+    
+}
+
 
 @end
