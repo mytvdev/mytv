@@ -1338,9 +1338,9 @@
                                     [genre setId:[[TBXML textForElement:xmlId] intValue]];
                                     genre.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
                                     genre.Logo = [TBXML textForElement:xmlThumbnail];
-                                    [genres addObject:genre];
-                                    item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
+                                    [genres addObject:genre];                                    
                                 }
+                                item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
                             } while (item != NULL);
                         }
                         
@@ -1352,6 +1352,78 @@
         }
     }];
     
+}
+
+
++(DataFetcher *)RequestProgramTypes:(NSString *)baseUrl ofGenre:(NSString *)genreId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenres)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getgenres2&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        
+                        NSMutableArray* programtypes = [NSMutableArray new];
+                        
+                        TBXMLElement *item = [TBXML childElementNamed:@"item" parentElement:root];
+                        if(item != NULL) {
+                            do {
+                                NSString *thisGenreId = [TBXML textForElement:[TBXML childElementNamed:@"playlist" parentElement:item]];
+                                if([thisGenreId compare:genreId] == NSOrderedSame) {
+                                    TBXMLElement *category = [TBXML childElementNamed:@"category" parentElement:item];
+                                    if(category != NULL) {
+                                        TBXMLElement *pgitem = [TBXML childElementNamed:@"poster" parentElement:category];
+                                        if(pgitem != NULL) {
+                                            do {
+                                                TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:pgitem];
+                                                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:pgitem];
+                                                TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:pgitem];
+                                                if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"programtype"] == NSOrderedSame) {
+                                                    ProgramType *pt = [ProgramType new];
+                                                    [pt setId:[[TBXML textForElement:xmlId] intValue]];
+                                                    pt.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:pgitem];
+                                                    pt.Logo = [TBXML textForElement:xmlThumbnail];
+                                                    pt.genreId = thisGenreId;
+                                                    [programtypes addObject:pt];
+                                                }
+                                                
+                                                pgitem = [TBXML nextSiblingNamed:@"poster" searchFromElement:pgitem];
+                                            }
+                                            while(pgitem != NULL);
+                                        }
+                                    }
+                                    
+                                    
+                                }
+                            } while (item != NULL);
+                        }
+                        
+                        callback([NSArray arrayWithArray:programtypes], NULL);
+                        
+                    }
+                }
+            }
+        }
+    }];
 }
 
 

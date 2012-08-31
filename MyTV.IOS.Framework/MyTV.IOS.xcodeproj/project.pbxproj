@@ -25,6 +25,8 @@
 		3745CC3315EE449300CCF4C0 /* VODPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3745CC3115EE449300CCF4C0 /* VODPackage.m */; };
 		37C7794615E6779900A56851 /* RestService.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C7794415E6779900A56851 /* RestService.h */; };
 		37C7794715E6779900A56851 /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7794515E6779900A56851 /* RestService.m */; };
+		37E6CF4315F0FF5200FDC2EB /* ProgramType.h in Headers */ = {isa = PBXBuildFile; fileRef = 37E6CF4115F0FF5200FDC2EB /* ProgramType.h */; };
+		37E6CF4415F0FF5200FDC2EB /* ProgramType.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E6CF4215F0FF5200FDC2EB /* ProgramType.m */; };
 		B21D9F3315DA8196001C11B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F3215DA8196001C11B7 /* Foundation.framework */; };
 		B21D9F3915DA8196001C11B7 /* MyTV_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B21D9F3815DA8196001C11B7 /* MyTV_IOS.m */; };
 		B21D9F4115DA8196001C11B7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D9F4015DA8196001C11B7 /* SenTestingKit.framework */; };
@@ -74,6 +76,8 @@
 		3745CC3115EE449300CCF4C0 /* VODPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VODPackage.m; sourceTree = "<group>"; };
 		37C7794415E6779900A56851 /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestService.h; sourceTree = "<group>"; };
 		37C7794515E6779900A56851 /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestService.m; sourceTree = "<group>"; };
+		37E6CF4115F0FF5200FDC2EB /* ProgramType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramType.h; sourceTree = "<group>"; };
+		37E6CF4215F0FF5200FDC2EB /* ProgramType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramType.m; sourceTree = "<group>"; };
 		37F7B37E15E4CE2D00CEC1DD /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		B21D9F2F15DA8196001C11B7 /* libMyTV.IOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMyTV.IOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21D9F3215DA8196001C11B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -238,6 +242,8 @@
 				371B174215EF8BD30032CFA6 /* PurchaseInformation.m */,
 				371B174915EFAF2D0032CFA6 /* Genre.h */,
 				371B174A15EFAF2D0032CFA6 /* Genre.m */,
+				37E6CF4115F0FF5200FDC2EB /* ProgramType.h */,
+				37E6CF4215F0FF5200FDC2EB /* ProgramType.m */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 				3745CC3215EE449300CCF4C0 /* VODPackage.h in Headers */,
 				371B174315EF8BD30032CFA6 /* PurchaseInformation.h in Headers */,
 				371B174B15EFAF2D0032CFA6 /* Genre.h in Headers */,
+				37E6CF4315F0FF5200FDC2EB /* ProgramType.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +392,7 @@
 				3745CC3315EE449300CCF4C0 /* VODPackage.m in Sources */,
 				371B174415EF8BD30032CFA6 /* PurchaseInformation.m in Sources */,
 				371B174C15EFAF2D0032CFA6 /* Genre.m in Sources */,
+				37E6CF4415F0FF5200FDC2EB /* ProgramType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
