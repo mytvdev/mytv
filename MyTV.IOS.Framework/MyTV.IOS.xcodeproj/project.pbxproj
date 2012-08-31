@@ -11,6 +11,8 @@
 		370FBDEB15DE40900078E783 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 370FBDE915DE40900078E783 /* DataFetcher.m */; };
 		371B174315EF8BD30032CFA6 /* PurchaseInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 371B174115EF8BD30032CFA6 /* PurchaseInformation.h */; };
 		371B174415EF8BD30032CFA6 /* PurchaseInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B174215EF8BD30032CFA6 /* PurchaseInformation.m */; };
+		371B174B15EFAF2D0032CFA6 /* Genre.h in Headers */ = {isa = PBXBuildFile; fileRef = 371B174915EFAF2D0032CFA6 /* Genre.h */; };
+		371B174C15EFAF2D0032CFA6 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B174A15EFAF2D0032CFA6 /* Genre.m */; };
 		371BB12B15E77FD400C85694 /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 371BB12515E77FD400C85694 /* TBXML.h */; };
 		371BB12C15E77FD400C85694 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 371BB12615E77FD400C85694 /* TBXML.m */; };
 		371BB12D15E77FD400C85694 /* TBXML+Compression.h in Headers */ = {isa = PBXBuildFile; fileRef = 371BB12715E77FD400C85694 /* TBXML+Compression.h */; };
@@ -58,6 +60,8 @@
 		370FBDE915DE40900078E783 /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
 		371B174115EF8BD30032CFA6 /* PurchaseInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseInformation.h; sourceTree = "<group>"; };
 		371B174215EF8BD30032CFA6 /* PurchaseInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseInformation.m; sourceTree = "<group>"; };
+		371B174915EFAF2D0032CFA6 /* Genre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Genre.h; sourceTree = "<group>"; };
+		371B174A15EFAF2D0032CFA6 /* Genre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Genre.m; sourceTree = "<group>"; };
 		371BB12515E77FD400C85694 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
 		371BB12615E77FD400C85694 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 		371BB12715E77FD400C85694 /* TBXML+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+Compression.h"; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				3745CC3115EE449300CCF4C0 /* VODPackage.m */,
 				371B174115EF8BD30032CFA6 /* PurchaseInformation.h */,
 				371B174215EF8BD30032CFA6 /* PurchaseInformation.m */,
+				371B174915EFAF2D0032CFA6 /* Genre.h */,
+				371B174A15EFAF2D0032CFA6 /* Genre.m */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -263,6 +269,7 @@
 				371BB14415E7C5B200C85694 /* ScanHelper.h in Headers */,
 				3745CC3215EE449300CCF4C0 /* VODPackage.h in Headers */,
 				371B174315EF8BD30032CFA6 /* PurchaseInformation.h in Headers */,
+				371B174B15EFAF2D0032CFA6 /* Genre.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +384,7 @@
 				371BB14515E7C5B200C85694 /* ScanHelper.m in Sources */,
 				3745CC3315EE449300CCF4C0 /* VODPackage.m in Sources */,
 				371B174415EF8BD30032CFA6 /* PurchaseInformation.m in Sources */,
+				371B174C15EFAF2D0032CFA6 /* Genre.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

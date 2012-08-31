@@ -15,6 +15,7 @@
 #import "Episode.h"
 #import "Program.h"
 #import "PurchaseInformation.h"
+#import "Genre.h"
 
 typedef void (^RSLinkingCallBack) (Linking*, NSError*);
 typedef void (^RSGetVodUrlCallBack) (NSString*, NSError*);
@@ -28,6 +29,8 @@ typedef void (^RSGetVODPackages) (NSArray /* VODPackage */ *, NSError*);
 typedef void (^RSGetVOD) (NSArray /* Video, Program */ *, NSError*);
 typedef void (^RSGetBoolean) (BOOL, NSError*);
 typedef void (^RSGetPurchaseInforamtion) (PurchaseInformation*, NSError*);
+typedef void (^RSGetEpisode) (Episode*, NSError*);
+typedef void (^RSGetGenres) (NSArray /* Genre */ *, NSError*);
 
 @interface RestService : NSObject
 
@@ -56,6 +59,10 @@ typedef void (^RSGetPurchaseInforamtion) (PurchaseInformation*, NSError*);
 
 +(DataFetcher *)RequestGetVOD:(NSString *)baseUrl ofProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback;
 
++(DataFetcher *)RequestGetVODEpisodes:(NSString *)baseUrl ofVODPackage:(NSString *)vodPackageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback;
+
++(DataFetcher *)RequestGetVODPrograms:(NSString *)baseUrl ofVODPackage:(NSString *)vodPackageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback;
+
 +(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisEpisode:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback;
 
 +(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisProgram:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback;
@@ -73,5 +80,7 @@ typedef void (^RSGetPurchaseInforamtion) (PurchaseInformation*, NSError*);
 +(DataFetcher *)BuyRequest:(NSString *)baseUrl Program:(NSString *)programId usingBilling:(NSString *)billingId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSBuyRequest)callback;
 
 +(DataFetcher *)BuyRequest:(NSString *)baseUrl Package:(NSString *)packageId usingBilling:(NSString *)billingId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSBuyRequest)callback;
+
++(DataFetcher *)RequestGetEpisode:(NSString *)baseUrl ofId:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetEpisode)callback;
 
 @end
