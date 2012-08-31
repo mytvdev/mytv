@@ -1327,7 +1327,7 @@
                         
                         NSMutableArray* genres = [NSMutableArray new];
                         
-                        TBXMLElement *item = [TBXML childElementNamed:@"item" parentElement:root];
+                        TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:root];
                         if(item != NULL) {
                             do {
                                 Genre *genre = [Genre new];
