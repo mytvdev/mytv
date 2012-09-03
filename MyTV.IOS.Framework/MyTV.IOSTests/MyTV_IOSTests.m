@@ -13,12 +13,20 @@
 - (void)setUp
 {
     [super setUp];
-    
     // Set-up code here.
+    self.webServer = [HTTPServer new];
+    [self.webServer setType:@"_http._tcp."];
+    [self.webServer setPort:8080];
+    NSString *webPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Web"];
+    DLog(@"%@", webPath);
+    [self.webServer setDocumentRoot:webPath];
+    NSError *error;
+    [self.webServer start:&error];
 }
 
 - (void)tearDown
 {
+    [self.webServer stop];
     // Tear-down code here.
     
     [super tearDown];

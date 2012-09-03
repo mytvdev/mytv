@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "HTTPServer.h"
 
 @interface MyTV_IOSTests : SenTestCase
+
+@property (strong, nonatomic) HTTPServer *webServer;
 
 @end
