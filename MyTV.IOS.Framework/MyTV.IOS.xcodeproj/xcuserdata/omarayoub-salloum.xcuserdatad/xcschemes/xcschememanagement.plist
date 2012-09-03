@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MyTV.IOS.StaticTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>MyTV.IOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>375BABF215F4F2B400E56459</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B21D9F2E15DA8196001C11B7</key>
 		<dict>
 			<key>primary</key>
