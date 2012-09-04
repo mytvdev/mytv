@@ -99,6 +99,7 @@
 		3791A3AD15F5E7B8000CB24A /* linkingrequest.success.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3791A3AC15F5E7B8000CB24A /* linkingrequest.success.xml */; };
 		3791A3B715F5EEF3000CB24A /* buyrequest.success.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3791A3B615F5EEF3000CB24A /* buyrequest.success.xml */; };
 		3791A3B915F5EFE0000CB24A /* buyrequest.failure.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3791A3B815F5EFE0000CB24A /* buyrequest.failure.xml */; };
+		3791A3BB15F602C3000CB24A /* canplay.success.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3791A3BA15F602C2000CB24A /* canplay.success.xml */; };
 		37C7794615E6779900A56851 /* RestService.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C7794415E6779900A56851 /* RestService.h */; };
 		37C7794715E6779900A56851 /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7794515E6779900A56851 /* RestService.m */; };
 		37E5EE5615F4A90200D5727B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E5EE5515F4A90200D5727B /* Security.framework */; };
@@ -218,6 +219,7 @@
 		3791A3AC15F5E7B8000CB24A /* linkingrequest.success.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = linkingrequest.success.xml; path = wwwroot/linkingrequest.success.xml; sourceTree = "<group>"; };
 		3791A3B615F5EEF3000CB24A /* buyrequest.success.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = buyrequest.success.xml; path = wwwroot/buyrequest.success.xml; sourceTree = "<group>"; };
 		3791A3B815F5EFE0000CB24A /* buyrequest.failure.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = buyrequest.failure.xml; path = wwwroot/buyrequest.failure.xml; sourceTree = "<group>"; };
+		3791A3BA15F602C2000CB24A /* canplay.success.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = canplay.success.xml; path = wwwroot/canplay.success.xml; sourceTree = "<group>"; };
 		37C7794415E6779900A56851 /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestService.h; sourceTree = "<group>"; };
 		37C7794515E6779900A56851 /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestService.m; sourceTree = "<group>"; };
 		37E5EE5515F4A90200D5727B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -454,6 +456,7 @@
 				3791A3A515F5E0EA000CB24A /* wwwroot */,
 				3791A3B615F5EEF3000CB24A /* buyrequest.success.xml */,
 				3791A3B815F5EFE0000CB24A /* buyrequest.failure.xml */,
+				3791A3BA15F602C2000CB24A /* canplay.success.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				3791A3AD15F5E7B8000CB24A /* linkingrequest.success.xml in Resources */,
 				3791A3B715F5EEF3000CB24A /* buyrequest.success.xml in Resources */,
 				3791A3B915F5EFE0000CB24A /* buyrequest.failure.xml in Resources */,
+				3791A3BB15F602C3000CB24A /* canplay.success.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
