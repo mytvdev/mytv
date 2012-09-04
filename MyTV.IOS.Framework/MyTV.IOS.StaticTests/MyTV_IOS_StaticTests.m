@@ -202,7 +202,7 @@
 
 - (void) testProgramTypesSuccess {
     
-    DataFetcher *fetcher = [RestService RequestProgramTypes:@"http://localhost:8080/genres.success.xml?" ofGenre:@"1" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(NSArray *programtypes, NSError *error){
+    DataFetcher *fetcher = [RestService RequestProgramTypes:@"http://localhost:8080/genres.success.xml?" ofGenre:@"10" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(NSArray *programtypes, NSError *error){
         STAssertNil(error, @"The method has returned an unexpected error %a", error);
         STAssertNotNil(programtypes, @"Data returned is null; expected a list of genres");
     }];
