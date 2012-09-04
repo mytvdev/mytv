@@ -122,5 +122,25 @@
     
 }
 
+- (void) testBuyRequestSuccess {
+    
+    DataFetcher *fetcher = [RestService BuyRequest:@"http://localhost:8080/buyrequest.success.xml?" Program:@"23" usingBilling:@"461" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(NSString *code, NSError *error) {
+        STAssertNil(error, @"The method has returned an unexpected error");
+        STAssertNotNil(code, @"No data was returned from the method call");
+        STAssertEqualObjects(code, @"success", @"code is not equal to success");
+    }];
+    
+    STAssertNotNil(fetcher, @"The method has not returned a DataFetcher object");
+    
+    NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:2];
+    while(!fetcher.hasFinishedLoading) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:loopUntil];
+    }
+    
+    if(!fetcher.hasFinishedLoading) {
+        STFail(@"Failed to load document");
+    }
+}
+
 
 @end
