@@ -55,4 +55,49 @@
     
 }
 
+- (void) testPreRegistrationSuccess {
+    
+    
+    DataFetcher *fetcher = [RestService RequestGetPreregistrationCode:@"http://localhost:8080/preregistration.success.xml?" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(NSString* code, NSError* error) {
+        STAssertNil(error, @"The method has returned an unexpected error");
+        STAssertEqualObjects(code, @"8L8M7", @"The code returned %@ is different than the expected value 8L8M7", code
+                             );
+    }];
+    STAssertNotNil(fetcher, @"The method has not returned a DataFetcher object");
+    
+    NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:2];
+    while(!fetcher.hasFinishedLoading) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:loopUntil];
+    }
+    
+    if(!fetcher.hasFinishedLoading) {
+        STFail(@"Failed to load document");
+    }
+    
+}
+
+- (void) testGetPackages {
+    
+    DataFetcher *fetcher = [RestService RequestGetPackages:@"http://localhost:8080/getmytvpackages.success.xml?" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(NSArray* packages, NSError* error) {
+        STAssertNil(error, @"The method has returned an unexpected error");
+        STAssertNotNil(packages, @"No data was returned from the method call");
+        if(packages != NULL) {
+            NSString *countval = [NSString stringWithFormat:@"%d", [packages count]];
+            STAssertEqualObjects(countval, @"1", @"Only one package should be returned.");
+        }
+    }];
+    
+    STAssertNotNil(fetcher, @"The method has not returned a DataFetcher object");
+    
+    NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:2];
+    while(!fetcher.hasFinishedLoading) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:loopUntil];
+    }
+    
+    if(!fetcher.hasFinishedLoading) {
+        STFail(@"Failed to load document");
+    }
+    
+}
+
 @end

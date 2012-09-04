@@ -9,6 +9,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "HTTPServer.h"
 #import "DataFetcher.h"
+#import "RestService.h"
 
 #ifdef DEBUG
 #   define DLog(__FORMAT__, ...) NSLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)

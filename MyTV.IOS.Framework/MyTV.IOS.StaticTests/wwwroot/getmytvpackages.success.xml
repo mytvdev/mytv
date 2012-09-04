@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="1.0">
+	<channel>
+		<title>myTV Playlist Feed</title>
+		<description/>
+		<link>http://test.my-tv.ys/vodfeed</link>
+		<copyright>MyTV</copyright>
+		<item>
+			<id>7</id>
+			<title>All You Can Watch</title>
+			<description>
+				<div>
+					<span style="font-family: arial; font-size: 16px;">Arabic live channels &amp; videos on demand are now available in a <br/>
+"All you can watch" package. Access all our channels line up <br/>
+and an unlimited number of videos with only $19.99</span>
+				</div>
+			</description>
+			<guid isPermaLink="false">7</guid>
+			<pubDate>Thu, 23 Aug 2012 00:32:59 -07:00</pubDate>
+			<type>livepackage</type>
+			<keywords/>
+			<language/>
+			<linkback/>
+			<Price>19.99</Price>
+			<ReleaseDate/>
+			<thumbnail url="http://images.my-tv.us/roku/mytv/website/LibraryCustom/Photos/Packages/LogoBig/All-You-Can-Watch-070440.jpg"/>
+		</item>
+	</channel>
+</rss>
