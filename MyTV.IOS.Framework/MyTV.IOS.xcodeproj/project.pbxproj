@@ -102,6 +102,7 @@
 		3791A3BB15F602C3000CB24A /* canplay.success.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3791A3BA15F602C2000CB24A /* canplay.success.xml */; };
 		3791A3BD15F62660000CB24A /* genres.success.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3791A3BC15F62660000CB24A /* genres.success.xml */; };
 		3791A3BF15F63DB3000CB24A /* allchannels.success.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3791A3BE15F63DB3000CB24A /* allchannels.success.xml */; };
+		3791A3C315F640D5000CB24A /* myvod.success.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3791A3C215F640D5000CB24A /* myvod.success.xml */; };
 		37C7794615E6779900A56851 /* RestService.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C7794415E6779900A56851 /* RestService.h */; };
 		37C7794715E6779900A56851 /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7794515E6779900A56851 /* RestService.m */; };
 		37E5EE5615F4A90200D5727B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E5EE5515F4A90200D5727B /* Security.framework */; };
@@ -224,6 +225,7 @@
 		3791A3BA15F602C2000CB24A /* canplay.success.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = canplay.success.xml; path = wwwroot/canplay.success.xml; sourceTree = "<group>"; };
 		3791A3BC15F62660000CB24A /* genres.success.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = genres.success.xml; path = wwwroot/genres.success.xml; sourceTree = "<group>"; };
 		3791A3BE15F63DB3000CB24A /* allchannels.success.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = allchannels.success.xml; path = wwwroot/allchannels.success.xml; sourceTree = "<group>"; };
+		3791A3C215F640D5000CB24A /* myvod.success.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = myvod.success.xml; path = wwwroot/myvod.success.xml; sourceTree = "<group>"; };
 		37C7794415E6779900A56851 /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestService.h; sourceTree = "<group>"; };
 		37C7794515E6779900A56851 /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestService.m; sourceTree = "<group>"; };
 		37E5EE5515F4A90200D5727B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -463,6 +465,7 @@
 				3791A3BA15F602C2000CB24A /* canplay.success.xml */,
 				3791A3BC15F62660000CB24A /* genres.success.xml */,
 				3791A3BE15F63DB3000CB24A /* allchannels.success.xml */,
+				3791A3C215F640D5000CB24A /* myvod.success.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				3791A3BB15F602C3000CB24A /* canplay.success.xml in Resources */,
 				3791A3BD15F62660000CB24A /* genres.success.xml in Resources */,
 				3791A3BF15F63DB3000CB24A /* allchannels.success.xml in Resources */,
+				3791A3C315F640D5000CB24A /* myvod.success.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
