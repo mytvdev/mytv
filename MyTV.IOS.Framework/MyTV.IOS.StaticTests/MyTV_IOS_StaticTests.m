@@ -18,8 +18,7 @@
     self.webServer = [HTTPServer new];
     [self.webServer setType:@"_http._tcp."];
     [self.webServer setPort:8080];
-    NSString *webPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"wwwroot"];
-    DLog("%@", webPath);
+    NSString *webPath = @"/mytvioswwwroot/wwwroot";
     [self.webServer setDocumentRoot:webPath];
     NSError *error;
     [self.webServer start:&error];

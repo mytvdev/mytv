@@ -121,13 +121,13 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		375BAC9215F4FAA800E56459 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "";
-			dstSubfolderSpec = 16;
+			buildActionMask = 12;
+			dstPath = /mytvioswwwroot;
+			dstSubfolderSpec = 0;
 			files = (
 				375BAC9815F4FBB900E56459 /* wwwroot in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -576,8 +576,8 @@
 				375BABEE15F4F2B400E56459 /* Sources */,
 				375BABEF15F4F2B400E56459 /* Frameworks */,
 				375BABF015F4F2B400E56459 /* Resources */,
-				375BABF115F4F2B400E56459 /* ShellScript */,
 				375BAC9215F4FAA800E56459 /* CopyFiles */,
+				375BABF115F4F2B400E56459 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -769,6 +769,7 @@
 		375BAC0115F4F2B500E56459 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -788,6 +789,7 @@
 		375BAC0215F4F2B500E56459 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -886,6 +888,7 @@
 				375BAC0215F4F2B500E56459 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B21D9F2915DA8196001C11B7 /* Build configuration list for PBXProject "MyTV.IOS" */ = {
 			isa = XCConfigurationList;
