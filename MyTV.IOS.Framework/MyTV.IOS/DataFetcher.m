@@ -23,6 +23,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     DLog(@"Connection has failed as expected");
+    self.hasFinishedLoading = TRUE;
     self.dataCallback(NULL, error);
 }
 
@@ -55,6 +56,7 @@
 
 -(BOOL) cancelPendingRequest {
     if(!self.hasFinishedLoading) {
+        self.hasFinishedLoading = TRUE;
         [self.connection cancel];
         return TRUE;
     }
