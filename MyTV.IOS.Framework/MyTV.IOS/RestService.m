@@ -1383,12 +1383,13 @@
                     else {
                         
                         NSMutableArray* programtypes = [NSMutableArray new];
-                        
-                        TBXMLElement *item = [TBXML childElementNamed:@"item" parentElement:root];
+                        BOOL foundGenre = NO;
+                        TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:root];
                         if(item != NULL) {
                             do {
                                 NSString *thisGenreId = [TBXML textForElement:[TBXML childElementNamed:@"playlist" parentElement:item]];
                                 if([thisGenreId compare:genreId] == NSOrderedSame) {
+                                    foundGenre = YES;
                                     TBXMLElement *category = [TBXML childElementNamed:@"category" parentElement:item];
                                     if(category != NULL) {
                                         TBXMLElement *pgitem = [TBXML childElementNamed:@"poster" parentElement:category];
@@ -1411,10 +1412,10 @@
                                             while(pgitem != NULL);
                                         }
                                     }
-                                    
+                                    item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
                                     
                                 }
-                            } while (item != NULL);
+                            } while (item != NULL && foundGenre == NO);
                         }
                         
                         callback([NSArray arrayWithArray:programtypes], NULL);
