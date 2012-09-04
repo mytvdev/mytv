@@ -1467,13 +1467,13 @@
                                 TBXMLElement *xmlStartDate = [TBXML childElementNamed:@"StartDate" parentElement:item];
                                 TBXMLElement *xmlEndDate = [TBXML childElementNamed:@"EndDate" parentElement:item];
                                 TBXMLElement *xmlType = [TBXML childElementNamed:@"type" parentElement:item];
-                                if([[TBXML textForElement:xmlType] compare:@"livepackage"]){
+                                if([[TBXML textForElement:xmlType] compare:@"livepackage"] == NSOrderedSame){
                                     MyTVPackage *package = [MyTVPackage new];
                                     [package setId:[TBXML textForElement:xmlId]];
                                     [package setTitle:[TBXML textForElement:xmlTitle]];
                                     [package setDescription:[TBXML textForElement:xmlDescription]];
-                                    [package setStartDate:[TBXML textForElement:xmlStartDate]];
-                                    [package setEndDate:[TBXML textForElement:xmlEndDate]];
+                                    if(xmlStartDate != NULL) [package setStartDate:[TBXML textForElement:xmlStartDate]];
+                                    if(xmlEndDate != NULL) [package setEndDate:[TBXML textForElement:xmlEndDate]];
                                     [package setThumbnail:[TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail]];
                                     [packages addObject:package];
                                 }
@@ -1482,8 +1482,8 @@
                                     [package setId:[TBXML textForElement:xmlId]];
                                     [package setTitle:[TBXML textForElement:xmlTitle]];
                                     [package setDescription:[TBXML textForElement:xmlDescription]];
-                                    [package setStartDate:[TBXML textForElement:xmlStartDate]];
-                                    [package setEndDate:[TBXML textForElement:xmlEndDate]];
+                                    if(xmlStartDate != NULL)[package setStartDate:[TBXML textForElement:xmlStartDate]];
+                                    if(xmlEndDate != NULL)[package setEndDate:[TBXML textForElement:xmlEndDate]];
                                     [package setThumbnail:[TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail]];
                                     [packages addObject:package];
                                 }
