@@ -218,5 +218,22 @@
     }
 }
 
+- (void) testGetAllChannelsSuccess {
+    
+    DataFetcher *fetcher = [RestService RequestGetAllChannels:@"http://localhost:8080/allchannels.success.xml?" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(NSArray *channels, NSError *error){
+        STAssertNil(error, @"The method has returned an unexpected error");
+        STAssertNotNil(channels, @"Data returned is null; expected a list of channels");
+    }];
+    STAssertNotNil(fetcher, @"The method has not returned a DataFetcher object");
+    
+    NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:2];
+    while(!fetcher.hasFinishedLoading) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:loopUntil];
+    }
+    
+    if(!fetcher.hasFinishedLoading) {
+        STFail(@"Failed to load document");
+    }
+}
 
 @end
