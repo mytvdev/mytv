@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<result>
+	<status>failure</status>
+	<ReceiptNumber/>
+	<AuthenticationMessage>Already purchased</AuthenticationMessage>
+</result>
