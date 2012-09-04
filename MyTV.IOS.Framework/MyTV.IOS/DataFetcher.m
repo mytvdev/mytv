@@ -43,7 +43,7 @@
 
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    DLog("%@", data);
+    DLog("Data Recieved %d", [data length]);
     self.hasReceivedData = TRUE;
     if(data != NULL) {
         if(self.receievedData == NULL) {
