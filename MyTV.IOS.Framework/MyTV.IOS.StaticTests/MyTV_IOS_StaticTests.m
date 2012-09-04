@@ -76,7 +76,7 @@
     
 }
 
-- (void) testGetPackages {
+- (void) testGetPackagesSuccess {
     
     DataFetcher *fetcher = [RestService RequestGetPackages:@"http://localhost:8080/getmytvpackages.success.xml?" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(NSArray* packages, NSError* error) {
         STAssertNil(error, @"The method has returned an unexpected error");
@@ -99,5 +99,6 @@
     }
     
 }
+
 
 @end

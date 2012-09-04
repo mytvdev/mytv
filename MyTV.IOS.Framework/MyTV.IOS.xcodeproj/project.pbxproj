@@ -96,6 +96,7 @@
 		375BAC8B15F4F6D000E56459 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 375BAC8915F4F63A00E56459 /* libz.dylib */; };
 		3791A3A615F5E0EA000CB24A /* wwwroot in Resources */ = {isa = PBXBuildFile; fileRef = 3791A3A515F5E0EA000CB24A /* wwwroot */; };
 		3791A3A715F5E249000CB24A /* wwwroot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3791A3A515F5E0EA000CB24A /* wwwroot */; };
+		3791A3AD15F5E7B8000CB24A /* linkingrequest.success.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3791A3AC15F5E7B8000CB24A /* linkingrequest.success.xml */; };
 		37C7794615E6779900A56851 /* RestService.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C7794415E6779900A56851 /* RestService.h */; };
 		37C7794715E6779900A56851 /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7794515E6779900A56851 /* RestService.m */; };
 		37E5EE5615F4A90200D5727B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E5EE5515F4A90200D5727B /* Security.framework */; };
@@ -212,6 +213,7 @@
 		375BAC6615F4F4F800E56459 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		375BAC8915F4F63A00E56459 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3791A3A515F5E0EA000CB24A /* wwwroot */ = {isa = PBXFileReference; lastKnownFileType = folder; path = wwwroot; sourceTree = "<group>"; };
+		3791A3AC15F5E7B8000CB24A /* linkingrequest.success.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = linkingrequest.success.xml; path = wwwroot/linkingrequest.success.xml; sourceTree = "<group>"; };
 		37C7794415E6779900A56851 /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestService.h; sourceTree = "<group>"; };
 		37C7794515E6779900A56851 /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestService.m; sourceTree = "<group>"; };
 		37E5EE5515F4A90200D5727B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -444,6 +446,7 @@
 		375BAC8C15F4F7C200E56459 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3791A3AC15F5E7B8000CB24A /* linkingrequest.success.xml */,
 				3791A3A515F5E0EA000CB24A /* wwwroot */,
 			);
 			name = Resources;
@@ -641,6 +644,7 @@
 				375BAC5515F4F33E00E56459 /* About.txt in Resources */,
 				375BAC5D15F4F33E00E56459 /* README.txt in Resources */,
 				3791A3A615F5E0EA000CB24A /* wwwroot in Resources */,
+				3791A3AD15F5E7B8000CB24A /* linkingrequest.success.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

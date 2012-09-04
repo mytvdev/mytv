@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<result>
+	<status>success</status>
+	<deviceToken>E4XSI</deviceToken>
+	<customer>
+		<Id>806</Id>
+		<FirstName>omar</FirstName>
+		<LastName>salloum</LastName>
+		<Email>dev@my-tv.us</Email>
+		<Telephone>234324324234</Telephone>
+		<Mobile/>
+		<Profession/>
+		<Address>beirut</Address>
+		<PinCode>12121</PinCode>
+		<BillingId>461</BillingId>
+	</customer>
+	<creationTime/>
+</result>
