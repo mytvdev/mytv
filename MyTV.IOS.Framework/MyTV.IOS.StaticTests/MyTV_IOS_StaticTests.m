@@ -100,5 +100,27 @@
     
 }
 
+- (void) testLinkingSuccess {
+    
+    DataFetcher *fetcher = [RestService SendLinkingRequest:@"http://localhost:8080/linkingrequest.success.xml?" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(Linking* customer, NSError* error) {
+        STAssertNil(error, @"The method has returned an unexpected error");
+        STAssertNotNil(customer, @"No data was returned from the method call");
+        NSString *customerpin = [NSString stringWithFormat:@"%d", customer.PinCode];
+        STAssertEqualObjects(customerpin, @"12121", @"Customer Pin Different than expected value");
+    }];
+    
+    STAssertNotNil(fetcher, @"The method has not returned a DataFetcher object");
+    
+    NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:2];
+    while(!fetcher.hasFinishedLoading) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:loopUntil];
+    }
+    
+    if(!fetcher.hasFinishedLoading) {
+        STFail(@"Failed to load document");
+    }
+    
+}
+
 
 @end
