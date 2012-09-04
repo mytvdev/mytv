@@ -165,7 +165,7 @@
 - (void) testCanPlaySuccess {
     
     DataFetcher *fetcher = [RestService RequestCanPlay:@"http://localhost:8080/canplay.success.xml?" thisChannel:@"22" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(BOOL canplay, NSError *error){
-        STAssertNil(error, @"The method has returned an unexpected error");
+        STAssertNil(error, @"The method has returned an unexpected error %@", error);
         STAssertEquals(canplay, YES, @"The method should return TRUE value for first parameter");
     }];
     
@@ -187,6 +187,24 @@
     DataFetcher *fetcher = [RestService RequestGenres:@"http://localhost:8080/genres.success.xml?" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(NSArray *items, NSError *error) {
         STAssertNil(error, @"The method has returned an unexpected error");
         STAssertNotNil(items, @"Data returned is null; expected a list of genres");
+    }];
+    STAssertNotNil(fetcher, @"The method has not returned a DataFetcher object");
+    
+    NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:2];
+    while(!fetcher.hasFinishedLoading) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:loopUntil];
+    }
+    
+    if(!fetcher.hasFinishedLoading) {
+        STFail(@"Failed to load document");
+    }
+}
+
+- (void) testProgramTypesSuccess {
+    
+    DataFetcher *fetcher = [RestService RequestProgramTypes:@"http://localhost:8080/genres.success.xml?" ofGenre:@"1" withDeviceId:@"deviceid" andDeviceTypeId:@"6" usingCallback:^(NSArray *programtypes, NSError *error){
+        STAssertNil(error, @"The method has returned an unexpected error %a", error);
+        STAssertNotNil(programtypes, @"Data returned is null; expected a list of genres");
     }];
     STAssertNotNil(fetcher, @"The method has not returned a DataFetcher object");
     
