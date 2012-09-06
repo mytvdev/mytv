@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  IPadViewController.h
 //  myTV.IOS.App
 //
 //  Created by Omar Ayoub-Salloum on 9/6/12.
@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MyTVViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) MyTVViewController *viewController;
+@interface IPadViewController : MyTVViewController
 
 @end

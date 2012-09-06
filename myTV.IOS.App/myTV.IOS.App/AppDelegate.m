@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "IPadViewController.h"
+#import "IPhoneViewController.h"
 
 @implementation AppDelegate
 
@@ -15,6 +17,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        self.viewController = [[IPadViewController alloc] initWithNibName:@"IPadViewController" bundle:nil];
+    }
+    else if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.viewController = [[IPhoneViewController alloc] initWithNibName:@"IPhoneViewController" bundle:nil];
+    }
+    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
