@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavigationLogic.h"
 
 @interface MyTVViewController : UIViewController
+
+@property NavigationLogic *navigationLogic;
 
 @end

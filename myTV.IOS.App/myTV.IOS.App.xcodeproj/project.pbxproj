@@ -201,6 +201,8 @@
 		37B2890315F8DDDC00B5A49F /* MyVODSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37B2890215F8DDDB00B5A49F /* MyVODSubView.xib */; };
 		37C680EF15F8E41E00A90D92 /* DealsSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C680EE15F8E41E00A90D92 /* DealsSubViewResponder.m */; };
 		37C680F215F8E43900A90D92 /* DealsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C680F115F8E43900A90D92 /* DealsSubView.xib */; };
+		37E3D1EC15F8ED6E00FDB4BA /* NavigationLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E3D1EB15F8ED6E00FDB4BA /* NavigationLogic.m */; };
+		37E3D1F015F8EEEA00FDB4BA /* NavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E3D1EF15F8EEEA00FDB4BA /* NavigationItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -360,6 +362,11 @@
 		37C680ED15F8E41E00A90D92 /* DealsSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsSubViewResponder.h; sourceTree = "<group>"; };
 		37C680EE15F8E41E00A90D92 /* DealsSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsSubViewResponder.m; sourceTree = "<group>"; };
 		37C680F115F8E43900A90D92 /* DealsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealsSubView.xib; sourceTree = "<group>"; };
+		37E3D1EA15F8ED6E00FDB4BA /* NavigationLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationLogic.h; sourceTree = "<group>"; };
+		37E3D1EB15F8ED6E00FDB4BA /* NavigationLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationLogic.m; sourceTree = "<group>"; };
+		37E3D1EE15F8EEEA00FDB4BA /* NavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationItem.h; sourceTree = "<group>"; };
+		37E3D1EF15F8EEEA00FDB4BA /* NavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationItem.m; sourceTree = "<group>"; };
+		37F3DCC815F901CA00E6AA22 /* IPadViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPadViews.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -523,6 +530,7 @@
 		371AA12115F8A62D006FCC06 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				37E3D1E815F8ED2900FDB4BA /* Logic */,
 				371AA12215F8A654006FCC06 /* MyTVViewController.h */,
 				371AA12315F8A654006FCC06 /* MyTVViewController.m */,
 				37B288E915F8DBBC00B5A49F /* SubViewResponder.h */,
@@ -628,6 +636,7 @@
 		37B288EC15F8DBCD00B5A49F /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				37F3DCC815F901CA00E6AA22 /* IPadViews.h */,
 				37B288ED15F8DBF500B5A49F /* HomeSubViewResponder.h */,
 				37B288EE15F8DBF500B5A49F /* HomeSubViewResponder.m */,
 				37B288F015F8DC1500B5A49F /* HomeSubView.xib */,
@@ -651,6 +660,25 @@
 				3725EED015F8E7C10074FB2E /* SearchSubView.xib */,
 			);
 			name = SubViews;
+			sourceTree = "<group>";
+		};
+		37E3D1E815F8ED2900FDB4BA /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				37E3D1ED15F8EECC00FDB4BA /* Navigation */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		37E3D1ED15F8EECC00FDB4BA /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				37E3D1EA15F8ED6E00FDB4BA /* NavigationLogic.h */,
+				37E3D1EB15F8ED6E00FDB4BA /* NavigationLogic.m */,
+				37E3D1EE15F8EEEA00FDB4BA /* NavigationItem.h */,
+				37E3D1EF15F8EEEA00FDB4BA /* NavigationItem.m */,
+			);
+			name = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -922,6 +950,8 @@
 				3725EEC615F8E6F40074FB2E /* LoginSubViewResponder.m in Sources */,
 				3725EECC15F8E77D0074FB2E /* SearchSubViewResponder.m in Sources */,
 				3725EECF15F8E7A10074FB2E /* LiveTVSubViewResponder.m in Sources */,
+				37E3D1EC15F8ED6E00FDB4BA /* NavigationLogic.m in Sources */,
+				37E3D1F015F8EEEA00FDB4BA /* NavigationItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

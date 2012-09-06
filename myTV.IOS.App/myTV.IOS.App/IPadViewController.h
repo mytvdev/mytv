@@ -15,10 +15,14 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *vodButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *myVODButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *dealsButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *loginButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UITextField *searchTextfield;
 
 - (IBAction)goHome:(id)sender;
 - (IBAction)goToVodCatalog:(id)sender;
 - (IBAction)goToMyVOD:(id)sender;
 - (IBAction)goToHotDeals:(id)sender;
+- (IBAction)goToLogin:(id)sender;
+- (IBAction)goToSearch:(id)sender;
 
 @end
