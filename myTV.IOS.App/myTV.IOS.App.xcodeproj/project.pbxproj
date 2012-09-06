@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		371AA09815F89FFE006FCC06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09715F89FFE006FCC06 /* UIKit.framework */; };
+		371AA09A15F89FFE006FCC06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09915F89FFE006FCC06 /* Foundation.framework */; };
+		371AA09C15F89FFE006FCC06 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09B15F89FFE006FCC06 /* CoreGraphics.framework */; };
+		371AA0A215F89FFE006FCC06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 371AA0A015F89FFE006FCC06 /* InfoPlist.strings */; };
+		371AA0A415F89FFE006FCC06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA0A315F89FFE006FCC06 /* main.m */; };
+		371AA0A815F89FFE006FCC06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA0A715F89FFE006FCC06 /* AppDelegate.m */; };
+		371AA0B015F89FFE006FCC06 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA0AF15F89FFE006FCC06 /* SenTestingKit.framework */; };
+		371AA0B115F89FFE006FCC06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09715F89FFE006FCC06 /* UIKit.framework */; };
+		371AA0B215F89FFE006FCC06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09915F89FFE006FCC06 /* Foundation.framework */; };
+		371AA0BA15F89FFE006FCC06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 371AA0B815F89FFE006FCC06 /* InfoPlist.strings */; };
+		371AA0BD15F89FFE006FCC06 /* myTV_IOS_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		371AA0B315F89FFE006FCC06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 371AA08A15F89FFE006FCC06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 371AA09215F89FFE006FCC06;
+			remoteInfo = myTV.IOS.App;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		371AA09315F89FFE006FCC06 /* myTV.IOS.App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myTV.IOS.App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		371AA09715F89FFE006FCC06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		371AA09915F89FFE006FCC06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		371AA09B15F89FFE006FCC06 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		371AA09F15F89FFE006FCC06 /* myTV.IOS.App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "myTV.IOS.App-Info.plist"; sourceTree = "<group>"; };
+		371AA0A115F89FFE006FCC06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		371AA0A315F89FFE006FCC06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		371AA0A515F89FFE006FCC06 /* myTV.IOS.App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myTV.IOS.App-Prefix.pch"; sourceTree = "<group>"; };
+		371AA0A615F89FFE006FCC06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		371AA0A715F89FFE006FCC06 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		371AA0AE15F89FFE006FCC06 /* myTV.IOS.AppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myTV.IOS.AppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		371AA0AF15F89FFE006FCC06 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		371AA0B715F89FFE006FCC06 /* myTV.IOS.AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "myTV.IOS.AppTests-Info.plist"; sourceTree = "<group>"; };
+		371AA0B915F89FFE006FCC06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		371AA0BB15F89FFE006FCC06 /* myTV_IOS_AppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myTV_IOS_AppTests.h; sourceTree = "<group>"; };
+		371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myTV_IOS_AppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		371AA09015F89FFE006FCC06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371AA09815F89FFE006FCC06 /* UIKit.framework in Frameworks */,
+				371AA09A15F89FFE006FCC06 /* Foundation.framework in Frameworks */,
+				371AA09C15F89FFE006FCC06 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		371AA0AA15F89FFE006FCC06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371AA0B015F89FFE006FCC06 /* SenTestingKit.framework in Frameworks */,
+				371AA0B115F89FFE006FCC06 /* UIKit.framework in Frameworks */,
+				371AA0B215F89FFE006FCC06 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		371AA08815F89FFE006FCC06 = {
+			isa = PBXGroup;
+			children = (
+				371AA09D15F89FFE006FCC06 /* myTV.IOS.App */,
+				371AA0B515F89FFE006FCC06 /* myTV.IOS.AppTests */,
+				371AA09615F89FFE006FCC06 /* Frameworks */,
+				371AA09415F89FFE006FCC06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		371AA09415F89FFE006FCC06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				371AA09315F89FFE006FCC06 /* myTV.IOS.App.app */,
+				371AA0AE15F89FFE006FCC06 /* myTV.IOS.AppTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		371AA09615F89FFE006FCC06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				371AA09715F89FFE006FCC06 /* UIKit.framework */,
+				371AA09915F89FFE006FCC06 /* Foundation.framework */,
+				371AA09B15F89FFE006FCC06 /* CoreGraphics.framework */,
+				371AA0AF15F89FFE006FCC06 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		371AA09D15F89FFE006FCC06 /* myTV.IOS.App */ = {
+			isa = PBXGroup;
+			children = (
+				371AA0A615F89FFE006FCC06 /* AppDelegate.h */,
+				371AA0A715F89FFE006FCC06 /* AppDelegate.m */,
+				371AA09E15F89FFE006FCC06 /* Supporting Files */,
+			);
+			path = myTV.IOS.App;
+			sourceTree = "<group>";
+		};
+		371AA09E15F89FFE006FCC06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				371AA09F15F89FFE006FCC06 /* myTV.IOS.App-Info.plist */,
+				371AA0A015F89FFE006FCC06 /* InfoPlist.strings */,
+				371AA0A315F89FFE006FCC06 /* main.m */,
+				371AA0A515F89FFE006FCC06 /* myTV.IOS.App-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		371AA0B515F89FFE006FCC06 /* myTV.IOS.AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				371AA0BB15F89FFE006FCC06 /* myTV_IOS_AppTests.h */,
+				371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */,
+				371AA0B615F89FFE006FCC06 /* Supporting Files */,
+			);
+			path = myTV.IOS.AppTests;
+			sourceTree = "<group>";
+		};
+		371AA0B615F89FFE006FCC06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				371AA0B715F89FFE006FCC06 /* myTV.IOS.AppTests-Info.plist */,
+				371AA0B815F89FFE006FCC06 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		371AA09215F89FFE006FCC06 /* myTV.IOS.App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 371AA0C015F89FFE006FCC06 /* Build configuration list for PBXNativeTarget "myTV.IOS.App" */;
+			buildPhases = (
+				371AA08F15F89FFE006FCC06 /* Sources */,
+				371AA09015F89FFE006FCC06 /* Frameworks */,
+				371AA09115F89FFE006FCC06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = myTV.IOS.App;
+			productName = myTV.IOS.App;
+			productReference = 371AA09315F89FFE006FCC06 /* myTV.IOS.App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		371AA0AD15F89FFE006FCC06 /* myTV.IOS.AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 371AA0C315F89FFE006FCC06 /* Build configuration list for PBXNativeTarget "myTV.IOS.AppTests" */;
+			buildPhases = (
+				371AA0A915F89FFE006FCC06 /* Sources */,
+				371AA0AA15F89FFE006FCC06 /* Frameworks */,
+				371AA0AB15F89FFE006FCC06 /* Resources */,
+				371AA0AC15F89FFE006FCC06 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				371AA0B415F89FFE006FCC06 /* PBXTargetDependency */,
+			);
+			name = myTV.IOS.AppTests;
+			productName = myTV.IOS.AppTests;
+			productReference = 371AA0AE15F89FFE006FCC06 /* myTV.IOS.AppTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		371AA08A15F89FFE006FCC06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Omar Ayoub-Salloum";
+			};
+			buildConfigurationList = 371AA08D15F89FFE006FCC06 /* Build configuration list for PBXProject "myTV.IOS.App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 371AA08815F89FFE006FCC06;
+			productRefGroup = 371AA09415F89FFE006FCC06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				371AA09215F89FFE006FCC06 /* myTV.IOS.App */,
+				371AA0AD15F89FFE006FCC06 /* myTV.IOS.AppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		371AA09115F89FFE006FCC06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371AA0A215F89FFE006FCC06 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		371AA0AB15F89FFE006FCC06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371AA0BA15F89FFE006FCC06 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		371AA0AC15F89FFE006FCC06 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		371AA08F15F89FFE006FCC06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371AA0A415F89FFE006FCC06 /* main.m in Sources */,
+				371AA0A815F89FFE006FCC06 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		371AA0A915F89FFE006FCC06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371AA0BD15F89FFE006FCC06 /* myTV_IOS_AppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		371AA0B415F89FFE006FCC06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 371AA09215F89FFE006FCC06 /* myTV.IOS.App */;
+			targetProxy = 371AA0B315F89FFE006FCC06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		371AA0A015F89FFE006FCC06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				371AA0A115F89FFE006FCC06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		371AA0B815F89FFE006FCC06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				371AA0B915F89FFE006FCC06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		371AA0BE15F89FFE006FCC06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		371AA0BF15F89FFE006FCC06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		371AA0C115F89FFE006FCC06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "myTV.IOS.App/myTV.IOS.App-Prefix.pch";
+				INFOPLIST_FILE = "myTV.IOS.App/myTV.IOS.App-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		371AA0C215F89FFE006FCC06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "myTV.IOS.App/myTV.IOS.App-Prefix.pch";
+				INFOPLIST_FILE = "myTV.IOS.App/myTV.IOS.App-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		371AA0C415F89FFE006FCC06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/myTV.IOS.App.app/myTV.IOS.App";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "myTV.IOS.App/myTV.IOS.App-Prefix.pch";
+				INFOPLIST_FILE = "myTV.IOS.AppTests/myTV.IOS.AppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		371AA0C515F89FFE006FCC06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/myTV.IOS.App.app/myTV.IOS.App";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "myTV.IOS.App/myTV.IOS.App-Prefix.pch";
+				INFOPLIST_FILE = "myTV.IOS.AppTests/myTV.IOS.AppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		371AA08D15F89FFE006FCC06 /* Build configuration list for PBXProject "myTV.IOS.App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				371AA0BE15F89FFE006FCC06 /* Debug */,
+				371AA0BF15F89FFE006FCC06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		371AA0C015F89FFE006FCC06 /* Build configuration list for PBXNativeTarget "myTV.IOS.App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				371AA0C115F89FFE006FCC06 /* Debug */,
+				371AA0C215F89FFE006FCC06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		371AA0C315F89FFE006FCC06 /* Build configuration list for PBXNativeTarget "myTV.IOS.AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				371AA0C415F89FFE006FCC06 /* Debug */,
+				371AA0C515F89FFE006FCC06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 371AA08A15F89FFE006FCC06 /* Project object */;
+}
