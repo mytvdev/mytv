@@ -13,6 +13,11 @@
 @end
 
 @implementation IPadViewController
+@synthesize mainView;
+@synthesize homeButton;
+@synthesize vodButton;
+@synthesize myVODButton;
+@synthesize dealsButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +36,11 @@
 
 - (void)viewDidUnload
 {
+    [self setMainView:nil];
+    [self setHomeButton:nil];
+    [self setVodButton:nil];
+    [self setMyVODButton:nil];
+    [self setDealsButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -41,4 +51,15 @@
     return(interfaceOrientation==UIInterfaceOrientationLandscapeRight);
 }
 
+- (IBAction)goHome:(id)sender {
+}
+
+- (IBAction)goToVodCatalog:(id)sender {
+}
+
+- (IBAction)goToMyVOD:(id)sender {
+}
+
+- (IBAction)goToHotDeals:(id)sender {
+}
 @end
