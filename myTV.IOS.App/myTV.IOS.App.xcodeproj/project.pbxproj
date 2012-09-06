@@ -184,6 +184,8 @@
 		371AA1E215F8AA6F006FCC06 /* visitwebsite-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = 371AA1A715F8AA6F006FCC06 /* visitwebsite-Over.png */; };
 		371AA1E315F8AA6F006FCC06 /* visitwebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = 371AA1A815F8AA6F006FCC06 /* visitwebsite.png */; };
 		371AA1E415F8AA6F006FCC06 /* visitwebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = 371AA1A815F8AA6F006FCC06 /* visitwebsite.png */; };
+		371AA1E615F8C7DA006FCC06 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 371AA1E515F8C7DA006FCC06 /* logo.png */; };
+		371AA1E715F8C7DA006FCC06 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 371AA1E515F8C7DA006FCC06 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -319,6 +321,7 @@
 		371AA1A615F8AA6F006FCC06 /* tray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tray.png; sourceTree = "<group>"; };
 		371AA1A715F8AA6F006FCC06 /* visitwebsite-Over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visitwebsite-Over.png"; sourceTree = "<group>"; };
 		371AA1A815F8AA6F006FCC06 /* visitwebsite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visitwebsite.png; sourceTree = "<group>"; };
+		371AA1E515F8C7DA006FCC06 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -546,6 +549,7 @@
 		371AA18A15F8AA6F006FCC06 /* ipadretina */ = {
 			isa = PBXGroup;
 			children = (
+				371AA1E515F8C7DA006FCC06 /* logo.png */,
 				371AA18B15F8AA6F006FCC06 /* background.jpg */,
 				371AA18C15F8AA6F006FCC06 /* catalog-Over.jpg */,
 				371AA18D15F8AA6F006FCC06 /* catalog.jpg */,
@@ -714,6 +718,7 @@
 				371AA1DF15F8AA6F006FCC06 /* tray.png in Resources */,
 				371AA1E115F8AA6F006FCC06 /* visitwebsite-Over.png in Resources */,
 				371AA1E315F8AA6F006FCC06 /* visitwebsite.png in Resources */,
+				371AA1E615F8C7DA006FCC06 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +789,7 @@
 				371AA1E015F8AA6F006FCC06 /* tray.png in Resources */,
 				371AA1E215F8AA6F006FCC06 /* visitwebsite-Over.png in Resources */,
 				371AA1E415F8AA6F006FCC06 /* visitwebsite.png in Resources */,
+				371AA1E715F8C7DA006FCC06 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
