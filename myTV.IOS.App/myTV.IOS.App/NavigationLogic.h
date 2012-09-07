@@ -17,9 +17,11 @@
 }
 
 @property UIView *mainview;
+@property NavigationItem *activeItem;
 
 - (id) init;
 - (void) addNavigationItem:(NavigationItem *)item;
 - (void) startHandlingNavigation;
+- (NSDictionary *) getNavigationItems;
 
 @end

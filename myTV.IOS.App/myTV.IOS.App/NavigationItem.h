@@ -16,7 +16,7 @@
 @property (unsafe_unretained) UIButton *activationButton;
 @property (readonly) UIImage *activeImage;
 @property (readonly) UIImage *image;
-@property NSObject *viewInstance;
+@property UIView *viewInstance;
 @property NSObject *responderInstance;
 
 - (id) initWithKey:(NSString *)key forNib:(NSString *)nib usingClass:(Class)className button:(UIButton *)button displayImage:(UIImage *)image displayActiveImage:(UIImage *)activeImage;

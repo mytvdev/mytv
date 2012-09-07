@@ -48,14 +48,16 @@
     item = [[NavigationItem alloc] initWithKey:@"myvod" forNib:@"MyVODSubView" usingClass:[MyVODSubViewResponder class] button:myVODButton displayImage:[UIImage imageNamed:@"myvod.jpg"] displayActiveImage:[UIImage imageNamed:@"myvod-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"hotdeals" forNib:@"DealsSubView" usingClass:[DealsSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"deals.jpg"] displayActiveImage:[UIImage imageNamed:@"deals-Over.jpg"]];
+    item = [[NavigationItem alloc] initWithKey:@"hotdeals" forNib:@"DealsSubView" usingClass:[DealsSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"deals.jpg"] displayActiveImage:[UIImage imageNamed:@"deals-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"login" forNib:@"LoginSubView" usingClass:[LoginSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"login.png"] displayActiveImage:[UIImage imageNamed:@"login-Over.png"]];
+    item = [[NavigationItem alloc] initWithKey:@"login" forNib:@"LoginSubView" usingClass:[LoginSubViewResponder class] button:loginButton displayImage:[UIImage imageNamed:@"login.png"] displayActiveImage:[UIImage imageNamed:@"login-Over.png"]];
     [self.navigationLogic addNavigationItem:item];
     
     item = [[NavigationItem alloc] initWithKey:@"search" forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
+    
+    self.navigationLogic.mainview = self.mainView;
     
     [self.navigationLogic startHandlingNavigation];
     
