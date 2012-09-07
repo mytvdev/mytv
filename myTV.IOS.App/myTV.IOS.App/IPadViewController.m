@@ -42,23 +42,23 @@
     NavigationItem *item = [[NavigationItem alloc] initWithKey:@"home" forNib:@"HomeSubView" usingClass:[HomeSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"home.jpg"] displayActiveImage:[UIImage imageNamed:@"home-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"vodcatalog" forNib:@"VODSubView" usingClass:[VODSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"catalog.jpg"] displayActiveImage:[UIImage imageNamed:@"catalog-Over.jpg"]];
+    item = [[NavigationItem alloc] initWithKey:@"vodcatalog" forNib:@"VODSubView" usingClass:[VODSubViewResponder class] button:vodButton displayImage:[UIImage imageNamed:@"catalog.jpg"] displayActiveImage:[UIImage imageNamed:@"catalog-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
 
-    item = [[NavigationItem alloc] initWithKey:@"myvod" forNib:@"MyVODSubView" usingClass:[MyVODSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"home.jpg"] displayActiveImage:[UIImage imageNamed:@"home-Over.jpg"]];
+    item = [[NavigationItem alloc] initWithKey:@"myvod" forNib:@"MyVODSubView" usingClass:[MyVODSubViewResponder class] button:myVODButton displayImage:[UIImage imageNamed:@"myvod.jpg"] displayActiveImage:[UIImage imageNamed:@"myvod-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"vodcatalog" forNib:@"VODSubView" usingClass:[VODSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"home.jpg"] displayActiveImage:[UIImage imageNamed:@"home-Over.jpg"]];
+    item = [[NavigationItem alloc] initWithKey:@"hotdeals" forNib:@"DealsSubView" usingClass:[DealsSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"deals.jpg"] displayActiveImage:[UIImage imageNamed:@"deals-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"vodcatalog" forNib:@"VODSubView" usingClass:[VODSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"home.jpg"] displayActiveImage:[UIImage imageNamed:@"home-Over.jpg"]];
+    item = [[NavigationItem alloc] initWithKey:@"login" forNib:@"LoginSubView" usingClass:[LoginSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"login.png"] displayActiveImage:[UIImage imageNamed:@"login-Over.png"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"vodcatalog" forNib:@"VODSubView" usingClass:[VODSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"home.jpg"] displayActiveImage:[UIImage imageNamed:@"home-Over.jpg"]];
+    item = [[NavigationItem alloc] initWithKey:@"search" forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"vodcatalog" forNib:@"VODSubView" usingClass:[VODSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"home.jpg"] displayActiveImage:[UIImage imageNamed:@"home-Over.jpg"]];
-    [self.navigationLogic addNavigationItem:item];
+    [self.navigationLogic startHandlingNavigation];
+    
 }
 
 - (void)viewDidUnload
@@ -99,6 +99,7 @@
 }
 
 - (void)goToSearch:(id)sender {
+    [self.searchTextfield resignFirstResponder];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"search" }];
 }
 

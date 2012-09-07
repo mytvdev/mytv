@@ -25,8 +25,20 @@
 - (void) startHandlingNavigation {
     if (!isListening) {
         isListening = YES;
-        
+        NavigationLogic *logic = self;
+        [[NSNotificationCenter defaultCenter] addObserverForName:@"ChangeMainSubView" object:nil queue:nil usingBlock:^(NSNotification *note){
+            NSString *viewName = [note.userInfo valueForKey:@"view"];
+            if(viewName == nil) {
+                viewName = @"undefined view";
+            }
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"notification recieved" message:[NSString stringWithFormat:@"view to display %@", viewName] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+        }];
     }
+}
+
+- (void) handleNavigation {
+    
 }
 
 @end
