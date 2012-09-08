@@ -79,7 +79,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return(interfaceOrientation==UIInterfaceOrientationLandscapeRight);
+    return(interfaceOrientation==UIInterfaceOrientationLandscapeLeft);
 }
 
 - (IBAction)goHome:(id)sender {
