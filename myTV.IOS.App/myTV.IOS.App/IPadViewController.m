@@ -22,6 +22,7 @@
 @synthesize dealsButton;
 @synthesize loginButton;
 @synthesize searchTextfield;
+@synthesize mainSubView;
 @synthesize navigationLogic;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -57,7 +58,7 @@
     item = [[NavigationItem alloc] initWithKey:@"search" forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
-    self.navigationLogic.mainview = self.mainView;
+    self.navigationLogic.mainview = self.mainSubView;
     
     [self.navigationLogic startHandlingNavigation];
     
@@ -65,11 +66,12 @@
 
 - (void)viewDidUnload
 {
-    [self setMainView:nil];
     [self setHomeButton:nil];
     [self setVodButton:nil];
     [self setMyVODButton:nil];
     [self setDealsButton:nil];
+    [self setMainSubView:nil];
+    [self setMainView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
