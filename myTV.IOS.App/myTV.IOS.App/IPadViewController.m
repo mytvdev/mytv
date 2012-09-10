@@ -66,6 +66,7 @@
     
     [self.navigationLogic startHandlingNavigation];
     
+<<<<<<< HEAD
     
     
     
@@ -78,6 +79,10 @@
     self.categoriesNavigationLogic.mainview = self.categoriesMainSubView;
     
     [self.categoriesNavigationLogic startHandlingNavigation];
+=======
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"home" }];
+    
+>>>>>>> Load HomeSubView by default
 }
 
 - (void)viewDidUnload
