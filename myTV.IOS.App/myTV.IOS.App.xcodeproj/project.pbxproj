@@ -203,6 +203,8 @@
 		37C680F215F8E43900A90D92 /* DealsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C680F115F8E43900A90D92 /* DealsSubView.xib */; };
 		37E3D1EC15F8ED6E00FDB4BA /* NavigationLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E3D1EB15F8ED6E00FDB4BA /* NavigationLogic.m */; };
 		37E3D1F015F8EEEA00FDB4BA /* NavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E3D1EF15F8EEEA00FDB4BA /* NavigationItem.m */; };
+		B2BBE28015FDE0490027729E /* CategoriesSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2BBE27F15FDE0490027729E /* CategoriesSubView.xib */; };
+		B2BBE28615FDE10F0027729E /* CategorieSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BBE28515FDE10E0027729E /* CategorieSubViewResponder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -367,6 +369,9 @@
 		37E3D1EE15F8EEEA00FDB4BA /* NavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationItem.h; sourceTree = "<group>"; };
 		37E3D1EF15F8EEEA00FDB4BA /* NavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationItem.m; sourceTree = "<group>"; };
 		37F3DCC815F901CA00E6AA22 /* IPadViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPadViews.h; sourceTree = "<group>"; };
+		B2BBE27F15FDE0490027729E /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
+		B2BBE28415FDE10E0027729E /* CategorieSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorieSubViewResponder.h; sourceTree = "<group>"; };
+		B2BBE28515FDE10E0027729E /* CategorieSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorieSubViewResponder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -658,6 +663,9 @@
 				3725EECA15F8E77D0074FB2E /* SearchSubViewResponder.h */,
 				3725EECB15F8E77D0074FB2E /* SearchSubViewResponder.m */,
 				3725EED015F8E7C10074FB2E /* SearchSubView.xib */,
+				B2BBE27F15FDE0490027729E /* CategoriesSubView.xib */,
+				B2BBE28415FDE10E0027729E /* CategorieSubViewResponder.h */,
+				B2BBE28515FDE10E0027729E /* CategorieSubViewResponder.m */,
 			);
 			name = SubViews;
 			sourceTree = "<group>";
@@ -823,6 +831,7 @@
 				37C680F215F8E43900A90D92 /* DealsSubView.xib in Resources */,
 				3725EEC915F8E7120074FB2E /* LoginSubView.xib in Resources */,
 				3725EED115F8E7C10074FB2E /* SearchSubView.xib in Resources */,
+				B2BBE28015FDE0490027729E /* CategoriesSubView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,6 +961,7 @@
 				3725EECF15F8E7A10074FB2E /* LiveTVSubViewResponder.m in Sources */,
 				37E3D1EC15F8ED6E00FDB4BA /* NavigationLogic.m in Sources */,
 				37E3D1F015F8EEEA00FDB4BA /* NavigationItem.m in Sources */,
+				B2BBE28615FDE10F0027729E /* CategorieSubViewResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,5 +12,6 @@
 @interface MyTVViewController : UIViewController
 
 @property NavigationLogic *navigationLogic;
+@property NavigationLogic *categoriesNavigationLogic;
 
 @end

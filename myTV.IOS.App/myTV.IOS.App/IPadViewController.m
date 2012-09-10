@@ -25,6 +25,10 @@
 @synthesize mainSubView;
 @synthesize navigationLogic;
 
+@synthesize categoriesButton;
+@synthesize categoriesMainSubView;
+@synthesize categoriesNavigationLogic;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -62,6 +66,18 @@
     
     [self.navigationLogic startHandlingNavigation];
     
+    
+    
+    
+    
+    self.categoriesNavigationLogic = [[NavigationLogic alloc] init];
+    
+    NavigationItem *itemC = [[NavigationItem alloc] initWithKey:@"categorie" forNib:@"CategorieSubView" usingClass:[CategorieSubViewResponder class] button:categoriesButton displayImage:[UIImage imageNamed:@"categoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"categoriesOpen-Over.png"]];
+    [self.categoriesNavigationLogic addNavigationItem:itemC];
+    
+    self.categoriesNavigationLogic.mainview = self.categoriesMainSubView;
+    
+    [self.categoriesNavigationLogic startHandlingNavigation];
 }
 
 - (void)viewDidUnload
@@ -72,6 +88,7 @@
     [self setDealsButton:nil];
     [self setMainSubView:nil];
     [self setMainView:nil];
+    [self setCategoriesButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -105,6 +122,10 @@
 - (void)goToSearch:(id)sender {
     [self.searchTextfield resignFirstResponder];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"search" }];
+}
+
+- (IBAction)goToCategories:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"categorie" }];
 }
 
 @end
