@@ -63,26 +63,19 @@
     [self.navigationLogic addNavigationItem:item];
     
     self.navigationLogic.mainview = self.mainSubView;
-    
     [self.navigationLogic startHandlingNavigation];
     
-<<<<<<< HEAD
-    
-    
-    
-    
+    //load homeview by default
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"home" }];
+
     self.categoriesNavigationLogic = [[NavigationLogic alloc] init];
-    
     NavigationItem *itemC = [[NavigationItem alloc] initWithKey:@"categorie" forNib:@"CategorieSubView" usingClass:[CategorieSubViewResponder class] button:categoriesButton displayImage:[UIImage imageNamed:@"categoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"categoriesOpen-Over.png"]];
     [self.categoriesNavigationLogic addNavigationItem:itemC];
-    
     self.categoriesNavigationLogic.mainview = self.categoriesMainSubView;
-    
     [self.categoriesNavigationLogic startHandlingNavigation];
-=======
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"home" }];
+
+
     
->>>>>>> Load HomeSubView by default
 }
 
 - (void)viewDidUnload
