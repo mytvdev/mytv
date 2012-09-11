@@ -1,8 +1,8 @@
 //
 //  main.m
-//  myTV.IOS.App
+//  myTV
 //
-//  Created by Omar Ayoub-Salloum on 9/6/12.
+//  Created by Omar Ayoub-Salloum on 9/11/12.
 //  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
 //
 

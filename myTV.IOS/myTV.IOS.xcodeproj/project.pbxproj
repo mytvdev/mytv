@@ -7,120 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		371AA09815F89FFE006FCC06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09715F89FFE006FCC06 /* UIKit.framework */; };
-		371AA09A15F89FFE006FCC06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09915F89FFE006FCC06 /* Foundation.framework */; };
-		371AA09C15F89FFE006FCC06 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09B15F89FFE006FCC06 /* CoreGraphics.framework */; };
 		371AA0B015F89FFE006FCC06 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA0AF15F89FFE006FCC06 /* SenTestingKit.framework */; };
 		371AA0B115F89FFE006FCC06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09715F89FFE006FCC06 /* UIKit.framework */; };
 		371AA0B215F89FFE006FCC06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09915F89FFE006FCC06 /* Foundation.framework */; };
 		371AA0BA15F89FFE006FCC06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 371AA0B815F89FFE006FCC06 /* InfoPlist.strings */; };
 		371AA0BD15F89FFE006FCC06 /* myTV_IOS_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */; };
-		371AA10F15F8A31E006FCC06 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA10E15F8A31E006FCC06 /* Security.framework */; };
-		371AA11115F8A324006FCC06 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA11015F8A324006FCC06 /* libz.dylib */; };
-		B2C79E8715FF2FD500A2EBE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E1915FF2FD500A2EBE7 /* AppDelegate.m */; };
-		B2C79E8815FF2FD500A2EBE7 /* CategoriesSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E1A15FF2FD500A2EBE7 /* CategoriesSubView.xib */; };
-		B2C79E8A15FF2FD500A2EBE7 /* CategorieSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E1D15FF2FD500A2EBE7 /* CategorieSubViewResponder.m */; };
-		B2C79E8B15FF2FD500A2EBE7 /* DealsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E1E15FF2FD500A2EBE7 /* DealsSubView.xib */; };
-		B2C79E8C15FF2FD500A2EBE7 /* DealsSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E2015FF2FD500A2EBE7 /* DealsSubViewResponder.m */; };
-		B2C79E8D15FF2FD500A2EBE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2115FF2FD500A2EBE7 /* InfoPlist.strings */; };
-		B2C79E8E15FF2FD500A2EBE7 /* HomeSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2315FF2FD500A2EBE7 /* HomeSubView.xib */; };
-		B2C79E8F15FF2FD500A2EBE7 /* HomeSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E2515FF2FD500A2EBE7 /* HomeSubViewResponder.m */; };
-		B2C79E9015FF2FD500A2EBE7 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2715FF2FD500A2EBE7 /* background.jpg */; };
-		B2C79E9115FF2FD500A2EBE7 /* catalog-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2815FF2FD500A2EBE7 /* catalog-Over.jpg */; };
-		B2C79E9215FF2FD500A2EBE7 /* catalog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2915FF2FD500A2EBE7 /* catalog.jpg */; };
-		B2C79E9315FF2FD500A2EBE7 /* categoriesClose-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2A15FF2FD500A2EBE7 /* categoriesClose-Over.png */; };
-		B2C79E9415FF2FD500A2EBE7 /* categoriesClose.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2B15FF2FD500A2EBE7 /* categoriesClose.png */; };
-		B2C79E9515FF2FD500A2EBE7 /* categoriesOpen-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2C15FF2FD500A2EBE7 /* categoriesOpen-Over.png */; };
-		B2C79E9615FF2FD500A2EBE7 /* categoriesOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2D15FF2FD500A2EBE7 /* categoriesOpen.png */; };
-		B2C79E9715FF2FD500A2EBE7 /* countriesClose-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2E15FF2FD500A2EBE7 /* countriesClose-Over.png */; };
-		B2C79E9815FF2FD500A2EBE7 /* countriesClose.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2F15FF2FD500A2EBE7 /* countriesClose.png */; };
-		B2C79E9915FF2FD500A2EBE7 /* countriesOpen-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3015FF2FD500A2EBE7 /* countriesOpen-Over.png */; };
-		B2C79E9A15FF2FD500A2EBE7 /* countriesOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3115FF2FD500A2EBE7 /* countriesOpen.png */; };
-		B2C79E9B15FF2FD500A2EBE7 /* deals-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3215FF2FD500A2EBE7 /* deals-Over.jpg */; };
-		B2C79E9C15FF2FD500A2EBE7 /* deals.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3315FF2FD500A2EBE7 /* deals.jpg */; };
-		B2C79E9D15FF2FD500A2EBE7 /* footer.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3415FF2FD500A2EBE7 /* footer.png */; };
-		B2C79E9E15FF2FD500A2EBE7 /* frame-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3515FF2FD500A2EBE7 /* frame-Highlight.png */; };
-		B2C79E9F15FF2FD500A2EBE7 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3615FF2FD500A2EBE7 /* frame.png */; };
-		B2C79EA015FF2FD500A2EBE7 /* header.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3715FF2FD500A2EBE7 /* header.jpg */; };
-		B2C79EA115FF2FD500A2EBE7 /* help-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3815FF2FD500A2EBE7 /* help-Over.png */; };
-		B2C79EA215FF2FD500A2EBE7 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3915FF2FD500A2EBE7 /* help.png */; };
-		B2C79EA315FF2FD500A2EBE7 /* home-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3A15FF2FD500A2EBE7 /* home-Over.jpg */; };
-		B2C79EA415FF2FD500A2EBE7 /* home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3B15FF2FD500A2EBE7 /* home.jpg */; };
-		B2C79EA515FF2FD500A2EBE7 /* liveTV-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3C15FF2FD500A2EBE7 /* liveTV-Over.jpg */; };
-		B2C79EA615FF2FD500A2EBE7 /* liveTV.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3D15FF2FD500A2EBE7 /* liveTV.jpg */; };
-		B2C79EA715FF2FD500A2EBE7 /* login-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3E15FF2FD500A2EBE7 /* login-Over.png */; };
-		B2C79EA815FF2FD500A2EBE7 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E3F15FF2FD500A2EBE7 /* login.png */; };
-		B2C79EA915FF2FD500A2EBE7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4015FF2FD500A2EBE7 /* logo.png */; };
-		B2C79EAA15FF2FD500A2EBE7 /* myvod-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4115FF2FD500A2EBE7 /* myvod-Over.jpg */; };
-		B2C79EAB15FF2FD500A2EBE7 /* myvod.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4215FF2FD500A2EBE7 /* myvod.jpg */; };
-		B2C79EAC15FF2FD500A2EBE7 /* tray.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4315FF2FD500A2EBE7 /* tray.png */; };
-		B2C79EAD15FF2FD500A2EBE7 /* visitwebsite-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4415FF2FD500A2EBE7 /* visitwebsite-Over.png */; };
-		B2C79EAE15FF2FD500A2EBE7 /* visitwebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4515FF2FD500A2EBE7 /* visitwebsite.png */; };
-		B2C79EAF15FF2FD500A2EBE7 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4715FF2FD500A2EBE7 /* background.jpg */; };
-		B2C79EB015FF2FD500A2EBE7 /* catalog-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4815FF2FD500A2EBE7 /* catalog-Over.jpg */; };
-		B2C79EB115FF2FD500A2EBE7 /* catalog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4915FF2FD500A2EBE7 /* catalog.jpg */; };
-		B2C79EB215FF2FD500A2EBE7 /* categoriesClose-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4A15FF2FD500A2EBE7 /* categoriesClose-Over.png */; };
-		B2C79EB315FF2FD500A2EBE7 /* categoriesClose.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4B15FF2FD500A2EBE7 /* categoriesClose.png */; };
-		B2C79EB415FF2FD500A2EBE7 /* categoriesOpen-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4C15FF2FD500A2EBE7 /* categoriesOpen-Over.png */; };
-		B2C79EB515FF2FD500A2EBE7 /* categoriesOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4D15FF2FD500A2EBE7 /* categoriesOpen.png */; };
-		B2C79EB615FF2FD500A2EBE7 /* countriesClose-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4E15FF2FD500A2EBE7 /* countriesClose-Over.png */; };
-		B2C79EB715FF2FD500A2EBE7 /* countriesClose.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4F15FF2FD500A2EBE7 /* countriesClose.png */; };
-		B2C79EB815FF2FD500A2EBE7 /* countriesOpen-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5015FF2FD500A2EBE7 /* countriesOpen-Over.png */; };
-		B2C79EB915FF2FD500A2EBE7 /* countriesOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5115FF2FD500A2EBE7 /* countriesOpen.png */; };
-		B2C79EBA15FF2FD500A2EBE7 /* deals-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5215FF2FD500A2EBE7 /* deals-Over.jpg */; };
-		B2C79EBB15FF2FD500A2EBE7 /* deals.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5315FF2FD500A2EBE7 /* deals.jpg */; };
-		B2C79EBC15FF2FD500A2EBE7 /* footer.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5415FF2FD500A2EBE7 /* footer.png */; };
-		B2C79EBD15FF2FD500A2EBE7 /* frame-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5515FF2FD500A2EBE7 /* frame-Highlight.png */; };
-		B2C79EBE15FF2FD500A2EBE7 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5615FF2FD500A2EBE7 /* frame.png */; };
-		B2C79EBF15FF2FD500A2EBE7 /* header.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5715FF2FD500A2EBE7 /* header.jpg */; };
-		B2C79EC015FF2FD500A2EBE7 /* help-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5815FF2FD500A2EBE7 /* help-Over.png */; };
-		B2C79EC115FF2FD500A2EBE7 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5915FF2FD500A2EBE7 /* help.png */; };
-		B2C79EC215FF2FD500A2EBE7 /* home-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5A15FF2FD500A2EBE7 /* home-Over.jpg */; };
-		B2C79EC315FF2FD500A2EBE7 /* home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5B15FF2FD500A2EBE7 /* home.jpg */; };
-		B2C79EC415FF2FD500A2EBE7 /* liveTV-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5C15FF2FD500A2EBE7 /* liveTV-Over.jpg */; };
-		B2C79EC515FF2FD500A2EBE7 /* liveTV.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5D15FF2FD500A2EBE7 /* liveTV.jpg */; };
-		B2C79EC615FF2FD500A2EBE7 /* login-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5E15FF2FD500A2EBE7 /* login-Over.png */; };
-		B2C79EC715FF2FD500A2EBE7 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5F15FF2FD500A2EBE7 /* login.png */; };
-		B2C79EC815FF2FD500A2EBE7 /* myvod-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6015FF2FD500A2EBE7 /* myvod-Over.jpg */; };
-		B2C79EC915FF2FD500A2EBE7 /* myvod.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6115FF2FD500A2EBE7 /* myvod.jpg */; };
-		B2C79ECA15FF2FD500A2EBE7 /* tray.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6215FF2FD500A2EBE7 /* tray.png */; };
-		B2C79ECB15FF2FD500A2EBE7 /* visitwebsite-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6315FF2FD500A2EBE7 /* visitwebsite-Over.png */; };
-		B2C79ECC15FF2FD500A2EBE7 /* visitwebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6415FF2FD500A2EBE7 /* visitwebsite.png */; };
-		B2C79ECD15FF2FD500A2EBE7 /* IPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E6615FF2FD500A2EBE7 /* IPadViewController.m */; };
-		B2C79ECE15FF2FD500A2EBE7 /* IPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6715FF2FD500A2EBE7 /* IPadViewController.xib */; };
-		B2C79ECF15FF2FD500A2EBE7 /* IPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E6A15FF2FD500A2EBE7 /* IPhoneViewController.m */; };
-		B2C79ED015FF2FD500A2EBE7 /* IPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6B15FF2FD500A2EBE7 /* IPhoneViewController.xib */; };
-		B2C79ED115FF2FD500A2EBE7 /* LiveTVSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6C15FF2FD500A2EBE7 /* LiveTVSubView.xib */; };
-		B2C79ED215FF2FD500A2EBE7 /* LiveTVSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E6E15FF2FD500A2EBE7 /* LiveTVSubViewResponder.m */; };
-		B2C79ED315FF2FD500A2EBE7 /* LoginSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6F15FF2FD500A2EBE7 /* LoginSubView.xib */; };
-		B2C79ED415FF2FD500A2EBE7 /* LoginSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7115FF2FD500A2EBE7 /* LoginSubViewResponder.m */; };
-		B2C79ED515FF2FD500A2EBE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7215FF2FD500A2EBE7 /* main.m */; };
-		B2C79ED615FF2FD500A2EBE7 /* myTV.IOS.App-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E7315FF2FD500A2EBE7 /* myTV.IOS.App-Info.plist */; };
-		B2C79ED815FF2FD500A2EBE7 /* MyTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7715FF2FD500A2EBE7 /* MyTVViewController.m */; };
-		B2C79ED915FF2FD500A2EBE7 /* MyVODSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E7815FF2FD500A2EBE7 /* MyVODSubView.xib */; };
-		B2C79EDA15FF2FD500A2EBE7 /* MyVODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7A15FF2FD500A2EBE7 /* MyVODSubViewResponder.m */; };
-		B2C79EDB15FF2FD500A2EBE7 /* NavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7C15FF2FD500A2EBE7 /* NavigationItem.m */; };
-		B2C79EDC15FF2FD500A2EBE7 /* NavigationLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7E15FF2FD500A2EBE7 /* NavigationLogic.m */; };
-		B2C79EDD15FF2FD500A2EBE7 /* SearchSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E7F15FF2FD500A2EBE7 /* SearchSubView.xib */; };
-		B2C79EDE15FF2FD500A2EBE7 /* SearchSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8115FF2FD500A2EBE7 /* SearchSubViewResponder.m */; };
-		B2C79EDF15FF2FD500A2EBE7 /* SubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8315FF2FD500A2EBE7 /* SubViewResponder.m */; };
-		B2C79EE015FF2FD500A2EBE7 /* VODSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E8415FF2FD500A2EBE7 /* VODSubView.xib */; };
-		B2C79EE115FF2FD500A2EBE7 /* VODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8615FF2FD500A2EBE7 /* VODSubViewResponder.m */; };
-		B2C79F9F15FF35AB00A2EBE7 /* libKKGridView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C79F9E15FF35AB00A2EBE7 /* libKKGridView.a */; };
+		37776DDD15FF3A3500BB6AF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09715F89FFE006FCC06 /* UIKit.framework */; };
+		37776DDE15FF3A3500BB6AF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09915F89FFE006FCC06 /* Foundation.framework */; };
+		37776DDF15FF3A3500BB6AF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09B15F89FFE006FCC06 /* CoreGraphics.framework */; };
+		37776DE515FF3A3500BB6AF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37776DE315FF3A3500BB6AF8 /* InfoPlist.strings */; };
+		37776DE715FF3A3500BB6AF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37776DE615FF3A3500BB6AF8 /* main.m */; };
+		37776DEB15FF3A3500BB6AF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37776DEA15FF3A3500BB6AF8 /* AppDelegate.m */; };
+		37776DF815FF3BA500BB6AF8 /* libKKGridView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37776DF515FF3B8300BB6AF8 /* libKKGridView.a */; };
+		37776DF915FF3BC800BB6AF8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA11015F8A324006FCC06 /* libz.dylib */; };
+		37776DFA15FF3BDA00BB6AF8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA10E15F8A31E006FCC06 /* Security.framework */; };
+		37776DFB15FF3C4B00BB6AF8 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4715FF2FD500A2EBE7 /* background.jpg */; };
+		37776DFC15FF3C4B00BB6AF8 /* catalog-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4815FF2FD500A2EBE7 /* catalog-Over.jpg */; };
+		37776DFD15FF3C4B00BB6AF8 /* catalog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4915FF2FD500A2EBE7 /* catalog.jpg */; };
+		37776DFE15FF3C4B00BB6AF8 /* categoriesClose-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4A15FF2FD500A2EBE7 /* categoriesClose-Over.png */; };
+		37776DFF15FF3C4B00BB6AF8 /* categoriesClose.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4B15FF2FD500A2EBE7 /* categoriesClose.png */; };
+		37776E0015FF3C4B00BB6AF8 /* categoriesOpen-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4C15FF2FD500A2EBE7 /* categoriesOpen-Over.png */; };
+		37776E0115FF3C4B00BB6AF8 /* categoriesOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4D15FF2FD500A2EBE7 /* categoriesOpen.png */; };
+		37776E0215FF3C4B00BB6AF8 /* countriesClose-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4E15FF2FD500A2EBE7 /* countriesClose-Over.png */; };
+		37776E0315FF3C4B00BB6AF8 /* countriesClose.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4F15FF2FD500A2EBE7 /* countriesClose.png */; };
+		37776E0415FF3C4B00BB6AF8 /* countriesOpen-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5015FF2FD500A2EBE7 /* countriesOpen-Over.png */; };
+		37776E0515FF3C4B00BB6AF8 /* countriesOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5115FF2FD500A2EBE7 /* countriesOpen.png */; };
+		37776E0615FF3C4B00BB6AF8 /* deals-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5215FF2FD500A2EBE7 /* deals-Over.jpg */; };
+		37776E0715FF3C4B00BB6AF8 /* deals.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5315FF2FD500A2EBE7 /* deals.jpg */; };
+		37776E0815FF3C4B00BB6AF8 /* footer.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5415FF2FD500A2EBE7 /* footer.png */; };
+		37776E0915FF3C4B00BB6AF8 /* frame-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5515FF2FD500A2EBE7 /* frame-Highlight.png */; };
+		37776E0A15FF3C4B00BB6AF8 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5615FF2FD500A2EBE7 /* frame.png */; };
+		37776E0B15FF3C4B00BB6AF8 /* header.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5715FF2FD500A2EBE7 /* header.jpg */; };
+		37776E0C15FF3C4B00BB6AF8 /* help-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5815FF2FD500A2EBE7 /* help-Over.png */; };
+		37776E0D15FF3C4B00BB6AF8 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5915FF2FD500A2EBE7 /* help.png */; };
+		37776E0E15FF3C4B00BB6AF8 /* home-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5A15FF2FD500A2EBE7 /* home-Over.jpg */; };
+		37776E0F15FF3C4B00BB6AF8 /* home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5B15FF2FD500A2EBE7 /* home.jpg */; };
+		37776E1015FF3C4B00BB6AF8 /* liveTV-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5C15FF2FD500A2EBE7 /* liveTV-Over.jpg */; };
+		37776E1115FF3C4B00BB6AF8 /* liveTV.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5D15FF2FD500A2EBE7 /* liveTV.jpg */; };
+		37776E1215FF3C4B00BB6AF8 /* login-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5E15FF2FD500A2EBE7 /* login-Over.png */; };
+		37776E1315FF3C4B00BB6AF8 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E5F15FF2FD500A2EBE7 /* login.png */; };
+		37776E1415FF3C4B00BB6AF8 /* myvod-Over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6015FF2FD500A2EBE7 /* myvod-Over.jpg */; };
+		37776E1515FF3C4B00BB6AF8 /* myvod.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6115FF2FD500A2EBE7 /* myvod.jpg */; };
+		37776E1615FF3C4B00BB6AF8 /* tray.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6215FF2FD500A2EBE7 /* tray.png */; };
+		37776E1715FF3C4B00BB6AF8 /* visitwebsite-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6315FF2FD500A2EBE7 /* visitwebsite-Over.png */; };
+		37776E1815FF3C4B00BB6AF8 /* visitwebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6415FF2FD500A2EBE7 /* visitwebsite.png */; };
+		37776E1915FF3C8400BB6AF8 /* CategoriesSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E1A15FF2FD500A2EBE7 /* CategoriesSubView.xib */; };
+		37776E1A15FF3C8400BB6AF8 /* DealsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E1E15FF2FD500A2EBE7 /* DealsSubView.xib */; };
+		37776E1B15FF3C8400BB6AF8 /* HomeSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E2315FF2FD500A2EBE7 /* HomeSubView.xib */; };
+		37776E1C15FF3C8400BB6AF8 /* IPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6715FF2FD500A2EBE7 /* IPadViewController.xib */; };
+		37776E1D15FF3C8400BB6AF8 /* IPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6B15FF2FD500A2EBE7 /* IPhoneViewController.xib */; };
+		37776E1E15FF3C8400BB6AF8 /* LiveTVSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6C15FF2FD500A2EBE7 /* LiveTVSubView.xib */; };
+		37776E1F15FF3C8400BB6AF8 /* LoginSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6F15FF2FD500A2EBE7 /* LoginSubView.xib */; };
+		37776E2015FF3C8400BB6AF8 /* MyVODSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E7815FF2FD500A2EBE7 /* MyVODSubView.xib */; };
+		37776E2115FF3C8400BB6AF8 /* SearchSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E7F15FF2FD500A2EBE7 /* SearchSubView.xib */; };
+		37776E2215FF3C8400BB6AF8 /* VODSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E8415FF2FD500A2EBE7 /* VODSubView.xib */; };
+		37776E2415FF3D2700BB6AF8 /* CategorieSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E1D15FF2FD500A2EBE7 /* CategorieSubViewResponder.m */; };
+		37776E2515FF3D2700BB6AF8 /* DealsSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E2015FF2FD500A2EBE7 /* DealsSubViewResponder.m */; };
+		37776E2615FF3D2700BB6AF8 /* HomeSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E2515FF2FD500A2EBE7 /* HomeSubViewResponder.m */; };
+		37776E2715FF3D2700BB6AF8 /* IPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E6615FF2FD500A2EBE7 /* IPadViewController.m */; };
+		37776E2815FF3D2700BB6AF8 /* IPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E6A15FF2FD500A2EBE7 /* IPhoneViewController.m */; };
+		37776E2915FF3D2700BB6AF8 /* LiveTVSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E6E15FF2FD500A2EBE7 /* LiveTVSubViewResponder.m */; };
+		37776E2A15FF3D2700BB6AF8 /* LoginSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7115FF2FD500A2EBE7 /* LoginSubViewResponder.m */; };
+		37776E2B15FF3D2700BB6AF8 /* MyTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7715FF2FD500A2EBE7 /* MyTVViewController.m */; };
+		37776E2C15FF3D2700BB6AF8 /* MyVODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7A15FF2FD500A2EBE7 /* MyVODSubViewResponder.m */; };
+		37776E2D15FF3D2700BB6AF8 /* NavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7C15FF2FD500A2EBE7 /* NavigationItem.m */; };
+		37776E2E15FF3D2700BB6AF8 /* NavigationLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7E15FF2FD500A2EBE7 /* NavigationLogic.m */; };
+		37776E2F15FF3D2700BB6AF8 /* SearchSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8115FF2FD500A2EBE7 /* SearchSubViewResponder.m */; };
+		37776E3015FF3D2700BB6AF8 /* SubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8315FF2FD500A2EBE7 /* SubViewResponder.m */; };
+		37776E3115FF3D2700BB6AF8 /* VODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8615FF2FD500A2EBE7 /* VODSubViewResponder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		371AA0B315F89FFE006FCC06 /* PBXContainerItemProxy */ = {
+		37776DF415FF3B8300BB6AF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 371AA08A15F89FFE006FCC06 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 371AA09215F89FFE006FCC06;
-			remoteInfo = myTV.IOS.App;
+			containerPortal = 37776DF015FF3B8300BB6AF8 /* KKGridView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A61BE0F13DCAF1F00AB4243;
+			remoteInfo = KKGridView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		371AA09315F89FFE006FCC06 /* myTV.IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myTV.IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		371AA09715F89FFE006FCC06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		371AA09915F89FFE006FCC06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		371AA09B15F89FFE006FCC06 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -132,15 +99,20 @@
 		371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myTV_IOS_AppTests.m; sourceTree = "<group>"; };
 		371AA10E15F8A31E006FCC06 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		371AA11015F8A324006FCC06 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		B2C79E1815FF2FD500A2EBE7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B2C79E1915FF2FD500A2EBE7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		37776DDB15FF3A3500BB6AF8 /* myTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37776DE215FF3A3500BB6AF8 /* myTV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "myTV-Info.plist"; sourceTree = "<group>"; };
+		37776DE415FF3A3500BB6AF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37776DE615FF3A3500BB6AF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		37776DE815FF3A3500BB6AF8 /* myTV-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myTV-Prefix.pch"; sourceTree = "<group>"; };
+		37776DE915FF3A3500BB6AF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		37776DEA15FF3A3500BB6AF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		37776DF015FF3B8300BB6AF8 /* KKGridView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KKGridView.xcodeproj; path = ../KKGridView/KKGridView.xcodeproj; sourceTree = "<group>"; };
 		B2C79E1A15FF2FD500A2EBE7 /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
 		B2C79E1C15FF2FD500A2EBE7 /* CategorieSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorieSubViewResponder.h; sourceTree = "<group>"; };
 		B2C79E1D15FF2FD500A2EBE7 /* CategorieSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorieSubViewResponder.m; sourceTree = "<group>"; };
 		B2C79E1E15FF2FD500A2EBE7 /* DealsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealsSubView.xib; sourceTree = "<group>"; };
 		B2C79E1F15FF2FD500A2EBE7 /* DealsSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsSubViewResponder.h; sourceTree = "<group>"; };
 		B2C79E2015FF2FD500A2EBE7 /* DealsSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsSubViewResponder.m; sourceTree = "<group>"; };
-		B2C79E2215FF2FD500A2EBE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2C79E2315FF2FD500A2EBE7 /* HomeSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeSubView.xib; sourceTree = "<group>"; };
 		B2C79E2415FF2FD500A2EBE7 /* HomeSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeSubViewResponder.h; sourceTree = "<group>"; };
 		B2C79E2515FF2FD500A2EBE7 /* HomeSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeSubViewResponder.m; sourceTree = "<group>"; };
@@ -218,9 +190,6 @@
 		B2C79E6F15FF2FD500A2EBE7 /* LoginSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginSubView.xib; sourceTree = "<group>"; };
 		B2C79E7015FF2FD500A2EBE7 /* LoginSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSubViewResponder.h; sourceTree = "<group>"; };
 		B2C79E7115FF2FD500A2EBE7 /* LoginSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginSubViewResponder.m; sourceTree = "<group>"; };
-		B2C79E7215FF2FD500A2EBE7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B2C79E7315FF2FD500A2EBE7 /* myTV.IOS.App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "myTV.IOS.App-Info.plist"; sourceTree = "<group>"; };
-		B2C79E7415FF2FD500A2EBE7 /* myTV.IOS.App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "myTV.IOS.App-Prefix.pch"; sourceTree = "<group>"; };
 		B2C79E7615FF2FD500A2EBE7 /* MyTVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTVViewController.h; sourceTree = "<group>"; };
 		B2C79E7715FF2FD500A2EBE7 /* MyTVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTVViewController.m; sourceTree = "<group>"; };
 		B2C79E7815FF2FD500A2EBE7 /* MyVODSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVODSubView.xib; sourceTree = "<group>"; };
@@ -238,23 +207,10 @@
 		B2C79E8415FF2FD500A2EBE7 /* VODSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VODSubView.xib; sourceTree = "<group>"; };
 		B2C79E8515FF2FD500A2EBE7 /* VODSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VODSubViewResponder.h; sourceTree = "<group>"; };
 		B2C79E8615FF2FD500A2EBE7 /* VODSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VODSubViewResponder.m; sourceTree = "<group>"; };
-		B2C79F9E15FF35AB00A2EBE7 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libKKGridView.a; path = "../KKGridView/build/Release-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
+		B2C79F9E15FF35AB00A2EBE7 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKKGridView.a; path = "../KKGridView/build/Release-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		371AA09015F89FFE006FCC06 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				371AA11115F8A324006FCC06 /* libz.dylib in Frameworks */,
-				371AA10F15F8A31E006FCC06 /* Security.framework in Frameworks */,
-				B2C79F9F15FF35AB00A2EBE7 /* libKKGridView.a in Frameworks */,
-				371AA09815F89FFE006FCC06 /* UIKit.framework in Frameworks */,
-				371AA09A15F89FFE006FCC06 /* Foundation.framework in Frameworks */,
-				371AA09C15F89FFE006FCC06 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		371AA0AA15F89FFE006FCC06 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,15 +221,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37776DD815FF3A3500BB6AF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37776DF915FF3BC800BB6AF8 /* libz.dylib in Frameworks */,
+				37776DF815FF3BA500BB6AF8 /* libKKGridView.a in Frameworks */,
+				37776DDD15FF3A3500BB6AF8 /* UIKit.framework in Frameworks */,
+				37776DDE15FF3A3500BB6AF8 /* Foundation.framework in Frameworks */,
+				37776DDF15FF3A3500BB6AF8 /* CoreGraphics.framework in Frameworks */,
+				37776DFA15FF3BDA00BB6AF8 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		371AA08815F89FFE006FCC06 = {
 			isa = PBXGroup;
 			children = (
-				B2C79F9E15FF35AB00A2EBE7 /* libKKGridView.a */,
+				37776DF015FF3B8300BB6AF8 /* KKGridView.xcodeproj */,
 				B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */,
 				371AA0B515F89FFE006FCC06 /* myTV.IOS.AppTests */,
+				37776DE015FF3A3500BB6AF8 /* myTV */,
 				371AA09615F89FFE006FCC06 /* Frameworks */,
 				371AA09415F89FFE006FCC06 /* Products */,
 			);
@@ -282,8 +252,8 @@
 		371AA09415F89FFE006FCC06 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				371AA09315F89FFE006FCC06 /* myTV.IOS.app */,
 				371AA0AE15F89FFE006FCC06 /* myTV.IOSTests.octest */,
+				37776DDB15FF3A3500BB6AF8 /* myTV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,6 +261,7 @@
 		371AA09615F89FFE006FCC06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2C79F9E15FF35AB00A2EBE7 /* libKKGridView.a */,
 				371AA11015F8A324006FCC06 /* libz.dylib */,
 				371AA10E15F8A31E006FCC06 /* Security.framework */,
 				371AA09715F89FFE006FCC06 /* UIKit.framework */,
@@ -320,54 +291,125 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */ = {
+		37776DE015FF3A3500BB6AF8 /* myTV */ = {
 			isa = PBXGroup;
 			children = (
-				B2C79E1815FF2FD500A2EBE7 /* AppDelegate.h */,
-				B2C79E1915FF2FD500A2EBE7 /* AppDelegate.m */,
-				B2C79E1A15FF2FD500A2EBE7 /* CategoriesSubView.xib */,
-				B2C79E1C15FF2FD500A2EBE7 /* CategorieSubViewResponder.h */,
-				B2C79E1D15FF2FD500A2EBE7 /* CategorieSubViewResponder.m */,
-				B2C79E1E15FF2FD500A2EBE7 /* DealsSubView.xib */,
-				B2C79E1F15FF2FD500A2EBE7 /* DealsSubViewResponder.h */,
-				B2C79E2015FF2FD500A2EBE7 /* DealsSubViewResponder.m */,
-				B2C79E2115FF2FD500A2EBE7 /* InfoPlist.strings */,
+				37776DE915FF3A3500BB6AF8 /* AppDelegate.h */,
+				37776DEA15FF3A3500BB6AF8 /* AppDelegate.m */,
+				37776DE115FF3A3500BB6AF8 /* Supporting Files */,
+			);
+			path = myTV;
+			sourceTree = "<group>";
+		};
+		37776DE115FF3A3500BB6AF8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37776DE215FF3A3500BB6AF8 /* myTV-Info.plist */,
+				37776DE315FF3A3500BB6AF8 /* InfoPlist.strings */,
+				37776DE615FF3A3500BB6AF8 /* main.m */,
+				37776DE815FF3A3500BB6AF8 /* myTV-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37776DF115FF3B8300BB6AF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37776DF515FF3B8300BB6AF8 /* libKKGridView.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37776E3215FF3E0F00BB6AF8 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				B2C79E8415FF2FD500A2EBE7 /* VODSubView.xib */,
+				B2C79E8515FF2FD500A2EBE7 /* VODSubViewResponder.h */,
+				B2C79E8615FF2FD500A2EBE7 /* VODSubViewResponder.m */,
+				B2C79E7F15FF2FD500A2EBE7 /* SearchSubView.xib */,
+				B2C79E8015FF2FD500A2EBE7 /* SearchSubViewResponder.h */,
+				B2C79E8115FF2FD500A2EBE7 /* SearchSubViewResponder.m */,
+				B2C79E7815FF2FD500A2EBE7 /* MyVODSubView.xib */,
+				B2C79E7915FF2FD500A2EBE7 /* MyVODSubViewResponder.h */,
+				B2C79E7A15FF2FD500A2EBE7 /* MyVODSubViewResponder.m */,
+				B2C79E6F15FF2FD500A2EBE7 /* LoginSubView.xib */,
+				B2C79E7015FF2FD500A2EBE7 /* LoginSubViewResponder.h */,
+				B2C79E7115FF2FD500A2EBE7 /* LoginSubViewResponder.m */,
+				B2C79E6C15FF2FD500A2EBE7 /* LiveTVSubView.xib */,
+				B2C79E6D15FF2FD500A2EBE7 /* LiveTVSubViewResponder.h */,
+				B2C79E6E15FF2FD500A2EBE7 /* LiveTVSubViewResponder.m */,
 				B2C79E2315FF2FD500A2EBE7 /* HomeSubView.xib */,
 				B2C79E2415FF2FD500A2EBE7 /* HomeSubViewResponder.h */,
 				B2C79E2515FF2FD500A2EBE7 /* HomeSubViewResponder.m */,
+				B2C79E1E15FF2FD500A2EBE7 /* DealsSubView.xib */,
+				B2C79E1F15FF2FD500A2EBE7 /* DealsSubViewResponder.h */,
+				B2C79E2015FF2FD500A2EBE7 /* DealsSubViewResponder.m */,
+				B2C79E1A15FF2FD500A2EBE7 /* CategoriesSubView.xib */,
+				B2C79E1C15FF2FD500A2EBE7 /* CategorieSubViewResponder.h */,
+				B2C79E1D15FF2FD500A2EBE7 /* CategorieSubViewResponder.m */,
+			);
+			name = SubViews;
+			sourceTree = "<group>";
+		};
+		37776E3315FF3E3B00BB6AF8 /* IPad */ = {
+			isa = PBXGroup;
+			children = (
 				B2C79E6515FF2FD500A2EBE7 /* IPadViewController.h */,
 				B2C79E6615FF2FD500A2EBE7 /* IPadViewController.m */,
 				B2C79E6715FF2FD500A2EBE7 /* IPadViewController.xib */,
 				B2C79E6815FF2FD500A2EBE7 /* IPadViews.h */,
+				37776E3215FF3E0F00BB6AF8 /* SubViews */,
+			);
+			name = IPad;
+			sourceTree = "<group>";
+		};
+		37776E3415FF3E5C00BB6AF8 /* IPhone */ = {
+			isa = PBXGroup;
+			children = (
 				B2C79E6915FF2FD500A2EBE7 /* IPhoneViewController.h */,
 				B2C79E6A15FF2FD500A2EBE7 /* IPhoneViewController.m */,
 				B2C79E6B15FF2FD500A2EBE7 /* IPhoneViewController.xib */,
-				B2C79E6C15FF2FD500A2EBE7 /* LiveTVSubView.xib */,
-				B2C79E6D15FF2FD500A2EBE7 /* LiveTVSubViewResponder.h */,
-				B2C79E6E15FF2FD500A2EBE7 /* LiveTVSubViewResponder.m */,
-				B2C79E6F15FF2FD500A2EBE7 /* LoginSubView.xib */,
-				B2C79E7015FF2FD500A2EBE7 /* LoginSubViewResponder.h */,
-				B2C79E7115FF2FD500A2EBE7 /* LoginSubViewResponder.m */,
-				B2C79E7215FF2FD500A2EBE7 /* main.m */,
-				B2C79E7315FF2FD500A2EBE7 /* myTV.IOS.App-Info.plist */,
-				B2C79E7415FF2FD500A2EBE7 /* myTV.IOS.App-Prefix.pch */,
+			);
+			name = IPhone;
+			sourceTree = "<group>";
+		};
+		37776E3515FF3EC900BB6AF8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				37776E3615FF3EE200BB6AF8 /* Logic */,
 				B2C79E7615FF2FD500A2EBE7 /* MyTVViewController.h */,
 				B2C79E7715FF2FD500A2EBE7 /* MyTVViewController.m */,
-				B2C79E7815FF2FD500A2EBE7 /* MyVODSubView.xib */,
-				B2C79E7915FF2FD500A2EBE7 /* MyVODSubViewResponder.h */,
-				B2C79E7A15FF2FD500A2EBE7 /* MyVODSubViewResponder.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		37776E3615FF3EE200BB6AF8 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				37776E3715FF3EF100BB6AF8 /* Navigation */,
+				B2C79E8215FF2FD500A2EBE7 /* SubViewResponder.h */,
+				B2C79E8315FF2FD500A2EBE7 /* SubViewResponder.m */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		37776E3715FF3EF100BB6AF8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
 				B2C79E7B15FF2FD500A2EBE7 /* NavigationItem.h */,
 				B2C79E7C15FF2FD500A2EBE7 /* NavigationItem.m */,
 				B2C79E7D15FF2FD500A2EBE7 /* NavigationLogic.h */,
 				B2C79E7E15FF2FD500A2EBE7 /* NavigationLogic.m */,
-				B2C79E7F15FF2FD500A2EBE7 /* SearchSubView.xib */,
-				B2C79E8015FF2FD500A2EBE7 /* SearchSubViewResponder.h */,
-				B2C79E8115FF2FD500A2EBE7 /* SearchSubViewResponder.m */,
-				B2C79E8215FF2FD500A2EBE7 /* SubViewResponder.h */,
-				B2C79E8315FF2FD500A2EBE7 /* SubViewResponder.m */,
-				B2C79E8415FF2FD500A2EBE7 /* VODSubView.xib */,
-				B2C79E8515FF2FD500A2EBE7 /* VODSubViewResponder.h */,
-				B2C79E8615FF2FD500A2EBE7 /* VODSubViewResponder.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */ = {
+			isa = PBXGroup;
+			children = (
+				37776E3515FF3EC900BB6AF8 /* Common */,
+				37776E3415FF3E5C00BB6AF8 /* IPhone */,
+				37776E3315FF3E3B00BB6AF8 /* IPad */,
 				B2C79E2615FF2FD500A2EBE7 /* ipadretina */,
 				B2C79E4615FF2FD500A2EBE7 /* ipadsd */,
 			);
@@ -452,23 +494,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		371AA09215F89FFE006FCC06 /* myTV.IOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 371AA0C015F89FFE006FCC06 /* Build configuration list for PBXNativeTarget "myTV.IOS" */;
-			buildPhases = (
-				371AA08F15F89FFE006FCC06 /* Sources */,
-				371AA09015F89FFE006FCC06 /* Frameworks */,
-				371AA09115F89FFE006FCC06 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = myTV.IOS;
-			productName = myTV.IOS.App;
-			productReference = 371AA09315F89FFE006FCC06 /* myTV.IOS.app */;
-			productType = "com.apple.product-type.application";
-		};
 		371AA0AD15F89FFE006FCC06 /* myTV.IOSTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 371AA0C315F89FFE006FCC06 /* Build configuration list for PBXNativeTarget "myTV.IOSTests" */;
@@ -481,12 +506,28 @@
 			buildRules = (
 			);
 			dependencies = (
-				371AA0B415F89FFE006FCC06 /* PBXTargetDependency */,
 			);
 			name = myTV.IOSTests;
 			productName = myTV.IOS.AppTests;
 			productReference = 371AA0AE15F89FFE006FCC06 /* myTV.IOSTests.octest */;
 			productType = "com.apple.product-type.bundle";
+		};
+		37776DDA15FF3A3500BB6AF8 /* myTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37776DEE15FF3A3500BB6AF8 /* Build configuration list for PBXNativeTarget "myTV" */;
+			buildPhases = (
+				37776DD715FF3A3500BB6AF8 /* Sources */,
+				37776DD815FF3A3500BB6AF8 /* Frameworks */,
+				37776DD915FF3A3500BB6AF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = myTV;
+			productName = myTV;
+			productReference = 37776DDB15FF3A3500BB6AF8 /* myTV.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -507,100 +548,84 @@
 			mainGroup = 371AA08815F89FFE006FCC06;
 			productRefGroup = 371AA09415F89FFE006FCC06 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 37776DF115FF3B8300BB6AF8 /* Products */;
+					ProjectRef = 37776DF015FF3B8300BB6AF8 /* KKGridView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				371AA09215F89FFE006FCC06 /* myTV.IOS */,
+				37776DDA15FF3A3500BB6AF8 /* myTV */,
 				371AA0AD15F89FFE006FCC06 /* myTV.IOSTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		371AA09115F89FFE006FCC06 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2C79E8815FF2FD500A2EBE7 /* CategoriesSubView.xib in Resources */,
-				B2C79E8B15FF2FD500A2EBE7 /* DealsSubView.xib in Resources */,
-				B2C79E8D15FF2FD500A2EBE7 /* InfoPlist.strings in Resources */,
-				B2C79E8E15FF2FD500A2EBE7 /* HomeSubView.xib in Resources */,
-				B2C79E9015FF2FD500A2EBE7 /* background.jpg in Resources */,
-				B2C79E9115FF2FD500A2EBE7 /* catalog-Over.jpg in Resources */,
-				B2C79E9215FF2FD500A2EBE7 /* catalog.jpg in Resources */,
-				B2C79E9315FF2FD500A2EBE7 /* categoriesClose-Over.png in Resources */,
-				B2C79E9415FF2FD500A2EBE7 /* categoriesClose.png in Resources */,
-				B2C79E9515FF2FD500A2EBE7 /* categoriesOpen-Over.png in Resources */,
-				B2C79E9615FF2FD500A2EBE7 /* categoriesOpen.png in Resources */,
-				B2C79E9715FF2FD500A2EBE7 /* countriesClose-Over.png in Resources */,
-				B2C79E9815FF2FD500A2EBE7 /* countriesClose.png in Resources */,
-				B2C79E9915FF2FD500A2EBE7 /* countriesOpen-Over.png in Resources */,
-				B2C79E9A15FF2FD500A2EBE7 /* countriesOpen.png in Resources */,
-				B2C79E9B15FF2FD500A2EBE7 /* deals-Over.jpg in Resources */,
-				B2C79E9C15FF2FD500A2EBE7 /* deals.jpg in Resources */,
-				B2C79E9D15FF2FD500A2EBE7 /* footer.png in Resources */,
-				B2C79E9E15FF2FD500A2EBE7 /* frame-Highlight.png in Resources */,
-				B2C79E9F15FF2FD500A2EBE7 /* frame.png in Resources */,
-				B2C79EA015FF2FD500A2EBE7 /* header.jpg in Resources */,
-				B2C79EA115FF2FD500A2EBE7 /* help-Over.png in Resources */,
-				B2C79EA215FF2FD500A2EBE7 /* help.png in Resources */,
-				B2C79EA315FF2FD500A2EBE7 /* home-Over.jpg in Resources */,
-				B2C79EA415FF2FD500A2EBE7 /* home.jpg in Resources */,
-				B2C79EA515FF2FD500A2EBE7 /* liveTV-Over.jpg in Resources */,
-				B2C79EA615FF2FD500A2EBE7 /* liveTV.jpg in Resources */,
-				B2C79EA715FF2FD500A2EBE7 /* login-Over.png in Resources */,
-				B2C79EA815FF2FD500A2EBE7 /* login.png in Resources */,
-				B2C79EA915FF2FD500A2EBE7 /* logo.png in Resources */,
-				B2C79EAA15FF2FD500A2EBE7 /* myvod-Over.jpg in Resources */,
-				B2C79EAB15FF2FD500A2EBE7 /* myvod.jpg in Resources */,
-				B2C79EAC15FF2FD500A2EBE7 /* tray.png in Resources */,
-				B2C79EAD15FF2FD500A2EBE7 /* visitwebsite-Over.png in Resources */,
-				B2C79EAE15FF2FD500A2EBE7 /* visitwebsite.png in Resources */,
-				B2C79EAF15FF2FD500A2EBE7 /* background.jpg in Resources */,
-				B2C79EB015FF2FD500A2EBE7 /* catalog-Over.jpg in Resources */,
-				B2C79EB115FF2FD500A2EBE7 /* catalog.jpg in Resources */,
-				B2C79EB215FF2FD500A2EBE7 /* categoriesClose-Over.png in Resources */,
-				B2C79EB315FF2FD500A2EBE7 /* categoriesClose.png in Resources */,
-				B2C79EB415FF2FD500A2EBE7 /* categoriesOpen-Over.png in Resources */,
-				B2C79EB515FF2FD500A2EBE7 /* categoriesOpen.png in Resources */,
-				B2C79EB615FF2FD500A2EBE7 /* countriesClose-Over.png in Resources */,
-				B2C79EB715FF2FD500A2EBE7 /* countriesClose.png in Resources */,
-				B2C79EB815FF2FD500A2EBE7 /* countriesOpen-Over.png in Resources */,
-				B2C79EB915FF2FD500A2EBE7 /* countriesOpen.png in Resources */,
-				B2C79EBA15FF2FD500A2EBE7 /* deals-Over.jpg in Resources */,
-				B2C79EBB15FF2FD500A2EBE7 /* deals.jpg in Resources */,
-				B2C79EBC15FF2FD500A2EBE7 /* footer.png in Resources */,
-				B2C79EBD15FF2FD500A2EBE7 /* frame-Highlight.png in Resources */,
-				B2C79EBE15FF2FD500A2EBE7 /* frame.png in Resources */,
-				B2C79EBF15FF2FD500A2EBE7 /* header.jpg in Resources */,
-				B2C79EC015FF2FD500A2EBE7 /* help-Over.png in Resources */,
-				B2C79EC115FF2FD500A2EBE7 /* help.png in Resources */,
-				B2C79EC215FF2FD500A2EBE7 /* home-Over.jpg in Resources */,
-				B2C79EC315FF2FD500A2EBE7 /* home.jpg in Resources */,
-				B2C79EC415FF2FD500A2EBE7 /* liveTV-Over.jpg in Resources */,
-				B2C79EC515FF2FD500A2EBE7 /* liveTV.jpg in Resources */,
-				B2C79EC615FF2FD500A2EBE7 /* login-Over.png in Resources */,
-				B2C79EC715FF2FD500A2EBE7 /* login.png in Resources */,
-				B2C79EC815FF2FD500A2EBE7 /* myvod-Over.jpg in Resources */,
-				B2C79EC915FF2FD500A2EBE7 /* myvod.jpg in Resources */,
-				B2C79ECA15FF2FD500A2EBE7 /* tray.png in Resources */,
-				B2C79ECB15FF2FD500A2EBE7 /* visitwebsite-Over.png in Resources */,
-				B2C79ECC15FF2FD500A2EBE7 /* visitwebsite.png in Resources */,
-				B2C79ECE15FF2FD500A2EBE7 /* IPadViewController.xib in Resources */,
-				B2C79ED015FF2FD500A2EBE7 /* IPhoneViewController.xib in Resources */,
-				B2C79ED115FF2FD500A2EBE7 /* LiveTVSubView.xib in Resources */,
-				B2C79ED315FF2FD500A2EBE7 /* LoginSubView.xib in Resources */,
-				B2C79ED615FF2FD500A2EBE7 /* myTV.IOS.App-Info.plist in Resources */,
-				B2C79ED915FF2FD500A2EBE7 /* MyVODSubView.xib in Resources */,
-				B2C79EDD15FF2FD500A2EBE7 /* SearchSubView.xib in Resources */,
-				B2C79EE015FF2FD500A2EBE7 /* VODSubView.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXReferenceProxy section */
+		37776DF515FF3B8300BB6AF8 /* libKKGridView.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKKGridView.a;
+			remoteRef = 37776DF415FF3B8300BB6AF8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
 		371AA0AB15F89FFE006FCC06 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				371AA0BA15F89FFE006FCC06 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37776DD915FF3A3500BB6AF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37776E1915FF3C8400BB6AF8 /* CategoriesSubView.xib in Resources */,
+				37776E1A15FF3C8400BB6AF8 /* DealsSubView.xib in Resources */,
+				37776E1B15FF3C8400BB6AF8 /* HomeSubView.xib in Resources */,
+				37776E1C15FF3C8400BB6AF8 /* IPadViewController.xib in Resources */,
+				37776E1D15FF3C8400BB6AF8 /* IPhoneViewController.xib in Resources */,
+				37776E1E15FF3C8400BB6AF8 /* LiveTVSubView.xib in Resources */,
+				37776E1F15FF3C8400BB6AF8 /* LoginSubView.xib in Resources */,
+				37776E2015FF3C8400BB6AF8 /* MyVODSubView.xib in Resources */,
+				37776E2115FF3C8400BB6AF8 /* SearchSubView.xib in Resources */,
+				37776E2215FF3C8400BB6AF8 /* VODSubView.xib in Resources */,
+				37776DFB15FF3C4B00BB6AF8 /* background.jpg in Resources */,
+				37776DFC15FF3C4B00BB6AF8 /* catalog-Over.jpg in Resources */,
+				37776DFD15FF3C4B00BB6AF8 /* catalog.jpg in Resources */,
+				37776DFE15FF3C4B00BB6AF8 /* categoriesClose-Over.png in Resources */,
+				37776DFF15FF3C4B00BB6AF8 /* categoriesClose.png in Resources */,
+				37776E0015FF3C4B00BB6AF8 /* categoriesOpen-Over.png in Resources */,
+				37776E0115FF3C4B00BB6AF8 /* categoriesOpen.png in Resources */,
+				37776E0215FF3C4B00BB6AF8 /* countriesClose-Over.png in Resources */,
+				37776E0315FF3C4B00BB6AF8 /* countriesClose.png in Resources */,
+				37776E0415FF3C4B00BB6AF8 /* countriesOpen-Over.png in Resources */,
+				37776E0515FF3C4B00BB6AF8 /* countriesOpen.png in Resources */,
+				37776E0615FF3C4B00BB6AF8 /* deals-Over.jpg in Resources */,
+				37776E0715FF3C4B00BB6AF8 /* deals.jpg in Resources */,
+				37776E0815FF3C4B00BB6AF8 /* footer.png in Resources */,
+				37776E0915FF3C4B00BB6AF8 /* frame-Highlight.png in Resources */,
+				37776E0A15FF3C4B00BB6AF8 /* frame.png in Resources */,
+				37776E0B15FF3C4B00BB6AF8 /* header.jpg in Resources */,
+				37776E0C15FF3C4B00BB6AF8 /* help-Over.png in Resources */,
+				37776E0D15FF3C4B00BB6AF8 /* help.png in Resources */,
+				37776E0E15FF3C4B00BB6AF8 /* home-Over.jpg in Resources */,
+				37776E0F15FF3C4B00BB6AF8 /* home.jpg in Resources */,
+				37776E1015FF3C4B00BB6AF8 /* liveTV-Over.jpg in Resources */,
+				37776E1115FF3C4B00BB6AF8 /* liveTV.jpg in Resources */,
+				37776E1215FF3C4B00BB6AF8 /* login-Over.png in Resources */,
+				37776E1315FF3C4B00BB6AF8 /* login.png in Resources */,
+				37776E1415FF3C4B00BB6AF8 /* myvod-Over.jpg in Resources */,
+				37776E1515FF3C4B00BB6AF8 /* myvod.jpg in Resources */,
+				37776E1615FF3C4B00BB6AF8 /* tray.png in Resources */,
+				37776E1715FF3C4B00BB6AF8 /* visitwebsite-Over.png in Resources */,
+				37776E1815FF3C4B00BB6AF8 /* visitwebsite.png in Resources */,
+				37776DE515FF3A3500BB6AF8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,29 +648,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		371AA08F15F89FFE006FCC06 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2C79E8715FF2FD500A2EBE7 /* AppDelegate.m in Sources */,
-				B2C79E8A15FF2FD500A2EBE7 /* CategorieSubViewResponder.m in Sources */,
-				B2C79E8C15FF2FD500A2EBE7 /* DealsSubViewResponder.m in Sources */,
-				B2C79E8F15FF2FD500A2EBE7 /* HomeSubViewResponder.m in Sources */,
-				B2C79ECD15FF2FD500A2EBE7 /* IPadViewController.m in Sources */,
-				B2C79ECF15FF2FD500A2EBE7 /* IPhoneViewController.m in Sources */,
-				B2C79ED215FF2FD500A2EBE7 /* LiveTVSubViewResponder.m in Sources */,
-				B2C79ED415FF2FD500A2EBE7 /* LoginSubViewResponder.m in Sources */,
-				B2C79ED515FF2FD500A2EBE7 /* main.m in Sources */,
-				B2C79ED815FF2FD500A2EBE7 /* MyTVViewController.m in Sources */,
-				B2C79EDA15FF2FD500A2EBE7 /* MyVODSubViewResponder.m in Sources */,
-				B2C79EDB15FF2FD500A2EBE7 /* NavigationItem.m in Sources */,
-				B2C79EDC15FF2FD500A2EBE7 /* NavigationLogic.m in Sources */,
-				B2C79EDE15FF2FD500A2EBE7 /* SearchSubViewResponder.m in Sources */,
-				B2C79EDF15FF2FD500A2EBE7 /* SubViewResponder.m in Sources */,
-				B2C79EE115FF2FD500A2EBE7 /* VODSubViewResponder.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		371AA0A915F89FFE006FCC06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -654,15 +656,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		371AA0B415F89FFE006FCC06 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 371AA09215F89FFE006FCC06 /* myTV.IOS */;
-			targetProxy = 371AA0B315F89FFE006FCC06 /* PBXContainerItemProxy */;
+		37776DD715FF3A3500BB6AF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37776E2415FF3D2700BB6AF8 /* CategorieSubViewResponder.m in Sources */,
+				37776E2515FF3D2700BB6AF8 /* DealsSubViewResponder.m in Sources */,
+				37776E2615FF3D2700BB6AF8 /* HomeSubViewResponder.m in Sources */,
+				37776E2715FF3D2700BB6AF8 /* IPadViewController.m in Sources */,
+				37776E2815FF3D2700BB6AF8 /* IPhoneViewController.m in Sources */,
+				37776E2915FF3D2700BB6AF8 /* LiveTVSubViewResponder.m in Sources */,
+				37776E2A15FF3D2700BB6AF8 /* LoginSubViewResponder.m in Sources */,
+				37776E2B15FF3D2700BB6AF8 /* MyTVViewController.m in Sources */,
+				37776E2C15FF3D2700BB6AF8 /* MyVODSubViewResponder.m in Sources */,
+				37776E2D15FF3D2700BB6AF8 /* NavigationItem.m in Sources */,
+				37776E2E15FF3D2700BB6AF8 /* NavigationLogic.m in Sources */,
+				37776E2F15FF3D2700BB6AF8 /* SearchSubViewResponder.m in Sources */,
+				37776E3015FF3D2700BB6AF8 /* SubViewResponder.m in Sources */,
+				37776E3115FF3D2700BB6AF8 /* VODSubViewResponder.m in Sources */,
+				37776DE715FF3A3500BB6AF8 /* main.m in Sources */,
+				37776DEB15FF3A3500BB6AF8 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXTargetDependency section */
+/* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
 		371AA0B815F89FFE006FCC06 /* InfoPlist.strings */ = {
@@ -673,10 +690,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		B2C79E2115FF2FD500A2EBE7 /* InfoPlist.strings */ = {
+		37776DE315FF3A3500BB6AF8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B2C79E2215FF2FD500A2EBE7 /* en */,
+				37776DE415FF3A3500BB6AF8 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -735,38 +752,6 @@
 			};
 			name = Release;
 		};
-		371AA0C115F89FFE006FCC06 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "myTV.IOS/myTV.IOS.App-Prefix.pch";
-				INFOPLIST_FILE = "myTV.IOS/myTV.IOS.App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/KKGridView-bbkizgrdiyyvvqejcepstvaxusde/Build/Products/Debug-iphoneos\"",
-				);
-				PRODUCT_NAME = myTV.IOS;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		371AA0C215F89FFE006FCC06 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "myTV.IOS/myTV.IOS.App-Prefix.pch";
-				INFOPLIST_FILE = "myTV.IOS/myTV.IOS.App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/KKGridView-bbkizgrdiyyvvqejcepstvaxusde/Build/Products/Debug-iphoneos\"",
-				);
-				PRODUCT_NAME = myTV.IOS;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 		371AA0C415F89FFE006FCC06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -801,6 +786,32 @@
 			};
 			name = Release;
 		};
+		37776DEC15FF3A3500BB6AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "myTV/myTV-Prefix.pch";
+				INFOPLIST_FILE = "myTV/myTV-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		37776DED15FF3A3500BB6AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "myTV/myTV-Prefix.pch";
+				INFOPLIST_FILE = "myTV/myTV-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -813,15 +824,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		371AA0C015F89FFE006FCC06 /* Build configuration list for PBXNativeTarget "myTV.IOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				371AA0C115F89FFE006FCC06 /* Debug */,
-				371AA0C215F89FFE006FCC06 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		371AA0C315F89FFE006FCC06 /* Build configuration list for PBXNativeTarget "myTV.IOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -830,6 +832,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		37776DEE15FF3A3500BB6AF8 /* Build configuration list for PBXNativeTarget "myTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37776DEC15FF3A3500BB6AF8 /* Debug */,
+				37776DED15FF3A3500BB6AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

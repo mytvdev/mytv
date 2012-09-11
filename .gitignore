@@ -17,3 +17,5 @@ MyTV.IOS.Player/.DS_Store
 myTV.IOS.App/myTV.IOS.App.xcodeproj/project.xcworkspace/xcuserdata/omarayoub-salloum.xcuserdatad/UserInterfaceState.xcuserstate
 
 myTV.IOS.App/myTV.IOS.App.xcodeproj/project.xcworkspace/xcuserdata/johnny.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.xcuserstate

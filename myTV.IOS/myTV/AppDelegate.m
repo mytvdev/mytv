@@ -1,10 +1,11 @@
 //
 //  AppDelegate.m
-//  myTV.IOS.App
+//  myTV
 //
-//  Created by Omar Ayoub-Salloum on 9/6/12.
+//  Created by Omar Ayoub-Salloum on 9/11/12.
 //  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
 //
+
 
 #import "AppDelegate.h"
 #import "IPadViewController.h"
@@ -36,7 +37,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
