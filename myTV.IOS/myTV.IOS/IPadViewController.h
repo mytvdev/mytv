@@ -21,6 +21,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *categoriesMainView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *categoriesButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *categoriesMainSubView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *categoriesCloseButton;
 
 - (IBAction)goHome:(id)sender;
 - (IBAction)goToVodCatalog:(id)sender;
@@ -29,5 +30,6 @@
 - (IBAction)goToLogin:(id)sender;
 - (IBAction)goToSearch:(id)sender;
 - (IBAction)goToCategories:(id)sender;
+- (IBAction)closeCategories:(id)sender;
 
 @end

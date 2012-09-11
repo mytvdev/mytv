@@ -29,6 +29,7 @@
 @synthesize categoriesMainView;
 @synthesize categoriesMainSubView;
 @synthesize categoriesNavigationLogic;
+@synthesize categoriesCloseButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -74,16 +75,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"home" }];
     
     [self.categoriesMainSubView setHidden:YES];
-
-
-    /*self.categoriesNavigationLogic = [[NavigationLogic alloc] init];
-    NavigationItem *itemC = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[CategorieSubViewResponder class] button:categoriesButton displayImage:[UIImage imageNamed:@"categoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"categoriesOpen-Over.png"]];
-    [self.categoriesNavigationLogic addNavigationItem:itemC];
-    self.categoriesNavigationLogic.mainview = self.categoriesMainSubView;
-    [self.categoriesNavigationLogic startHandlingNavigation];*/
-
-
-    
+    [self.categoriesCloseButton setHidden:YES];
 }
 
 - (void)viewDidUnload
@@ -96,9 +88,8 @@
     [self setMainView:nil];
     [self setCategoriesMainSubView:nil];
     [self setCategoriesButton:nil];
+    [self setCategoriesCloseButton:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -133,6 +124,14 @@
 
 - (IBAction)goToCategories:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"categories" }];
+    
+    [self.categoriesMainSubView setHidden:NO];
+    [self.categoriesCloseButton setHidden:NO];
+}
+
+- (IBAction)closeCategories:(id)sender {
+    [self.categoriesMainSubView setHidden:YES];
+    [self.categoriesCloseButton setHidden:YES];
 }
 
 @end

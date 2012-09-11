@@ -264,7 +264,7 @@
 						<string key="NSFrame">{{0, 45}, {1024, 659}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="353098755"/>
+						<reference key="NSNextKeyView" ref="301761163"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -279,7 +279,7 @@
 						<string key="NSFrame">{{0, 704}, {1024, 44}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="183768484"/>
+						<reference key="NSNextKeyView" ref="353098755"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -294,7 +294,6 @@
 						<string key="NSFrame">{{462, 693}, {173, 55}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -319,7 +318,7 @@
 						<string key="NSFrame">{{249, 627}, {600, 121}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="138337772"/>
+						<reference key="NSNextKeyView" ref="183768484"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -327,6 +326,31 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">tray.png</string>
 						</object>
+					</object>
+					<object class="IBUIButton" id="301761163">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{462, 584}, {173, 55}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="138337772"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<reference key="IBUIHighlightedTitleColor" ref="95914661"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="869465775"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">categoriesClose.png</string>
+						</object>
+						<reference key="IBUIFontDescription" ref="989886577"/>
+						<reference key="IBUIFont" ref="263023455"/>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {1024, 748}}</string>
@@ -432,6 +456,14 @@
 					<int key="connectionID">44</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">categoriesCloseButton</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="301761163"/>
+					</object>
+					<int key="connectionID">47</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">goHome:</string>
 						<reference key="source" ref="4782532"/>
@@ -494,6 +526,15 @@
 					</object>
 					<int key="connectionID">36</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">closeCategories:</string>
+						<reference key="source" ref="301761163"/>
+						<reference key="destination" ref="841351856"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">46</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -531,6 +572,7 @@
 							<reference ref="568730108"/>
 							<reference ref="183768484"/>
 							<reference ref="353098755"/>
+							<reference ref="301761163"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -612,6 +654,12 @@
 						<reference key="parent" ref="766721923"/>
 						<string key="objectName">Categories Main View</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">45</int>
+						<reference key="object" ref="301761163"/>
+						<reference key="parent" ref="766721923"/>
+						<string key="objectName">Categories Close Button</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -628,6 +676,7 @@
 				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="43.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="45.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -638,7 +687,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">44</int>
+			<int key="maxID">47</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -646,6 +695,7 @@
 					<string key="className">IPadViewController</string>
 					<string key="superclassName">MyTVViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="closeCategories:">id</string>
 						<string key="goHome:">id</string>
 						<string key="goToCategories:">id</string>
 						<string key="goToHotDeals:">id</string>
@@ -655,6 +705,10 @@
 						<string key="goToVodCatalog:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="closeCategories:">
+							<string key="name">closeCategories:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="goHome:">
 							<string key="name">goHome:</string>
 							<string key="candidateClassName">id</string>
@@ -686,6 +740,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="categoriesButton">UIButton</string>
+						<string key="categoriesCloseButton">UIButton</string>
 						<string key="categoriesMainSubView">UIView</string>
 						<string key="categoriesMainView">UIView</string>
 						<string key="dealsButton">UIButton</string>
@@ -700,6 +755,10 @@
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="categoriesButton">
 							<string key="name">categoriesButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="categoriesCloseButton">
+							<string key="name">categoriesCloseButton</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="categoriesMainSubView">
@@ -768,12 +827,13 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="background.jpg">{1021, 768}</string>
-			<string key="catalog.jpg">{227, 89}</string>
+			<string key="catalog.jpg">{115, 45}</string>
+			<string key="categoriesClose.png">{245, 92}</string>
 			<string key="categoriesOpen.png">{123, 46}</string>
-			<string key="deals.jpg">{105, 45}</string>
+			<string key="deals.jpg">{207, 89}</string>
 			<string key="footer.png">{2048, 87}</string>
 			<string key="header.jpg">{2048, 89}</string>
-			<string key="home.jpg">{104, 45}</string>
+			<string key="home.jpg">{206, 89}</string>
 			<string key="login.png">{62, 26}</string>
 			<string key="logo.png">{145, 89}</string>
 			<string key="myvod.jpg">{105, 45}</string>
