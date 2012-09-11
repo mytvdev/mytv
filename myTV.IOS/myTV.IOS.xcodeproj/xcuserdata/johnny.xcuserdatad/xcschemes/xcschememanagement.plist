@@ -7,7 +7,12 @@
 		<key>myTV.IOS.App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>myTV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>371AA0AD15F89FFE006FCC06</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>37776DDA15FF3A3500BB6AF8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
