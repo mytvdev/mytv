@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:myTV.IOS.App.xcodeproj">
+      location = "self:myTV.IOS.xcodeproj">
    </FileRef>
 </Workspace>

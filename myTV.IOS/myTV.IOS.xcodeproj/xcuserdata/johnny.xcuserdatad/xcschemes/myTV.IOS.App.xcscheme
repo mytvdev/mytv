@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "371AA09215F89FFE006FCC06"
-               BuildableName = "myTV.IOS.App.app"
-               BlueprintName = "myTV.IOS.App"
-               ReferencedContainer = "container:myTV.IOS.App.xcodeproj">
+               BuildableName = "myTV.IOS.app"
+               BlueprintName = "myTV.IOS"
+               ReferencedContainer = "container:myTV.IOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "371AA0AD15F89FFE006FCC06"
-               BuildableName = "myTV.IOS.AppTests.octest"
-               BlueprintName = "myTV.IOS.AppTests"
-               ReferencedContainer = "container:myTV.IOS.App.xcodeproj">
+               BuildableName = "myTV.IOSTests.octest"
+               BlueprintName = "myTV.IOSTests"
+               ReferencedContainer = "container:myTV.IOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "371AA09215F89FFE006FCC06"
-            BuildableName = "myTV.IOS.App.app"
-            BlueprintName = "myTV.IOS.App"
-            ReferencedContainer = "container:myTV.IOS.App.xcodeproj">
+            BuildableName = "myTV.IOS.app"
+            BlueprintName = "myTV.IOS"
+            ReferencedContainer = "container:myTV.IOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "371AA09215F89FFE006FCC06"
-            BuildableName = "myTV.IOS.App.app"
-            BlueprintName = "myTV.IOS.App"
-            ReferencedContainer = "container:myTV.IOS.App.xcodeproj">
+            BuildableName = "myTV.IOS.app"
+            BlueprintName = "myTV.IOS"
+            ReferencedContainer = "container:myTV.IOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "371AA09215F89FFE006FCC06"
-            BuildableName = "myTV.IOS.App.app"
-            BlueprintName = "myTV.IOS.App"
-            ReferencedContainer = "container:myTV.IOS.App.xcodeproj">
+            BuildableName = "myTV.IOS.app"
+            BlueprintName = "myTV.IOS"
+            ReferencedContainer = "container:myTV.IOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
