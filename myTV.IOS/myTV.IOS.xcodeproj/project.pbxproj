@@ -12,6 +12,7 @@
 		371AA0B215F89FFE006FCC06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09915F89FFE006FCC06 /* Foundation.framework */; };
 		371AA0BA15F89FFE006FCC06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 371AA0B815F89FFE006FCC06 /* InfoPlist.strings */; };
 		371AA0BD15F89FFE006FCC06 /* myTV_IOS_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */; };
+		372990FA15FF466E00C015C5 /* libKKGridView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372990F915FF466E00C015C5 /* libKKGridView.a */; };
 		37776DDD15FF3A3500BB6AF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09715F89FFE006FCC06 /* UIKit.framework */; };
 		37776DDE15FF3A3500BB6AF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09915F89FFE006FCC06 /* Foundation.framework */; };
 		37776DDF15FF3A3500BB6AF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09B15F89FFE006FCC06 /* CoreGraphics.framework */; };
@@ -88,6 +89,7 @@
 		371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myTV_IOS_AppTests.m; sourceTree = "<group>"; };
 		371AA10E15F8A31E006FCC06 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		371AA11015F8A324006FCC06 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		372990F915FF466E00C015C5 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libKKGridView.a; path = "../KKGridView/build/Release-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
 		37776DDB15FF3A3500BB6AF8 /* myTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37776DE215FF3A3500BB6AF8 /* myTV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "myTV-Info.plist"; sourceTree = "<group>"; };
 		37776DE415FF3A3500BB6AF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37776DF915FF3BC800BB6AF8 /* libz.dylib in Frameworks */,
+				372990FA15FF466E00C015C5 /* libKKGridView.a in Frameworks */,
 				37776DDD15FF3A3500BB6AF8 /* UIKit.framework in Frameworks */,
 				37776DDE15FF3A3500BB6AF8 /* Foundation.framework in Frameworks */,
 				37776DDF15FF3A3500BB6AF8 /* CoreGraphics.framework in Frameworks */,
@@ -247,6 +250,7 @@
 		371AA09615F89FFE006FCC06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				372990F915FF466E00C015C5 /* libKKGridView.a */,
 				B2C79F9E15FF35AB00A2EBE7 /* libKKGridView.a */,
 				371AA11015F8A324006FCC06 /* libz.dylib */,
 				371AA10E15F8A31E006FCC06 /* Security.framework */,
