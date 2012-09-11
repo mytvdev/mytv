@@ -18,7 +18,6 @@
 		37776DE515FF3A3500BB6AF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37776DE315FF3A3500BB6AF8 /* InfoPlist.strings */; };
 		37776DE715FF3A3500BB6AF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37776DE615FF3A3500BB6AF8 /* main.m */; };
 		37776DEB15FF3A3500BB6AF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37776DEA15FF3A3500BB6AF8 /* AppDelegate.m */; };
-		37776DF815FF3BA500BB6AF8 /* libKKGridView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37776DF515FF3B8300BB6AF8 /* libKKGridView.a */; };
 		37776DF915FF3BC800BB6AF8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA11015F8A324006FCC06 /* libz.dylib */; };
 		37776DFA15FF3BDA00BB6AF8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA10E15F8A31E006FCC06 /* Security.framework */; };
 		37776DFB15FF3C4B00BB6AF8 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4715FF2FD500A2EBE7 /* background.jpg */; };
@@ -77,16 +76,6 @@
 		37776E3115FF3D2700BB6AF8 /* VODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8615FF2FD500A2EBE7 /* VODSubViewResponder.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		37776DF415FF3B8300BB6AF8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37776DF015FF3B8300BB6AF8 /* KKGridView.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1A61BE0F13DCAF1F00AB4243;
-			remoteInfo = KKGridView;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		371AA09715F89FFE006FCC06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		371AA09915F89FFE006FCC06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,7 +95,6 @@
 		37776DE815FF3A3500BB6AF8 /* myTV-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myTV-Prefix.pch"; sourceTree = "<group>"; };
 		37776DE915FF3A3500BB6AF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		37776DEA15FF3A3500BB6AF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		37776DF015FF3B8300BB6AF8 /* KKGridView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KKGridView.xcodeproj; path = ../KKGridView/KKGridView.xcodeproj; sourceTree = "<group>"; };
 		B2C79E1A15FF2FD500A2EBE7 /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
 		B2C79E1C15FF2FD500A2EBE7 /* CategorieSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorieSubViewResponder.h; sourceTree = "<group>"; };
 		B2C79E1D15FF2FD500A2EBE7 /* CategorieSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorieSubViewResponder.m; sourceTree = "<group>"; };
@@ -226,7 +214,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				37776DF915FF3BC800BB6AF8 /* libz.dylib in Frameworks */,
-				37776DF815FF3BA500BB6AF8 /* libKKGridView.a in Frameworks */,
 				37776DDD15FF3A3500BB6AF8 /* UIKit.framework in Frameworks */,
 				37776DDE15FF3A3500BB6AF8 /* Foundation.framework in Frameworks */,
 				37776DDF15FF3A3500BB6AF8 /* CoreGraphics.framework in Frameworks */,
@@ -240,7 +227,6 @@
 		371AA08815F89FFE006FCC06 = {
 			isa = PBXGroup;
 			children = (
-				37776DF015FF3B8300BB6AF8 /* KKGridView.xcodeproj */,
 				B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */,
 				371AA0B515F89FFE006FCC06 /* myTV.IOS.AppTests */,
 				37776DE015FF3A3500BB6AF8 /* myTV */,
@@ -310,14 +296,6 @@
 				37776DE815FF3A3500BB6AF8 /* myTV-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		37776DF115FF3B8300BB6AF8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				37776DF515FF3B8300BB6AF8 /* libKKGridView.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		37776E3215FF3E0F00BB6AF8 /* SubViews */ = {
@@ -548,12 +526,6 @@
 			mainGroup = 371AA08815F89FFE006FCC06;
 			productRefGroup = 371AA09415F89FFE006FCC06 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 37776DF115FF3B8300BB6AF8 /* Products */;
-					ProjectRef = 37776DF015FF3B8300BB6AF8 /* KKGridView.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				37776DDA15FF3A3500BB6AF8 /* myTV */,
@@ -561,16 +533,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		37776DF515FF3B8300BB6AF8 /* libKKGridView.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libKKGridView.a;
-			remoteRef = 37776DF415FF3B8300BB6AF8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		371AA0AB15F89FFE006FCC06 /* Resources */ = {
@@ -840,6 +802,7 @@
 				37776DED15FF3A3500BB6AF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
