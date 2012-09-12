@@ -10,6 +10,5 @@
 
 @interface CategorieSubViewResponder : SubViewResponder
 
-- (IBAction)blueButtonPressed;
 
 @end
