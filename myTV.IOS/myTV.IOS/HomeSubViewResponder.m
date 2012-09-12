@@ -37,6 +37,7 @@
                     }
                 }
                 subview.channelScrollView.contentSize = CGSizeMake(xPos, subview.channelScrollView.frame.size.height);
+                //[subview.channelScrollView setCanCancelContentTouches:YES];
             }
             
             [subview cancelChannelFetcher];
