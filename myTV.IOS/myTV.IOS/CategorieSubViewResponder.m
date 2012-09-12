@@ -20,4 +20,10 @@
     [alert show];
 }
 
+- (void)viewDidLoad
+{
+    UIView *backgroundView = [[UIView alloc] init];
+    backgroundView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+}
+
 @end

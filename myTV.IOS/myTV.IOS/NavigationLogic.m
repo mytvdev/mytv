@@ -65,11 +65,15 @@
                             if([[logic.categorieMainview subviews] count] > 0) {
                                 [[[logic.categorieMainview subviews] objectAtIndex:0] removeFromSuperview];
                             }
+                            
+                            [logic.categorieMainview addSubview:item.viewInstance];
+                            
+                            if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
+                                [item.responderInstance performSelector:@selector(viewDidLoad)];
+                            }
+                            
                             if(logic.categorieMainview.hidden == YES)
                                 [logic.categorieMainview setHidden:NO];
-
-                            [logic.categorieMainview addSubview:item.viewInstance];
-
                         }
                         else
                         {
