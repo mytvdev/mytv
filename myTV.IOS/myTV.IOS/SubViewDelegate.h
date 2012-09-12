@@ -16,5 +16,6 @@
 -(void)viewDidLoad;
 -(void)viewDidUnload;
 -(void)abortOperatons;
+-(void)bindData:(NSObject *)data;
 
 @end

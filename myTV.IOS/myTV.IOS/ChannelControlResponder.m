@@ -9,5 +9,22 @@
 #import "ChannelControlResponder.h"
 
 @implementation ChannelControlResponder
+@synthesize imageDisplay;
+@synthesize labelDisplay;
+
+-(void)bindData:(NSObject *)data {
+    self.channel = (Channel *)data;
+    ChannelControlResponder *parent = self;
+    self.imageFetcher = [DataFetcher Get:self.channel.SmallLogo usingCallback:^(NSData *data, NSError *error){
+        if(error == nil && data != nil) {
+            parent.imageDisplay.image = [[UIImage alloc] initWithData:data];
+        }
+    }];
+    labelDisplay.text = self.channel.Name;
+}
+
+-(void)viewDidUnload {
+    self.channel = nil;
+}
 
 @end

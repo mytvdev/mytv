@@ -7,9 +7,19 @@
 //
 
 #import "SubViewResponder.h"
+#import "Channel.h"
+#import "DataFetcher.h"
 
 #define ChannelControl_Space 14
 
 @interface ChannelControlResponder : SubViewResponder
+
+@property Channel *channel;
+
+@property DataFetcher *imageFetcher;
+
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imageDisplay;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelDisplay;
+
 
 @end

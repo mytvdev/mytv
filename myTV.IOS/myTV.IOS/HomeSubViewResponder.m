@@ -26,11 +26,15 @@
             if(subview.channelScrollView != nil) {
                 int xPos = ChannelControl_Space;
                 for (Channel *channel in channels) {
-                    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:nil options:nil];
+                    ChannelControlResponder *responder = [[ChannelControlResponder alloc] init];
+                    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
                     UIView *view = [array objectAtIndex:0];
                     view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
                     xPos = xPos + view.frame.size.width + ChannelControl_Space;
                     [subview.channelScrollView addSubview:view];
+                    if([responder respondsToSelector:@selector(bindData:)]) {
+                        [responder performSelector:@selector(bindData:) withObject:channel];
+                    }
                 }
                 subview.channelScrollView.contentSize = CGSizeMake(xPos, subview.channelScrollView.frame.size.height);
             }
