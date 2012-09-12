@@ -75,6 +75,24 @@
 		37776E2F15FF3D2700BB6AF8 /* SearchSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8115FF2FD500A2EBE7 /* SearchSubViewResponder.m */; };
 		37776E3015FF3D2700BB6AF8 /* SubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8315FF2FD500A2EBE7 /* SubViewResponder.m */; };
 		37776E3115FF3D2700BB6AF8 /* VODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8615FF2FD500A2EBE7 /* VODSubViewResponder.m */; };
+		37ABA8BD16006BED00F87280 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA89D16006BED00F87280 /* Channel.m */; };
+		37ABA8BE16006BED00F87280 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA89F16006BED00F87280 /* DataFetcher.m */; };
+		37ABA8BF16006BED00F87280 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8A116006BED00F87280 /* Episode.m */; };
+		37ABA8C016006BED00F87280 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8A316006BED00F87280 /* Genre.m */; };
+		37ABA8C116006BED00F87280 /* ItemBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8A516006BED00F87280 /* ItemBase.m */; };
+		37ABA8C216006BED00F87280 /* Linking.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8A716006BED00F87280 /* Linking.m */; };
+		37ABA8C316006BED00F87280 /* MyTVPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8AA16006BED00F87280 /* MyTVPackage.m */; };
+		37ABA8C416006BED00F87280 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8AC16006BED00F87280 /* Program.m */; };
+		37ABA8C516006BED00F87280 /* ProgramType.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8AE16006BED00F87280 /* ProgramType.m */; };
+		37ABA8C616006BED00F87280 /* PurchaseInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8B016006BED00F87280 /* PurchaseInformation.m */; };
+		37ABA8C716006BED00F87280 /* RestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8B216006BED00F87280 /* RestService.m */; };
+		37ABA8C816006BED00F87280 /* ScanHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8B416006BED00F87280 /* ScanHelper.m */; };
+		37ABA8C916006BED00F87280 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8B616006BED00F87280 /* TBXML.m */; };
+		37ABA8CA16006BED00F87280 /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8B816006BED00F87280 /* TBXML+Compression.m */; };
+		37ABA8CB16006BED00F87280 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8BA16006BED00F87280 /* TBXML+HTTP.m */; };
+		37ABA8CC16006BED00F87280 /* VODPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8BC16006BED00F87280 /* VODPackage.m */; };
+		37ABA8D016006CC700F87280 /* ChannelControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8CF16006CC700F87280 /* ChannelControlResponder.m */; };
+		37ABA8D216006CE200F87280 /* ChannelControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37ABA8D116006CE200F87280 /* ChannelControl.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,7 +107,7 @@
 		371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myTV_IOS_AppTests.m; sourceTree = "<group>"; };
 		371AA10E15F8A31E006FCC06 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		371AA11015F8A324006FCC06 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		372990F915FF466E00C015C5 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libKKGridView.a; path = "../KKGridView/build/Release-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
+		372990F915FF466E00C015C5 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKKGridView.a; path = "../KKGridView/build/Release-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
 		37776DDB15FF3A3500BB6AF8 /* myTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37776DE215FF3A3500BB6AF8 /* myTV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "myTV-Info.plist"; sourceTree = "<group>"; };
 		37776DE415FF3A3500BB6AF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -97,6 +115,43 @@
 		37776DE815FF3A3500BB6AF8 /* myTV-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myTV-Prefix.pch"; sourceTree = "<group>"; };
 		37776DE915FF3A3500BB6AF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		37776DEA15FF3A3500BB6AF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		37ABA89C16006BED00F87280 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = ../MyTV.IOS.Framework/MyTV.IOS/Channel.h; sourceTree = "<group>"; };
+		37ABA89D16006BED00F87280 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = ../MyTV.IOS.Framework/MyTV.IOS/Channel.m; sourceTree = "<group>"; };
+		37ABA89E16006BED00F87280 /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataFetcher.h; path = ../MyTV.IOS.Framework/MyTV.IOS/DataFetcher.h; sourceTree = "<group>"; };
+		37ABA89F16006BED00F87280 /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataFetcher.m; path = ../MyTV.IOS.Framework/MyTV.IOS/DataFetcher.m; sourceTree = "<group>"; };
+		37ABA8A016006BED00F87280 /* Episode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Episode.h; path = ../MyTV.IOS.Framework/MyTV.IOS/Episode.h; sourceTree = "<group>"; };
+		37ABA8A116006BED00F87280 /* Episode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Episode.m; path = ../MyTV.IOS.Framework/MyTV.IOS/Episode.m; sourceTree = "<group>"; };
+		37ABA8A216006BED00F87280 /* Genre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Genre.h; path = ../MyTV.IOS.Framework/MyTV.IOS/Genre.h; sourceTree = "<group>"; };
+		37ABA8A316006BED00F87280 /* Genre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Genre.m; path = ../MyTV.IOS.Framework/MyTV.IOS/Genre.m; sourceTree = "<group>"; };
+		37ABA8A416006BED00F87280 /* ItemBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemBase.h; path = ../MyTV.IOS.Framework/MyTV.IOS/ItemBase.h; sourceTree = "<group>"; };
+		37ABA8A516006BED00F87280 /* ItemBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemBase.m; path = ../MyTV.IOS.Framework/MyTV.IOS/ItemBase.m; sourceTree = "<group>"; };
+		37ABA8A616006BED00F87280 /* Linking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Linking.h; path = ../MyTV.IOS.Framework/MyTV.IOS/Linking.h; sourceTree = "<group>"; };
+		37ABA8A716006BED00F87280 /* Linking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Linking.m; path = ../MyTV.IOS.Framework/MyTV.IOS/Linking.m; sourceTree = "<group>"; };
+		37ABA8A816006BED00F87280 /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logging.h; path = ../MyTV.IOS.Framework/MyTV.IOS/Logging.h; sourceTree = "<group>"; };
+		37ABA8A916006BED00F87280 /* MyTVPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTVPackage.h; path = ../MyTV.IOS.Framework/MyTV.IOS/MyTVPackage.h; sourceTree = "<group>"; };
+		37ABA8AA16006BED00F87280 /* MyTVPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTVPackage.m; path = ../MyTV.IOS.Framework/MyTV.IOS/MyTVPackage.m; sourceTree = "<group>"; };
+		37ABA8AB16006BED00F87280 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Program.h; path = ../MyTV.IOS.Framework/MyTV.IOS/Program.h; sourceTree = "<group>"; };
+		37ABA8AC16006BED00F87280 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Program.m; path = ../MyTV.IOS.Framework/MyTV.IOS/Program.m; sourceTree = "<group>"; };
+		37ABA8AD16006BED00F87280 /* ProgramType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgramType.h; path = ../MyTV.IOS.Framework/MyTV.IOS/ProgramType.h; sourceTree = "<group>"; };
+		37ABA8AE16006BED00F87280 /* ProgramType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgramType.m; path = ../MyTV.IOS.Framework/MyTV.IOS/ProgramType.m; sourceTree = "<group>"; };
+		37ABA8AF16006BED00F87280 /* PurchaseInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PurchaseInformation.h; path = ../MyTV.IOS.Framework/MyTV.IOS/PurchaseInformation.h; sourceTree = "<group>"; };
+		37ABA8B016006BED00F87280 /* PurchaseInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PurchaseInformation.m; path = ../MyTV.IOS.Framework/MyTV.IOS/PurchaseInformation.m; sourceTree = "<group>"; };
+		37ABA8B116006BED00F87280 /* RestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestService.h; path = ../MyTV.IOS.Framework/MyTV.IOS/RestService.h; sourceTree = "<group>"; };
+		37ABA8B216006BED00F87280 /* RestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestService.m; path = ../MyTV.IOS.Framework/MyTV.IOS/RestService.m; sourceTree = "<group>"; };
+		37ABA8B316006BED00F87280 /* ScanHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanHelper.h; path = ../MyTV.IOS.Framework/MyTV.IOS/ScanHelper.h; sourceTree = "<group>"; };
+		37ABA8B416006BED00F87280 /* ScanHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanHelper.m; path = ../MyTV.IOS.Framework/MyTV.IOS/ScanHelper.m; sourceTree = "<group>"; };
+		37ABA8B516006BED00F87280 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBXML.h; path = ../MyTV.IOS.Framework/MyTV.IOS/TBXML.h; sourceTree = "<group>"; };
+		37ABA8B616006BED00F87280 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBXML.m; path = ../MyTV.IOS.Framework/MyTV.IOS/TBXML.m; sourceTree = "<group>"; };
+		37ABA8B716006BED00F87280 /* TBXML+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TBXML+Compression.h"; path = "../MyTV.IOS.Framework/MyTV.IOS/TBXML+Compression.h"; sourceTree = "<group>"; };
+		37ABA8B816006BED00F87280 /* TBXML+Compression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TBXML+Compression.m"; path = "../MyTV.IOS.Framework/MyTV.IOS/TBXML+Compression.m"; sourceTree = "<group>"; };
+		37ABA8B916006BED00F87280 /* TBXML+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TBXML+HTTP.h"; path = "../MyTV.IOS.Framework/MyTV.IOS/TBXML+HTTP.h"; sourceTree = "<group>"; };
+		37ABA8BA16006BED00F87280 /* TBXML+HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TBXML+HTTP.m"; path = "../MyTV.IOS.Framework/MyTV.IOS/TBXML+HTTP.m"; sourceTree = "<group>"; };
+		37ABA8BB16006BED00F87280 /* VODPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VODPackage.h; path = ../MyTV.IOS.Framework/MyTV.IOS/VODPackage.h; sourceTree = "<group>"; };
+		37ABA8BC16006BED00F87280 /* VODPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VODPackage.m; path = ../MyTV.IOS.Framework/MyTV.IOS/VODPackage.m; sourceTree = "<group>"; };
+		37ABA8CE16006CC700F87280 /* ChannelControlResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelControlResponder.h; sourceTree = "<group>"; };
+		37ABA8CF16006CC700F87280 /* ChannelControlResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelControlResponder.m; sourceTree = "<group>"; };
+		37ABA8D116006CE200F87280 /* ChannelControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelControl.xib; sourceTree = "<group>"; };
+		37ABA8D31600734F00F87280 /* SubViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubViewDelegate.h; sourceTree = "<group>"; };
 		B2C79E1A15FF2FD500A2EBE7 /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
 		B2C79E1C15FF2FD500A2EBE7 /* CategorieSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorieSubViewResponder.h; sourceTree = "<group>"; };
 		B2C79E1D15FF2FD500A2EBE7 /* CategorieSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorieSubViewResponder.m; sourceTree = "<group>"; };
@@ -231,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */,
+				37ABA89A16006BBC00F87280 /* MyTV.IOS.Framework */,
 				371AA0B515F89FFE006FCC06 /* myTV.IOS.AppTests */,
 				37776DE015FF3A3500BB6AF8 /* myTV */,
 				371AA09615F89FFE006FCC06 /* Frameworks */,
@@ -341,6 +397,7 @@
 				B2C79E6715FF2FD500A2EBE7 /* IPadViewController.xib */,
 				B2C79E6815FF2FD500A2EBE7 /* IPadViews.h */,
 				37776E3215FF3E0F00BB6AF8 /* SubViews */,
+				37ABA8CD16006C2D00F87280 /* Controls */,
 			);
 			name = IPad;
 			sourceTree = "<group>";
@@ -371,6 +428,7 @@
 				37776E3715FF3EF100BB6AF8 /* Navigation */,
 				B2C79E8215FF2FD500A2EBE7 /* SubViewResponder.h */,
 				B2C79E8315FF2FD500A2EBE7 /* SubViewResponder.m */,
+				37ABA8D31600734F00F87280 /* SubViewDelegate.h */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -384,6 +442,56 @@
 				B2C79E7E15FF2FD500A2EBE7 /* NavigationLogic.m */,
 			);
 			name = Navigation;
+			sourceTree = "<group>";
+		};
+		37ABA89A16006BBC00F87280 /* MyTV.IOS.Framework */ = {
+			isa = PBXGroup;
+			children = (
+				37ABA89C16006BED00F87280 /* Channel.h */,
+				37ABA89D16006BED00F87280 /* Channel.m */,
+				37ABA89E16006BED00F87280 /* DataFetcher.h */,
+				37ABA89F16006BED00F87280 /* DataFetcher.m */,
+				37ABA8A016006BED00F87280 /* Episode.h */,
+				37ABA8A116006BED00F87280 /* Episode.m */,
+				37ABA8A216006BED00F87280 /* Genre.h */,
+				37ABA8A316006BED00F87280 /* Genre.m */,
+				37ABA8A416006BED00F87280 /* ItemBase.h */,
+				37ABA8A516006BED00F87280 /* ItemBase.m */,
+				37ABA8A616006BED00F87280 /* Linking.h */,
+				37ABA8A716006BED00F87280 /* Linking.m */,
+				37ABA8A816006BED00F87280 /* Logging.h */,
+				37ABA8A916006BED00F87280 /* MyTVPackage.h */,
+				37ABA8AA16006BED00F87280 /* MyTVPackage.m */,
+				37ABA8AB16006BED00F87280 /* Program.h */,
+				37ABA8AC16006BED00F87280 /* Program.m */,
+				37ABA8AD16006BED00F87280 /* ProgramType.h */,
+				37ABA8AE16006BED00F87280 /* ProgramType.m */,
+				37ABA8AF16006BED00F87280 /* PurchaseInformation.h */,
+				37ABA8B016006BED00F87280 /* PurchaseInformation.m */,
+				37ABA8B116006BED00F87280 /* RestService.h */,
+				37ABA8B216006BED00F87280 /* RestService.m */,
+				37ABA8B316006BED00F87280 /* ScanHelper.h */,
+				37ABA8B416006BED00F87280 /* ScanHelper.m */,
+				37ABA8B516006BED00F87280 /* TBXML.h */,
+				37ABA8B616006BED00F87280 /* TBXML.m */,
+				37ABA8B716006BED00F87280 /* TBXML+Compression.h */,
+				37ABA8B816006BED00F87280 /* TBXML+Compression.m */,
+				37ABA8B916006BED00F87280 /* TBXML+HTTP.h */,
+				37ABA8BA16006BED00F87280 /* TBXML+HTTP.m */,
+				37ABA8BB16006BED00F87280 /* VODPackage.h */,
+				37ABA8BC16006BED00F87280 /* VODPackage.m */,
+			);
+			name = MyTV.IOS.Framework;
+			sourceTree = "<group>";
+		};
+		37ABA8CD16006C2D00F87280 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				37ABA8CE16006CC700F87280 /* ChannelControlResponder.h */,
+				37ABA8CF16006CC700F87280 /* ChannelControlResponder.m */,
+				37ABA8D116006CE200F87280 /* ChannelControl.xib */,
+			);
+			name = Controls;
 			sourceTree = "<group>";
 		};
 		B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */ = {
@@ -592,6 +700,7 @@
 				37776E1715FF3C4B00BB6AF8 /* visitwebsite-Over.png in Resources */,
 				37776E1815FF3C4B00BB6AF8 /* visitwebsite.png in Resources */,
 				37776DE515FF3A3500BB6AF8 /* InfoPlist.strings in Resources */,
+				37ABA8D216006CE200F87280 /* ChannelControl.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +751,23 @@
 				37776E3115FF3D2700BB6AF8 /* VODSubViewResponder.m in Sources */,
 				37776DE715FF3A3500BB6AF8 /* main.m in Sources */,
 				37776DEB15FF3A3500BB6AF8 /* AppDelegate.m in Sources */,
+				37ABA8BD16006BED00F87280 /* Channel.m in Sources */,
+				37ABA8BE16006BED00F87280 /* DataFetcher.m in Sources */,
+				37ABA8BF16006BED00F87280 /* Episode.m in Sources */,
+				37ABA8C016006BED00F87280 /* Genre.m in Sources */,
+				37ABA8C116006BED00F87280 /* ItemBase.m in Sources */,
+				37ABA8C216006BED00F87280 /* Linking.m in Sources */,
+				37ABA8C316006BED00F87280 /* MyTVPackage.m in Sources */,
+				37ABA8C416006BED00F87280 /* Program.m in Sources */,
+				37ABA8C516006BED00F87280 /* ProgramType.m in Sources */,
+				37ABA8C616006BED00F87280 /* PurchaseInformation.m in Sources */,
+				37ABA8C716006BED00F87280 /* RestService.m in Sources */,
+				37ABA8C816006BED00F87280 /* ScanHelper.m in Sources */,
+				37ABA8C916006BED00F87280 /* TBXML.m in Sources */,
+				37ABA8CA16006BED00F87280 /* TBXML+Compression.m in Sources */,
+				37ABA8CB16006BED00F87280 /* TBXML+HTTP.m in Sources */,
+				37ABA8CC16006BED00F87280 /* VODPackage.m in Sources */,
+				37ABA8D016006CC700F87280 /* ChannelControlResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
