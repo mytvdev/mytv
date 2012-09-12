@@ -1,19 +1,19 @@
 //
-//  KKDetailViewController.m
-//  myTV.IOS
+//  BIDTKKGridViewController.m
+//  TestKKGridView
 //
 //  Created by Johnny on 9/12/12.
-//  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
+//  Copyright (c) 2012 Johnny. All rights reserved.
 //
 
-#import "KKDetailViewController.h"
+#import "BIDTKKGridViewController.h"
 #import "KKDemoCell.h"
 
-@interface KKDetailViewController ()
+@interface BIDTKKGridViewController ()
 
 @end
 
-@implementation KKDetailViewController
+@implementation BIDTKKGridViewController
 
 @synthesize fillerData = _fillerData;
 
@@ -27,8 +27,8 @@
     backgroundView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     self.gridView.backgroundView = backgroundView;
     
-    self.gridView.cellPadding = CGSizeMake(5.f, 5.f);
-    self.title = @"";
+    self.gridView.cellPadding = CGSizeMake(11.f, 5.f);
+    self.title = @"KKGridView";
     
     _fillerData = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < 20; i++) {
@@ -84,4 +84,5 @@
 {
     return YES;
 }
+
 @end
