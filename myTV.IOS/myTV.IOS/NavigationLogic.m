@@ -77,6 +77,9 @@
                                 [[[logic.mainview subviews] objectAtIndex:0] removeFromSuperview];
                             }
                             [logic.mainview addSubview:item.viewInstance];
+                            if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
+                                [item.responderInstance performSelector:@selector(viewDidLoad)];
+                            }
                         }
                         if(item.activationButton != nil) {
                             [item.activationButton setImage:item.activeImage forState:UIControlStateNormal];
@@ -89,8 +92,5 @@
     }
 }
 
-- (void) handleNavigation {
-    
-}
 
 @end

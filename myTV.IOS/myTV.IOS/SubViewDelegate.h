@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SubViewResponder.h"
 
 @protocol SubViewDelegate <NSObject>
+
+@optional
+
+-(void)viewDidLoad;
+-(void)viewDidUnload;
+-(void)abortOperatons;
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SubViewDelegate.h"
 
-@interface SubViewResponder : NSObject
+@interface SubViewResponder : NSObject <SubViewDelegate>
 
 @end
