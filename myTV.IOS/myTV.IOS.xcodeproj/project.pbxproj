@@ -94,6 +94,7 @@
 		37ABA8D016006CC700F87280 /* ChannelControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8CF16006CC700F87280 /* ChannelControlResponder.m */; };
 		37ABA8D216006CE200F87280 /* ChannelControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37ABA8D116006CE200F87280 /* ChannelControl.xib */; };
 		B24D94531600BA30005A5509 /* KKDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B24D94521600BA30005A5509 /* KKDemoCell.m */; };
+		B24D94561600BE2B005A5509 /* KKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24D94551600BE2B005A5509 /* KKDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,8 @@
 		37ABA8D31600734F00F87280 /* SubViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubViewDelegate.h; sourceTree = "<group>"; };
 		B24D94511600BA30005A5509 /* KKDemoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDemoCell.h; sourceTree = "<group>"; };
 		B24D94521600BA30005A5509 /* KKDemoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDemoCell.m; sourceTree = "<group>"; };
+		B24D94541600BE2B005A5509 /* KKDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDetailViewController.h; sourceTree = "<group>"; };
+		B24D94551600BE2B005A5509 /* KKDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDetailViewController.m; sourceTree = "<group>"; };
 		B2C79E1A15FF2FD500A2EBE7 /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
 		B2C79E1C15FF2FD500A2EBE7 /* CategorieSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorieSubViewResponder.h; sourceTree = "<group>"; };
 		B2C79E1D15FF2FD500A2EBE7 /* CategorieSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorieSubViewResponder.m; sourceTree = "<group>"; };
@@ -364,7 +367,10 @@
 		37776E3215FF3E0F00BB6AF8 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				B24D944F1600BA16005A5509 /* KKGridView */,
+				B24D94511600BA30005A5509 /* KKDemoCell.h */,
+				B24D94521600BA30005A5509 /* KKDemoCell.m */,
+				B24D94541600BE2B005A5509 /* KKDetailViewController.h */,
+				B24D94551600BE2B005A5509 /* KKDetailViewController.m */,
 				B2C79E8415FF2FD500A2EBE7 /* VODSubView.xib */,
 				B2C79E8515FF2FD500A2EBE7 /* VODSubViewResponder.h */,
 				B2C79E8615FF2FD500A2EBE7 /* VODSubViewResponder.m */,
@@ -496,15 +502,6 @@
 				37ABA8D116006CE200F87280 /* ChannelControl.xib */,
 			);
 			name = Controls;
-			sourceTree = "<group>";
-		};
-		B24D944F1600BA16005A5509 /* KKGridView */ = {
-			isa = PBXGroup;
-			children = (
-				B24D94511600BA30005A5509 /* KKDemoCell.h */,
-				B24D94521600BA30005A5509 /* KKDemoCell.m */,
-			);
-			name = KKGridView;
 			sourceTree = "<group>";
 		};
 		B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */ = {
@@ -782,6 +779,7 @@
 				37ABA8CC16006BED00F87280 /* VODPackage.m in Sources */,
 				37ABA8D016006CC700F87280 /* ChannelControlResponder.m in Sources */,
 				B24D94531600BA30005A5509 /* KKDemoCell.m in Sources */,
+				B24D94561600BE2B005A5509 /* KKDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

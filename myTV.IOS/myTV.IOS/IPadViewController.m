@@ -64,7 +64,7 @@
     item = [[NavigationItem alloc] initWithKey:@"search" forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
-    NavigationItem *itemC = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[CategorieSubViewResponder class] button:categoriesButton displayImage:[UIImage imageNamed:@"categoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"categoriesOpen-Over.png"]];
+    NavigationItem *itemC = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[KKDetailViewController class] button:categoriesButton displayImage:[UIImage imageNamed:@"categoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"categoriesOpen-Over.png"]];
     [self.navigationLogic addNavigationItem:itemC];
     
     self.navigationLogic.mainview = self.mainSubView;

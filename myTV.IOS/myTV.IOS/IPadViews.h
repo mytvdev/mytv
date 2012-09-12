@@ -15,6 +15,7 @@
 #import "LoginSubViewResponder.h"
 #import "SearchSubViewResponder.h"
 #import "CategorieSubViewResponder.h"
+#import "KKDetailViewController.h"
 
 
 @protocol IPadViews <NSObject>
