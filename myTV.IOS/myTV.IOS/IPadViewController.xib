@@ -264,7 +264,7 @@
 						<string key="NSFrame">{{0, 45}, {1024, 659}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="301761163"/>
+						<reference key="NSNextKeyView" ref="138337772"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -294,6 +294,7 @@
 						<string key="NSFrame">{{462, 693}, {173, 55}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -318,14 +319,10 @@
 						<string key="NSFrame">{{249, 627}, {600, 121}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="183768484"/>
+						<reference key="NSNextKeyView" ref="301761163"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">tray.png</string>
-						</object>
 					</object>
 					<object class="IBUIButton" id="301761163">
 						<reference key="NSNextResponder" ref="766721923"/>
@@ -333,7 +330,7 @@
 						<string key="NSFrame">{{462, 584}, {173, 55}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="138337772"/>
+						<reference key="NSNextKeyView" ref="183768484"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -833,11 +830,10 @@
 			<string key="deals.jpg">{207, 89}</string>
 			<string key="footer.png">{2048, 87}</string>
 			<string key="header.jpg">{2048, 89}</string>
-			<string key="home.jpg">{206, 89}</string>
-			<string key="login.png">{62, 26}</string>
+			<string key="home.jpg">{104, 45}</string>
+			<string key="login.png">{123, 52}</string>
 			<string key="logo.png">{145, 89}</string>
-			<string key="myvod.jpg">{105, 45}</string>
-			<string key="tray.png">{543, 99}</string>
+			<string key="myvod.jpg">{207, 89}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1498</string>
 	</data>
