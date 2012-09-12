@@ -7,7 +7,17 @@
 //
 
 #import "SubViewResponder.h"
+#import "DataFetcher.h"
+#import "RestService.h"
+#import "ChannelControlResponder.h"
 
 @interface HomeSubViewResponder : SubViewResponder
+{
+    BOOL hasLoadedChannelData;
+}
 
+@property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *channelScrollView;
+@property (readonly) DataFetcher *channelFetcher;
+
+-(void)cancelChannelFetcher;
 @end

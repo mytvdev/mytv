@@ -8,6 +8,8 @@
 
 #import "SubViewResponder.h"
 
+#define ChannelControl_Space 14
+
 @interface ChannelControlResponder : SubViewResponder
 
 @end
