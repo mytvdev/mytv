@@ -1,15 +1,19 @@
 //
-//  KKDetailViewController.m
-//  myTV.IOS
+//  BIDViewController.m
+//  TestKKGrid
 //
 //  Created by Johnny on 9/12/12.
-//  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
+//  Copyright (c) 2012 Johnny. All rights reserved.
 //
 
-#import "KKDetailViewController.h"
+#import "BIDViewController.h"
 #import "KKDemoCell.h"
 
-@implementation KKDetailViewController
+@interface BIDViewController ()
+
+@end
+
+@implementation BIDViewController
 
 @synthesize fillerData = _fillerData;
 
@@ -23,12 +27,12 @@
     backgroundView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     self.gridView.backgroundView = backgroundView;
     
-    self.gridView.cellPadding = CGSizeMake(5.f, 5.f);
-    self.title = @"";
+    self.gridView.cellPadding = CGSizeMake(11.f, 5.f);
+    self.title = @"KKGridView";
     
     _fillerData = [[NSMutableArray alloc] init];
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    for (NSUInteger j = 0; j < 10; j++) {
+    for (NSUInteger j = 0; j < 20; j++) {
         [array addObject:[NSString stringWithFormat:@"%u", j]];
     }
     
@@ -78,4 +82,5 @@
 {
     return YES;
 }
+
 @end

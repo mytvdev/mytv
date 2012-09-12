@@ -8,6 +8,8 @@
 #import <UIKit/UIKit.h>
 #import "IPadViewController.h"
 #import "IPadViews.h"
+#import "KKDetailViewController.h"
+#import "KKDemoCell.h"
 
 @interface IPadViewController ()
 
@@ -64,11 +66,11 @@
     item = [[NavigationItem alloc] initWithKey:@"search" forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
-    NavigationItem *itemC = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[KKDetailViewController class] button:categoriesButton displayImage:[UIImage imageNamed:@"categoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"categoriesOpen-Over.png"]];
-    [self.navigationLogic addNavigationItem:itemC];
+    /*item = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[KKDetailViewController class] button:categoriesButton displayImage:[UIImage imageNamed:@"categoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"categoriesOpen-Over.png"]];
+    [self.navigationLogic addNavigationItem:item];*/
     
     self.navigationLogic.mainview = self.mainSubView;
-    self.navigationLogic.categorieMainview = self.categoriesMainSubView;
+    //self.navigationLogic.categorieMainview = self.categoriesMainSubView;
     [self.navigationLogic startHandlingNavigation];
     
     //load homeview by default
@@ -123,15 +125,65 @@
 }
 
 - (IBAction)goToCategories:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"categories" }];
+    /*[[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"categories" }];*/
     
-    [self.categoriesMainSubView setHidden:NO];
+    /*UIImageView *newView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,600,250)];
+    UIImage *backImage = [UIImage imageNamed:@"tray.png"];
+    UIImage *buttonBk = [self scaleImage:backImage toSize:CGSizeMake(600.0,250.0)];
+    newView.image = buttonBk;
+    
+    [self.categoriesMainSubView addSubview:newView];*/
+    
+    KKGridView *gridView = [[KKGridView alloc] initWithFrame:self.view.bounds];
+    gridView.scrollsToTop = YES;
+    gridView.backgroundColor = [UIColor darkGrayColor];
+    gridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    gridView.cellSize = CGSizeMake(75.f, 75.f);
+    gridView.cellPadding = CGSizeMake(4.f, 4.f);
+    
+    gridView.allowsMultipleSelection = NO;
+    
+    //[self.categoriesMainSubView addSubview:gridView];
+    
+    if(self.categoriesMainSubView.hidden == YES)
+        [self.categoriesMainSubView setHidden:NO];
+    
+    //[self.categoriesMainSubView setHidden:NO];
     [self.categoriesCloseButton setHidden:NO];
 }
 
 - (IBAction)closeCategories:(id)sender {
     [self.categoriesMainSubView setHidden:YES];
     [self.categoriesCloseButton setHidden:YES];
+}
+
+-(UIImage *)scaleImage:(UIImage *)image toSize:(CGSize)newSize
+{    
+    float width = newSize.width;
+    float height = newSize.height;
+    
+    UIGraphicsBeginImageContext(newSize);
+    CGRect rect = CGRectMake(0, 0, width, height);
+    
+    float widthRatio = image.size.width / width;
+    float heightRatio = image.size.height / height;
+    float divisor = widthRatio > heightRatio ? widthRatio : heightRatio;
+    
+    width = image.size.width / divisor;
+    height = image.size.height / divisor;
+    
+    rect.size.width  = width;
+    rect.size.height = height;
+    
+    if(height < width)
+        rect.origin.y = height / 3;
+    [image drawInRect: rect];
+    
+    UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return smallImage;
 }
 
 @end

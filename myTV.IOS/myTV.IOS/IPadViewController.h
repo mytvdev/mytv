@@ -32,4 +32,6 @@
 - (IBAction)goToCategories:(id)sender;
 - (IBAction)closeCategories:(id)sender;
 
+-(UIImage *)scaleImage:(UIImage *)image toSize:(CGSize)newSize;
+
 @end

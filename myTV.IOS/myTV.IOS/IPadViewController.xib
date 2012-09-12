@@ -325,6 +325,10 @@
 							<integer value="260" key="IBUIAccessibilityTraits"/>
 						</object>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">tray.png</string>
+						</object>
 					</object>
 					<object class="IBUIButton" id="301761163">
 						<reference key="NSNextResponder" ref="766721923"/>
@@ -825,17 +829,18 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="background.jpg">{1021, 768}</string>
-			<string key="catalog.jpg">{115, 45}</string>
+			<string key="background.jpg">{2048, 1536}</string>
+			<string key="catalog.jpg">{227, 89}</string>
 			<string key="categoriesClose.png">{245, 92}</string>
 			<string key="categoriesOpen.png">{123, 46}</string>
-			<string key="deals.jpg">{207, 89}</string>
+			<string key="deals.jpg">{105, 45}</string>
 			<string key="footer.png">{2048, 87}</string>
 			<string key="header.jpg">{2048, 89}</string>
-			<string key="home.jpg">{104, 45}</string>
+			<string key="home.jpg">{206, 89}</string>
 			<string key="login.png">{123, 52}</string>
 			<string key="logo.png">{145, 89}</string>
-			<string key="myvod.jpg">{207, 89}</string>
+			<string key="myvod.jpg">{105, 45}</string>
+			<string key="tray.png">{1086, 198}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1498</string>
 	</data>

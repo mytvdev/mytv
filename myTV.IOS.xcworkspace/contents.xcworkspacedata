@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TestKKGrid/TestKKGrid.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:myTV.IOS/myTV.IOS.xcodeproj">
    </FileRef>
    <FileRef
