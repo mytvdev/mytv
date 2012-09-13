@@ -1,12 +1,13 @@
 //
 //  BIDViewController.m
-//  TestKKGrid
+//  TestKKGrid2
 //
-//  Created by Johnny on 9/12/12.
+//  Created by Johnny on 9/13/12.
 //  Copyright (c) 2012 Johnny. All rights reserved.
 //
 
 #import "BIDViewController.h"
+#import <KKGridView/KKGridView.h>
 #import "KKDemoCell.h"
 
 @interface BIDViewController ()
@@ -15,30 +16,47 @@
 
 @implementation BIDViewController
 
-@synthesize fillerData = _fillerData;
 
-#pragma mark - Initialization
+@synthesize fillerData = _fillerData;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    
+    KKGridView *gridView = [[KKGridView alloc] initWithFrame:self.view.bounds];
+    gridView.scrollsToTop = YES;
+    gridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     UIView *backgroundView = [[UIView alloc] init];
     backgroundView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
-    self.gridView.backgroundView = backgroundView;
+    gridView.backgroundView = backgroundView;
     
-    self.gridView.cellPadding = CGSizeMake(11.f, 5.f);
-    self.title = @"KKGridView";
+    gridView.cellSize = CGSizeMake(75.f, 75.f);
+    gridView.cellPadding = CGSizeMake(4.f, 4.f);
+    
+    gridView.allowsMultipleSelection = NO;
     
     _fillerData = [[NSMutableArray alloc] init];
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    for (NSUInteger j = 0; j < 20; j++) {
+    for (NSUInteger j = 0; j < 10; j++) {
         [array addObject:[NSString stringWithFormat:@"%u", j]];
     }
-    
     [_fillerData addObject:array];
+    [gridView reloadData];
     
-    [self.gridView reloadData];
+    [self.view addSubview:gridView];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
 }
 
 #pragma mark - KKGridView
@@ -67,20 +85,6 @@
     cell.contentView.backgroundColor = [UIColor colorWithWhite:percentage alpha:1.f];
     
     return cell;
-}
-
-#pragma mark - Cleanup
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-}
-
-#pragma mark - UIViewController
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
 }
 
 @end

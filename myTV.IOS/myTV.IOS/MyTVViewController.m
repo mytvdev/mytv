@@ -15,7 +15,6 @@
 @implementation MyTVViewController
 
 @synthesize navigationLogic;
-@synthesize categoriesNavigationLogic;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

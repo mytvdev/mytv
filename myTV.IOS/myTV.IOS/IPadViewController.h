@@ -18,10 +18,6 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *loginButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *searchTextfield;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainSubView;
-@property (unsafe_unretained, nonatomic) IBOutlet UIView *categoriesMainView;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *categoriesButton;
-@property (unsafe_unretained, nonatomic) IBOutlet UIView *categoriesMainSubView;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *categoriesCloseButton;
 
 - (IBAction)goHome:(id)sender;
 - (IBAction)goToVodCatalog:(id)sender;
@@ -29,9 +25,5 @@
 - (IBAction)goToHotDeals:(id)sender;
 - (IBAction)goToLogin:(id)sender;
 - (IBAction)goToSearch:(id)sender;
-- (IBAction)goToCategories:(id)sender;
-- (IBAction)closeCategories:(id)sender;
-
--(UIImage *)scaleImage:(UIImage *)image toSize:(CGSize)newSize;
 
 @end
