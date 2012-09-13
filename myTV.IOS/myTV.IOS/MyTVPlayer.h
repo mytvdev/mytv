@@ -15,6 +15,7 @@
 }
 
 @property MPMoviePlayerController *movieController;
+@property UIView *mainView;
 
 - (void) startHandlingPlayerRequests;
 

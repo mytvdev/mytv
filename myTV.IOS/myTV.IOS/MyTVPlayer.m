@@ -20,9 +20,11 @@
             DLog(@"%@", url);
             NSURL *vidUrl = [NSURL URLWithString:url];
             player.movieController = [[MPMoviePlayerController alloc] initWithContentURL:vidUrl];
-            
+            player.movieController.scalingMode = MPMovieScalingModeAspectFill;
             [player.movieController play];
-            [[[UIApplication sharedApplication] keyWindow] addSubview:player.movieController.view];
+            [[player.movieController view] setFrame:[self.mainView bounds]];
+
+            [self.mainView addSubview:player.movieController.view];
         }
         
     }];

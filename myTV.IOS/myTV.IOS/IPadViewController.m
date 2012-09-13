@@ -67,6 +67,8 @@
     
     
     self.player = [[MyTVPlayer alloc] init];
+    self.player.mainView = self.mainSubView;
+    
     [self.player startHandlingPlayerRequests];
 }
 
