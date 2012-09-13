@@ -22,9 +22,9 @@
         }
     }];
     labelDisplay.text = self.channel.Name;
-    UITapGestureRecognizer *taprecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fireEvent:)];
-    self.recognizer = taprecognizer;
-    [self.mainView addGestureRecognizer:taprecognizer];
+    //UITapGestureRecognizer *taprecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fireEvent:)];
+    //self.recognizer = taprecognizer;
+    //[self.mainView addGestureRecognizer:taprecognizer];
 }
 
 -(void)viewDidUnload {
@@ -36,7 +36,7 @@
     //self.recognizer = nil;
 }
 
--(void) fireEvent:(UIGestureRecognizer *)gestureRecognizer {
+/*-(void) fireEvent:(UIGestureRecognizer *)gestureRecognizer {
     UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Play Channel" message:[NSString stringWithFormat:@"Do you want to play %@?", self.channel.Name] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     [view show];
 
@@ -52,7 +52,7 @@
         }];
         
     }
-}
+}*/
 
 
 @end
