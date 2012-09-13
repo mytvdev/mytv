@@ -22,6 +22,6 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imageDisplay;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelDisplay;
-//@property UITapGestureRecognizer *recognizer;
+@property UITapGestureRecognizer *recognizer;
 
 @end
