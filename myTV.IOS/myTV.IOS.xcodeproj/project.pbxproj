@@ -95,6 +95,7 @@
 		37ABA8D216006CE200F87280 /* ChannelControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37ABA8D116006CE200F87280 /* ChannelControl.xib */; };
 		B24D94531600BA30005A5509 /* KKDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B24D94521600BA30005A5509 /* KKDemoCell.m */; };
 		B24D94561600BE2B005A5509 /* KKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24D94551600BE2B005A5509 /* KKDetailViewController.m */; };
+		B2D2BF1C1601D2500040B206 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4015FF2FD500A2EBE7 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -669,6 +670,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D2BF1C1601D2500040B206 /* logo.png in Resources */,
 				37776E1915FF3C8400BB6AF8 /* CategoriesSubView.xib in Resources */,
 				37776E1A15FF3C8400BB6AF8 /* DealsSubView.xib in Resources */,
 				37776E1B15FF3C8400BB6AF8 /* HomeSubView.xib in Resources */,
