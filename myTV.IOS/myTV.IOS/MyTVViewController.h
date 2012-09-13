@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "NavigationLogic.h"
+#import "MyTVPlayer.h"
 
 @interface MyTVViewController : UIViewController
 
 @property NavigationLogic *navigationLogic;
+@property NavigationLogic *categoriesNavigationLogic;
+@property MyTVPlayer *player;
 
 @end

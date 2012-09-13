@@ -14,10 +14,12 @@
     NSMutableDictionary *logicItems;
     NSMutableArray *nibs;
     BOOL isListening;
+    id navigationObserver;
 }
 
 @property UIView *mainview;
-@property NavigationItem *activeItem;
+@property UIView *categorieMainview;
+@property NavigationItem *activeItem; 
 
 - (id) init;
 - (void) addNavigationItem:(NavigationItem *)item;

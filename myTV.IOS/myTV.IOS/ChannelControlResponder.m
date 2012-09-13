@@ -45,7 +45,12 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSLog(@"button clicked of index %d", buttonIndex);
     if(buttonIndex > 0){
-        NSLog(@"Play channel");
+        [RestService RequestGetChannelUrl:[NSString stringWithCString:RestServiceUrl encoding:[NSString defaultCStringEncoding]] ofChannel:[NSString stringWithFormat:@"%d", self.channel.Id] withDeviceId:@"iosdevice1" andDeviceTypeId:@"5" usingCallback:^(NSString *url, NSError *error){
+            if (url != nil && error == nil) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"PlayVideo" object:nil userInfo:@{@"url": url}];
+            }
+        }];
+        
     }
 }*/
 

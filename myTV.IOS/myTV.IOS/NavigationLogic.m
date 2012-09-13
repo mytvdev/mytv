@@ -31,7 +31,7 @@
     if (!isListening) {
         isListening = YES;
         NavigationLogic *logic = self;
-        [[NSNotificationCenter defaultCenter] addObserverForName:@"ChangeMainSubView" object:nil queue:nil usingBlock:^(NSNotification *note){
+        navigationObserver =[[NSNotificationCenter defaultCenter] addObserverForName:@"ChangeMainSubView" object:nil queue:nil usingBlock:^(NSNotification *note){
             NSString *viewName = [note.userInfo valueForKey:@"view"];
             if(viewName == nil) {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Expected Observer Key" message:@"view key not found" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -81,8 +81,16 @@
             }
             
         }];
+        
+        
     }
 }
 
+-(void) dealloc {
+    if(navigationObserver != nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:navigationObserver];
+        navigationObserver = nil;
+    }
+}
 
 @end

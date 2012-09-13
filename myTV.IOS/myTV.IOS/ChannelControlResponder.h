@@ -9,6 +9,7 @@
 #import "SubViewResponder.h"
 #import "Channel.h"
 #import "DataFetcher.h"
+#import "RestService.h"
 
 #define ChannelControl_Space 14
 

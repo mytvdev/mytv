@@ -25,6 +25,12 @@
 @synthesize mainSubView;
 @synthesize navigationLogic;
 
+@synthesize categoriesButton;
+@synthesize categoriesMainView;
+@synthesize categoriesMainSubView;
+@synthesize categoriesNavigationLogic;
+@synthesize categoriesCloseButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -63,6 +69,12 @@
     
     //load homeview by default
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"home" }];
+    
+    [self.categoriesMainSubView setHidden:YES];
+    [self.categoriesCloseButton setHidden:YES];
+    
+    self.player = [[MyTVPlayer alloc] init];
+    [self.player startHandlingPlayerRequests];
 }
 
 - (void)viewDidUnload
