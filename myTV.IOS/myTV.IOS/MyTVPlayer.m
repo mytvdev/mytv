@@ -17,9 +17,10 @@
         
         if (note.userInfo != nil) {
             NSString *url = [note.userInfo valueForKey:@"url"];
+            DLog(@"%@", url);
             NSURL *vidUrl = [NSURL URLWithString:url];
             player.movieController = [[MPMoviePlayerController alloc] initWithContentURL:vidUrl];
-            [player.movieController prepareToPlay];
+            
             [player.movieController play];
             [[[UIApplication sharedApplication] keyWindow] addSubview:player.movieController.view];
         }
