@@ -78,28 +78,8 @@
 		37ABA8CC16006BED00F87280 /* VODPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8BC16006BED00F87280 /* VODPackage.m */; };
 		37ABA8D016006CC700F87280 /* ChannelControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8CF16006CC700F87280 /* ChannelControlResponder.m */; };
 		37ABA8D216006CE200F87280 /* ChannelControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37ABA8D116006CE200F87280 /* ChannelControl.xib */; };
-<<<<<<< HEAD
 		37B1A9A91602160300687B3E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B1A9A81602160300687B3E /* MediaPlayer.framework */; };
 		37B1A9AC1602161E00687B3E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B1A9AB1602161E00687B3E /* CoreMedia.framework */; };
-=======
-		B2D2BF1C1601D2500040B206 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E4015FF2FD500A2EBE7 /* logo.png */; };
-		B2D2BF7C160211810040B206 /* HomeSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF7B160211810040B206 /* HomeSubViewResponder.m */; };
-		B2D2BF821602118C0040B206 /* DealsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF7D1602118C0040B206 /* DealsSubView.xib */; };
-		B2D2BF831602118C0040B206 /* DealsSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF7F1602118C0040B206 /* DealsSubViewResponder.m */; };
-		B2D2BF841602118C0040B206 /* HomeSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF801602118C0040B206 /* HomeSubView.xib */; };
-		B2D2BF8B160211970040B206 /* LiveTVSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF85160211970040B206 /* LiveTVSubView.xib */; };
-		B2D2BF8C160211970040B206 /* LiveTVSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF87160211970040B206 /* LiveTVSubViewResponder.m */; };
-		B2D2BF8D160211970040B206 /* LoginSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF88160211970040B206 /* LoginSubView.xib */; };
-		B2D2BF8E160211970040B206 /* LoginSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF8A160211970040B206 /* LoginSubViewResponder.m */; };
-		B2D2BF98160211AB0040B206 /* MyVODSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF8F160211AB0040B206 /* MyVODSubView.xib */; };
-		B2D2BF99160211AB0040B206 /* MyVODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF91160211AB0040B206 /* MyVODSubViewResponder.m */; };
-		B2D2BF9A160211AB0040B206 /* SearchSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF92160211AB0040B206 /* SearchSubView.xib */; };
-		B2D2BF9B160211AB0040B206 /* SearchSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF94160211AB0040B206 /* SearchSubViewResponder.m */; };
-		B2D2BF9C160211AB0040B206 /* VODSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF95160211AB0040B206 /* VODSubView.xib */; };
-		B2D2BF9D160211AB0040B206 /* VODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF97160211AB0040B206 /* VODSubViewResponder.m */; };
-		B2D2BF9F1602179D0040B206 /* CategoriesSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF9E1602179D0040B206 /* CategoriesSubView.xib */; };
-		B2D2BFA2160219D60040B206 /* CategoriesSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BFA1160219D60040B206 /* CategoriesSubViewResponder.m */; };
->>>>>>> 1234
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,9 +250,6 @@
 		B2D2BF95160211AB0040B206 /* VODSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VODSubView.xib; sourceTree = "<group>"; };
 		B2D2BF96160211AB0040B206 /* VODSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VODSubViewResponder.h; sourceTree = "<group>"; };
 		B2D2BF97160211AB0040B206 /* VODSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VODSubViewResponder.m; sourceTree = "<group>"; };
-		B2D2BF9E1602179D0040B206 /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
-		B2D2BFA0160219D60040B206 /* CategoriesSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesSubViewResponder.h; sourceTree = "<group>"; };
-		B2D2BFA1160219D60040B206 /* CategoriesSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesSubViewResponder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,9 +585,6 @@
 				B2D2BF801602118C0040B206 /* HomeSubView.xib */,
 				B2D2BF811602118C0040B206 /* HomeSubViewResponder.h */,
 				B2D2BF7B160211810040B206 /* HomeSubViewResponder.m */,
-				B2D2BF9E1602179D0040B206 /* CategoriesSubView.xib */,
-				B2D2BFA0160219D60040B206 /* CategoriesSubViewResponder.h */,
-				B2D2BFA1160219D60040B206 /* CategoriesSubViewResponder.m */,
 			);
 			name = SubViews;
 			sourceTree = "<group>";
@@ -735,7 +709,6 @@
 				B2D2BF98160211AB0040B206 /* MyVODSubView.xib in Resources */,
 				B2D2BF9A160211AB0040B206 /* SearchSubView.xib in Resources */,
 				B2D2BF9C160211AB0040B206 /* VODSubView.xib in Resources */,
-				B2D2BF9F1602179D0040B206 /* CategoriesSubView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,18 +768,7 @@
 				37ABA8CB16006BED00F87280 /* TBXML+HTTP.m in Sources */,
 				37ABA8CC16006BED00F87280 /* VODPackage.m in Sources */,
 				37ABA8D016006CC700F87280 /* ChannelControlResponder.m in Sources */,
-<<<<<<< HEAD
 				374D31F01601E01C0018F52A /* MyTVPlayer.m in Sources */,
-=======
-				B2D2BF7C160211810040B206 /* HomeSubViewResponder.m in Sources */,
-				B2D2BF831602118C0040B206 /* DealsSubViewResponder.m in Sources */,
-				B2D2BF8C160211970040B206 /* LiveTVSubViewResponder.m in Sources */,
-				B2D2BF8E160211970040B206 /* LoginSubViewResponder.m in Sources */,
-				B2D2BF99160211AB0040B206 /* MyVODSubViewResponder.m in Sources */,
-				B2D2BF9B160211AB0040B206 /* SearchSubViewResponder.m in Sources */,
-				B2D2BF9D160211AB0040B206 /* VODSubViewResponder.m in Sources */,
-				B2D2BFA2160219D60040B206 /* CategoriesSubViewResponder.m in Sources */,
->>>>>>> 1234
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
