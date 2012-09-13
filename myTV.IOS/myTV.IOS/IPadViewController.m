@@ -136,7 +136,6 @@
     
     KKGridView *gridView = [[KKGridView alloc] initWithFrame:self.view.bounds];
     gridView.scrollsToTop = YES;
-    gridView.backgroundColor = [UIColor darkGrayColor];
     gridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     gridView.cellSize = CGSizeMake(75.f, 75.f);
