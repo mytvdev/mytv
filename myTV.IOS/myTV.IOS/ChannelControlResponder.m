@@ -55,5 +55,14 @@
     }
 }
 
+- (void) dealloc {
+    self.channel = nil;
+    self.recognizer = nil;
+    if(self.imageFetcher != nil) {
+        [self.imageFetcher cancelPendingRequest];
+        self.imageFetcher = nil;
+    }
+}
+
 
 @end

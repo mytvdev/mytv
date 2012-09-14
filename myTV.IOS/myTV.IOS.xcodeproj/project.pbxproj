@@ -16,6 +16,7 @@
 		374D31F01601E01C0018F52A /* MyTVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 374D31EF1601E01C0018F52A /* MyTVPlayer.m */; };
 		37714A6516032D8A004C71B1 /* PlayerSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37714A6416032D8A004C71B1 /* PlayerSubViewResponder.m */; };
 		37714A6716032DC5004C71B1 /* PlayerSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37714A6616032DC5004C71B1 /* PlayerSubView.xib */; };
+		37714A6E16036CD1004C71B1 /* VODControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37714A6D16036CD1004C71B1 /* VODControlResponder.m */; };
 		37776DDD15FF3A3500BB6AF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09715F89FFE006FCC06 /* UIKit.framework */; };
 		37776DDE15FF3A3500BB6AF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09915F89FFE006FCC06 /* Foundation.framework */; };
 		37776DDF15FF3A3500BB6AF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09B15F89FFE006FCC06 /* CoreGraphics.framework */; };
@@ -111,6 +112,8 @@
 		37714A6316032D8A004C71B1 /* PlayerSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerSubViewResponder.h; sourceTree = "<group>"; };
 		37714A6416032D8A004C71B1 /* PlayerSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerSubViewResponder.m; sourceTree = "<group>"; };
 		37714A6616032DC5004C71B1 /* PlayerSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerSubView.xib; sourceTree = "<group>"; };
+		37714A6C16036CD1004C71B1 /* VODControlResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VODControlResponder.h; sourceTree = "<group>"; };
+		37714A6D16036CD1004C71B1 /* VODControlResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VODControlResponder.m; sourceTree = "<group>"; };
 		37776DDB15FF3A3500BB6AF8 /* myTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37776DE215FF3A3500BB6AF8 /* myTV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "myTV-Info.plist"; sourceTree = "<group>"; };
 		37776DE415FF3A3500BB6AF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 				37ABA8CE16006CC700F87280 /* ChannelControlResponder.h */,
 				37ABA8CF16006CC700F87280 /* ChannelControlResponder.m */,
 				37ABA8D116006CE200F87280 /* ChannelControl.xib */,
+				37714A6C16036CD1004C71B1 /* VODControlResponder.h */,
+				37714A6D16036CD1004C71B1 /* VODControlResponder.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -794,6 +799,7 @@
 				374D31F01601E01C0018F52A /* MyTVPlayer.m in Sources */,
 				B29BBCE216021F7600600B5E /* CategoriesSubViewResponder.m in Sources */,
 				37714A6516032D8A004C71B1 /* PlayerSubViewResponder.m in Sources */,
+				37714A6E16036CD1004C71B1 /* VODControlResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
