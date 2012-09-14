@@ -12,7 +12,7 @@
 
 @interface VODControlResponder : SubViewResponder
 
-@property MyTVProgram *program;
+@property ItemBase *vod;
 
 @property DataFetcher *imageFetcher;
 
