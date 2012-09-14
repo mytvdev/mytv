@@ -19,13 +19,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *searchTextfield;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainSubView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *liveButton;
-<<<<<<< HEAD
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *rootView;
-=======
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *categoriesButton;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *categoriesCloseButton;
-@property (unsafe_unretained, nonatomic) IBOutlet UIView *categoriesSubView;
->>>>>>> Re-add KKGridView
 
 - (IBAction)goHome:(id)sender;
 - (IBAction)goToVodCatalog:(id)sender;
@@ -34,7 +28,5 @@
 - (IBAction)goToLogin:(id)sender;
 - (IBAction)goToSearch:(id)sender;
 - (IBAction)goToLive:(id)sender;
-- (IBAction)goToCategories:(id)sender;
-- (IBAction)goToCloseCategories:(id)sender;
 
 @end
