@@ -26,7 +26,9 @@
 @synthesize liveButton;
 @synthesize rootView;
 @synthesize navigationLogic;
-
+@synthesize categoriesButton;
+@synthesize categoriesCloseButton;
+@synthesize categoriesSubView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -64,8 +66,16 @@
     item = [[NavigationItem alloc] initWithKey:@"search" forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
+    item = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[CategoriesSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"catgoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"catgoriesOpen-Over.png"]];
+    [self.navigationLogic addNavigationItem:item];
+    
     self.navigationLogic.mainview = self.mainSubView;
+    self.navigationLogic.categoriesMainview = self.categoriesSubView;
+    
     [self.navigationLogic startHandlingNavigation];
+    
+    [self.categoriesSubView setHidden:YES];
+    [self.categoriesCloseButton setHidden:YES];
     
     //load homeview by default
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"home" }];
@@ -87,6 +97,9 @@
     [self setMainView:nil];
     [self setLiveButton:nil];
     [self setRootView:nil];
+    [self setCategoriesSubView:nil];
+    [self setCategoriesButton:nil];
+    [self setCategoriesCloseButton:nil];
     [super viewDidUnload];
 }
 
@@ -122,6 +135,17 @@
 
 - (IBAction)goToLive:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"livetv" }];
+}
+
+- (IBAction)goToCategories:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"categories" }];
+    [self.categoriesSubView setHidden:NO];
+    [self.categoriesCloseButton setHidden:NO];
+}
+
+- (IBAction)goToCloseCategories:(id)sender {
+    [self.categoriesSubView setHidden:YES];
+    [self.categoriesCloseButton setHidden:YES];
 }
 
 @end

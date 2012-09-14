@@ -11,6 +11,7 @@
 @implementation NavigationLogic
 
 @synthesize mainview;
+@synthesize categoriesMainview;
 
 - (id)init {
     self = [super init];
@@ -61,7 +62,13 @@
                         
                         if ([viewName isEqualToString:@"categories"])
                         {
-                            
+                            if([[logic.categoriesMainview subviews] count] > 0) {
+                                [[[logic.categoriesMainview subviews] objectAtIndex:0] removeFromSuperview];
+                            }
+                            [logic.categoriesMainview addSubview:item.viewInstance];
+                            if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
+                                [item.responderInstance performSelector:@selector(viewDidLoad)];
+                            }
                         }
                         else
                         {

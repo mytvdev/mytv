@@ -11,6 +11,8 @@
 @implementation CategoriesSubViewResponder
 
 @synthesize fillerData = _fillerData;
+@synthesize categoriesSubView;
+@synthesize categoriesKKGridView;
 
 - (void)viewDidLoad
 {
@@ -23,57 +25,43 @@
     
     [_fillerData addObject:array];
     
-    UIScrollView *view = [[UIScrollView alloc]
-                          initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-	int row = 0;
-	int column = 0;
-	for(int i = 0; i < _fillerData.count; ++i)
-    {
-		UIImage *thumb = [_fillerData objectAtIndex:i];
-		UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-		button.frame = CGRectMake(column*100+24, row*80+10, 64, 64);
-		[button setImage:thumb forState:UIControlStateNormal];
-		[button addTarget:self
-				   action:@selector(buttonClicked:)
-		 forControlEvents:UIControlEventTouchUpInside];
-		button.tag = i;
-		[view addSubview:button];
-        
-		if (column == 2)
-        {
-			column = 0;
-			row++;
-		}
-        else
-        {
-			column++;
-		}
-	}
-    
-	[view setContentSize:CGSizeMake(320, (row+1) * 80 + 10)];
-	//subview = view;
-    
-    //[super viewDidLoad];
-	// Do any additional setup after loading the view.
+    categoriesKKGridView = [[KKGridView alloc] initWithFrame:self.categoriesSubView.bounds];
+    categoriesKKGridView.dataSource = self;
+    categoriesKKGridView.delegate = self;
+    categoriesKKGridView.scrollsToTop = YES;
+    categoriesKKGridView.backgroundColor = [UIColor darkGrayColor];
+    categoriesKKGridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    categoriesKKGridView.cellSize = CGSizeMake(75.f, 75.f);
+    categoriesKKGridView.cellPadding = CGSizeMake(4.f, 4.f);
+    categoriesKKGridView.allowsMultipleSelection = NO;
+    [categoriesKKGridView reloadData];
+    self.categoriesSubView = categoriesKKGridView;
 }
 
-- (IBAction)buttonClicked:(id)sender {
-	//UIButton *button = (UIButton *)sender;
-    //[alert @"Test"];
-	//UIImage *selectedImage = [_images objectAtIndex:button.tag];
-	// Do something with image!
-}
+#pragma mark - KKGridViewDataSource
 
-//- (void)viewDidUnload
-//{
-//    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-//}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(NSUInteger)numberOfSectionsInGridView:(KKGridView *)gridView
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return _fillerData.count;
+}
+
+- (NSUInteger)gridView:(KKGridView *)gridView numberOfItemsInSection:(NSUInteger)section
+{
+    return [[_fillerData objectAtIndex:section] count];
+}
+
+- (NSString *)gridView:(KKGridView *)gridView titleForHeaderInSection:(NSUInteger)section
+{
+    return [NSString stringWithFormat:@"%u", section + 1];
+}
+
+- (KKGridViewCell *)gridView:(KKGridView *)gridView cellForItemAtIndexPath:(KKIndexPath *)indexPath
+{
+    KKDemoCell *cell = [KKDemoCell cellForGridView:gridView];
+    cell.label.text = [NSString stringWithFormat:@"%u", indexPath.index];
+    CGFloat percentage = (CGFloat)indexPath.index / (CGFloat)[[_fillerData objectAtIndex:indexPath.section] count];
+    cell.contentView.backgroundColor = [UIColor colorWithWhite:percentage alpha:1.f];
+    return cell;
 }
 
 @end
