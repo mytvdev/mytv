@@ -12,7 +12,6 @@
 		371AA0B215F89FFE006FCC06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09915F89FFE006FCC06 /* Foundation.framework */; };
 		371AA0BA15F89FFE006FCC06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 371AA0B815F89FFE006FCC06 /* InfoPlist.strings */; };
 		371AA0BD15F89FFE006FCC06 /* myTV_IOS_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */; };
-		372990FA15FF466E00C015C5 /* libKKGridView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372990F915FF466E00C015C5 /* libKKGridView.a */; };
 		374D31F01601E01C0018F52A /* MyTVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 374D31EF1601E01C0018F52A /* MyTVPlayer.m */; };
 		37714A6516032D8A004C71B1 /* PlayerSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37714A6416032D8A004C71B1 /* PlayerSubViewResponder.m */; };
 		37714A6E16036CD1004C71B1 /* VODControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37714A6D16036CD1004C71B1 /* VODControlResponder.m */; };
@@ -79,6 +78,7 @@
 		37ABA8D016006CC700F87280 /* ChannelControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8CF16006CC700F87280 /* ChannelControlResponder.m */; };
 		37B1A9A91602160300687B3E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B1A9A81602160300687B3E /* MediaPlayer.framework */; };
 		37B1A9AC1602161E00687B3E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B1A9AB1602161E00687B3E /* CoreMedia.framework */; };
+<<<<<<< HEAD
 		37DF9CD416037FC9004AD66E /* PlayerSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37714A6616032DC5004C71B1 /* PlayerSubView.xib */; };
 		37DF9CD516037FC9004AD66E /* IPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6B15FF2FD500A2EBE7 /* IPhoneViewController.xib */; };
 		37DF9CD616037FC9004AD66E /* CategoriesSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29BBCDE16021F7600600B5E /* CategoriesSubView.xib */; };
@@ -91,6 +91,11 @@
 		37DF9CDD16037FC9004AD66E /* HomeSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF801602118C0040B206 /* HomeSubView.xib */; };
 		37DF9CDE16037FC9004AD66E /* IPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6715FF2FD500A2EBE7 /* IPadViewController.xib */; };
 		37DF9CDF16037FC9004AD66E /* ChannelControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37ABA8D116006CE200F87280 /* ChannelControl.xib */; };
+=======
+		B22D25D216036A64007BA843 /* CategoriesSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22D25D116036A64007BA843 /* CategoriesSubView.xib */; };
+		B22D25D41603726A007BA843 /* libKKGridView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B22D25D316037269007BA843 /* libKKGridView.a */; };
+		B22D25DE1603776B007BA843 /* KKDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B22D25DD1603776B007BA843 /* KKDemoCell.m */; };
+>>>>>>> Re-add KKGridView
 		B29BBCE216021F7600600B5E /* CategoriesSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B29BBCE016021F7600600B5E /* CategoriesSubViewResponder.m */; };
 		B29BBCE416021FBD00600B5E /* MyVODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF91160211AB0040B206 /* MyVODSubViewResponder.m */; };
 		B29BBCE516021FBD00600B5E /* SearchSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF94160211AB0040B206 /* SearchSubViewResponder.m */; };
@@ -113,7 +118,6 @@
 		371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myTV_IOS_AppTests.m; sourceTree = "<group>"; };
 		371AA10E15F8A31E006FCC06 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		371AA11015F8A324006FCC06 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		372990F915FF466E00C015C5 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKKGridView.a; path = "../KKGridView/build/Release-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
 		374D31EE1601E01C0018F52A /* MyTVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTVPlayer.h; sourceTree = "<group>"; };
 		374D31EF1601E01C0018F52A /* MyTVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTVPlayer.m; sourceTree = "<group>"; };
 		37714A6316032D8A004C71B1 /* PlayerSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerSubViewResponder.h; sourceTree = "<group>"; };
@@ -167,7 +171,10 @@
 		37ABA8D31600734F00F87280 /* SubViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubViewDelegate.h; sourceTree = "<group>"; };
 		37B1A9A81602160300687B3E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		37B1A9AB1602161E00687B3E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		B29BBCDE16021F7600600B5E /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
+		B22D25D116036A64007BA843 /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
+		B22D25D316037269007BA843 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKKGridView.a; path = "../../../../Library/Developer/Xcode/DerivedData/myTV.IOS-cwzhxrndmhqupkathwwtwnhldvgi/Build/Products/Debug-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
+		B22D25DC1603776A007BA843 /* KKDemoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDemoCell.h; sourceTree = "<group>"; };
+		B22D25DD1603776B007BA843 /* KKDemoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDemoCell.m; sourceTree = "<group>"; };
 		B29BBCDF16021F7600600B5E /* CategoriesSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesSubViewResponder.h; sourceTree = "<group>"; };
 		B29BBCE016021F7600600B5E /* CategoriesSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesSubViewResponder.m; sourceTree = "<group>"; };
 		B2C79E2715FF2FD500A2EBE7 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -246,7 +253,6 @@
 		B2C79E7E15FF2FD500A2EBE7 /* NavigationLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationLogic.m; sourceTree = "<group>"; };
 		B2C79E8215FF2FD500A2EBE7 /* SubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubViewResponder.h; sourceTree = "<group>"; };
 		B2C79E8315FF2FD500A2EBE7 /* SubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubViewResponder.m; sourceTree = "<group>"; };
-		B2C79F9E15FF35AB00A2EBE7 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKKGridView.a; path = "../KKGridView/build/Release-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
 		B2D2BF7B160211810040B206 /* HomeSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeSubViewResponder.m; sourceTree = "<group>"; };
 		B2D2BF7D1602118C0040B206 /* DealsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealsSubView.xib; sourceTree = "<group>"; };
 		B2D2BF7E1602118C0040B206 /* DealsSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsSubViewResponder.h; sourceTree = "<group>"; };
@@ -285,8 +291,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22D25D41603726A007BA843 /* libKKGridView.a in Frameworks */,
 				37776DF915FF3BC800BB6AF8 /* libz.dylib in Frameworks */,
-				372990FA15FF466E00C015C5 /* libKKGridView.a in Frameworks */,
 				37776DDD15FF3A3500BB6AF8 /* UIKit.framework in Frameworks */,
 				37776DDE15FF3A3500BB6AF8 /* Foundation.framework in Frameworks */,
 				37776DDF15FF3A3500BB6AF8 /* CoreGraphics.framework in Frameworks */,
@@ -302,6 +308,7 @@
 		371AA08815F89FFE006FCC06 = {
 			isa = PBXGroup;
 			children = (
+				B22D25D316037269007BA843 /* libKKGridView.a */,
 				B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */,
 				37ABA89A16006BBC00F87280 /* MyTV.IOS.Framework */,
 				371AA0B515F89FFE006FCC06 /* myTV.IOS.AppTests */,
@@ -325,8 +332,6 @@
 			children = (
 				37B1A9AB1602161E00687B3E /* CoreMedia.framework */,
 				37B1A9A81602160300687B3E /* MediaPlayer.framework */,
-				372990F915FF466E00C015C5 /* libKKGridView.a */,
-				B2C79F9E15FF35AB00A2EBE7 /* libKKGridView.a */,
 				371AA11015F8A324006FCC06 /* libz.dylib */,
 				371AA10E15F8A31E006FCC06 /* Security.framework */,
 				371AA09715F89FFE006FCC06 /* UIKit.framework */,
@@ -595,7 +600,9 @@
 		B2D2BF7A160211620040B206 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				B29BBCDE16021F7600600B5E /* CategoriesSubView.xib */,
+				B22D25DC1603776A007BA843 /* KKDemoCell.h */,
+				B22D25DD1603776B007BA843 /* KKDemoCell.m */,
+				B22D25D116036A64007BA843 /* CategoriesSubView.xib */,
 				B29BBCDF16021F7600600B5E /* CategoriesSubViewResponder.h */,
 				B29BBCE016021F7600600B5E /* CategoriesSubViewResponder.m */,
 				B2D2BF8F160211AB0040B206 /* MyVODSubView.xib */,
@@ -744,6 +751,11 @@
 				37776E1715FF3C4B00BB6AF8 /* visitwebsite-Over.png in Resources */,
 				37776E1815FF3C4B00BB6AF8 /* visitwebsite.png in Resources */,
 				37776DE515FF3A3500BB6AF8 /* InfoPlist.strings in Resources */,
+<<<<<<< HEAD
+=======
+				37ABA8D216006CE200F87280 /* ChannelControl.xib in Resources */,
+				B22D25D216036A64007BA843 /* CategoriesSubView.xib in Resources */,
+>>>>>>> Re-add KKGridView
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,8 +824,12 @@
 				37ABA8D016006CC700F87280 /* ChannelControlResponder.m in Sources */,
 				374D31F01601E01C0018F52A /* MyTVPlayer.m in Sources */,
 				B29BBCE216021F7600600B5E /* CategoriesSubViewResponder.m in Sources */,
+<<<<<<< HEAD
 				37714A6516032D8A004C71B1 /* PlayerSubViewResponder.m in Sources */,
 				37714A6E16036CD1004C71B1 /* VODControlResponder.m in Sources */,
+=======
+				B22D25DE1603776B007BA843 /* KKDemoCell.m in Sources */,
+>>>>>>> Re-add KKGridView
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -932,6 +948,10 @@
 				GCC_PREFIX_HEADER = "myTV/myTV-Prefix.pch";
 				INFOPLIST_FILE = "myTV/myTV-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/myTV.IOS-cwzhxrndmhqupkathwwtwnhldvgi/Build/Products/Debug-iphoneos\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -945,6 +965,10 @@
 				GCC_PREFIX_HEADER = "myTV/myTV-Prefix.pch";
 				INFOPLIST_FILE = "myTV/myTV-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/myTV.IOS-cwzhxrndmhqupkathwwtwnhldvgi/Build/Products/Debug-iphoneos\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

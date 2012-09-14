@@ -18,7 +18,7 @@
 }
 
 @property UIView *mainview;
-@property UIView *categorieMainview;
+@property UIView *categoriesMainview;
 @property NavigationItem *activeItem; 
 
 - (id) init;
