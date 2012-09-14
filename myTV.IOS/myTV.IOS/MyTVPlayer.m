@@ -38,8 +38,6 @@
     }];
     StopObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"StopVideo" object:nil queue:nil usingBlock:^(NSNotification *note){
         [player.movieController stop];
-        [PlayerView removeFromSuperview];
-        PlayerView = nil;
     }];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:MPMoviePlayerPlaybackStateDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
@@ -53,7 +51,10 @@
                 [player.responder setIsLoading:YES];
                 break;
 
-                
+            case MPMoviePlaybackStateStopped:
+                [PlayerView removeFromSuperview];
+                PlayerView = nil;
+                break;
             default:
                 break;
         }
