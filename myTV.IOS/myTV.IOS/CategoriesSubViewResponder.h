@@ -6,9 +6,11 @@
 //  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SubViewResponder.h"
+#import "DataFetcher.h"
+#import "RestService.h"
 
-@interface CategoriesSubViewResponder : UIViewController
+@interface CategoriesSubViewResponder : SubViewResponder
 
 @property (nonatomic, strong) NSMutableArray *fillerData;
 

@@ -74,10 +74,6 @@
     self.player.mainView = self.mainSubView;
     
     [self.player startHandlingPlayerRequests];
-    
-    //self.splitViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Title" image:nil tag:0];
-    //NSArray *controllers = [NSArray arrayWithObjects:self.splitViewController, nil];
-    //self.tabBarController.viewControllers = controllers;
 }
 
 - (void)viewDidUnload

@@ -13,7 +13,6 @@
 @interface MyTVViewController : UIViewController
 
 @property NavigationLogic *navigationLogic;
-@property NavigationLogic *categoriesNavigationLogic;
 @property MyTVPlayer *player;
 
 @end
