@@ -822,6 +822,62 @@
     }];
 }
 
++(DataFetcher *)RequestGetFeaturedVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getfeatured&deviceid=%@&devicetypeid=%@&contenttypeid=1", deviceId, deviceTypeId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    [RestService ProcessVideoItemsTags:root usingCallBack:callback onlyFirstElement:NO];
+                }
+            }
+        }
+    }];
+}
+
++(DataFetcher *)RequestGetNewReleasesVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getnewreleases&deviceid=%@&devicetypeid=%@&contenttypeid=1", deviceId, deviceTypeId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    [RestService ProcessVideoItemsTags:root usingCallBack:callback onlyFirstElement:NO];
+                }
+            }
+        }
+    }];
+}
+
 +(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisEpisode:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=canplayepisode&deviceid=%@&devicetypeid=%@&episodeid=%@", deviceId, deviceTypeId, episodeId]];
@@ -1505,6 +1561,7 @@
     }];
     
 }
+
 
 
 @end
