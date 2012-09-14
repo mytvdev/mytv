@@ -14,6 +14,8 @@
 		371AA0BD15F89FFE006FCC06 /* myTV_IOS_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AA0BC15F89FFE006FCC06 /* myTV_IOS_AppTests.m */; };
 		372990FA15FF466E00C015C5 /* libKKGridView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372990F915FF466E00C015C5 /* libKKGridView.a */; };
 		374D31F01601E01C0018F52A /* MyTVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 374D31EF1601E01C0018F52A /* MyTVPlayer.m */; };
+		37714A6516032D8A004C71B1 /* PlayerSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37714A6416032D8A004C71B1 /* PlayerSubViewResponder.m */; };
+		37714A6716032DC5004C71B1 /* PlayerSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37714A6616032DC5004C71B1 /* PlayerSubView.xib */; };
 		37776DDD15FF3A3500BB6AF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09715F89FFE006FCC06 /* UIKit.framework */; };
 		37776DDE15FF3A3500BB6AF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09915F89FFE006FCC06 /* Foundation.framework */; };
 		37776DDF15FF3A3500BB6AF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AA09B15F89FFE006FCC06 /* CoreGraphics.framework */; };
@@ -106,6 +108,9 @@
 		372990F915FF466E00C015C5 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKKGridView.a; path = "../KKGridView/build/Release-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
 		374D31EE1601E01C0018F52A /* MyTVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTVPlayer.h; sourceTree = "<group>"; };
 		374D31EF1601E01C0018F52A /* MyTVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTVPlayer.m; sourceTree = "<group>"; };
+		37714A6316032D8A004C71B1 /* PlayerSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerSubViewResponder.h; sourceTree = "<group>"; };
+		37714A6416032D8A004C71B1 /* PlayerSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerSubViewResponder.m; sourceTree = "<group>"; };
+		37714A6616032DC5004C71B1 /* PlayerSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerSubView.xib; sourceTree = "<group>"; };
 		37776DDB15FF3A3500BB6AF8 /* myTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37776DE215FF3A3500BB6AF8 /* myTV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "myTV-Info.plist"; sourceTree = "<group>"; };
 		37776DE415FF3A3500BB6AF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -344,10 +349,21 @@
 		374D31EC1601DAFC0018F52A /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				37714A6116032D44004C71B1 /* UI */,
 				374D31EE1601E01C0018F52A /* MyTVPlayer.h */,
 				374D31EF1601E01C0018F52A /* MyTVPlayer.m */,
 			);
 			name = Player;
+			sourceTree = "<group>";
+		};
+		37714A6116032D44004C71B1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				37714A6316032D8A004C71B1 /* PlayerSubViewResponder.h */,
+				37714A6416032D8A004C71B1 /* PlayerSubViewResponder.m */,
+				37714A6616032DC5004C71B1 /* PlayerSubView.xib */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 		37776DE015FF3A3500BB6AF8 /* myTV */ = {
@@ -708,6 +724,7 @@
 				37776DE515FF3A3500BB6AF8 /* InfoPlist.strings in Resources */,
 				37ABA8D216006CE200F87280 /* ChannelControl.xib in Resources */,
 				B29BBCE116021F7600600B5E /* CategoriesSubView.xib in Resources */,
+				37714A6716032DC5004C71B1 /* PlayerSubView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +793,7 @@
 				37ABA8D016006CC700F87280 /* ChannelControlResponder.m in Sources */,
 				374D31F01601E01C0018F52A /* MyTVPlayer.m in Sources */,
 				B29BBCE216021F7600600B5E /* CategoriesSubViewResponder.m in Sources */,
+				37714A6516032D8A004C71B1 /* PlayerSubViewResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

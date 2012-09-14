@@ -24,6 +24,7 @@
 @synthesize searchTextfield;
 @synthesize mainSubView;
 @synthesize liveButton;
+@synthesize rootView;
 @synthesize navigationLogic;
 
 
@@ -71,7 +72,7 @@
     
     
     self.player = [[MyTVPlayer alloc] init];
-    self.player.mainView = self.mainSubView;
+    self.player.mainView = self.rootView;
     
     [self.player startHandlingPlayerRequests];
 }
@@ -85,6 +86,7 @@
     [self setMainSubView:nil];
     [self setMainView:nil];
     [self setLiveButton:nil];
+    [self setRootView:nil];
     [super viewDidUnload];
 }
 

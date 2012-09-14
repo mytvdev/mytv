@@ -25,3 +25,5 @@ myTV.IOS.App/myTV.IOS.App.xcodeproj/project.xcworkspace/xcuserdata/johnny.xcuser
 
 
 *.xcuserstate
+
+*.xcexplist

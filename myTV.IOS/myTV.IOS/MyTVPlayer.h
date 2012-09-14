@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "PlayerSubViewResponder.h"
 
 @interface MyTVPlayer : NSObject
 {
     id PlayerObserver;
+    id StopObserver;
+    UIView *PlayerView;
 }
 
 @property MPMoviePlayerController *movieController;
-@property UIView *mainView;
+@property PlayerSubViewResponder *responder;
+@property (unsafe_unretained) UIView *mainView;
 
 - (void) startHandlingPlayerRequests;
 

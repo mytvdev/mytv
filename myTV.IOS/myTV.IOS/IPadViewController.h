@@ -19,6 +19,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *searchTextfield;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainSubView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *liveButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *rootView;
 
 - (IBAction)goHome:(id)sender;
 - (IBAction)goToVodCatalog:(id)sender;
