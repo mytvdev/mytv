@@ -824,7 +824,7 @@
 
 +(DataFetcher *)RequestGetFeaturedVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback {
     
-    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getfeatured&deviceid=%@&devicetypeid=%@&contenttypeid=1", deviceId, deviceTypeId]];
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getfeatured&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
     return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
@@ -836,6 +836,7 @@
                 callback(NULL, NULL);
             }
             else {
+                
                 NSError *error;
                 TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
                 if(error != NULL) {
@@ -843,8 +844,52 @@
                 }
                 else {
                     TBXMLElement *root = document.rootXMLElement;
-                    [RestService ProcessVideoItemsTags:root usingCallBack:callback onlyFirstElement:NO];
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSMutableArray* vods = [NSMutableArray new];
+                        
+                        TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:root];
+                        if(item != NULL) {
+                            do {
+                                
+                                TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
+                                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
+                                TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
+                                if(xmlpostertype != NULL) {
+                                    
+                                    
+                                    
+                                    if([[TBXML textForElement:xmlpostertype] compare:@"program"] == NSOrderedSame) {
+                                        MyTVProgram *program = [[MyTVProgram alloc] init];
+                                        [program setId:[[TBXML textForElement:xmlId] intValue]];
+                                        program.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                                        program.Logo = [TBXML textForElement:xmlThumbnail];
+                                        [vods addObject:program];
+                                    }
+                                    else {
+                                        Episode *episode = [[Episode alloc] init];
+                                        [episode setId:[[TBXML textForElement:xmlId] intValue]];
+                                        episode.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                                        episode.Logo = [TBXML textForElement:xmlThumbnail];
+                                        [vods addObject:episode];
+                                    }
+                                    
+                                }
+                                
+                                item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
+                            } while (item != NULL);
+                        }
+                        
+                        callback([NSArray arrayWithArray:vods], NULL);
+                        
+                    }
                 }
+                
+                
             }
         }
     }];
@@ -852,7 +897,7 @@
 
 +(DataFetcher *)RequestGetNewReleasesVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback {
     
-    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getnewreleases&deviceid=%@&devicetypeid=%@&contenttypeid=1", deviceId, deviceTypeId]];
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getnewreleases&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
     return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
@@ -864,6 +909,7 @@
                 callback(NULL, NULL);
             }
             else {
+                
                 NSError *error;
                 TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
                 if(error != NULL) {
@@ -871,8 +917,52 @@
                 }
                 else {
                     TBXMLElement *root = document.rootXMLElement;
-                    [RestService ProcessVideoItemsTags:root usingCallBack:callback onlyFirstElement:NO];
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        NSMutableArray* vods = [NSMutableArray new];
+                        
+                        TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:root];
+                        if(item != NULL) {
+                            do {
+                                
+                                TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
+                                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
+                                TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
+                                if(xmlpostertype != NULL) {
+                                    
+                                    
+                                    
+                                    if([[TBXML textForElement:xmlpostertype] compare:@"program"] == NSOrderedSame) {
+                                        MyTVProgram *program = [[MyTVProgram alloc] init];
+                                        [program setId:[[TBXML textForElement:xmlId] intValue]];
+                                        program.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                                        program.Logo = [TBXML textForElement:xmlThumbnail];
+                                        [vods addObject:program];
+                                    }
+                                    else {
+                                        Episode *episode = [[Episode alloc] init];
+                                        [episode setId:[[TBXML textForElement:xmlId] intValue]];
+                                        episode.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                                        episode.Logo = [TBXML textForElement:xmlThumbnail];
+                                        [vods addObject:episode];
+                                    }
+                                    
+                                }
+                                
+                                item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
+                            } while (item != NULL);
+                        }
+                        
+                        callback([NSArray arrayWithArray:vods], NULL);
+                        
+                    }
                 }
+                
+                
             }
         }
     }];
