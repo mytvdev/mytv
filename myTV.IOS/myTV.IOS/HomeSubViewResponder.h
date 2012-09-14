@@ -10,14 +10,18 @@
 #import "DataFetcher.h"
 #import "RestService.h"
 #import "ChannelControlResponder.h"
+#import "VODControlResponder.h"
 
 @interface HomeSubViewResponder : SubViewResponder
 {
     BOOL hasLoadedChannelData;
+    BOOL hasLoadedVODFeaturedData;
 }
+@property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *vodFeaturedScrollView;
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *channelScrollView;
 @property (readonly) DataFetcher *channelFetcher;
+@property (readonly) DataFetcher *featuredVOdFetcher;
 
 -(void)cancelChannelFetcher;
 @end

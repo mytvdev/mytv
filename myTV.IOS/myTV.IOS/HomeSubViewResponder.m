@@ -12,11 +12,14 @@
 
 @implementation HomeSubViewResponder
 
+@synthesize vodFeaturedScrollView = _vodFeaturedScrollView;
 @synthesize channelScrollView = _channelScrollView;
 @synthesize channelFetcher = _channelFetcher;
+@synthesize featuredVOdFetcher = _featuredVOdFetcher;
 
 -(void)viewDidLoad {
     [self fillChannels];
+    [self fillFeaturedVOD];
 }
 
 -(void) fillChannels {
@@ -52,6 +55,29 @@
         _channelFetcher = nil;
     }
 }
+
+
+-(void) fillFeaturedVOD {
+    if(!hasLoadedVODFeaturedData) {
+        HomeSubViewResponder *subview = self;
+        _featuredVOdFetcher = [RestService RequestGetFeaturedVOD:[NSString stringWithCString:RestServiceUrl encoding:[NSString defaultCStringEncoding]] withDeviceId:@"iosdevice1" andDeviceTypeId:@"5" usingCallback:^(NSArray *array, NSError *error){
+            int xPos = ChannelControl_Space;
+            for (MyTVProgram *program in array) {
+                VODControlResponder *responder = [[VODControlResponder alloc] init];
+                NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
+                UIView *view = [array objectAtIndex:0];
+                view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
+                xPos = xPos + view.frame.size.width + ChannelControl_Space;
+                [subview.vodFeaturedScrollView addSubview:view];
+                if([responder respondsToSelector:@selector(bindData:)]) {
+                    [responder performSelector:@selector(bindData:) withObject:program];
+                }
+            }
+            subview.vodFeaturedScrollView.contentSize = CGSizeMake(xPos, subview.vodFeaturedScrollView.frame.size.height);
+        }];
+    }
+}
+
 
 -(void) abortOperatons {
     [self cancelChannelFetcher];
