@@ -88,7 +88,7 @@
 						<string key="NSFrame">{{148, 0}, {104, 45}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="568730108"/>
+						<reference key="NSNextKeyView" ref="920677624"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -120,10 +120,35 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
+					<object class="IBUIButton" id="920677624">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{251, 0}, {105, 45}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="568730108"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<reference key="IBUIHighlightedTitleColor" ref="95914661"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="869465775"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">liveTV.jpg</string>
+						</object>
+						<reference key="IBUIFontDescription" ref="989886577"/>
+						<reference key="IBUIFont" ref="263023455"/>
+					</object>
 					<object class="IBUIButton" id="568730108">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{252, 0}, {114, 45}}</string>
+						<string key="NSFrame">{{355, 0}, {114, 45}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="501197261"/>
@@ -148,7 +173,7 @@
 					<object class="IBUIButton" id="501197261">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{365, 0}, {105, 45}}</string>
+						<string key="NSFrame">{{469, 0}, {105, 45}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="203176136"/>
@@ -173,7 +198,7 @@
 					<object class="IBUIButton" id="203176136">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{470, 0}, {105, 45}}</string>
+						<string key="NSFrame">{{574, 0}, {105, 45}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="3253445"/>
@@ -226,7 +251,7 @@
 						<string key="NSFrame">{{790, 7}, {192, 31}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="138337772"/>
+						<reference key="NSNextKeyView" ref="954530808"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -264,7 +289,7 @@
 						<string key="NSFrame">{{0, 45}, {1024, 659}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="830681637"/>
+						<reference key="NSNextKeyView" ref="138337772"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -294,7 +319,6 @@
 						<string key="NSFrame">{{446, 704}, {132, 44}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<int key="IBUITag">1</int>
@@ -318,7 +342,7 @@
 				<string key="NSFrame">{{0, 20}, {1024, 748}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="954530808"/>
+				<reference key="NSNextKeyView" ref="830681637"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -402,6 +426,14 @@
 					<int key="connectionID">31</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">liveButton</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="920677624"/>
+					</object>
+					<int key="connectionID">71</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">goHome:</string>
 						<reference key="source" ref="4782532"/>
@@ -455,6 +487,15 @@
 					</object>
 					<int key="connectionID">29</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">goToLive:</string>
+						<reference key="source" ref="920677624"/>
+						<reference key="destination" ref="841351856"/>
+						<int key="IBEventType">1</int>
+					</object>
+					<int key="connectionID">72</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -483,7 +524,6 @@
 							<reference ref="4782532"/>
 							<reference ref="830681637"/>
 							<reference ref="501197261"/>
-							<reference ref="203176136"/>
 							<reference ref="138337772"/>
 							<reference ref="492322829"/>
 							<reference ref="3253445"/>
@@ -491,6 +531,8 @@
 							<reference ref="568730108"/>
 							<reference ref="772255138"/>
 							<reference ref="954530808"/>
+							<reference ref="920677624"/>
+							<reference ref="203176136"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -566,6 +608,12 @@
 						<reference key="parent" ref="766721923"/>
 						<string key="objectName">Open Categories Button</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">70</int>
+						<reference key="object" ref="920677624"/>
+						<reference key="parent" ref="766721923"/>
+						<string key="objectName">Live TV Button</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -584,6 +632,7 @@
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="70.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
@@ -591,7 +640,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">69</int>
+			<int key="maxID">72</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -601,6 +650,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="goHome:">id</string>
 						<string key="goToHotDeals:">id</string>
+						<string key="goToLive:">id</string>
 						<string key="goToLogin:">id</string>
 						<string key="goToMyVOD:">id</string>
 						<string key="goToSearch:">id</string>
@@ -613,6 +663,10 @@
 						</object>
 						<object class="IBActionInfo" key="goToHotDeals:">
 							<string key="name">goToHotDeals:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="goToLive:">
+							<string key="name">goToLive:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="goToLogin:">
@@ -635,6 +689,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="dealsButton">UIButton</string>
 						<string key="homeButton">UIButton</string>
+						<string key="liveButton">UIButton</string>
 						<string key="loginButton">UIButton</string>
 						<string key="mainSubView">UIView</string>
 						<string key="mainView">UIView</string>
@@ -649,6 +704,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="homeButton">
 							<string key="name">homeButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="liveButton">
+							<string key="name">liveButton</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="loginButton">
@@ -701,12 +760,13 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="background.jpg">{2048, 1536}</string>
-			<string key="catalog.jpg">{227, 89}</string>
-			<string key="categoriesOpen.png">{245, 92}</string>
-			<string key="deals.jpg">{207, 89}</string>
+			<string key="catalog.jpg">{115, 45}</string>
+			<string key="categoriesOpen.png">{123, 46}</string>
+			<string key="deals.jpg">{105, 45}</string>
 			<string key="footer.png">{2048, 87}</string>
 			<string key="header.jpg">{2048, 89}</string>
 			<string key="home.jpg">{104, 45}</string>
+			<string key="liveTV.jpg">{207, 89}</string>
 			<string key="login.png">{62, 26}</string>
 			<string key="logo.png">{145, 89}</string>
 			<string key="myvod.jpg">{105, 45}</string>

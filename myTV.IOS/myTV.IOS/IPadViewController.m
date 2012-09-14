@@ -23,6 +23,7 @@
 @synthesize loginButton;
 @synthesize searchTextfield;
 @synthesize mainSubView;
+@synthesize liveButton;
 @synthesize navigationLogic;
 
 
@@ -42,6 +43,9 @@
     self.navigationLogic = [[NavigationLogic alloc] init];
     
     NavigationItem *item = [[NavigationItem alloc] initWithKey:@"home" forNib:@"HomeSubView" usingClass:[HomeSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"home.jpg"] displayActiveImage:[UIImage imageNamed:@"home-Over.jpg"]];
+    [self.navigationLogic addNavigationItem:item];
+    
+    item = [[NavigationItem alloc] initWithKey:@"livetv" forNib:@"LiveTVSubView" usingClass:[LiveTVSubViewResponder class] button:liveButton displayImage:[UIImage imageNamed:@"liveTV.jpg"] displayActiveImage:[UIImage imageNamed:@"liveTV-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
     
     item = [[NavigationItem alloc] initWithKey:@"vodcatalog" forNib:@"VODSubView" usingClass:[VODSubViewResponder class] button:vodButton displayImage:[UIImage imageNamed:@"catalog.jpg"] displayActiveImage:[UIImage imageNamed:@"catalog-Over.jpg"]];
@@ -84,6 +88,7 @@
     [self setDealsButton:nil];
     [self setMainSubView:nil];
     [self setMainView:nil];
+    [self setLiveButton:nil];
     [super viewDidUnload];
 }
 
@@ -115,6 +120,10 @@
 - (void)goToSearch:(id)sender {
     [self.searchTextfield resignFirstResponder];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"search" }];
+}
+
+- (IBAction)goToLive:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"livetv" }];
 }
 
 @end
