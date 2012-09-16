@@ -61,13 +61,13 @@
         _reuseIdentifier = reuseIdentifier;
         
         _backgroundView = [[UIView alloc] initWithFrame:self.bounds];
-        _backgroundView.backgroundColor = [UIColor whiteColor];
+        _backgroundView.backgroundColor = [UIColor clearColor];
         [self addSubview:_backgroundView];
 
         _highlightAlpha = 1.0f;
 
         _contentView = [[UIView alloc] initWithFrame:self.bounds];
-        _contentView.backgroundColor = [UIColor whiteColor];
+        _contentView.backgroundColor = [UIColor clearColor];
         [self addSubview:_contentView];
         [self addSubview:_selectedBackgroundView];
         

@@ -16,8 +16,9 @@
 {
     if ((self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier])) {
         _label = [[UILabel alloc] initWithFrame:CGRectMake(0.f, 0.f, self.frame.size.width, 14.f)];
-        _label.backgroundColor = [UIColor lightGrayColor];
+        _label.backgroundColor = [UIColor clearColor];
         _label.textAlignment = UITextAlignmentCenter;
+        _label.textColor = [UIColor whiteColor];
         [self.contentView addSubview:_label];
     }
     return self;
