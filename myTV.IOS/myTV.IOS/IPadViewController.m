@@ -138,7 +138,7 @@
 }
 
 - (IBAction)goToCategories:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"categories" }];
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"categories" }];
     [self.categoriesSubView setHidden:NO];
     [self.categoriesCloseButton setHidden:NO];
 }

@@ -35,7 +35,7 @@
     categoriesKKGridView.cellPadding = CGSizeMake(4.f, 4.f);
     categoriesKKGridView.allowsMultipleSelection = NO;
     [categoriesKKGridView reloadData];
-    self.categoriesSubView = categoriesKKGridView;
+    //self.categoriesSubView = categoriesKKGridView;
 }
 
 #pragma mark - KKGridViewDataSource
