@@ -95,4 +95,21 @@
     [_fillerData addObject:array];
 }
 
+-(void) cancelGenreFetcher {
+    if(_genreFetcher != nil) {
+        //if(_genreFetcher.hasFinishedLoading) hasLoadedChannelData = YES;
+        [_genreFetcher cancelPendingRequest];
+        _genreFetcher = nil;
+    }
+}
+
+-(void) abortOperatons {
+    [self cancelGenreFetcher];
+}
+
+-(void) forceReloadGenres {
+    [self cancelGenreFetcher];
+    [self fillGenres];
+}
+
 @end
