@@ -60,6 +60,9 @@
 		37776E2D15FF3D2700BB6AF8 /* NavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7C15FF2FD500A2EBE7 /* NavigationItem.m */; };
 		37776E2E15FF3D2700BB6AF8 /* NavigationLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E7E15FF2FD500A2EBE7 /* NavigationLogic.m */; };
 		37776E3015FF3D2700BB6AF8 /* SubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C79E8315FF2FD500A2EBE7 /* SubViewResponder.m */; };
+		37886EB0160715DF0094F4E2 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37886EAD160715DF0094F4E2 /* NSString+MD5Addition.m */; };
+		37886EB1160715DF0094F4E2 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37886EAF160715DF0094F4E2 /* UIDevice+IdentifierAddition.m */; };
+		37886EB4160717200094F4E2 /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 37886EB3160717200094F4E2 /* Prefs.m */; };
 		37ABA8BD16006BED00F87280 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA89D16006BED00F87280 /* Channel.m */; };
 		37ABA8BE16006BED00F87280 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA89F16006BED00F87280 /* DataFetcher.m */; };
 		37ABA8BF16006BED00F87280 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8A116006BED00F87280 /* Episode.m */; };
@@ -129,6 +132,12 @@
 		37776DE815FF3A3500BB6AF8 /* myTV-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myTV-Prefix.pch"; sourceTree = "<group>"; };
 		37776DE915FF3A3500BB6AF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		37776DEA15FF3A3500BB6AF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		37886EAC160715DF0094F4E2 /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Addition.h"; sourceTree = "<group>"; };
+		37886EAD160715DF0094F4E2 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5Addition.m"; sourceTree = "<group>"; };
+		37886EAE160715DF0094F4E2 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
+		37886EAF160715DF0094F4E2 /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
+		37886EB2160717200094F4E2 /* Prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefs.h; sourceTree = "<group>"; };
+		37886EB3160717200094F4E2 /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prefs.m; sourceTree = "<group>"; };
 		37ABA89C16006BED00F87280 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = ../MyTV.IOS.Framework/MyTV.IOS/Channel.h; sourceTree = "<group>"; };
 		37ABA89D16006BED00F87280 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = ../MyTV.IOS.Framework/MyTV.IOS/Channel.m; sourceTree = "<group>"; };
 		37ABA89E16006BED00F87280 /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataFetcher.h; path = ../MyTV.IOS.Framework/MyTV.IOS/DataFetcher.h; sourceTree = "<group>"; };
@@ -396,6 +405,8 @@
 				37776DE315FF3A3500BB6AF8 /* InfoPlist.strings */,
 				37776DE615FF3A3500BB6AF8 /* main.m */,
 				37776DE815FF3A3500BB6AF8 /* myTV-Prefix.pch */,
+				37886EB2160717200094F4E2 /* Prefs.h */,
+				37886EB3160717200094F4E2 /* Prefs.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -426,6 +437,7 @@
 		37776E3515FF3EC900BB6AF8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				37886EAB160715BF0094F4E2 /* UDID */,
 				37776E3615FF3EE200BB6AF8 /* Logic */,
 				B2C79E7615FF2FD500A2EBE7 /* MyTVViewController.h */,
 				B2C79E7715FF2FD500A2EBE7 /* MyTVViewController.m */,
@@ -454,6 +466,17 @@
 				B2C79E7E15FF2FD500A2EBE7 /* NavigationLogic.m */,
 			);
 			name = Navigation;
+			sourceTree = "<group>";
+		};
+		37886EAB160715BF0094F4E2 /* UDID */ = {
+			isa = PBXGroup;
+			children = (
+				37886EAC160715DF0094F4E2 /* NSString+MD5Addition.h */,
+				37886EAD160715DF0094F4E2 /* NSString+MD5Addition.m */,
+				37886EAE160715DF0094F4E2 /* UIDevice+IdentifierAddition.h */,
+				37886EAF160715DF0094F4E2 /* UIDevice+IdentifierAddition.m */,
+			);
+			name = UDID;
 			sourceTree = "<group>";
 		};
 		37ABA89A16006BBC00F87280 /* MyTV.IOS.Framework */ = {
@@ -820,6 +843,9 @@
 				37714A6516032D8A004C71B1 /* PlayerSubViewResponder.m in Sources */,
 				37714A6E16036CD1004C71B1 /* VODControlResponder.m in Sources */,
 				B203A4D5160382E1003D49D3 /* KKDemoCell.m in Sources */,
+				37886EB0160715DF0094F4E2 /* NSString+MD5Addition.m in Sources */,
+				37886EB1160715DF0094F4E2 /* UIDevice+IdentifierAddition.m in Sources */,
+				37886EB4160717200094F4E2 /* Prefs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
