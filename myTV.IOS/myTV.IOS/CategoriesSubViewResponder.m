@@ -7,6 +7,7 @@
 //
 
 #import "CategoriesSubViewResponder.h"
+#import "TBXML.h"
 
 @implementation CategoriesSubViewResponder
 
@@ -18,11 +19,11 @@
 - (void)viewDidLoad
 {
     _fillerData = [[NSMutableArray alloc] init];
-    //NSMutableArray *array = [[NSMutableArray alloc] init];
-    //for (NSUInteger j = 1; j <= 10; j++)
-   // {
-    //    [array addObject:[NSString stringWithFormat:@"%u", j]];
-    //}
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for (NSUInteger j = 1; j <= 10; j++)
+   {
+        [array addObject:[NSString stringWithFormat:@"%u", j]];
+    }
     
     //[_fillerData addObject:array];
     
@@ -65,7 +66,7 @@
 - (KKGridViewCell *)gridView:(KKGridView *)gridView cellForItemAtIndexPath:(KKIndexPath *)indexPath
 {
     KKDemoCell *cell = [KKDemoCell cellForGridView:gridView];
-    cell.label.text = [NSString stringWithFormat:@"%u", indexPath.index];
+    cell.label.text = [[_fillerData objectAtIndex:indexPath.section] Title];
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
     //CGFloat percentage = (CGFloat)indexPath.index / (CGFloat)[[_fillerData objectAtIndex:indexPath.section] count];
@@ -75,23 +76,12 @@
 
 -(void) fillGenres {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    
-    _genreFetcher = [RestService RequestGenres:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *genres, NSError *error)
-    {
-        for (Genre *genre in genres) {
-            //ChannelControlResponder *responder = [[ChannelControlResponder alloc] init];
-            //NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
-            //UIView *view = [array objectAtIndex:0];
-            //view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
-            //xPos = xPos + view.frame.size.width + ChannelControl_Space;
-            //[subview.channelScrollView addSubview:view];
-            //if([responder respondsToSelector:@selector(bindData:)]) {
-            //    [responder performSelector:@selector(bindData:) withObject:channel];
-            //}
-            [array addObject:genre.Title];
-        }
-    }];
-    
+    NSArray *genres = [self RequestGenres:MyTV_RestServiceUrl];
+    //NSArray *genres = [RestService RequestGenresWithNoCallback:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId];
+    //
+    for (Genre *genre in genres) {
+        [array addObject:genre.Title];
+    }
     [_fillerData addObject:array];
 }
 
@@ -110,6 +100,82 @@
 -(void) forceReloadGenres {
     [self cancelGenreFetcher];
     [self fillGenres];
+}
+
+-(NSData *)GetDataRS:(NSString *)url {
+    DLog("%@", [NSString stringWithFormat:@"url is %@", url]);
+    
+    //NSURLResponse* response = nil;
+    //NSData* data = [NSURLConnection sendSynchronousRequest:[NSURL URLWithString:url] returningResponse:&response error:nil];
+    
+    //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    
+    //NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    //NSMutableData *receiveData = nil;
+    //if (theConnection) {
+    //    receiveData = [NSMutableData data];
+    //}
+    
+    NSString *baseURLString = url;
+    NSURL *urlD = [[NSURL alloc] initWithString:baseURLString];
+    NSData *result = [[NSData alloc] initWithContentsOfURL:urlD];
+    
+    return result;
+}
+
+-(NSArray *)RequestGenres:(NSString *)baseUrl
+{
+    NSMutableArray* genres = [NSMutableArray new];
+    NSError *error = nil;
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getgenres2&deviceid=%@&devicetypeid=%@", [[UIDevice currentDevice] uniqueDeviceIdentifier], MyTV_DeviceTypeId]];
+    //NSMutableArray *data = [[NSMutableArray alloc] initWithCapacity:10];
+    NSData *dataD = [self GetDataRS:requestUrl];
+    DLog(@"Processing Data inside Code Block");
+    if (error != NULL) {
+        genres = [NSMutableArray new];
+    }
+    else {
+        if(dataD == NULL) {
+            genres = [NSMutableArray new];
+        }
+        else {
+            NSError *error;
+            TBXML *document = [TBXML newTBXMLWithXMLData:dataD error:&error];
+            if(error != NULL) {
+                genres = [NSMutableArray new];
+            }
+            else {
+                TBXMLElement *root = document.rootXMLElement;
+                TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                if(statusEl == NULL) {
+                    DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                    genres = [NSMutableArray new];
+                }
+                else {
+                    TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:root];
+                    if(item != NULL) {
+                        do {
+                            Genre *genre = [Genre new];
+                            TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
+                            TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
+                            TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
+                            if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"genre"] == NSOrderedSame) {
+                                [genre setId:[[TBXML textForElement:xmlId] intValue]];
+                                genre.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                                genre.Logo = [TBXML textForElement:xmlThumbnail];
+                                [genres addObject:genre];
+                            }
+                            item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
+                        } while (item != NULL);
+                    }
+                    
+                    return genres;
+                }
+            }
+        }
+    }
+    return genres;
 }
 
 @end

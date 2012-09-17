@@ -11,6 +11,7 @@
 #import "KKDemoCell.h"
 #import "DataFetcher.h"
 #import "RestService.h"
+#import "UIDevice+IdentifierAddition.h"
 
 @interface CategoriesSubViewResponder : SubViewResponder <KKGridViewDataSource, KKGridViewDelegate>
 
