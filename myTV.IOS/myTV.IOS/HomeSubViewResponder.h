@@ -16,12 +16,14 @@
 {
     BOOL hasLoadedChannelData;
     BOOL hasLoadedVODFeaturedData;
+    BOOL hasLoadedVODRecentData;
 }
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *vodFeaturedScrollView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *vodRecentScrollView;
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *channelScrollView;
 @property (readonly) DataFetcher *channelFetcher;
 @property (readonly) DataFetcher *featuredVOdFetcher;
-
+@property (readonly) DataFetcher *recentVODFetcher;
 -(void)cancelChannelFetcher;
 @end
