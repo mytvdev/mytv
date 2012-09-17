@@ -26,8 +26,10 @@
 
 -(void) fillChannels {
     if(!hasLoadedChannelData) {
+        
         HomeSubViewResponder *subview = self;
-        _channelFetcher = [RestService RequestGetAllChannels:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *channels, NSError *error){
+        
+        RSGetChannelCallBack channelCallback = ^(NSArray *channels, NSError *error){
             if(subview.channelScrollView != nil) {
                 int xPos = ChannelControl_Space;
                 for (Channel *channel in channels) {
@@ -47,7 +49,20 @@
             }
             
             [subview cancelChannelFetcher];
+        };
+        
+        [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error){
+            if(linking != nil && error == nil) {
+                _channelFetcher = [RestService RequestGetSubscribedChannels:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:channelCallback];
+            }
+            else {
+                _channelFetcher = [RestService RequestGetAllChannels:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:channelCallback];
+            }
         }];
+        
+        
+
+        
     }
 }
 
