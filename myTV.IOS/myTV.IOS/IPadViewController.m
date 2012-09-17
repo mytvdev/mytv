@@ -45,25 +45,31 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationLogic = [[NavigationLogic alloc] init];
     
-    NavigationItem *item = [[NavigationItem alloc] initWithKey:@"home" forNib:@"HomeSubView" usingClass:[HomeSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"home.jpg"] displayActiveImage:[UIImage imageNamed:@"home-Over.jpg"]];
+    NavigationItem *item = [[NavigationItem alloc] initWithKey:MyTV_View_Home forNib:@"HomeSubView" usingClass:[HomeSubViewResponder class] button:homeButton displayImage:[UIImage imageNamed:@"home.jpg"] displayActiveImage:[UIImage imageNamed:@"home-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"livetv" forNib:@"LiveTVSubView" usingClass:[LiveTVSubViewResponder class] button:liveButton displayImage:[UIImage imageNamed:@"liveTV.jpg"] displayActiveImage:[UIImage imageNamed:@"liveTV-Over.jpg"]];
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_LiveTV forNib:@"LiveTVSubView" usingClass:[LiveTVSubViewResponder class] button:liveButton displayImage:[UIImage imageNamed:@"liveTV.jpg"] displayActiveImage:[UIImage imageNamed:@"liveTV-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"vodcatalog" forNib:@"VODSubView" usingClass:[VODSubViewResponder class] button:vodButton displayImage:[UIImage imageNamed:@"catalog.jpg"] displayActiveImage:[UIImage imageNamed:@"catalog-Over.jpg"]];
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_VODCatalog forNib:@"VODSubView" usingClass:[VODSubViewResponder class] button:vodButton displayImage:[UIImage imageNamed:@"catalog.jpg"] displayActiveImage:[UIImage imageNamed:@"catalog-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
 
-    item = [[NavigationItem alloc] initWithKey:@"myvod" forNib:@"MyVODSubView" usingClass:[MyVODSubViewResponder class] button:myVODButton displayImage:[UIImage imageNamed:@"myvod.jpg"] displayActiveImage:[UIImage imageNamed:@"myvod-Over.jpg"]];
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_MyVOD forNib:@"MyVODSubView" usingClass:[MyVODSubViewResponder class] button:myVODButton displayImage:[UIImage imageNamed:@"myvod.jpg"] displayActiveImage:[UIImage imageNamed:@"myvod-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"hotdeals" forNib:@"DealsSubView" usingClass:[DealsSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"deals.jpg"] displayActiveImage:[UIImage imageNamed:@"deals-Over.jpg"]];
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_HotDeals forNib:@"DealsSubView" usingClass:[DealsSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"deals.jpg"] displayActiveImage:[UIImage imageNamed:@"deals-Over.jpg"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"login" forNib:@"LoginSubView" usingClass:[LoginSubViewResponder class] button:loginButton displayImage:[UIImage imageNamed:@"login.png"] displayActiveImage:[UIImage imageNamed:@"login-Over.png"]];
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_Login forNib:@"LoginSubView" usingClass:[LoginSubViewResponder class] button:loginButton displayImage:[UIImage imageNamed:@"login.png"] displayActiveImage:[UIImage imageNamed:@"login-Over.png"]];
     [self.navigationLogic addNavigationItem:item];
     
-    item = [[NavigationItem alloc] initWithKey:@"search" forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_Search forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
+    [self.navigationLogic addNavigationItem:item];
+    
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_Episode forNib:@"EpisodeSubView" usingClass:[EpisodeSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
+    [self.navigationLogic addNavigationItem:item];
+    
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_Program forNib:@"ProgramSubView" usingClass:[ProgramSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
     item = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[CategoriesSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"catgoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"catgoriesOpen-Over.png"]];
@@ -78,7 +84,7 @@
     [self.categoriesCloseButton setHidden:YES];
     
     //load homeview by default
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"home" }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"home" }];
     
     
     self.player = [[MyTVPlayer alloc] init];
@@ -109,36 +115,36 @@
 }
 
 - (IBAction)goHome:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"home" }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_Home }];
 }
 
 - (IBAction)goToVodCatalog:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"vodcatalog" }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_VODCatalog}];
 }
 
 - (IBAction)goToMyVOD:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"myvod" }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_MyVOD }];
 }
 
 - (IBAction)goToHotDeals:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"hotdeals" }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View :  MyTV_View_HotDeals}];
 }
 
 - (IBAction)goToLogin:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"login" }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_Login }];
 }
 
 - (void)goToSearch:(id)sender {
     [self.searchTextfield resignFirstResponder];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"search" }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_Search }];
 }
 
 - (IBAction)goToLive:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"livetv" }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_LiveTV }];
 }
 
 - (IBAction)goToCategories:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMainSubView" object:nil userInfo:@{ @"view" : @"categories" }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
     [self.categoriesSubView setHidden:NO];
     [self.categoriesCloseButton setHidden:NO];
 }

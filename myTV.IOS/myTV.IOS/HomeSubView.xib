@@ -136,7 +136,7 @@
 								<string key="NSFrameSize">{1000, 168}</string>
 								<reference key="NSSuperview" ref="476452973"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="194621397"/>
+								<reference key="NSNextKeyView" ref="728205906"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -151,19 +151,19 @@
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MSAwLjMAA</bytes>
-							<object class="NSColorSpace" key="NSCustomColorSpace" id="837587739">
+							<object class="NSColorSpace" key="NSCustomColorSpace" id="874166673">
 								<int key="NSID">2</int>
 							</object>
 						</object>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
-					<object class="IBUILabel" id="194621397">
+					<object class="IBUILabel" id="728205906">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{40, 451}, {117, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="661960983"/>
+						<reference key="NSNextKeyView" ref="730288143"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -182,15 +182,15 @@
 						<reference key="IBUIFontDescription" ref="939367237"/>
 						<reference key="IBUIFont" ref="1042939733"/>
 					</object>
-					<object class="IBUIView" id="661960983">
+					<object class="IBUIView" id="730288143">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<array class="NSMutableArray" key="NSSubviews">
-							<object class="IBUIScrollView" id="117426114">
-								<reference key="NSNextResponder" ref="661960983"/>
+							<object class="IBUIScrollView" id="772721911">
+								<reference key="NSNextResponder" ref="730288143"/>
 								<int key="NSvFlags">274</int>
 								<string key="NSFrameSize">{1000, 168}</string>
-								<reference key="NSSuperview" ref="661960983"/>
+								<reference key="NSSuperview" ref="730288143"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -201,26 +201,23 @@
 						<string key="NSFrame">{{12, 476}, {1000, 168}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="117426114"/>
+						<reference key="NSNextKeyView" ref="772721911"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MSAwLjMAA</bytes>
-							<reference key="NSCustomColorSpace" ref="837587739"/>
+							<reference key="NSCustomColorSpace" ref="874166673"/>
 						</object>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
 				</array>
-				<string key="NSFrame">{{0, 20}, {1024, 659}}</string>
+				<string key="NSFrameSize">{1024, 659}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="678715682"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MCAwIDAgMAA</bytes>
-				</object>
-				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
-					<int key="IBUIStatusBarStyle">2</int>
 				</object>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
@@ -247,7 +244,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">vodRecentScrollView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="117426114"/>
+						<reference key="destination" ref="772721911"/>
 					</object>
 					<int key="connectionID">25</int>
 				</object>
@@ -268,8 +265,8 @@
 							<reference ref="529536134"/>
 							<reference ref="144331439"/>
 							<reference ref="476452973"/>
-							<reference ref="194621397"/>
-							<reference ref="661960983"/>
+							<reference ref="728205906"/>
+							<reference ref="730288143"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -326,22 +323,22 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">22</int>
-						<reference key="object" ref="194621397"/>
+						<reference key="object" ref="728205906"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
-						<reference key="object" ref="661960983"/>
+						<reference key="object" ref="730288143"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="117426114"/>
+							<reference ref="772721911"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 						<string key="objectName">Recent VOD Widget</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">24</int>
-						<reference key="object" ref="117426114"/>
-						<reference key="parent" ref="661960983"/>
+						<reference key="object" ref="772721911"/>
+						<reference key="parent" ref="730288143"/>
 					</object>
 				</array>
 			</object>

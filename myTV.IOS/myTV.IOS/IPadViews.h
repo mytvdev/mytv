@@ -15,6 +15,8 @@
 #import "LoginSubViewResponder.h"
 #import "SearchSubViewResponder.h"
 #import "CategoriesSubViewResponder.h"
+#import "ProgramSubViewResponder.h"
+#import "EpisodeSubViewResponder.h"
 
 @protocol IPadViews <NSObject>
 @end

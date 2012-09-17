@@ -39,16 +39,14 @@
 }
 
 -(void) fireEvent:(UIGestureRecognizer *)gestureRecognizer {
-    UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Play Channel" message:[NSString stringWithFormat:@"Do you want to view %@?", self.vod.Title] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-    [view show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSLog(@"button clicked of index %d", buttonIndex);
-    if(buttonIndex > 0){
-        
-        
+    
+    if([self.vod isKindOfClass:[Episode class]]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View: MyTV_View_Episode, MyTV_ViewArgument_Id: [NSString stringWithFormat:@"%d", self.vod.Id] }];
     }
+    else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View: MyTV_View_Program, MyTV_ViewArgument_Id: [NSString stringWithFormat:@"%d", self.vod.Id] }];
+    }
+    
 }
 
 - (void) dealloc {
