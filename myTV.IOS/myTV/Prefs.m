@@ -8,6 +8,9 @@
 
 #import "Prefs.h"
 
+NSString * const MyTV_RestServiceUrl = @"http://www.my-tv.us/mytv.restws.new/restservice.ashx?";
+NSString * const MyTV_DeviceTypeId = @"5";
+
 @implementation Prefs
 
 @end

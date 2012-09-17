@@ -76,7 +76,7 @@
 -(void) fillGenres {
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
-    _genreFetcher = [RestService RequestGenres:@"http://www.my-tv.us/mytv.restws.new/RestService.ashx?" withDeviceId:@"iosdevice1" andDeviceTypeId:@"5" usingCallback:^(NSArray *genres, NSError *error)
+    _genreFetcher = [RestService RequestGenres:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *genres, NSError *error)
     {
         for (Genre *genre in genres) {
             //ChannelControlResponder *responder = [[ChannelControlResponder alloc] init];

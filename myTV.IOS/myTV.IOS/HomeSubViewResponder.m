@@ -9,7 +9,6 @@
 #import "HomeSubViewResponder.h"
 
 
-
 @implementation HomeSubViewResponder
 
 @synthesize vodFeaturedScrollView = _vodFeaturedScrollView;
@@ -28,7 +27,7 @@
 -(void) fillChannels {
     if(!hasLoadedChannelData) {
         HomeSubViewResponder *subview = self;
-        _channelFetcher = [RestService RequestGetAllChannels:@"http://www.my-tv.us/mytv.restws.new/RestService.ashx?" withDeviceId:@"iosdevice1" andDeviceTypeId:@"5" usingCallback:^(NSArray *channels, NSError *error){
+        _channelFetcher = [RestService RequestGetAllChannels:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *channels, NSError *error){
             if(subview.channelScrollView != nil) {
                 int xPos = ChannelControl_Space;
                 for (Channel *channel in channels) {
@@ -63,7 +62,7 @@
 -(void) fillFeaturedVOD {
     if(!hasLoadedVODFeaturedData) {
         HomeSubViewResponder *subview = self;
-        _featuredVOdFetcher = [RestService RequestGetFeaturedVOD:[NSString stringWithCString:RestServiceUrl encoding:[NSString defaultCStringEncoding]] withDeviceId:@"iosdevice1" andDeviceTypeId:@"5" usingCallback:^(NSArray *array, NSError *error){
+        _featuredVOdFetcher = [RestService RequestGetFeaturedVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
             int xPos = ChannelControl_Space;
             for (MyTVProgram *program in array) {
                 VODControlResponder *responder = [[VODControlResponder alloc] init];
@@ -93,7 +92,8 @@
 -(void) fillRecentVOD {
     if(!hasLoadedVODRecentData) {
         HomeSubViewResponder *subview = self;
-        _recentVODFetcher = [RestService RequestGetNewReleasesVOD:[NSString stringWithCString:RestServiceUrl encoding:[NSString defaultCStringEncoding]] withDeviceId:@"iosdevice1" andDeviceTypeId:@"5" usingCallback:^(NSArray *array, NSError *error){
+
+        _recentVODFetcher = [RestService RequestGetNewReleasesVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
             int xPos = ChannelControl_Space;
             for (MyTVProgram *program in array) {
                 VODControlResponder *responder = [[VODControlResponder alloc] init];

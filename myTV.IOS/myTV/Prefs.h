@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+extern NSString * const MyTV_RestServiceUrl;
+extern NSString * const MyTV_DeviceTypeId;
+
 @interface Prefs : NSObject
 
 @end
