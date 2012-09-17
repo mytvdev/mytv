@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">12B19</string>
+		<string key="IBDocument.SystemVersion">11E53</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
-		<string key="IBDocument.AppKitVersion">1187</string>
-		<string key="IBDocument.HIToolboxVersion">624.00</string>
+		<string key="IBDocument.AppKitVersion">1138.47</string>
+		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">1498</string>
@@ -319,7 +319,6 @@
 						<string key="NSFrame">{{446, 704}, {132, 44}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<int key="IBUITag">1</int>
@@ -895,18 +894,18 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="background.jpg">{2048, 1536}</string>
-			<string key="catalog.jpg">{115, 45}</string>
+			<string key="background.jpg">{1021, 768}</string>
+			<string key="catalog.jpg">{227, 89}</string>
 			<string key="categoriesClose.png">{245, 92}</string>
 			<string key="categoriesOpen.png">{245, 92}</string>
-			<string key="deals.jpg">{105, 45}</string>
+			<string key="deals.jpg">{207, 89}</string>
 			<string key="footer.png">{2048, 87}</string>
-			<string key="header.jpg">{2048, 89}</string>
+			<string key="header.jpg">{1024, 45}</string>
 			<string key="home.jpg">{206, 89}</string>
 			<string key="liveTV.jpg">{207, 89}</string>
-			<string key="login.png">{62, 26}</string>
+			<string key="login.png">{123, 52}</string>
 			<string key="logo.png">{145, 89}</string>
-			<string key="myvod.jpg">{207, 89}</string>
+			<string key="myvod.jpg">{105, 45}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1498</string>
 	</data>

@@ -62,6 +62,9 @@
                         
                         if ([viewName isEqualToString:@"categories"])
                         {
+                            [logic.categoriesMainview setHidden:NO];
+                            //[self.categoriesCloseButton setHidden:NO];
+                            
                             if([[logic.categoriesMainview subviews] count] > 0) {
                                 [[[logic.categoriesMainview subviews] objectAtIndex:0] removeFromSuperview];
                             }

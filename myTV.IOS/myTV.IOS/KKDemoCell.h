@@ -10,4 +10,5 @@
 
 @interface KKDemoCell : KKGridViewCell
 @property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UIButton *button;
 @end

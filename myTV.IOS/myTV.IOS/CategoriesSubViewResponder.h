@@ -14,7 +14,9 @@
 #import "UIDevice+IdentifierAddition.h"
 
 @interface CategoriesSubViewResponder : SubViewResponder <KKGridViewDataSource, KKGridViewDelegate>
-
+{
+    BOOL hasLoadedGenresData;
+}
 @property (nonatomic, strong) NSMutableArray *fillerData;
 @property (nonatomic, strong) IBOutlet UIView *categoriesSubView;
 @property (nonatomic, strong) KKGridView *categoriesKKGridView;

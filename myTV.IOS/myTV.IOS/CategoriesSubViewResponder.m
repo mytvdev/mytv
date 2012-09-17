@@ -19,31 +19,36 @@
 - (void)viewDidLoad
 {
     _fillerData = [[NSMutableArray alloc] init];
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    for (NSUInteger j = 1; j <= 10; j++)
-   {
-        [array addObject:[NSString stringWithFormat:@"%u", j]];
-    }
+    //NSMutableArray *array = [[NSMutableArray alloc] init];
+    //for (NSUInteger j = 1; j <= 10; j++)
+   //{
+   //     [array addObject:[NSString stringWithFormat:@"%u", j]];
+   // }
     
     //[_fillerData addObject:array];
     
-    [self fillGenres];
+    if(!hasLoadedGenresData) {        
+        [self fillGenres];
     
     
-    categoriesKKGridView = [[KKGridView alloc] initWithFrame:self.categoriesSubView.bounds];
-    categoriesKKGridView.dataSource = self;
-    categoriesKKGridView.delegate = self;
-    categoriesKKGridView.scrollsToTop = YES;
-    //categoriesKKGridView.backgroundColor = [UIColor darkGrayColor];
-    categoriesKKGridView.backgroundColor = [UIColor clearColor];
-    categoriesKKGridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    categoriesKKGridView.cellSize = CGSizeMake(108.f, 40.f);
-    categoriesKKGridView.cellPadding = CGSizeMake(0.f, 15.f);
-    categoriesKKGridView.allowsMultipleSelection = NO;
-    categoriesKKGridView.gridHeaderView = nil;
-    categoriesKKGridView.gridFooterView = nil;
-    [categoriesKKGridView reloadData];
-    [self.categoriesSubView addSubview:categoriesKKGridView];
+        categoriesKKGridView = [[KKGridView alloc] initWithFrame:self.categoriesSubView.bounds];
+        categoriesKKGridView.dataSource = self;
+        categoriesKKGridView.delegate = self;
+        categoriesKKGridView.scrollsToTop = YES;
+        //categoriesKKGridView.backgroundColor = [UIColor darkGrayColor];
+        categoriesKKGridView.backgroundColor = [UIColor clearColor];
+        categoriesKKGridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        categoriesKKGridView.cellSize = CGSizeMake(108.f, 40.f);
+        categoriesKKGridView.cellPadding = CGSizeMake(0.f, 15.f);
+        categoriesKKGridView.allowsMultipleSelection = NO;
+        categoriesKKGridView.gridHeaderView = nil;
+        categoriesKKGridView.gridFooterView = nil;
+        [categoriesKKGridView reloadData];
+        [self.categoriesSubView addSubview:categoriesKKGridView];
+        hasLoadedGenresData = YES;
+        
+        
+    }
 }
 
 #pragma mark - KKGridViewDataSource
@@ -66,7 +71,7 @@
 - (KKGridViewCell *)gridView:(KKGridView *)gridView cellForItemAtIndexPath:(KKIndexPath *)indexPath
 {
     KKDemoCell *cell = [KKDemoCell cellForGridView:gridView];
-    cell.label.text = [[_fillerData objectAtIndex:indexPath.section] Title];
+    cell.label.text = [[_fillerData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
     //CGFloat percentage = (CGFloat)indexPath.index / (CGFloat)[[_fillerData objectAtIndex:indexPath.section] count];
@@ -98,6 +103,7 @@
 }
 
 -(void) forceReloadGenres {
+    hasLoadedGenresData = NO;
     [self cancelGenreFetcher];
     [self fillGenres];
 }

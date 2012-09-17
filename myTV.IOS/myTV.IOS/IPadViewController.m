@@ -144,9 +144,27 @@
 }
 
 - (IBAction)goToCategories:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
     [self.categoriesSubView setHidden:NO];
     [self.categoriesCloseButton setHidden:NO];
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(160, 240);
+    spinner.tag = 12;
+    [self.categoriesSubView addSubview:spinner];
+    [spinner startAnimating];
+    
+    //dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // This is the operation that blocks the main thread, so we execute it in a background thread
+        [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
+        
+        // UIKit calls need to be made on the main thread, so re-dispatch there
+        //dispatch_async(dispatch_get_main_queue(), ^{
+        //    detailViewController.item = item;
+        //    [spinner stopAnimating];
+        //});
+    //});
+    
+    [spinner stopAnimating];
 }
 
 - (IBAction)goToCloseCategories:(id)sender {
