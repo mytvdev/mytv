@@ -35,7 +35,6 @@
         categoriesKKGridView.dataSource = self;
         categoriesKKGridView.delegate = self;
         categoriesKKGridView.scrollsToTop = YES;
-        //categoriesKKGridView.backgroundColor = [UIColor darkGrayColor];
         categoriesKKGridView.backgroundColor = [UIColor clearColor];
         categoriesKKGridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         categoriesKKGridView.cellSize = CGSizeMake(108.f, 40.f);
@@ -43,11 +42,14 @@
         categoriesKKGridView.allowsMultipleSelection = NO;
         categoriesKKGridView.gridHeaderView = nil;
         categoriesKKGridView.gridFooterView = nil;
-        [categoriesKKGridView reloadData];
+        
+        [categoriesKKGridView performSelectorOnMainThread:@selector(reloadData)
+                                         withObject:nil
+                                      waitUntilDone:NO];
+        
+
         [self.categoriesSubView addSubview:categoriesKKGridView];
         hasLoadedGenresData = YES;
-        
-        
     }
 }
 

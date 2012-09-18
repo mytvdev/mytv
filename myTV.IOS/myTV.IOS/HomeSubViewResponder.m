@@ -7,6 +7,7 @@
 //
 
 #import "HomeSubViewResponder.h"
+#import "MBProgressHUD.h"
 
 
 @implementation HomeSubViewResponder
@@ -28,7 +29,7 @@
     if(!hasLoadedChannelData) {
         
         HomeSubViewResponder *subview = self;
-        
+        [MBProgressHUD showHUDAddedTo:subview.channelScrollView animated:YES];
         RSGetChannelCallBack channelCallback = ^(NSArray *channels, NSError *error){
             if(subview.channelScrollView != nil) {
                 int xPos = ChannelControl_Space;
@@ -47,7 +48,7 @@
                 //[subview.channelScrollView setCanCancelContentTouches:YES];
                 hasLoadedChannelData = YES;
             }
-            
+            [MBProgressHUD hideHUDForView:subview.channelScrollView animated:YES];
             [subview cancelChannelFetcher];
         };
         

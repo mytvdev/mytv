@@ -277,7 +277,10 @@ struct KKSectionMetrics {
         _cellPadding = cellPadding;
         
         [self _layoutModelCells];
-        [self reloadData];
+        //[self reloadData];
+        [self performSelectorOnMainThread:@selector(reloadData)
+                                         withObject:nil
+                                      waitUntilDone:NO];
     }
 }
 
@@ -289,7 +292,10 @@ struct KKSectionMetrics {
         _cellSize = cellSize;
         
         [self _layoutModelCells];
-        [self reloadData];
+        //[self reloadData];
+        [self performSelectorOnMainThread:@selector(reloadData)
+                               withObject:nil
+                            waitUntilDone:NO];
     }
 }
 
@@ -321,7 +327,10 @@ struct KKSectionMetrics {
         _dataSourceRespondsTo.sectionIndexTitles = RESPONDS_TO(sectionIndexTitlesForGridView:);
         _dataSourceRespondsTo.sectionForSectionIndexTitle = RESPONDS_TO(gridView:sectionForSectionIndexTitle:atIndex:);
 #undef RESPONDS_TO
-        [self reloadData];
+        //[self reloadData];
+        [self performSelectorOnMainThread:@selector(reloadData)
+                               withObject:nil
+                            waitUntilDone:NO];
     }
 }
 
@@ -434,7 +443,10 @@ struct KKSectionMetrics {
 
 - (void)_respondToBoundsChange
 {
-    [self reloadData];
+    //[self reloadData];
+    [self performSelectorOnMainThread:@selector(reloadData)
+                           withObject:nil
+                        waitUntilDone:NO];
     [self setNeedsLayout];
 }
 
