@@ -8,6 +8,7 @@
 
 #import "CategoriesSubViewResponder.h"
 #import "TBXML.h"
+#import "MBProgressHUD.h"
 
 @implementation CategoriesSubViewResponder
 
@@ -19,13 +20,6 @@
 - (void)viewDidLoad
 {
     _fillerData = [[NSMutableArray alloc] init];
-    //NSMutableArray *array = [[NSMutableArray alloc] init];
-    //for (NSUInteger j = 1; j <= 10; j++)
-   //{
-   //     [array addObject:[NSString stringWithFormat:@"%u", j]];
-   // }
-    
-    //[_fillerData addObject:array];
     
     if(!hasLoadedGenresData) {        
         [self fillGenres];
@@ -65,27 +59,36 @@
     return [[_fillerData objectAtIndex:section] count];
 }
 
-//- (NSString *)gridView:(KKGridView *)gridView titleForHeaderInSection:(NSUInteger)section
-//{
-//    return [NSString stringWithFormat:@"%u", section + 1];
-//}
-
 - (KKGridViewCell *)gridView:(KKGridView *)gridView cellForItemAtIndexPath:(KKIndexPath *)indexPath
 {
     KKDemoCell *cell = [KKDemoCell cellForGridView:gridView];
     cell.label.text = [[_fillerData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
-    //CGFloat percentage = (CGFloat)indexPath.index / (CGFloat)[[_fillerData objectAtIndex:indexPath.section] count];
-    //cell.contentView.backgroundColor = [UIColor colorWithWhite:percentage alpha:1.f];
     return cell;
+}
+
+-(void) fillGenres2 {
+    if(!hasLoadedGenresData) {
+        [MBProgressHUD showHUDAddedTo:self.categoriesSubView animated:YES];
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        [RestService RequestGenres:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *genres, NSError *error)
+        {
+            if(genres != nil && error == nil)
+            {
+                for (Genre *genre in genres) {
+                    [array addObject:genre.Title];
+                }
+                [_fillerData addObject:array];
+            }
+            [MBProgressHUD hideHUDForView:self.categoriesSubView animated:YES];
+        }];
+    }
 }
 
 -(void) fillGenres {
     NSMutableArray *array = [[NSMutableArray alloc] init];
     NSArray *genres = [self RequestGenres:MyTV_RestServiceUrl];
-    //NSArray *genres = [RestService RequestGenresWithNoCallback:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId];
-    //
     for (Genre *genre in genres) {
         [array addObject:genre.Title];
     }
@@ -94,7 +97,6 @@
 
 -(void) cancelGenreFetcher {
     if(_genreFetcher != nil) {
-        //if(_genreFetcher.hasFinishedLoading) hasLoadedChannelData = YES;
         [_genreFetcher cancelPendingRequest];
         _genreFetcher = nil;
     }
@@ -112,19 +114,6 @@
 
 -(NSData *)GetDataRS:(NSString *)url {
     DLog("%@", [NSString stringWithFormat:@"url is %@", url]);
-    
-    //NSURLResponse* response = nil;
-    //NSData* data = [NSURLConnection sendSynchronousRequest:[NSURL URLWithString:url] returningResponse:&response error:nil];
-    
-    //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-    
-    //NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
-    //NSMutableData *receiveData = nil;
-    //if (theConnection) {
-    //    receiveData = [NSMutableData data];
-    //}
-    
     NSString *baseURLString = url;
     NSURL *urlD = [[NSURL alloc] initWithString:baseURLString];
     NSData *result = [[NSData alloc] initWithContentsOfURL:urlD];
@@ -137,7 +126,6 @@
     NSMutableArray* genres = [NSMutableArray new];
     NSError *error = nil;
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getgenres2&deviceid=%@&devicetypeid=%@", [[UIDevice currentDevice] uniqueDeviceIdentifier], MyTV_DeviceTypeId]];
-    //NSMutableArray *data = [[NSMutableArray alloc] initWithCapacity:10];
     NSData *dataD = [self GetDataRS:requestUrl];
     DLog(@"Processing Data inside Code Block");
     if (error != NULL) {

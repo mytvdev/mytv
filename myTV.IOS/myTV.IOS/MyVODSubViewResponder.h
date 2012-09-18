@@ -7,7 +7,20 @@
 //
 
 #import "SubViewResponder.h"
+#import <KKGridView/KKGridView.h>
+#import "DataFetcher.h"
+#import "RestService.h"
+#import "UIDevice+IdentifierAddition.h"
+#import "VODControlResponder.h"
 
-@interface MyVODSubViewResponder : SubViewResponder
+@interface MyVODSubViewResponder : SubViewResponder <KKGridViewDataSource, KKGridViewDelegate>
+{
+    BOOL hasLoadedMyVODData;
+}
+
+@property (readonly) DataFetcher *myvodFetcher;
+@property (nonatomic, strong) NSMutableArray *fillerData;
+@property (nonatomic, strong) KKGridView *myvodKKGridView;
+@property (nonatomic, strong) IBOutlet UIView *myvodView;
 
 @end
