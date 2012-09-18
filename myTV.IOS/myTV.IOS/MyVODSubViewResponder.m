@@ -57,7 +57,7 @@
             }
             //subview.vodFeaturedScrollView.contentSize = CGSizeMake(xPos, subview.vodFeaturedScrollView.frame.size.height);
             hasLoadedMyVODData = YES;
-        }];
+        } synchronous:YES];
     }
 }
 

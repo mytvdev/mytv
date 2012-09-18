@@ -21,6 +21,29 @@
     return fetcher;
 }
 
++(DataFetcher *)Get:url Synchronously:(BOOL)sync usingCallback:(DataProcessorCallback)callback {
+    if(sync == NO) {
+        return [self Get:url usingCallback:callback];
+    }
+    else {
+        DLog("%@", [NSString stringWithFormat:@"url is %@", url]);
+        
+       
+        NSURLResponse* response;
+        NSError *error;
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if (error != nil) {
+            callback(nil, error);
+        }
+        else {
+            callback(data, nil);
+        }
+        return nil;
+    }
+    
+}
+
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     DLog(@"Connection has failed as expected");
     self.hasFinishedLoading = TRUE;

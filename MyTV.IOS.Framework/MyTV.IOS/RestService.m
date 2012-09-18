@@ -15,9 +15,15 @@
 
 +(DataFetcher *)SendLinkingRequest:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSLinkingCallBack)callback {
     
+    return [self SendLinkingRequest:baseUrl withDeviceId:deviceId andDeviceTypeId:deviceTypeId usingCallback:callback synchronous:NO];
+    
+}
+
++(DataFetcher *)SendLinkingRequest:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSLinkingCallBack)callback synchronous:(BOOL)sync {
+    
     NSString* linkingRequestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=linking&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
-    return [DataFetcher Get:linkingRequestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:linkingRequestUrl Synchronously:sync usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -234,10 +240,14 @@
 }
 
 +(DataFetcher *)RequestGetAllChannels:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetAllChannelCallBack)callback {
+    return  [self RequestGetAllChannels:baseUrl withDeviceId:deviceId andDeviceTypeId:deviceTypeId usingCallback:callback synchronous:NO];
+}
+
++(DataFetcher *)RequestGetAllChannels:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetAllChannelCallBack)callback synchronous:(BOOL)sync {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getchannel&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
-    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl Synchronously:sync usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -299,10 +309,14 @@
 }
 
 +(DataFetcher *)RequestGetSubscribedChannels:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
+    return [self RequestGetSubscribedChannels:baseUrl withDeviceId:deviceId andDeviceTypeId:deviceTypeId usingCallback:callback synchronous:NO];
+}
+
++(DataFetcher *)RequestGetSubscribedChannels:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback synchronous:(BOOL)sync {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getchannels&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
-    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl Synchronously:sync usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);
@@ -619,11 +633,16 @@
     
 }
 
-+(DataFetcher *)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback{
++(DataFetcher *)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback {
+    
+    return [self RequestGetMyVOD:baseUrl withDeviceId:deviceId andDeviceTypeId:deviceTypeId usingCallback:callback synchronous:NO];
+}
+
++(DataFetcher *)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback synchronous:(BOOL)sync {
     
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=myvod&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
     
-    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+    return [DataFetcher Get:requestUrl Synchronously:sync usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
         if (error != NULL) {
             callback(NULL, error);

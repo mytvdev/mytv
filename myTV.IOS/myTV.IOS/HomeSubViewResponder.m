@@ -59,7 +59,7 @@
             else {
                 _channelFetcher = [RestService RequestGetAllChannels:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:channelCallback];
             }
-        }];
+        } synchronous:NO];
         
         
 

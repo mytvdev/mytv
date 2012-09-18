@@ -141,7 +141,9 @@
 }
 
 - (IBAction)goToLive:(id)sender {
+    //[MBProgressHUD showHUDAddedTo:self.mainSubView animated:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_LiveTV }];
+    //[MBProgressHUD hideHUDForView:self.mainSubView animated:YES];
 }
 
 - (IBAction)goToCategories:(id)sender {

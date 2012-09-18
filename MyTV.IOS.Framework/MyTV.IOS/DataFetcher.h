@@ -17,6 +17,7 @@ typedef void (^DataProcessorCallback)(NSData*, NSError*);
 @property NSMutableData* receievedData;
 @property NSURLConnection* connection;
 
++(DataFetcher *)Get:url Synchronously:(BOOL)sync usingCallback:(DataProcessorCallback)callback;
 +(DataFetcher *)Get:(NSString *)url usingCallback:(DataProcessorCallback) callback;
 -(BOOL)cancelPendingRequest;
 
