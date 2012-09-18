@@ -27,3 +27,21 @@ myTV.IOS.App/myTV.IOS.App.xcodeproj/project.xcworkspace/xcuserdata/johnny.xcuser
 *.xcuserstate
 
 *.xcexplist
+
+Three20/extensions/ignoreme
+
+Three20/src/Three20UICommon/Three20UICommon.xcodeproj/xcuserdata/johnny.xcuserdatad/xcschemes/xcschememanagement.plist
+
+Three20/extensions/ignoreme
+
+*.xcscheme
+
+*.plist
+
+*.plist
+
+Three20/extensions/ignoreme
+
+Three20/src/Three20/Three20.xcodeproj/xcuserdata/johnny.xcuserdatad/xcschemes/Three20.xcscheme
+
+Three20/src/Three20UI/Three20UI.xcodeproj/xcuserdata/johnny.xcuserdatad/xcschemes/Three20UI.xcscheme
