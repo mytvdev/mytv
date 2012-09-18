@@ -78,6 +78,7 @@
 -(void) fillFeaturedVOD {
     if(!hasLoadedVODFeaturedData) {
         HomeSubViewResponder *subview = self;
+        MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.vodFeaturedScrollView animated:YES];
         _featuredVOdFetcher = [RestService RequestGetFeaturedVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
             int xPos = ChannelControl_Space;
             for (MyTVProgram *program in array) {
@@ -90,8 +91,10 @@
                 if([responder respondsToSelector:@selector(bindData:)]) {
                     [responder performSelector:@selector(bindData:) withObject:program];
                 }
+                
             }
             subview.vodFeaturedScrollView.contentSize = CGSizeMake(xPos, subview.vodFeaturedScrollView.frame.size.height);
+            [loader hide:YES];
             hasLoadedVODFeaturedData = YES;
         }];
     }
@@ -108,7 +111,7 @@
 -(void) fillRecentVOD {
     if(!hasLoadedVODRecentData) {
         HomeSubViewResponder *subview = self;
-
+        [MBProgressHUD showHUDAddedTo:subview.vodRecentScrollView animated:YES];
         _recentVODFetcher = [RestService RequestGetNewReleasesVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
             int xPos = ChannelControl_Space;
             for (MyTVProgram *program in array) {
@@ -123,6 +126,7 @@
                 }
             }
             subview.vodRecentScrollView.contentSize = CGSizeMake(xPos, subview.vodFeaturedScrollView.frame.size.height);
+            [MBProgressHUD hideHUDForView:subview.vodRecentScrollView animated:YES];
             hasLoadedVODRecentData = YES;
         }];
     }
