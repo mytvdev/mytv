@@ -20,6 +20,7 @@
         if(error == nil && data != nil) {
             parent.imageDisplay.image = [[UIImage alloc] initWithData:data];
         }
+        self.imageFetcher = nil;
     }];
     labelDisplay.text = self.channel.Name;
     UITapGestureRecognizer *taprecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fireEvent:)];

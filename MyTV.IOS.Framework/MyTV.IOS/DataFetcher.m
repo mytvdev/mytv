@@ -37,7 +37,6 @@
     }
     else {
         self.dataCallback([NSData dataWithData:self.receievedData] , NULL);
-        
     }
 }
 
@@ -61,6 +60,12 @@
         return TRUE;
     }
     return FALSE;
+}
+
+-(void) dealloc {
+    self.receievedData = nil;
+    self.connection = nil;
+    self.dataCallback = nil;
 }
 
 
