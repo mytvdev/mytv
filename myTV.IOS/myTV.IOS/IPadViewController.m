@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "IPadViewController.h"
 #import "IPadViews.h"
+#import "MBProgressHUD.h"
 
 @interface IPadViewController ()
 
@@ -144,18 +145,27 @@
 }
 
 - (IBAction)goToCategories:(id)sender {
-    [self.categoriesSubView setHidden:NO];
     [self.categoriesCloseButton setHidden:NO];
+    [self.categoriesSubView setHidden:NO];
     
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    /*UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     spinner.center = CGPointMake(160, 240);
     spinner.tag = 12;
     [self.categoriesSubView addSubview:spinner];
-    [spinner startAnimating];
+    [spinner startAnimating];*/
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    });
+    
     
     //dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // This is the operation that blocks the main thread, so we execute it in a background thread
-        [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
+        //[[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
         
         // UIKit calls need to be made on the main thread, so re-dispatch there
         //dispatch_async(dispatch_get_main_queue(), ^{
@@ -164,7 +174,7 @@
         //});
     //});
     
-    [spinner stopAnimating];
+    //[spinner stopAnimating];
 }
 
 - (IBAction)goToCloseCategories:(id)sender {
