@@ -109,6 +109,7 @@
 		B29BBCE816021FBD00600B5E /* LoginSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF8A160211970040B206 /* LoginSubViewResponder.m */; };
 		B29BBCE916021FBD00600B5E /* DealsSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF7F1602118C0040B206 /* DealsSubViewResponder.m */; };
 		B29BBCEA16021FBD00600B5E /* HomeSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF7B160211810040B206 /* HomeSubViewResponder.m */; };
+		B2C5D01D1608D6D2008A27AB /* KKEpisodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C5D01C1608D6D2008A27AB /* KKEpisodeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,6 +199,8 @@
 		B29BBCDE16021F7600600B5E /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
 		B29BBCDF16021F7600600B5E /* CategoriesSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesSubViewResponder.h; sourceTree = "<group>"; };
 		B29BBCE016021F7600600B5E /* CategoriesSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesSubViewResponder.m; sourceTree = "<group>"; };
+		B2C5D01B1608D6D2008A27AB /* KKEpisodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKEpisodeCell.h; sourceTree = "<group>"; };
+		B2C5D01C1608D6D2008A27AB /* KKEpisodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKEpisodeCell.m; sourceTree = "<group>"; };
 		B2C79E2715FF2FD500A2EBE7 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		B2C79E2815FF2FD500A2EBE7 /* catalog-Over.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "catalog-Over.jpg"; sourceTree = "<group>"; };
 		B2C79E2915FF2FD500A2EBE7 /* catalog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = catalog.jpg; sourceTree = "<group>"; };
@@ -643,6 +646,8 @@
 				B203A4D4160382E1003D49D3 /* KKDemoCell.m */,
 				B22A823216088C0B00B9F63C /* KKChannelCell.h */,
 				B22A823316088C0B00B9F63C /* KKChannelCell.m */,
+				B2C5D01B1608D6D2008A27AB /* KKEpisodeCell.h */,
+				B2C5D01C1608D6D2008A27AB /* KKEpisodeCell.m */,
 				B29BBCDE16021F7600600B5E /* CategoriesSubView.xib */,
 				B29BBCDF16021F7600600B5E /* CategoriesSubViewResponder.h */,
 				B29BBCE016021F7600600B5E /* CategoriesSubViewResponder.m */,
@@ -878,6 +883,7 @@
 				37886EC0160752200094F4E2 /* EpisodeSubViewResponder.m in Sources */,
 				B2746CC216084E4C00C70126 /* MBProgressHUD.m in Sources */,
 				B22A823416088C0B00B9F63C /* KKChannelCell.m in Sources */,
+				B2C5D01D1608D6D2008A27AB /* KKEpisodeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

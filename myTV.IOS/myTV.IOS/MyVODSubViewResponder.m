@@ -20,7 +20,31 @@
 
 - (void)viewDidLoad
 {
-    [self fillMyVOD];
+    _fillerData = [[NSMutableArray alloc] init];
+    
+    if(!hasLoadedMyVODData) {
+        [self fillMyVOD];
+        
+        myvodKKGridView = [[KKGridView alloc] initWithFrame:self.myvodView.bounds];
+        myvodKKGridView.dataSource = self;
+        myvodKKGridView.delegate = self;
+        myvodKKGridView.scrollsToTop = YES;
+        myvodKKGridView.backgroundColor = [UIColor clearColor];
+        myvodKKGridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        myvodKKGridView.cellSize = CGSizeMake(180.f, 180.f);
+        myvodKKGridView.cellPadding = CGSizeMake(0.f, 0.f);
+        myvodKKGridView.allowsMultipleSelection = NO;
+        myvodKKGridView.gridHeaderView = nil;
+        myvodKKGridView.gridFooterView = nil;
+        
+        [myvodKKGridView performSelectorOnMainThread:@selector(reloadData)
+                                             withObject:nil
+                                          waitUntilDone:NO];
+        
+        
+        [self.myvodView addSubview:myvodKKGridView];
+        hasLoadedMyVODData = YES;
+    }
 }
 
 -(NSUInteger)numberOfSectionsInGridView:(KKGridView *)gridView
@@ -35,29 +59,31 @@
 
 - (KKGridViewCell *)gridView:(KKGridView *)gridView cellForItemAtIndexPath:(KKIndexPath *)indexPath
 {
-    KKGridViewCell *cell = [KKGridViewCell cellForGridView:gridView];
+    KKEpisodeCell *cell = [KKEpisodeCell cellForGridView:gridView];
+    Episode *episode = [[_fillerData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
+    cell.episode = episode;
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
+    if([cell respondsToSelector:@selector(bindData::)]) {
+        [cell performSelector:@selector(bindData:) withObject:episode];
+    }
     return cell;
 }
 
 -(void) fillMyVOD {
     if(!hasLoadedMyVODData) {
-        MyVODSubViewResponder *subview = self;
-        _myvodFetcher = [RestService RequestGetMyVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
-            int xPos = 14;
-            for (Episode *episode in array) {
-                VODControlResponder *responder = [[VODControlResponder alloc] init];
-                NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
-                UIView *view = [array objectAtIndex:0];
-                view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
-                xPos = xPos + view.frame.size.width + 14;
-                [subview.myvodView addSubview:view];
-                if([responder respondsToSelector:@selector(bindData:)]) {
-                    [responder performSelector:@selector(bindData:) withObject:episode];
-                }
-            }
-            //subview.vodFeaturedScrollView.contentSize = CGSizeMake(xPos, subview.vodFeaturedScrollView.frame.size.height);
-            hasLoadedMyVODData = YES;
-        } synchronous:YES];
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        [RestService RequestGetMyVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *episodes, NSError *error)
+         {
+             if(episodes != nil && error == nil)
+             {
+                 for (Episode *episode in episodes) {
+                     [array addObject:episode];
+                 }
+                 [_fillerData addObject:array];
+             }
+             hasLoadedMyVODData = YES;
+         } synchronous:YES];
     }
 }
 
