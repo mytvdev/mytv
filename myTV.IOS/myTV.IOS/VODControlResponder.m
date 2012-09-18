@@ -22,7 +22,7 @@
         if(error == nil && data != nil) {
             parent.imageDisplay.image = [[UIImage alloc] initWithData:data];
         }
-        self.imageFetcher = nil;
+        //self.imageFetcher = nil;
     }];
     labelDisplay.text = self.vod.Title;
     UITapGestureRecognizer *taprecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fireEvent:)];
