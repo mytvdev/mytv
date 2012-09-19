@@ -9,6 +9,7 @@
 #import "ProgramSubViewResponder.h"
 
 @implementation ProgramSubViewResponder
+@synthesize lblProgramDescription;
 @synthesize lblProgramName;
 @synthesize imgProgram;
 @synthesize episodeScrollView;
@@ -23,16 +24,74 @@
         programFetcher = [RestService RequestGetProgram:MyTV_RestServiceUrl ofId:idvalue withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(MyTVProgram *program, NSError *error){
             if(program != nil && error == nil) {
                 lblProgramName.text = program.Title;
+                lblProgramDescription.text = program.Description;
                 programImageFetcher = [DataFetcher Get:program.Thumbnail usingCallback:^(NSData *data, NSError *error){
                     if(data != nil && error == nil) {
                         imgProgram.image  = [[UIImage alloc] initWithData:data];
                     }
                     programImageFetcher = nil;
                 }];
+                [self fillRelatedVOD:idvalue];
+                [self fillProgramEpisodes:idvalue];
             }
             [MBProgressHUD hideHUDForView:self.mainView animated:NO];
         }];
     }
+}
+
+- (void) fillRelatedVOD:(NSString *)programId {
+    if(!hasLoadedRelatedData) {
+        ProgramSubViewResponder *subview = self;
+        
+        for(UIView *view in[subview.relatedVODScrollView subviews]) {
+            [view removeFromSuperview];
+        }
+        MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.relatedVODScrollView animated:YES];
+        relatedVODFetcher = [RestService RequestGetFeaturedVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
+            int xPos = VODControl_Space;
+            for (ItemBase *vod in array) {
+                VODControlResponder *responder = [[VODControlResponder alloc] init];
+                NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
+                UIView *view = [array objectAtIndex:0];
+                view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
+                xPos = xPos + view.frame.size.width + VODControl_Space;
+                [subview.relatedVODScrollView addSubview:view];
+                if([responder respondsToSelector:@selector(bindData:)]) {
+                    [responder performSelector:@selector(bindData:) withObject:vod];
+                }
+                
+            }
+            subview.relatedVODScrollView.contentSize = CGSizeMake(xPos, subview.relatedVODScrollView.frame.size.height);
+            [loader hide:YES];
+            hasLoadedRelatedData = YES;
+        }];
+    }
+}
+
+- (void) fillProgramEpisodes:(NSString *)programId {
+    ProgramSubViewResponder *subview = self;
+    
+    for(UIView *view in[subview.episodeScrollView subviews]) {
+        [view removeFromSuperview];
+    }
+    MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.episodeScrollView animated:YES];
+    programEpisodesFetcher = [RestService RequestGetVOD:MyTV_RestServiceUrl ofProgram:programId withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
+        int xPos = VODControl_Space;
+        for (ItemBase *vod in array) {
+            VODControlResponder *responder = [[VODControlResponder alloc] init];
+            NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
+            UIView *view = [array objectAtIndex:0];
+            view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
+            xPos = xPos + view.frame.size.width + VODControl_Space;
+            [subview.episodeScrollView addSubview:view];
+            if([responder respondsToSelector:@selector(bindData:)]) {
+                [responder performSelector:@selector(bindData:) withObject:vod];
+            }
+            
+        }
+        subview.episodeScrollView.contentSize = CGSizeMake(xPos, subview.relatedVODScrollView.frame.size.height);
+        [loader hide:YES];
+    }];
 }
 
 @end

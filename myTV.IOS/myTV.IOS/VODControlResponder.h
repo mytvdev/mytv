@@ -10,6 +10,8 @@
 #import "DataFetcher.h"
 #import "RestService.h"
 
+#define VODControl_Space 14
+
 @interface VODControlResponder : SubViewResponder
 
 @property ItemBase *vod;

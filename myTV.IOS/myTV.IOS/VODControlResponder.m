@@ -18,7 +18,16 @@
 -(void)bindData:(NSObject *)data {
     self.vod = (ItemBase *)data;
     VODControlResponder *parent = self;
-    self.imageFetcher = [DataFetcher Get:self.vod.Logo usingCallback:^(NSData *data, NSError *error){
+    NSString *image = self.vod.Logo;
+    if(image == nil) {
+        if([data isKindOfClass:[Episode class]]) {
+            image = ((Episode *)data).Thumbnail;
+        }
+        else if([data isKindOfClass:[MyTVProgram class]]) {
+            image = ((MyTVProgram *) data).Thumbnail;
+        }
+    }
+    self.imageFetcher = [DataFetcher Get:image usingCallback:^(NSData *data, NSError *error){
         if(error == nil && data != nil) {
             parent.imageDisplay.image = [[UIImage alloc] initWithData:data];
         }

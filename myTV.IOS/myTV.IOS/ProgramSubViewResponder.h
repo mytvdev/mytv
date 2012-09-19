@@ -8,13 +8,18 @@
 
 #import "SubViewResponder.h"
 #import "RestService.h"
+#import "VODControlResponder.h"
 
 @interface ProgramSubViewResponder : SubViewResponder
 {
     DataFetcher *programFetcher;
     DataFetcher *programImageFetcher;
+    DataFetcher *relatedVODFetcher;
+    DataFetcher *programEpisodesFetcher;
+    BOOL hasLoadedRelatedData; 
 }
 
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblProgramDescription;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblProgramName;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imgProgram;
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *episodeScrollView;
