@@ -77,7 +77,7 @@
          {
              if(episodes != nil && error == nil)
              {
-                 for (Episode *episode in episodes) {
+                 for (ItemBase *episode in episodes) {
                      [array addObject:episode];
                  }
                  [_fillerData addObject:array];

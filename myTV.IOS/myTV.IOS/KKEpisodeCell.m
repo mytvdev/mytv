@@ -25,8 +25,8 @@
 -(void)bindEpisode:(Episode *)episode
 {
     int xPos = 14;
-    VODControlResponder *responder = [[VODControlResponder alloc] init];
-    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
+    MyVODControlResponder *responder = [[MyVODControlResponder alloc] init];
+    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"VODControl" owner:responder options:nil];
     UIView *view = [array objectAtIndex:0];
     view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
     xPos = xPos + view.frame.size.width + 14;

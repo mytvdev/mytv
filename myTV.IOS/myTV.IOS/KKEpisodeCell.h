@@ -7,7 +7,7 @@
 //
 
 #import <KKGridView/KKGridView.h>
-#import "VODControlResponder.h"
+#import "MyVODControlResponder.h"
 
 @interface KKEpisodeCell : KKGridViewCell
 

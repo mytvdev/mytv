@@ -111,6 +111,8 @@
 		B29BBCEA16021FBD00600B5E /* HomeSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF7B160211810040B206 /* HomeSubViewResponder.m */; };
 		B2AD45BD1609EB2600A4B240 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD45BC1609EB2500A4B240 /* LoadingView.m */; };
 		B2BCEA011609EF22000AE7F7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BCEA001609EF22000AE7F7 /* QuartzCore.framework */; };
+		B2BCEA081609F50F000AE7F7 /* VODControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2BCEA071609F50F000AE7F7 /* VODControl.xib */; };
+		B2BCEA0C1609F8E3000AE7F7 /* MyVODControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BCEA0B1609F8E3000AE7F7 /* MyVODControlResponder.m */; };
 		B2C5D01D1608D6D2008A27AB /* KKEpisodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C5D01C1608D6D2008A27AB /* KKEpisodeCell.m */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +206,9 @@
 		B2AD45BB1609EB2500A4B240 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		B2AD45BC1609EB2500A4B240 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		B2BCEA001609EF22000AE7F7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B2BCEA071609F50F000AE7F7 /* VODControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VODControl.xib; sourceTree = "<group>"; };
+		B2BCEA0A1609F8E3000AE7F7 /* MyVODControlResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVODControlResponder.h; sourceTree = "<group>"; };
+		B2BCEA0B1609F8E3000AE7F7 /* MyVODControlResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVODControlResponder.m; sourceTree = "<group>"; };
 		B2C5D01B1608D6D2008A27AB /* KKEpisodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKEpisodeCell.h; sourceTree = "<group>"; };
 		B2C5D01C1608D6D2008A27AB /* KKEpisodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKEpisodeCell.m; sourceTree = "<group>"; };
 		B2C79E2715FF2FD500A2EBE7 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -557,6 +562,9 @@
 				37ABA8D116006CE200F87280 /* ChannelControl.xib */,
 				37714A6C16036CD1004C71B1 /* VODControlResponder.h */,
 				37714A6D16036CD1004C71B1 /* VODControlResponder.m */,
+				B2BCEA071609F50F000AE7F7 /* VODControl.xib */,
+				B2BCEA0A1609F8E3000AE7F7 /* MyVODControlResponder.h */,
+				B2BCEA0B1609F8E3000AE7F7 /* MyVODControlResponder.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -814,6 +822,7 @@
 				37776DE515FF3A3500BB6AF8 /* InfoPlist.strings in Resources */,
 				37886EB8160751DB0094F4E2 /* ProgramSubView.xib in Resources */,
 				37886EBD1607520E0094F4E2 /* EpisodeSubView.xib in Resources */,
+				B2BCEA081609F50F000AE7F7 /* VODControl.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,6 +903,7 @@
 				B22A823416088C0B00B9F63C /* KKChannelCell.m in Sources */,
 				B2C5D01D1608D6D2008A27AB /* KKEpisodeCell.m in Sources */,
 				B2AD45BD1609EB2600A4B240 /* LoadingView.m in Sources */,
+				B2BCEA0C1609F8E3000AE7F7 /* MyVODControlResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
