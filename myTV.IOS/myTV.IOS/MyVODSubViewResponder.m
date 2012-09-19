@@ -61,11 +61,11 @@
 {
     KKEpisodeCell *cell = [KKEpisodeCell cellForGridView:gridView];
     Episode *episode = [[_fillerData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
-    cell.episode = episode;
+    cell.episode = episode;             
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
-    if([cell respondsToSelector:@selector(bindData::)]) {
-        [cell performSelector:@selector(bindData:) withObject:episode];
+    if([cell respondsToSelector:@selector(bindEpisode:)]) {
+        [cell performSelector:@selector(bindEpisode:) withObject:episode];
     }
     return cell;
 }

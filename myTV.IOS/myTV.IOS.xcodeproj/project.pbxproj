@@ -109,6 +109,8 @@
 		B29BBCE816021FBD00600B5E /* LoginSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF8A160211970040B206 /* LoginSubViewResponder.m */; };
 		B29BBCE916021FBD00600B5E /* DealsSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF7F1602118C0040B206 /* DealsSubViewResponder.m */; };
 		B29BBCEA16021FBD00600B5E /* HomeSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF7B160211810040B206 /* HomeSubViewResponder.m */; };
+		B2AD45BD1609EB2600A4B240 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD45BC1609EB2500A4B240 /* LoadingView.m */; };
+		B2BCEA011609EF22000AE7F7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BCEA001609EF22000AE7F7 /* QuartzCore.framework */; };
 		B2C5D01D1608D6D2008A27AB /* KKEpisodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C5D01C1608D6D2008A27AB /* KKEpisodeCell.m */; };
 /* End PBXBuildFile section */
 
@@ -199,6 +201,9 @@
 		B29BBCDE16021F7600600B5E /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
 		B29BBCDF16021F7600600B5E /* CategoriesSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesSubViewResponder.h; sourceTree = "<group>"; };
 		B29BBCE016021F7600600B5E /* CategoriesSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesSubViewResponder.m; sourceTree = "<group>"; };
+		B2AD45BB1609EB2500A4B240 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		B2AD45BC1609EB2500A4B240 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		B2BCEA001609EF22000AE7F7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B2C5D01B1608D6D2008A27AB /* KKEpisodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKEpisodeCell.h; sourceTree = "<group>"; };
 		B2C5D01C1608D6D2008A27AB /* KKEpisodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKEpisodeCell.m; sourceTree = "<group>"; };
 		B2C79E2715FF2FD500A2EBE7 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -316,6 +321,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2BCEA011609EF22000AE7F7 /* QuartzCore.framework in Frameworks */,
 				37776DF915FF3BC800BB6AF8 /* libz.dylib in Frameworks */,
 				372990FA15FF466E00C015C5 /* libKKGridView.a in Frameworks */,
 				37776DDD15FF3A3500BB6AF8 /* UIKit.framework in Frameworks */,
@@ -333,6 +339,7 @@
 		371AA08815F89FFE006FCC06 = {
 			isa = PBXGroup;
 			children = (
+				B2BCEA001609EF22000AE7F7 /* QuartzCore.framework */,
 				B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */,
 				37ABA89A16006BBC00F87280 /* MyTV.IOS.Framework */,
 				371AA0B515F89FFE006FCC06 /* myTV.IOS.AppTests */,
@@ -439,6 +446,8 @@
 				B2C79E6615FF2FD500A2EBE7 /* IPadViewController.m */,
 				B2C79E6715FF2FD500A2EBE7 /* IPadViewController.xib */,
 				B2C79E6815FF2FD500A2EBE7 /* IPadViews.h */,
+				B2AD45BB1609EB2500A4B240 /* LoadingView.h */,
+				B2AD45BC1609EB2500A4B240 /* LoadingView.m */,
 			);
 			name = IPad;
 			sourceTree = "<group>";
@@ -884,6 +893,7 @@
 				B2746CC216084E4C00C70126 /* MBProgressHUD.m in Sources */,
 				B22A823416088C0B00B9F63C /* KKChannelCell.m in Sources */,
 				B2C5D01D1608D6D2008A27AB /* KKEpisodeCell.m in Sources */,
+				B2AD45BD1609EB2600A4B240 /* LoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

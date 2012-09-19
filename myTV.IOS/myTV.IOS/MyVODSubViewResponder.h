@@ -8,11 +8,10 @@
 
 #import "SubViewResponder.h"
 #import <KKGridView/KKGridView.h>
+#import "KKEpisodeCell.h"
 #import "DataFetcher.h"
 #import "RestService.h"
 #import "UIDevice+IdentifierAddition.h"
-#import "VODControlResponder.h"
-#import "KKEpisodeCell.h"
 
 @interface MyVODSubViewResponder : SubViewResponder <KKGridViewDataSource, KKGridViewDelegate>
 {

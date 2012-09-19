@@ -9,6 +9,7 @@
 #import "IPadViewController.h"
 #import "IPadViews.h"
 #import "MBProgressHUD.h"
+#import "LoadingView.h"
 
 @interface IPadViewController ()
 
@@ -116,18 +117,30 @@
 }
 
 - (IBAction)goHome:(id)sender {
+    //LoadingView *loadingView = [LoadingView loadingViewInView:[self.view.window.subviews objectAtIndex:0]];
+	//[loadingView performSelector:@selector(removeView) withObject:nil];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_Home }];
 }
 
 - (IBAction)goToVodCatalog:(id)sender {
+    //LoadingView *loadingView = [LoadingView loadingViewInView:[self.view.window.subviews objectAtIndex:0]];
+	//[loadingView performSelector:@selector(removeView) withObject:nil];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_VODCatalog}];
 }
 
 - (IBAction)goToMyVOD:(id)sender {
+    //LoadingView *loadingView = [LoadingView loadingViewInView:[self.view.window.subviews objectAtIndex:0]];
+	//[loadingView performSelector:@selector(removeView) withObject:nil afterDelay:5.0];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_MyVOD }];
 }
 
 - (IBAction)goToHotDeals:(id)sender {
+    //LoadingView *loadingView = [LoadingView loadingViewInView:[self.view.window.subviews objectAtIndex:0]];
+	//[loadingView performSelector:@selector(removeView) withObject:nil afterDelay:5.0];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View :  MyTV_View_HotDeals}];
 }
 
@@ -141,20 +154,15 @@
 }
 
 - (IBAction)goToLive:(id)sender {
-    //[MBProgressHUD showHUDAddedTo:self.mainSubView animated:YES];
+    //LoadingView *loadingView = [LoadingView loadingViewInView:[self.view.window.subviews objectAtIndex:0]];
+	//[loadingView performSelector:@selector(removeView) withObject:nil afterDelay:5.0];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_LiveTV }];
-    //[MBProgressHUD hideHUDForView:self.mainSubView animated:YES];
 }
 
 - (IBAction)goToCategories:(id)sender {
     [self.categoriesCloseButton setHidden:NO];
     [self.categoriesSubView setHidden:NO];
-    
-    /*UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    spinner.center = CGPointMake(160, 240);
-    spinner.tag = 12;
-    [self.categoriesSubView addSubview:spinner];
-    [spinner startAnimating];*/
         
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     //hud.mode = MBProgressHUDModeAnnularDeterminate;
@@ -165,20 +173,6 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     });
-    
-    
-    //dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        // This is the operation that blocks the main thread, so we execute it in a background thread
-        //[[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
-        
-        // UIKit calls need to be made on the main thread, so re-dispatch there
-        //dispatch_async(dispatch_get_main_queue(), ^{
-        //    detailViewController.item = item;
-        //    [spinner stopAnimating];
-        //});
-    //});
-    
-    //[spinner stopAnimating];
 }
 
 - (IBAction)goToCloseCategories:(id)sender {

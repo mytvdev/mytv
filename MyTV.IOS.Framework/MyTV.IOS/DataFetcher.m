@@ -28,7 +28,6 @@
     else {
         DLog("%@", [NSString stringWithFormat:@"url is %@", url]);
         
-       
         NSURLResponse* response;
         NSError *error;
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
