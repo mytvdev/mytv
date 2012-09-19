@@ -33,6 +33,7 @@ typedef void (^RSGetVOD) (NSArray /* Video, Program */ *, NSError*);
 typedef void (^RSGetBoolean) (BOOL, NSError*);
 typedef void (^RSGetPurchaseInforamtion) (PurchaseInformation*, NSError*);
 typedef void (^RSGetEpisode) (Episode*, NSError*);
+typedef void (^RSGetProgram) (MyTVProgram*, NSError*);
 typedef void (^RSGetGenres) (NSArray /* Genre */ *, NSError*);
 typedef void (^RSGetProgramTypes) (NSArray /* ProgramType */ *, NSError*);
 typedef void (^RSGetPackages) (NSArray /* MyTVPackage, VODPackage */ *, NSError*);
@@ -80,7 +81,8 @@ typedef void (^RSGetPackages) (NSArray /* MyTVPackage, VODPackage */ *, NSError*
 
 +(DataFetcher *)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback synchronous:(BOOL)sync;
 
-+(DataFetcher *)RequestGetVODPrograms:(NSString *)baseUrl ofVODPackage:(NSString *)vodPackageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback;
+
++(DataFetcher *)RequestGetProgram:(NSString *)baseUrl ofId:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgram)callback;
 
 +(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisEpisode:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback;
 

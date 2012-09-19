@@ -1437,7 +1437,34 @@
 }
 
 +(DataFetcher *)RequestGetEpisode:(NSString *)baseUrl ofId:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetEpisode)callback {
-    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=myvod&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getepisode&deviceid=%@&devicetypeid=%@&id=%@", deviceId, deviceTypeId, episodeId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    [RestService ProcessVideoItemsTags:root usingCallBack:callback onlyFirstElement:YES];
+                }
+            }
+        }
+    }];
+}
+
++(DataFetcher *)RequestGetProgram:(NSString *)baseUrl ofId:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgram)callback {
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getprogram&deviceid=%@&devicetypeid=%@&id=%@", deviceId, deviceTypeId, programId]];
     
     return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
         DLog(@"Processing Data inside Code Block");
