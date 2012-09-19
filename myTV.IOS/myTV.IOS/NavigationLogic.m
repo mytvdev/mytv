@@ -82,10 +82,14 @@
                             if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
                                 [item.responderInstance performSelector:@selector(viewDidLoad)];
                             }
+                           
                         }
                         if(item.activationButton != nil) {
                             [item.activationButton setImage:item.activeImage forState:UIControlStateNormal];
                         }
+                    }
+                    if([note.userInfo count] > 1 && [item.responderInstance respondsToSelector:@selector(bindData:)]){
+                        [item.responderInstance performSelector:@selector(bindData:) withObject:note.userInfo];
                     }
                 }
             }
