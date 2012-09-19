@@ -7,7 +7,22 @@
 //
 
 #import "SubViewResponder.h"
+#import "DataFetcher.h"
+#import "RestService.h"
+#import "VODControlResponder.h"
 
 @interface VODSubViewResponder : SubViewResponder
+{
+    BOOL hasLoadedVODFeaturedData;
+    BOOL hasLoadedVODRecentData;
+}
+
+@property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *vodFeaturedScrollView;
+
+@property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *vodRecentScrollView;
+
+@property (readonly) DataFetcher *featuredVOdFetcher;
+
+@property (readonly) DataFetcher *recentVODFetcher;
 
 @end

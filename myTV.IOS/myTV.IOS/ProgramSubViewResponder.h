@@ -24,6 +24,14 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imgProgram;
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *episodeScrollView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *relatedVODScrollView;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblDirector;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblCast;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblPresenter;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblLanguage;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblSeason;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblReleaseDate;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblAwards;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblRating;
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainView;
 

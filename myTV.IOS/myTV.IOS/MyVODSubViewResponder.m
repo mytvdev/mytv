@@ -72,6 +72,7 @@
 
 -(void) fillMyVOD {
     if(!hasLoadedMyVODData) {
+        [MBProgressHUD showHUDAddedTo:self.myvodView animated:YES];
         NSMutableArray *array = [[NSMutableArray alloc] init];
         [RestService RequestGetMyVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *episodes, NSError *error)
          {
@@ -83,6 +84,7 @@
                  [_fillerData addObject:array];
              }
              hasLoadedMyVODData = YES;
+             [MBProgressHUD hideHUDForView:self.myvodView animated:NO];
          } synchronous:YES];
     }
 }

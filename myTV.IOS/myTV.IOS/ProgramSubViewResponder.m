@@ -15,6 +15,14 @@
 @synthesize episodeScrollView;
 @synthesize relatedVODScrollView;
 @synthesize mainView;
+@synthesize lblDirector;
+@synthesize lblCast;
+@synthesize lblPresenter;
+@synthesize lblLanguage;
+@synthesize lblSeason;
+@synthesize lblReleaseDate;
+@synthesize lblAwards;
+@synthesize lblRating;
 
 -(void)bindData:(NSObject *)data {
     NSDictionary *dict = (NSDictionary *)data;
@@ -23,8 +31,16 @@
         [MBProgressHUD showHUDAddedTo:self.mainView animated:YES];
         programFetcher = [RestService RequestGetProgram:MyTV_RestServiceUrl ofId:idvalue withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(MyTVProgram *program, NSError *error){
             if(program != nil && error == nil) {
-                lblProgramName.text = program.Title;
-                lblProgramDescription.text = program.Description;
+                lblProgramName.text = (program.Title != nil && program.Title != @"") ? program.Title : @"-";
+                lblProgramDescription.text = (program.Description != nil && program.Description != @"") ? program.Description : @"-";
+                lblDirector.text = (program.Director != nil && program.Director != @"") ? program.Director : @"-";
+                lblCast.text = (program.Guest != nil && program.Guest != @"") ? program.Guest : @"-";
+                lblPresenter.text = (program.Presenter != nil && program.Presenter != @"") ? program.Presenter : @"-";
+                lblLanguage.text = (program.Language != nil && program.Language != @"") ? program.Language : @"-";
+                lblSeason.text = (program.Season != nil && program.Season != @"") ? program.Season : @"-";
+                lblReleaseDate.text = (program.ReleaseDate != nil && program.ReleaseDate != @"") ? program.ReleaseDate : @"-";
+                lblAwards.text = (program.Award != nil && program.Award != @"") ? program.Award : @"-";
+                lblRating.text = (program.Rating != nil && program.Rating != @"") ? program.Rating : @"-";
                 programImageFetcher = [DataFetcher Get:program.Thumbnail usingCallback:^(NSData *data, NSError *error){
                     if(data != nil && error == nil) {
                         imgProgram.image  = [[UIImage alloc] initWithData:data];

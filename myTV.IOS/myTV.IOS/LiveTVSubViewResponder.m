@@ -25,13 +25,14 @@
     if(!hasLoadedChannelsData) {
         [self fillChannels];
         
-        channelsKKGridView = [[KKGridView alloc] initWithFrame:self.channelsView.bounds];
+        //channelsKKGridView = [[KKGridView alloc] initWithFrame:self.channelsView.bounds];
+        channelsKKGridView = [[KKGridView alloc] initWithFrame:CGRectMake(20, 20, 970, 550)];
         channelsKKGridView.dataSource = self;
         channelsKKGridView.delegate = self;
         channelsKKGridView.scrollsToTop = YES;
-        channelsKKGridView.backgroundColor = [UIColor clearColor];
+        channelsKKGridView.backgroundColor = [UIColor lightGrayColor];
         channelsKKGridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        channelsKKGridView.cellSize = CGSizeMake(180.f, 180.f);
+        channelsKKGridView.cellSize = CGSizeMake(190.f, 185.f);
         channelsKKGridView.cellPadding = CGSizeMake(0.f, 0.f);
         channelsKKGridView.allowsMultipleSelection = NO;
         channelsKKGridView.gridHeaderView = nil;
