@@ -28,7 +28,7 @@
 
 #import "Prefs.h"
 #import "UIDevice+IdentifierAddition.h"
-
+#import "MBProgressHUD.h"
 #endif
 
 
