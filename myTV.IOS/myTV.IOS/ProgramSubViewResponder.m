@@ -9,5 +9,8 @@
 #import "ProgramSubViewResponder.h"
 
 @implementation ProgramSubViewResponder
+@synthesize lblProgramName;
+@synthesize imgProgram;
+@synthesize episodeScrollView;
 
 @end

@@ -9,5 +9,8 @@
 #import "SubViewResponder.h"
 
 @interface ProgramSubViewResponder : SubViewResponder
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblProgramName;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imgProgram;
+@property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *episodeScrollView;
 
 @end
