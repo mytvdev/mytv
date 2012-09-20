@@ -13,6 +13,7 @@
 @interface ProgramSubViewResponder : SubViewResponder <
     UIScrollViewDelegate
     , UITextFieldDelegate
+    , UIAlertViewDelegate
 >
 {
     DataFetcher *programFetcher;

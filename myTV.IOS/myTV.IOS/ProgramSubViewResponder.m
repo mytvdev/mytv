@@ -44,6 +44,7 @@
             if(program != nil && error == nil) {
                 [self.lblPriceOrExpiry setHidden:YES];
                 [self.btnPayOrPlay setHidden:YES];
+                [self.btnPayOrPlay setEnabled:YES];
                 currentprogram = program;
                 
                 lblProgramName.text = (program.Title != nil && program.Title != @"") ? program.Title : @"-";
@@ -216,13 +217,25 @@
 }
 
 -(void) buyProgram {
-    
+    ProgramSubViewResponder *subview = self;
     RSLinkingCallBack callback = ^(Linking *data, NSError *error){
-        if(error == nil && data != nil) {   
-            NSString *progid = @"1";
+        if(error == nil && data != nil) {
+            NSString *pid = [NSString stringWithFormat:@"%d", currentprogram.Id];
+            NSString *bid = [NSString stringWithFormat:@"%d", data.BillingId];
+            [RestService BuyRequest:MyTV_RestServiceUrl Program:pid usingBilling:bid withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSString *status, NSError *error) {
+                if(error == nil && status != nil) {
+                    if([status compare:@"success"] == NSOrderedSame) {
+                        isPurchased = YES;
+                        [self.btnPayOrPlay setImage:[UIImage imageNamed:@"playAll.png"] forState:UIControlStateNormal];
+                        [self.btnPayOrPlay setImage:[UIImage imageNamed:@"playAll-Over.png"] forState:UIControlStateHighlighted];
+                        [self.btnPayOrPlay setHidden:NO];
+                    }
+                }
+                [self.btnPayOrPlay setEnabled:YES];
+            }];
         }
         else {
-            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"You must login with your account first" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"You must login with your account first" delegate:subview cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [message show];
         }
     };
@@ -230,6 +243,10 @@
     [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:callback synchronous:NO];
 }
 
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@ { MyTV_ViewArgument_View: MyTV_View_Login }];
+}
+ 
 
 
 @end
