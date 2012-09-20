@@ -6,15 +6,19 @@
 //  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
 //
 
+#define PageSize ((VODControl_Space + VODControl_Width) * 3)
+
 #import "ProgramSubViewResponder.h"
 
 @implementation ProgramSubViewResponder
 @synthesize lblProgramDescription;
 @synthesize lblProgramName;
 @synthesize imgProgram;
+@synthesize episodeContainerView;
 @synthesize episodeScrollView;
 @synthesize relatedVODScrollView;
 @synthesize mainView;
+@synthesize episodePager;
 @synthesize lblDirector;
 @synthesize lblCast;
 @synthesize lblPresenter;
@@ -23,6 +27,10 @@
 @synthesize lblReleaseDate;
 @synthesize lblAwards;
 @synthesize lblRating;
+
+-(void) viewDidLoad {
+
+}
 
 -(void)bindData:(NSObject *)data {
     NSDictionary *dict = (NSDictionary *)data;
@@ -63,6 +71,7 @@
             [view removeFromSuperview];
         }
         MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.relatedVODScrollView animated:YES];
+        
         relatedVODFetcher = [RestService RequestGetFeaturedVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
             int xPos = VODControl_Space;
             for (ItemBase *vod in array) {
@@ -92,22 +101,52 @@
     }
     MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.episodeScrollView animated:YES];
     programEpisodesFetcher = [RestService RequestGetVOD:MyTV_RestServiceUrl ofProgram:programId withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
-        int xPos = VODControl_Space;
+        int xPos1 = VODControl_Space;
+        int xPos2 = VODControl_Space;
+        int pos = 0;
         for (ItemBase *vod in array) {
             VODControlResponder *responder = [[VODControlResponder alloc] init];
             NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
             UIView *view = [array objectAtIndex:0];
-            view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
-            xPos = xPos + view.frame.size.width + VODControl_Space;
+            if (pos % 2 == 0) {
+                view.frame = CGRectMake(xPos1, 0, view.frame.size.width, view.frame.size.height);
+                xPos1 = xPos1 + view.frame.size.width + VODControl_Space;
+            }
+            else {
+                view.frame = CGRectMake(xPos2, 155, view.frame.size.width, view.frame.size.height);
+                xPos2 = xPos2 + view.frame.size.width + VODControl_Space;
+            }
+            pos++;
             [subview.episodeScrollView addSubview:view];
             if([responder respondsToSelector:@selector(bindData:)]) {
                 [responder performSelector:@selector(bindData:) withObject:vod];
             }
             
+                              
         }
-        subview.episodeScrollView.contentSize = CGSizeMake(xPos, subview.relatedVODScrollView.frame.size.height);
+        subview.episodeScrollView.contentSize = CGSizeMake(xPos1, subview.relatedVODScrollView.frame.size.height);
+        subview.episodeScrollView.delegate = subview;
+        float val = subview.episodeScrollView.contentSize.width / PageSize;
+        subview.episodePager.numberOfPages = [[NSString stringWithFormat:@"%f",  val] integerValue];
         [loader hide:YES];
     }];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+    DLog(@"Scorlling hereee");
+    if(sender == self.episodeScrollView) {
+        int page = floor((self.episodeScrollView.contentOffset.x - PageSize / 2) / PageSize) + 1;
+        self.episodePager.currentPage = page;
+    }
+  
+}
+
+
+- (IBAction)changeEpisodePage:(id)sender {
+    CGRect frame;
+    frame.origin.x = PageSize * self.episodePager.currentPage;
+    frame.origin.y = 0;
+    frame.size = self.episodeScrollView.frame.size;
+    [self.episodeScrollView scrollRectToVisible:frame animated:YES];
+}
 @end

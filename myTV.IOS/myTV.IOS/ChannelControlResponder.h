@@ -12,6 +12,7 @@
 #import "RestService.h"
 
 #define ChannelControl_Space 14
+#define ChannelControl_Width 162
 
 @interface ChannelControlResponder : SubViewResponder
 

@@ -10,7 +10,9 @@
 #import "RestService.h"
 #import "VODControlResponder.h"
 
-@interface ProgramSubViewResponder : SubViewResponder
+@interface ProgramSubViewResponder : SubViewResponder <
+    UIScrollViewDelegate
+>
 {
     DataFetcher *programFetcher;
     DataFetcher *programImageFetcher;
@@ -22,6 +24,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblProgramDescription;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblProgramName;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imgProgram;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *episodeContainerView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *episodeScrollView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *relatedVODScrollView;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblDirector;
@@ -34,5 +37,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblRating;
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIPageControl *episodePager;
+- (IBAction)changeEpisodePage:(id)sender;
 
 @end

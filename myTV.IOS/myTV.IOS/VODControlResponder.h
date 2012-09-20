@@ -11,6 +11,7 @@
 #import "RestService.h"
 
 #define VODControl_Space 14
+#define VODControl_Width 162
 
 @interface VODControlResponder : SubViewResponder
 
