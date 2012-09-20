@@ -2,8 +2,8 @@
 //  myTV_IOS_AppTests.m
 //  myTV.IOS.AppTests
 //
-//  Created by Omar Ayoub-Salloum on 9/6/12.
-//  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
+//  Created by myTV Inc. on 9/6/12.
+//  Copyright (c) 2012 myTV Inc.. All rights reserved.
 //
 
 #import "myTV_IOS_AppTests.h"

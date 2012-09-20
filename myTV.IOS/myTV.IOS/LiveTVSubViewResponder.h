@@ -2,8 +2,8 @@
 //  LiveTVSubViewResponder.h
 //  myTV.IOS.App
 //
-//  Created by Omar Ayoub-Salloum on 9/6/12.
-//  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
+//  Created by myTV Inc. on 9/6/12.
+//  Copyright (c) 2012 myTV Inc.. All rights reserved.
 //
 
 #import "SubViewResponder.h"
@@ -22,5 +22,7 @@
 @property (nonatomic, strong) NSMutableArray *fillerData;
 @property (nonatomic, strong) KKGridView *channelsKKGridView;
 @property (nonatomic, strong) IBOutlet UIView *channelsView;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblChannelName;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblChannelDescripton;
 
 @end

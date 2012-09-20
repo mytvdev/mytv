@@ -2,7 +2,7 @@
 //  MyTVPackage.h
 //  MyTV.IOS
 //
-//  Created by Omar Ayoub-Salloum on 8/31/12.
+//  Created by myTV Inc. on 8/31/12.
 //
 //
 

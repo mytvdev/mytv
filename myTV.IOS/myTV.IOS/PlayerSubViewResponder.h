@@ -2,8 +2,8 @@
 //  PlayerSubViewResponder.h
 //  myTV.IOS
 //
-//  Created by Omar Ayoub-Salloum on 9/14/12.
-//  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
+//  Created by myTV Inc. on 9/14/12.
+//  Copyright (c) 2012 myTV Inc.. All rights reserved.
 //
 
 #import "SubViewResponder.h"

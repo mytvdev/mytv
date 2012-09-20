@@ -3,7 +3,7 @@
 //  myTV.IOS
 //
 //  Created by Johnny on 9/19/12.
-//  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
+//  Copyright (c) 2012 myTV Inc.. All rights reserved.
 //
 
 #import "SubViewResponder.h"

@@ -2,8 +2,8 @@
 //  LiveTVSubViewResponder.m
 //  myTV.IOS.App
 //
-//  Created by Omar Ayoub-Salloum on 9/6/12.
-//  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
+//  Created by myTV Inc. on 9/6/12.
+//  Copyright (c) 2012 myTV Inc.. All rights reserved.
 //
 
 #import "LiveTVSubViewResponder.h"
@@ -17,6 +17,8 @@
 @synthesize channelsKKGridView;
 @synthesize channelsView;
 @synthesize channelFetcher = _channelFetcher;
+@synthesize lblChannelName = _lblChannelName;
+@synthesize lblChannelDescripton = _lblChannelDescripton;
 
 - (void)viewDidLoad
 {
@@ -27,7 +29,7 @@
         channelsKKGridView.dataSource = self;
         channelsKKGridView.delegate = self;
         channelsKKGridView.scrollsToTop = YES;
-        channelsKKGridView.backgroundColor = [UIColor lightGrayColor];
+        channelsKKGridView.backgroundColor = [UIColor blackColor];
         channelsKKGridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         channelsKKGridView.cellSize = CGSizeMake(190.f, 185.f);
         channelsKKGridView.cellPadding = CGSizeMake(0.f, 0.f);
@@ -36,12 +38,7 @@
         channelsKKGridView.gridFooterView = nil;
         
         [self fillChannels];
-        
-        
-        
-        
     }
-    
 }
 
 -(NSUInteger)numberOfSectionsInGridView:(KKGridView *)gridView
