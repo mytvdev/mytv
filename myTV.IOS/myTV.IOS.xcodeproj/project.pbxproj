@@ -86,6 +86,14 @@
 		37ABA8D016006CC700F87280 /* ChannelControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8CF16006CC700F87280 /* ChannelControlResponder.m */; };
 		37B1A9A91602160300687B3E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B1A9A81602160300687B3E /* MediaPlayer.framework */; };
 		37B1A9AC1602161E00687B3E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B1A9AB1602161E00687B3E /* CoreMedia.framework */; };
+		37DBB2F2160B4EA60071F454 /* buyEpisode-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DBB2EA160B4EA60071F454 /* buyEpisode-Over.png */; };
+		37DBB2F3160B4EA60071F454 /* buyEpisode.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DBB2EB160B4EA60071F454 /* buyEpisode.png */; };
+		37DBB2F4160B4EA60071F454 /* buyProgram-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DBB2EC160B4EA60071F454 /* buyProgram-Over.png */; };
+		37DBB2F5160B4EA60071F454 /* buyProgram.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DBB2ED160B4EA60071F454 /* buyProgram.png */; };
+		37DBB2F6160B4EA60071F454 /* play-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DBB2EE160B4EA60071F454 /* play-Over.png */; };
+		37DBB2F7160B4EA60071F454 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DBB2EF160B4EA60071F454 /* play.png */; };
+		37DBB2F8160B4EA60071F454 /* playAll-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DBB2F0160B4EA60071F454 /* playAll-Over.png */; };
+		37DBB2F9160B4EA60071F454 /* playAll.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DBB2F1160B4EA60071F454 /* playAll.png */; };
 		37DF9CD416037FC9004AD66E /* PlayerSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37714A6616032DC5004C71B1 /* PlayerSubView.xib */; };
 		37DF9CD516037FC9004AD66E /* IPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6B15FF2FD500A2EBE7 /* IPhoneViewController.xib */; };
 		37DF9CD616037FC9004AD66E /* CategoriesSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29BBCDE16021F7600600B5E /* CategoriesSubView.xib */; };
@@ -194,6 +202,14 @@
 		37ABA8D31600734F00F87280 /* SubViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubViewDelegate.h; sourceTree = "<group>"; };
 		37B1A9A81602160300687B3E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		37B1A9AB1602161E00687B3E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		37DBB2EA160B4EA60071F454 /* buyEpisode-Over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buyEpisode-Over.png"; sourceTree = "<group>"; };
+		37DBB2EB160B4EA60071F454 /* buyEpisode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyEpisode.png; sourceTree = "<group>"; };
+		37DBB2EC160B4EA60071F454 /* buyProgram-Over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buyProgram-Over.png"; sourceTree = "<group>"; };
+		37DBB2ED160B4EA60071F454 /* buyProgram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyProgram.png; sourceTree = "<group>"; };
+		37DBB2EE160B4EA60071F454 /* play-Over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-Over.png"; sourceTree = "<group>"; };
+		37DBB2EF160B4EA60071F454 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		37DBB2F0160B4EA60071F454 /* playAll-Over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playAll-Over.png"; sourceTree = "<group>"; };
+		37DBB2F1160B4EA60071F454 /* playAll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playAll.png; sourceTree = "<group>"; };
 		B203A4D3160382E1003D49D3 /* KKDemoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDemoCell.h; sourceTree = "<group>"; };
 		B203A4D4160382E1003D49D3 /* KKDemoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDemoCell.m; sourceTree = "<group>"; };
 		B22A823216088C0B00B9F63C /* KKChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKChannelCell.h; sourceTree = "<group>"; };
@@ -622,6 +638,14 @@
 		B2C79E4615FF2FD500A2EBE7 /* ipadsd */ = {
 			isa = PBXGroup;
 			children = (
+				37DBB2EA160B4EA60071F454 /* buyEpisode-Over.png */,
+				37DBB2EB160B4EA60071F454 /* buyEpisode.png */,
+				37DBB2EC160B4EA60071F454 /* buyProgram-Over.png */,
+				37DBB2ED160B4EA60071F454 /* buyProgram.png */,
+				37DBB2EE160B4EA60071F454 /* play-Over.png */,
+				37DBB2EF160B4EA60071F454 /* play.png */,
+				37DBB2F0160B4EA60071F454 /* playAll-Over.png */,
+				37DBB2F1160B4EA60071F454 /* playAll.png */,
 				B2C79E4715FF2FD500A2EBE7 /* background.jpg */,
 				B2C79E4815FF2FD500A2EBE7 /* catalog-Over.jpg */,
 				B2C79E4915FF2FD500A2EBE7 /* catalog.jpg */,
@@ -823,6 +847,14 @@
 				37886EB8160751DB0094F4E2 /* ProgramSubView.xib in Resources */,
 				37886EBD1607520E0094F4E2 /* EpisodeSubView.xib in Resources */,
 				B2BCEA081609F50F000AE7F7 /* VODControl.xib in Resources */,
+				37DBB2F2160B4EA60071F454 /* buyEpisode-Over.png in Resources */,
+				37DBB2F3160B4EA60071F454 /* buyEpisode.png in Resources */,
+				37DBB2F4160B4EA60071F454 /* buyProgram-Over.png in Resources */,
+				37DBB2F5160B4EA60071F454 /* buyProgram.png in Resources */,
+				37DBB2F6160B4EA60071F454 /* play-Over.png in Resources */,
+				37DBB2F7160B4EA60071F454 /* play.png in Resources */,
+				37DBB2F8160B4EA60071F454 /* playAll-Over.png in Resources */,
+				37DBB2F9160B4EA60071F454 /* playAll.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

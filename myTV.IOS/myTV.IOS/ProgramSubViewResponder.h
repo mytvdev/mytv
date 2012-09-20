@@ -12,15 +12,22 @@
 
 @interface ProgramSubViewResponder : SubViewResponder <
     UIScrollViewDelegate
+    , UITextFieldDelegate
 >
 {
     DataFetcher *programFetcher;
     DataFetcher *programImageFetcher;
     DataFetcher *relatedVODFetcher;
     DataFetcher *programEpisodesFetcher;
-    BOOL hasLoadedRelatedData; 
+    BOOL hasLoadedRelatedData;
+    MyTVProgram *currentprogram;
+    BOOL isPurchased;
 }
 
+
+@property (unsafe_unretained, nonatomic) IBOutlet UITextField *txtPinCode;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblPriceOrExpiry;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *btnPayOrPlay;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblProgramDescription;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblProgramName;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imgProgram;
@@ -38,6 +45,8 @@
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIPageControl *episodePager;
+
 - (IBAction)changeEpisodePage:(id)sender;
+- (IBAction)playOrBuyProgram:(id)sender;
 
 @end

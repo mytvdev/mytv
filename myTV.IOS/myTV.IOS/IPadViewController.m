@@ -180,4 +180,8 @@
     [self.categoriesCloseButton setHidden:YES];
 }
 
+-(BOOL) disablesAutomaticKeyboardDismissal {
+    return NO;
+}
+
 @end

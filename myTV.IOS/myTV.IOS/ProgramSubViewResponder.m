@@ -11,6 +11,9 @@
 #import "ProgramSubViewResponder.h"
 
 @implementation ProgramSubViewResponder
+@synthesize txtPinCode;
+@synthesize lblPriceOrExpiry;
+@synthesize btnPayOrPlay;
 @synthesize lblProgramDescription;
 @synthesize lblProgramName;
 @synthesize imgProgram;
@@ -39,6 +42,10 @@
         [MBProgressHUD showHUDAddedTo:self.mainView animated:YES];
         programFetcher = [RestService RequestGetProgram:MyTV_RestServiceUrl ofId:idvalue withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(MyTVProgram *program, NSError *error){
             if(program != nil && error == nil) {
+                [self.lblPriceOrExpiry setHidden:YES];
+                [self.btnPayOrPlay setHidden:YES];
+                currentprogram = program;
+                
                 lblProgramName.text = (program.Title != nil && program.Title != @"") ? program.Title : @"-";
                 lblProgramDescription.text = (program.Description != nil && program.Description != @"") ? program.Description : @"-";
                 lblDirector.text = (program.Director != nil && program.Director != @"") ? program.Director : @"-";
@@ -57,6 +64,23 @@
                 }];
                 [self fillRelatedVOD:idvalue];
                 [self fillProgramEpisodes:idvalue];
+                [RestService RequestIsPurchased:MyTV_RestServiceUrl thisProgram:idvalue withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(PurchaseInformation* pi, NSError *error){
+                    if(error == nil && pi != nil && pi.isPurchased == YES) {
+                        [self.btnPayOrPlay setImage:[UIImage imageNamed:@"playAll.png"] forState:UIControlStateNormal];
+                        [self.btnPayOrPlay setImage:[UIImage imageNamed:@"playAll-Over.png"] forState:UIControlStateHighlighted];
+                        [self.btnPayOrPlay setHidden:NO];
+                        isPurchased = YES;
+                    }
+                    else {
+                        isPurchased = NO;
+                        if ([program.Price floatValue] > 0) {
+                            [self.btnPayOrPlay setImage:[UIImage imageNamed:@"buyProgram.png"] forState:UIControlStateNormal];
+                            [self.btnPayOrPlay setImage:[UIImage imageNamed:@"buyProgram-Over.png"] forState:UIControlStateHighlighted];
+                            [self.btnPayOrPlay setHidden:NO];
+                        }
+                    }
+                    
+                }];
             }
             [MBProgressHUD hideHUDForView:self.mainView animated:NO];
         }];
@@ -126,6 +150,7 @@
         }
         subview.episodeScrollView.contentSize = CGSizeMake(xPos1, subview.relatedVODScrollView.frame.size.height);
         subview.episodeScrollView.delegate = subview;
+        subview.txtPinCode.delegate = subview;
         float val = subview.episodeScrollView.contentSize.width / PageSize;
         subview.episodePager.numberOfPages = [[NSString stringWithFormat:@"%f",  val] integerValue];
         [loader hide:YES];
@@ -133,7 +158,6 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
-    DLog(@"Scorlling hereee");
     if(sender == self.episodeScrollView) {
         int page = floor((self.episodeScrollView.contentOffset.x - PageSize / 2) / PageSize) + 1;
         self.episodePager.currentPage = page;
@@ -149,4 +173,63 @@
     frame.size = self.episodeScrollView.frame.size;
     [self.episodeScrollView scrollRectToVisible:frame animated:YES];
 }
+
+- (IBAction)playOrBuyProgram:(id)sender {
+    [btnPayOrPlay setHidden:YES];
+    [txtPinCode setHidden:NO];
+    [txtPinCode becomeFirstResponder];
+}
+
+-(void) textFieldDidEndEditing:(UITextField *)textField {
+    if(textField == self.txtPinCode) {
+        if (txtPinCode.isFirstResponder) {
+            [textField resignFirstResponder];
+            [txtPinCode setHidden:YES];
+            [btnPayOrPlay setHidden:NO];
+        }
+    }
+}
+-(BOOL) textFieldShouldEndEditing:(UITextField *)textField {
+    if (textField == self.txtPinCode) {
+        [txtPinCode setHidden:YES];
+        [btnPayOrPlay setHidden:NO];
+        return  YES;
+    }
+    return NO;
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.txtPinCode) {
+        [textField resignFirstResponder];
+        [btnPayOrPlay setEnabled:NO];
+        if(isPurchased) {
+            //[self playcode]
+        }
+        else {
+            [self buyProgram];
+        }
+        
+        
+        return YES;
+    }
+    return NO;
+}
+
+-(void) buyProgram {
+    
+    RSLinkingCallBack callback = ^(Linking *data, NSError *error){
+        if(error == nil && data != nil) {   
+            NSString *progid = @"1";
+        }
+        else {
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"You must login with your account first" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [message show];
+        }
+    };
+    
+    [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:callback synchronous:NO];
+}
+
+
+
 @end
