@@ -715,6 +715,7 @@
     TBXMLElement *xmlLanguage = [TBXML childElementNamed:@"language" parentElement:item];
     TBXMLElement *xmlProgramPurchased = [TBXML childElementNamed:@"PackagePurchased" parentElement:item];
     TBXMLElement *xmlCanBuyEpisode = [TBXML childElementNamed:@"CanBuyEpisode" parentElement:item];
+    TBXMLElement *xmlProgramTitle = [TBXML childElementNamed:@"ProgramTitle" parentElement:item];
     
     NSString *type = [TBXML textForElement:[TBXML childElementNamed:@"type" parentElement:item]];
     
@@ -731,6 +732,7 @@
         video.Rating = [TBXML textForElement:xmlRating];
         video.Language = [TBXML textForElement:xmlLanguage];
         video.CanBuyEpisode = [TBXML textForElement:xmlCanBuyEpisode];
+        video.ProgramTitle = [TBXML textForElement:xmlProgramTitle];
         
         return video;
     }

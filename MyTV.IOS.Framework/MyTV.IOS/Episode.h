@@ -12,7 +12,7 @@
 @interface Episode : ItemBase
 
 
-@property NSString *Duration, *Duration2, *Director, *Guest, *Category, *Price, *ProgramPrice, *Rating, *ProgramId, *ReleaseDate, *ExpiresIn, *ProgramExpiresIn, *ProgramPurchased, *CanBuyEpisode, *TrailerFileName, *Presenter, *Thumbnail, *Language;
+@property NSString *Duration, *Duration2, *Director, *Guest, *Category, *Price, *ProgramPrice, *Rating, *ProgramId, *ReleaseDate, *ExpiresIn, *ProgramExpiresIn, *ProgramPurchased, *CanBuyEpisode, *TrailerFileName, *Presenter, *Thumbnail, *Language, *ProgramTitle;
 
 
 @end
