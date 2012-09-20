@@ -23,9 +23,6 @@
     _fillerData = [[NSMutableArray alloc] init];
     
     if(!hasLoadedChannelsData) {
-        [self fillChannels];
-        
-        //channelsKKGridView = [[KKGridView alloc] initWithFrame:self.channelsView.bounds];
         channelsKKGridView = [[KKGridView alloc] initWithFrame:CGRectMake(20, 20, 970, 550)];
         channelsKKGridView.dataSource = self;
         channelsKKGridView.delegate = self;
@@ -38,13 +35,11 @@
         channelsKKGridView.gridHeaderView = nil;
         channelsKKGridView.gridFooterView = nil;
         
-        [channelsKKGridView performSelectorOnMainThread:@selector(reloadData)
-                                               withObject:nil
-                                            waitUntilDone:NO];
+        [self fillChannels];
         
         
-        [self.channelsView addSubview:channelsKKGridView];
-        hasLoadedChannelsData = YES;
+        
+        
     }
     
 }
@@ -87,7 +82,10 @@
                     }
                     [_fillerData addObject:array];
                 }
-            } synchronous:YES];
+                [channelsKKGridView reloadData];
+                [self.channelsView addSubview:channelsKKGridView];
+                hasLoadedChannelsData = YES;
+            } synchronous:NO];
         }
         else {
             [RestService RequestGetAllChannels:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *channels, NSError *error)
@@ -99,10 +97,13 @@
                     }
                     [_fillerData addObject:array];
                 }
-            } synchronous:YES];
+                [channelsKKGridView reloadData];
+                [self.channelsView addSubview:channelsKKGridView];
+                hasLoadedChannelsData = YES;
+            } synchronous:NO];
         }
         [MBProgressHUD hideHUDForView:self.channelsView animated:YES];
-    } synchronous:YES];
+    } synchronous:NO];
 }
 
 @end

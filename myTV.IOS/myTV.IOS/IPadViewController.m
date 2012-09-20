@@ -164,15 +164,15 @@
     [self.categoriesCloseButton setHidden:NO];
     [self.categoriesSubView setHidden:NO];
         
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     //hud.mode = MBProgressHUDModeAnnularDeterminate;
-    hud.labelText = @"Retreiving categories...";
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+    //hud.labelText = @"Retreiving categories...";
+    //dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        });
-    });
+        //dispatch_async(dispatch_get_main_queue(), ^{
+            //[MBProgressHUD hideHUDForView:self.view animated:YES];
+        //});
+    //});
 }
 
 - (IBAction)goToCloseCategories:(id)sender {

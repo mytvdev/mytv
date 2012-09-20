@@ -23,8 +23,6 @@
     _fillerData = [[NSMutableArray alloc] init];
     
     if(!hasLoadedMyVODData) {
-        [self fillMyVOD];
-        
         myvodKKGridView = [[KKGridView alloc] initWithFrame:self.myvodView.bounds];
         myvodKKGridView.dataSource = self;
         myvodKKGridView.delegate = self;
@@ -37,13 +35,7 @@
         myvodKKGridView.gridHeaderView = nil;
         myvodKKGridView.gridFooterView = nil;
         
-        [myvodKKGridView performSelectorOnMainThread:@selector(reloadData)
-                                             withObject:nil
-                                          waitUntilDone:NO];
-        
-        
-        [self.myvodView addSubview:myvodKKGridView];
-        hasLoadedMyVODData = YES;
+        [self fillMyVOD];
     }
 }
 
@@ -83,9 +75,11 @@
                  }
                  [_fillerData addObject:array];
              }
+             [myvodKKGridView reloadData];
+             [self.myvodView addSubview:myvodKKGridView];
              hasLoadedMyVODData = YES;
              [MBProgressHUD hideHUDForView:self.myvodView animated:NO];
-         } synchronous:YES];
+         } synchronous:NO];
     }
 }
 

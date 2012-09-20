@@ -21,10 +21,7 @@
 {
     _fillerData = [[NSMutableArray alloc] init];
     
-    if(!hasLoadedGenresData) {        
-        [self fillGenres];
-    
-    
+    if(!hasLoadedGenresData) {
         categoriesKKGridView = [[KKGridView alloc] initWithFrame:self.categoriesSubView.bounds];
         categoriesKKGridView.dataSource = self;
         categoriesKKGridView.delegate = self;
@@ -37,13 +34,7 @@
         categoriesKKGridView.gridHeaderView = nil;
         categoriesKKGridView.gridFooterView = nil;
         
-        [categoriesKKGridView performSelectorOnMainThread:@selector(reloadData)
-                                         withObject:nil
-                                      waitUntilDone:NO];
-        
-
-        [self.categoriesSubView addSubview:categoriesKKGridView];
-        hasLoadedGenresData = YES;
+        [self fillGenres2];
     }
 }
 
@@ -81,6 +72,9 @@
                 }
                 [_fillerData addObject:array];
             }
+            [categoriesKKGridView reloadData];
+            [self.categoriesSubView addSubview:categoriesKKGridView];
+            hasLoadedGenresData = YES;
             [MBProgressHUD hideHUDForView:self.categoriesSubView animated:YES];
         }];
     }
