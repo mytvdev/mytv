@@ -7,7 +7,20 @@
 //
 
 #import "SubViewResponder.h"
+#import "RestService.h"
+@interface LoginSubViewResponder : SubViewResponder <
+ UIAlertViewDelegate
+>
+{
+    UIAlertView *alertError;
+    UIAlertView *alertSuccess;
+    DataFetcher *codeFetcher;
+    DataFetcher *linkingFetcher;
+}
 
-@interface LoginSubViewResponder : SubViewResponder
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *mainView;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblCode;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *btnNewCode;
+- (IBAction)getNewCode:(id)sender;
 
 @end
