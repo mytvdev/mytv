@@ -16,6 +16,7 @@
 - (id)init {
     self = [super init];
     logicItems = [[NSMutableDictionary alloc] init];
+    navigationData = [[NSMutableArray alloc] init];
     return self;
 }
 
@@ -46,6 +47,9 @@
                     [alert show];
                 }
                 else {
+                    if([viewName compare:@"categories"] != NSOrderedSame) {
+                        [navigationData addObject:note.userInfo];
+                    }
                     if(logic.activeItem != item) {
                         if(item.viewInstance == nil) {
                             item.responderInstance = [[item.subViewResponder alloc] init];
@@ -75,6 +79,7 @@
                         }
                         else
                         {
+                            
                             if([[logic.mainview subviews] count] > 0) {
                                 [[[logic.mainview subviews] objectAtIndex:0] removeFromSuperview];
                             }
@@ -96,14 +101,19 @@
             
         }];
         
-        
+        navBackObserver = [[NSNotificationCenter defaultCenter] addObserverForName:MyTV_Event_PopView object:nil queue:nil usingBlock:^(NSNotification *note){
+            [navigationData removeLastObject];
+            NSDictionary *data = [navigationData objectAtIndex:([navigationData count] - 1)];
+            [navigationData removeObject:data];
+            [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:data];
+        }];
     }
 }
 
 -(void) dealloc {
     if(navigationObserver != nil) {
         [[NSNotificationCenter defaultCenter] removeObserver:navigationObserver];
-        navigationObserver = nil;
+        [[NSNotificationCenter defaultCenter] removeObject:navBackObserver];
     }
 }
 

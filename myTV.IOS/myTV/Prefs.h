@@ -23,6 +23,7 @@ extern NSString * const MyTV_View_Episode;
 extern NSString * const MyTV_ViewArgument_View;
 extern NSString * const MyTV_ViewArgument_Id;
 extern NSString * const MyTV_Event_ChangeView;
+extern NSString * const MyTV_Event_PopView;
 
 @interface Prefs : NSObject
 

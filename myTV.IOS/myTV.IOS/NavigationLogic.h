@@ -15,6 +15,8 @@
     NSMutableArray *nibs;
     BOOL isListening;
     id navigationObserver;
+    id navBackObserver;
+    NSMutableArray *navigationData;
 }
 
 @property UIView *mainview;

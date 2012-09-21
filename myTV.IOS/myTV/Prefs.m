@@ -22,7 +22,7 @@ NSString * const MyTV_View_Episode = @"episode";
 NSString * const MyTV_ViewArgument_View = @"view";
 NSString * const MyTV_ViewArgument_Id = @"id";
 NSString * const MyTV_Event_ChangeView = @"ChangeMainSubView";
-
+NSString * const MyTV_Event_PopView = @"ChangeMainSubViewBack";
 @implementation Prefs
 
 @end
