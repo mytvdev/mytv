@@ -11,4 +11,6 @@
 
 @interface Genre : ItemBase
 
+@property (nonatomic, strong) NSArray *programTypes;
+
 @end

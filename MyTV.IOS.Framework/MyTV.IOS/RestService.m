@@ -1518,36 +1518,116 @@
                         callback(NULL, NULL);
                     }
                     else {
+                        Genre *genre = [Genre new];
                         
                         NSMutableArray* genres = [NSMutableArray new];
                         
                         TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:root];
                         if(item != NULL) {
                             do {
-                                Genre *genre = [Genre new];
+                                
                                 TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
                                 TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
                                 TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
-                                if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"genre"] == NSOrderedSame) {
+                                TBXMLElement *xmlProgramTypes = [TBXML childElementNamed:@"category" parentElement:item];
+                                if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"genre"] == NSOrderedSame)
+                                {
+                                    genre = [Genre new];
+                                    
                                     [genre setId:[[TBXML textForElement:xmlId] intValue]];
                                     genre.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
                                     genre.Logo = [TBXML textForElement:xmlThumbnail];
-                                    [genres addObject:genre];                                    
+                                    genre.Description = [TBXML textForElement:xmlProgramTypes];
+                                    genre.programTypes = [RestService FetchGenreProgramTypes:xmlProgramTypes];
+                                    [genres addObject:genre];
                                 }
+                                
                                 item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
                             } while (item != NULL);
                         }
                         
                         callback([NSArray arrayWithArray:genres], NULL);
-                        
                     }
                 }
             }
         }
     }];
-    
 }
 
++(NSMutableArray *)FetchGenreProgramTypes:(TBXMLElement *)element
+{
+    NSMutableArray* programtypes = [NSMutableArray new];
+    ProgramType *programtype = [ProgramType new];
+    
+    if(element != NULL)
+    {
+        TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:element];
+        if (item != NULL) {
+            do {
+                
+                TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
+                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
+                TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
+                TBXMLElement *xmlPrograms = [TBXML childElementNamed:@"category" parentElement:item];
+                
+                if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"programtype"] == NSOrderedSame)
+                {
+                    programtype = [ProgramType new];
+                    [programtype setId:[[TBXML textForElement:xmlId] intValue]];
+                    programtype.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                    programtype.Logo = [TBXML textForElement:xmlThumbnail];
+                    programtype.programs = [RestService FetchProgramTypePrograms:xmlPrograms];
+                    [programtypes addObject:programtype];
+                }
+                
+                item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
+            } while (item != NULL);
+        }
+    }
+    
+    return programtypes;
+}
+
++(NSMutableArray *)FetchProgramTypePrograms:(TBXMLElement *)element
+{
+    NSMutableArray* programs = [NSMutableArray new];
+    MyTVProgram *program = [MyTVProgram new];
+    Episode *episode = [Episode new];
+    
+    if(element != NULL)
+    {
+        TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:element];
+        if (item != NULL) {
+            do {
+                
+                TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
+                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
+                TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
+                
+                if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"program"] == NSOrderedSame)
+                {
+                    program = [MyTVProgram new];
+                    [program setId:[[TBXML textForElement:xmlId] intValue]];
+                    program.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                    program.Logo = [TBXML textForElement:xmlThumbnail];
+                    [programs addObject:program];
+                }
+                else if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"episode"] == NSOrderedSame)
+                {
+                    episode = [Episode new];
+                    [episode setId:[[TBXML textForElement:xmlId] intValue]];
+                    episode.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                    episode.Logo = [TBXML textForElement:xmlThumbnail];
+                    [programs addObject:episode];
+                }
+                
+                item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
+            } while (item != NULL);
+        }
+    }
+    
+    return programs;
+}
 
 +(DataFetcher *)RequestProgramTypes:(NSString *)baseUrl ofGenre:(NSString *)genreId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenres)callback {
     
@@ -1691,7 +1771,6 @@
                         }
                         
                         callback([NSArray arrayWithArray:packages], NULL);
-                        
                     }
                 }
             }
@@ -1735,7 +1814,7 @@
                                 TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
                                 TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
                                 TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
-                                if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"genre"] == NSOrderedSame) {
+                                if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"country"] == NSOrderedSame) {
                                     [genre setId:[[TBXML textForElement:xmlId] intValue]];
                                     genre.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
                                     genre.Logo = [TBXML textForElement:xmlThumbnail];

@@ -11,5 +11,6 @@
 @implementation Genre
 
 @synthesize Id, Title, Logo;
+@synthesize programTypes;
 
 @end

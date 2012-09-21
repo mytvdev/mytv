@@ -80,8 +80,12 @@
     item = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[CategoriesSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"catgoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"catgoriesOpen-Over.png"]];
     [self.navigationLogic addNavigationItem:item];
     
+    item = [[NavigationItem alloc] initWithKey:@"countries" forNib:@"CountriesSubView" usingClass:[CountriesSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"countriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"countriesOpen-Over.png"]];
+    [self.navigationLogic addNavigationItem:item];
+    
     self.navigationLogic.mainview = self.mainSubView;
     self.navigationLogic.categoriesMainview = self.categoriesSubView;
+    self.navigationLogic.countriesMainview = self.countriesSubView;
     
     [self.navigationLogic startHandlingNavigation];
     

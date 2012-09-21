@@ -12,6 +12,7 @@
 
 @synthesize mainview;
 @synthesize categoriesMainview;
+@synthesize countriesMainview;
 
 - (id)init {
     self = [super init];
@@ -67,12 +68,23 @@
                         if ([viewName isEqualToString:@"categories"])
                         {
                             [logic.categoriesMainview setHidden:NO];
-                            //[self.categoriesCloseButton setHidden:NO];
                             
                             if([[logic.categoriesMainview subviews] count] > 0) {
                                 [[[logic.categoriesMainview subviews] objectAtIndex:0] removeFromSuperview];
                             }
                             [logic.categoriesMainview addSubview:item.viewInstance];
+                            if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
+                                [item.responderInstance performSelector:@selector(viewDidLoad)];
+                            }
+                        }
+                        else if ([viewName isEqualToString:@"countries"])
+                        {
+                            [logic.countriesMainview setHidden:NO];
+                            
+                            if([[logic.countriesMainview subviews] count] > 0) {
+                                [[[logic.countriesMainview subviews] objectAtIndex:0] removeFromSuperview];
+                            }
+                            [logic.countriesMainview addSubview:item.viewInstance];
                             if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
                                 [item.responderInstance performSelector:@selector(viewDidLoad)];
                             }

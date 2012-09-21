@@ -17,6 +17,7 @@
 #import "CategoriesSubViewResponder.h"
 #import "ProgramSubViewResponder.h"
 #import "EpisodeSubViewResponder.h"
+#import "CountriesSubViewResponder.h"
 
 @protocol IPadViews <NSObject>
 @end

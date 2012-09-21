@@ -21,8 +21,10 @@
         _label.backgroundColor = [UIColor clearColor];
         _label.textAlignment = UITextAlignmentCenter;
         _label.textColor = [UIColor whiteColor];
-        _label.numberOfLines = 1;
+        _label.numberOfLines = 2;
         _label.font = [UIFont fontWithName:@"Arial" size:12];
+        _label.lineBreakMode = UILineBreakModeWordWrap;
+
         _label.adjustsFontSizeToFitWidth = YES;
         [self.contentView addSubview:_label];
         
