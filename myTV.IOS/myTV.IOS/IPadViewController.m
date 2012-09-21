@@ -87,10 +87,11 @@
     
     [self.categoriesSubView setHidden:YES];
     [self.categoriesCloseButton setHidden:YES];
+    [self.countriesSubView setHidden:YES];
+    [self.countriesCloseButton setHidden:YES];
     
     //load homeview by default
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"home" }];
-    
     
     self.player = [[MyTVPlayer alloc] init];
     self.player.mainView = self.rootView;

@@ -108,6 +108,7 @@
 		37DF9CDF16037FC9004AD66E /* ChannelControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37ABA8D116006CE200F87280 /* ChannelControl.xib */; };
 		B203A4D5160382E1003D49D3 /* KKDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B203A4D4160382E1003D49D3 /* KKDemoCell.m */; };
 		B22A823416088C0B00B9F63C /* KKChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B22A823316088C0B00B9F63C /* KKChannelCell.m */; };
+		B2630A1A160C533B00D56704 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = B2630A19160C533B00D56704 /* Country.m */; };
 		B2746CC216084E4C00C70126 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B2746CC116084E4C00C70126 /* MBProgressHUD.m */; };
 		B29BBCE216021F7600600B5E /* CategoriesSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B29BBCE016021F7600600B5E /* CategoriesSubViewResponder.m */; };
 		B29BBCE416021FBD00600B5E /* MyVODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF91160211AB0040B206 /* MyVODSubViewResponder.m */; };
@@ -214,6 +215,8 @@
 		B203A4D4160382E1003D49D3 /* KKDemoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDemoCell.m; sourceTree = "<group>"; };
 		B22A823216088C0B00B9F63C /* KKChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKChannelCell.h; sourceTree = "<group>"; };
 		B22A823316088C0B00B9F63C /* KKChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKChannelCell.m; sourceTree = "<group>"; };
+		B2630A18160C533B00D56704 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		B2630A19160C533B00D56704 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
 		B2746CC016084E4C00C70126 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		B2746CC116084E4C00C70126 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B29BBCDE16021F7600600B5E /* CategoriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesSubView.xib; sourceTree = "<group>"; };
@@ -566,6 +569,8 @@
 				37ABA8BA16006BED00F87280 /* TBXML+HTTP.m */,
 				37ABA8BB16006BED00F87280 /* VODPackage.h */,
 				37ABA8BC16006BED00F87280 /* VODPackage.m */,
+				B2630A18160C533B00D56704 /* Country.h */,
+				B2630A19160C533B00D56704 /* Country.m */,
 			);
 			name = MyTV.IOS.Framework;
 			sourceTree = "<group>";
@@ -936,6 +941,7 @@
 				B2C5D01D1608D6D2008A27AB /* KKEpisodeCell.m in Sources */,
 				B2AD45BD1609EB2600A4B240 /* LoadingView.m in Sources */,
 				B2BCEA0C1609F8E3000AE7F7 /* MyVODControlResponder.m in Sources */,
+				B2630A1A160C533B00D56704 /* Country.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
