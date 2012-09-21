@@ -31,6 +31,9 @@
 @synthesize categoriesButton;
 @synthesize categoriesCloseButton;
 @synthesize categoriesSubView;
+@synthesize countriesButton;
+@synthesize countriesCloseButton;
+@synthesize countriesSubView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -108,6 +111,9 @@
     [self setCategoriesSubView:nil];
     [self setCategoriesButton:nil];
     [self setCategoriesCloseButton:nil];
+    [self setCountriesButton:nil];
+    [self setCountriesCloseButton:nil];
+    [self setCountriesSubView:nil];
     [super viewDidUnload];
 }
 
@@ -117,30 +123,18 @@
 }
 
 - (IBAction)goHome:(id)sender {
-    //LoadingView *loadingView = [LoadingView loadingViewInView:[self.view.window.subviews objectAtIndex:0]];
-	//[loadingView performSelector:@selector(removeView) withObject:nil];
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_Home }];
 }
 
 - (IBAction)goToVodCatalog:(id)sender {
-    //LoadingView *loadingView = [LoadingView loadingViewInView:[self.view.window.subviews objectAtIndex:0]];
-	//[loadingView performSelector:@selector(removeView) withObject:nil];
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_VODCatalog}];
 }
 
 - (IBAction)goToMyVOD:(id)sender {
-    //LoadingView *loadingView = [LoadingView loadingViewInView:[self.view.window.subviews objectAtIndex:0]];
-	//[loadingView performSelector:@selector(removeView) withObject:nil afterDelay:5.0];
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_MyVOD }];
 }
 
 - (IBAction)goToHotDeals:(id)sender {
-    //LoadingView *loadingView = [LoadingView loadingViewInView:[self.view.window.subviews objectAtIndex:0]];
-	//[loadingView performSelector:@selector(removeView) withObject:nil afterDelay:5.0];
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View :  MyTV_View_HotDeals}];
 }
 
@@ -154,9 +148,6 @@
 }
 
 - (IBAction)goToLive:(id)sender {
-    //LoadingView *loadingView = [LoadingView loadingViewInView:[self.view.window.subviews objectAtIndex:0]];
-	//[loadingView performSelector:@selector(removeView) withObject:nil afterDelay:5.0];
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_LiveTV }];
 }
 
@@ -164,20 +155,24 @@
     [self.categoriesCloseButton setHidden:NO];
     [self.categoriesSubView setHidden:NO];
         
-    //MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    //hud.mode = MBProgressHUDModeAnnularDeterminate;
-    //hud.labelText = @"Retreiving categories...";
-    //dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
-        //dispatch_async(dispatch_get_main_queue(), ^{
-            //[MBProgressHUD hideHUDForView:self.view animated:YES];
-        //});
-    //});
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
 }
 
 - (IBAction)goToCloseCategories:(id)sender {
     [self.categoriesSubView setHidden:YES];
     [self.categoriesCloseButton setHidden:YES];
+}
+
+- (IBAction)goToCountries:(id)sender {
+    [self.countriesCloseButton setHidden:NO];
+    [self.countriesSubView setHidden:NO];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"countries" }];
+}
+
+- (IBAction)goToCloseCountries:(id)sender {
+    [self.countriesSubView setHidden:YES];
+    [self.countriesCloseButton setHidden:YES];
 }
 
 -(BOOL) disablesAutomaticKeyboardDismissal {
