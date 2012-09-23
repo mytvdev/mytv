@@ -53,7 +53,8 @@
 - (KKGridViewCell *)gridView:(KKGridView *)gridView cellForItemAtIndexPath:(KKIndexPath *)indexPath
 {
     KKDemoCell *cell = [KKDemoCell cellForGridView:gridView];
-    cell.label.text = [[_fillerData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
+    //cell.label.text = [[_fillerData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
+    [cell.button setTitle:[[_fillerData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index] forState:UIControlStateNormal];
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
     return cell;

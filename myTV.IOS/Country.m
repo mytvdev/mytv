@@ -11,5 +11,6 @@
 @implementation Country
 
 @synthesize Id, Title, Logo;
+@synthesize genres;
 
 @end

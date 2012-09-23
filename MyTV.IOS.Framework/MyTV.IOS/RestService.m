@@ -1810,15 +1810,17 @@
                         TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:root];
                         if(item != NULL) {
                             do {
-                                Country *genre = [Country new];
+                                Country *country = [Country new];
                                 TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
                                 TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
                                 TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
+                                TBXMLElement *xmlGenres = [TBXML childElementNamed:@"category" parentElement:item];
                                 if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"country"] == NSOrderedSame) {
-                                    [genre setId:[[TBXML textForElement:xmlId] intValue]];
-                                    genre.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
-                                    genre.Logo = [TBXML textForElement:xmlThumbnail];
-                                    [genres addObject:genre];
+                                    [country setId:[[TBXML textForElement:xmlId] intValue]];
+                                    country.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                                    country.Logo = [TBXML textForElement:xmlThumbnail];
+                                    country.genres = [RestService FetchCountryGenres:xmlGenres];
+                                    [genres addObject:country];
                                 }
                                 item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
                             } while (item != NULL);
@@ -1831,7 +1833,40 @@
             }
         }
     }];
+}
+
++(NSMutableArray *)FetchCountryGenres:(TBXMLElement *)element
+{
+    NSMutableArray* genres = [NSMutableArray new];
+    Genre *genre = [Genre new];
     
+    if(element != NULL)
+    {
+        TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:element];
+        if (item != NULL) {
+            do {
+                
+                TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
+                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
+                TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
+                TBXMLElement *xmlProgramTypes = [TBXML childElementNamed:@"category" parentElement:item];
+                
+                if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"genre"] == NSOrderedSame)
+                {
+                    genre = [Genre new];
+                    [genre setId:[[TBXML textForElement:xmlId] intValue]];
+                    genre.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                    genre.Logo = [TBXML textForElement:xmlThumbnail];
+                    genre.programTypes = [RestService FetchGenreProgramTypes:xmlProgramTypes];
+                    [genres addObject:genre];
+                }
+                
+                item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
+            } while (item != NULL);
+        }
+    }
+    
+    return genres;
 }
 
 @end

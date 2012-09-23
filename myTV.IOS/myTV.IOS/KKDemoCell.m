@@ -3,7 +3,7 @@
 //  myTV.IOS
 //
 //  Created by Johnny on 9/14/12.
-//  Copyright (c) 2012 myTV Inc.. All rights reserved.
+//  Copyright (c) 2012 myTV Inc. All rights reserved.
 //
 
 #import "KKDemoCell.h"
@@ -12,28 +12,46 @@
 
 @synthesize label = _label;
 @synthesize button = _button;
+@synthesize cSubView;
+
+@synthesize delegate = _delegate;
+@synthesize indexCellPath = _indexCellPath;
+
+@synthesize isBackButton;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier
 {
     if ((self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]))
     {
-        _label = [[UILabel alloc] initWithFrame:CGRectMake(1.f, 1.f, self.frame.size.width, 20.f)];
-        _label.backgroundColor = [UIColor clearColor];
-        _label.textAlignment = UITextAlignmentCenter;
-        _label.textColor = [UIColor whiteColor];
-        _label.numberOfLines = 2;
-        _label.font = [UIFont fontWithName:@"Arial" size:12];
-        _label.lineBreakMode = UILineBreakModeWordWrap;
-
-        _label.adjustsFontSizeToFitWidth = YES;
-        [self.contentView addSubview:_label];
-        
-        _button = [[UIButton alloc] initWithFrame:CGRectMake(1.f, 1.f, self.frame.size.width, 20.f)];
-        _button.backgroundColor = [UIColor clearColor];
+        if (isBackButton) {
+            _button = [[UIButton alloc] initWithFrame:CGRectMake(0.f, 0.f, 24.f, 24.f)];
+            _button.backgroundColor = [UIColor clearColor];
+            _button.titleLabel.font = [UIFont fontWithName:@"Arial" size:12];
+            [_button addTarget:self action:@selector(ReloadGenres:) forControlEvents:UIControlEventTouchDown];
+            //UIImage *backButtonImage = [UIImage imageNamed:@"backward.png"];
+            //[_button setBackgroundImage:backButtonImage forState:UIControlStateNormal];
+        }
+        else
+        {
+            _button = [[UIButton alloc] initWithFrame:CGRectMake(0.f, 0.f, self.frame.size.width, self.frame.size.height)];
+            _button.backgroundColor = [UIColor clearColor];
+            _button.titleLabel.font = [UIFont fontWithName:@"Arial" size:12];
+            [_button addTarget:self action:@selector(fillProgramTypes:) forControlEvents:UIControlEventTouchDown];
+        }
         [self.contentView addSubview:_button];
     }
     
     return self;
+}
+
+- (void)fillProgramTypes:(id)sender
+{
+    [self.delegate fillProgramTypes:self];
+}
+
+- (void)ReloadGenres:(id)sender
+{
+    [self.delegate ReloadGenres:self];
 }
 
 @end

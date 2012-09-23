@@ -8,7 +8,23 @@
 
 #import <KKGridView/KKGridView.h>
 
+@protocol MyKKDemoCellDelegate;
+
 @interface KKDemoCell : KKGridViewCell
+
+@property (nonatomic, unsafe_unretained) id <MyKKDemoCellDelegate> delegate;
+@property (nonatomic, retain) KKIndexPath *indexCellPath;
+
 @property (nonatomic, strong) UILabel *label;
-@property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) IBOutlet UIView *cSubView;
+@property (nonatomic, strong) IBOutlet UIButton *button;
+@property (nonatomic, assign) BOOL isBackButton;
+
+@end
+
+@protocol MyKKDemoCellDelegate <NSObject>;
+
+- (void)fillProgramTypes:(KKDemoCell *)cell;
+- (void)ReloadGenres:(KKDemoCell *)cell;
+
 @end

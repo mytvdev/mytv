@@ -13,11 +13,13 @@
 #import "RestService.h"
 #import "UIDevice+IdentifierAddition.h"
 
-@interface CategoriesSubViewResponder : SubViewResponder <KKGridViewDataSource, KKGridViewDelegate>
+@interface CategoriesSubViewResponder : SubViewResponder <MyKKDemoCellDelegate, KKGridViewDataSource, KKGridViewDelegate>
 {
     BOOL hasLoadedGenresData;
+    BOOL IsLoadingProgramTypes;
 }
 @property (nonatomic, strong) NSMutableArray *fillerData;
+@property (nonatomic, strong) NSMutableArray *fillerProgramTypeData;
 @property (nonatomic, strong) IBOutlet UIView *categoriesSubView;
 @property (nonatomic, strong) KKGridView *categoriesKKGridView;
 @property (readonly) DataFetcher *genreFetcher;

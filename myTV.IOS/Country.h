@@ -10,4 +10,6 @@
 
 @interface Country : ItemBase
 
+@property (nonatomic, strong) NSArray *genres;
+
 @end
