@@ -126,8 +126,12 @@
 		B2BCEA081609F50F000AE7F7 /* VODControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2BCEA071609F50F000AE7F7 /* VODControl.xib */; };
 		B2BCEA0C1609F8E3000AE7F7 /* MyVODControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BCEA0B1609F8E3000AE7F7 /* MyVODControlResponder.m */; };
 		B2C5D01D1608D6D2008A27AB /* KKEpisodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C5D01C1608D6D2008A27AB /* KKEpisodeCell.m */; };
+		B2C83834160E4BF800BC32C5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C83833160E4BF800BC32C5 /* back.png */; };
+		B2C83837160E4C0400BC32C5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C83836160E4C0400BC32C5 /* back.png */; };
 		B2E2A205160C7C0000AD13D0 /* CountriesSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E2A204160C7C0000AD13D0 /* CountriesSubViewResponder.m */; };
 		B2E2A208160C7E8400AD13D0 /* CountriesSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E2A207160C7E8400AD13D0 /* CountriesSubView.xib */; };
+		B2EA2D3C160F1BB200D2201D /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EA2D3B160F1BB200D2201D /* backward.png */; };
+		B2EA2D3F160F1BBD00D2201D /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EA2D3E160F1BBD00D2201D /* backward.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -315,6 +319,8 @@
 		B2C79E8215FF2FD500A2EBE7 /* SubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubViewResponder.h; sourceTree = "<group>"; };
 		B2C79E8315FF2FD500A2EBE7 /* SubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubViewResponder.m; sourceTree = "<group>"; };
 		B2C79F9E15FF35AB00A2EBE7 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKKGridView.a; path = "../KKGridView/build/Release-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
+		B2C83833160E4BF800BC32C5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		B2C83836160E4C0400BC32C5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		B2D2BF7B160211810040B206 /* HomeSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeSubViewResponder.m; sourceTree = "<group>"; };
 		B2D2BF7D1602118C0040B206 /* DealsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealsSubView.xib; sourceTree = "<group>"; };
 		B2D2BF7E1602118C0040B206 /* DealsSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsSubViewResponder.h; sourceTree = "<group>"; };
@@ -339,6 +345,8 @@
 		B2E2A203160C7C0000AD13D0 /* CountriesSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSubViewResponder.h; sourceTree = "<group>"; };
 		B2E2A204160C7C0000AD13D0 /* CountriesSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSubViewResponder.m; sourceTree = "<group>"; };
 		B2E2A207160C7E8400AD13D0 /* CountriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountriesSubView.xib; sourceTree = "<group>"; };
+		B2EA2D3B160F1BB200D2201D /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
+		B2EA2D3E160F1BBD00D2201D /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -616,6 +624,8 @@
 		B2C79E2615FF2FD500A2EBE7 /* ipadretina */ = {
 			isa = PBXGroup;
 			children = (
+				B2EA2D3B160F1BB200D2201D /* backward.png */,
+				B2C83836160E4C0400BC32C5 /* back.png */,
 				B2C79E2715FF2FD500A2EBE7 /* background.jpg */,
 				B2C79E2815FF2FD500A2EBE7 /* catalog-Over.jpg */,
 				B2C79E2915FF2FD500A2EBE7 /* catalog.jpg */,
@@ -654,9 +664,14 @@
 		B2C79E4615FF2FD500A2EBE7 /* ipadsd */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				37B54189160CB488009AAA79 /* instructions.png */,
 				37B54184160CB47D009AAA79 /* button_newcode-over.png */,
 				37B54185160CB47D009AAA79 /* button_newcode.png */,
+=======
+				B2EA2D3E160F1BBD00D2201D /* backward.png */,
+				B2C83833160E4BF800BC32C5 /* back.png */,
+>>>>>>> 12
 				37DBB2EA160B4EA60071F454 /* buyEpisode-Over.png */,
 				37DBB2EB160B4EA60071F454 /* buyEpisode.png */,
 				37DBB2EC160B4EA60071F454 /* buyProgram-Over.png */,
@@ -881,6 +896,10 @@
 				37B54187160CB47D009AAA79 /* button_newcode.png in Resources */,
 				37B5418A160CB488009AAA79 /* instructions.png in Resources */,
 				B2E2A208160C7E8400AD13D0 /* CountriesSubView.xib in Resources */,
+				B2C83834160E4BF800BC32C5 /* back.png in Resources */,
+				B2C83837160E4C0400BC32C5 /* back.png in Resources */,
+				B2EA2D3C160F1BB200D2201D /* backward.png in Resources */,
+				B2EA2D3F160F1BBD00D2201D /* backward.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
