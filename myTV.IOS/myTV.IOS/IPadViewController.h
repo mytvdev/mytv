@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "MyTVViewController.h"
+#import "CategoriesSubViewResponder.h"
+#import "CountriesSubViewResponder.h"
 
-@interface IPadViewController : MyTVViewController
+@interface IPadViewController : MyTVViewController {
+    UIPopoverController *popoverController;
+    IBOutlet UIBarButtonItem *popButton;
+    CategoriesSubViewResponder *myCatPopOver;
+    CountriesSubViewResponder *myCountPopOver;
+}
+
+@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *popButton;
+@property (nonatomic, retain) CategoriesSubViewResponder *myCatPopOver;
+@property (nonatomic, retain) CountriesSubViewResponder *myCountPopOver;
+
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *homeButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *vodButton;

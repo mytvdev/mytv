@@ -35,6 +35,8 @@
 @synthesize countriesCloseButton;
 @synthesize countriesSubView;
 
+@synthesize popoverController, popButton, myCatPopOver, myCountPopOver;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -157,10 +159,22 @@
 }
 
 - (IBAction)goToCategories:(id)sender {
-    [self.categoriesCloseButton setHidden:NO];
-    [self.categoriesSubView setHidden:NO];
+    //[self.categoriesCloseButton setHidden:NO];
+    //[self.categoriesSubView setHidden:NO];
         
-    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
+    //[[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"categories" }];
+    
+    //build our custom popover view
+    myCatPopOver = [[CategoriesSubViewResponder alloc] initWithNibName:@"CategoriesSubView" bundle:nil];
+    popoverController = [[UIPopoverController alloc] initWithContentViewController:myCatPopOver];
+    popoverController.popoverContentSize = CGSizeMake(543.f, 128.f);
+    
+    //present the popover view non-modal with a
+    //refrence to the button pressed within the current view
+    [self.popoverController presentPopoverFromRect:self.categoriesButton.frame
+                                            inView:self.view
+                          permittedArrowDirections:UIPopoverArrowDirectionAny
+                                          animated:YES];
 }
 
 - (IBAction)goToCloseCategories:(id)sender {
@@ -169,10 +183,21 @@
 }
 
 - (IBAction)goToCountries:(id)sender {
-    [self.countriesCloseButton setHidden:NO];
-    [self.countriesSubView setHidden:NO];
+    //[self.countriesCloseButton setHidden:NO];
+    //[self.countriesSubView setHidden:NO];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"countries" }];
+    //[[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"countries" }];
+    
+    myCountPopOver = [[CountriesSubViewResponder alloc] initWithNibName:@"CountriesSubView" bundle:nil];
+    popoverController = [[UIPopoverController alloc] initWithContentViewController:myCountPopOver];
+    popoverController.popoverContentSize = CGSizeMake(543.f, 128.f);
+    
+    //present the popover view non-modal with a
+    //refrence to the button pressed within the current view
+    [self.popoverController presentPopoverFromRect:self.countriesButton.frame
+                                            inView:self.view
+                          permittedArrowDirections:UIPopoverArrowDirectionAny
+                                          animated:YES];
 }
 
 - (IBAction)goToCloseCountries:(id)sender {
@@ -183,5 +208,7 @@
 -(BOOL) disablesAutomaticKeyboardDismissal {
     return NO;
 }
+
+
 
 @end

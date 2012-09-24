@@ -13,11 +13,16 @@
 #import "RestService.h"
 #import "UIDevice+IdentifierAddition.h"
 
-@interface CountriesSubViewResponder : SubViewResponder <KKGridViewDataSource, KKGridViewDelegate>
+@interface CountriesSubViewResponder : UIViewController <MyKKDemoCellDelegate, KKGridViewDataSource, KKGridViewDelegate>
 {
     BOOL hasLoadedCountriesData;
+    BOOL IsLoadingCountries;
+    BOOL IsLoadingGenres;
+    BOOL IsLoadingProgramTypes;
 }
 @property (nonatomic, strong) NSMutableArray *fillerData;
+@property (nonatomic, strong) NSMutableArray *fillerGenreData;
+@property (nonatomic, strong) NSMutableArray *fillerProgramTypeData;
 @property (nonatomic, strong) IBOutlet UIView *countriesSubView;
 @property (nonatomic, strong) KKGridView *countriesKKGridView;
 @property (readonly) DataFetcher *countryFetcher;

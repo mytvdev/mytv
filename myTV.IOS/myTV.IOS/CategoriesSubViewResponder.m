@@ -18,6 +18,15 @@
 @synthesize categoriesKKGridView;
 @synthesize genreFetcher = _genreFetcher;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     _fillerData = [[NSMutableArray alloc] init];
@@ -65,22 +74,21 @@
     {
         Genre *genre = [[_fillerData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
         [cell.button setTitle:genre.Title forState:UIControlStateNormal];
+        //cell.isCountryGenreCell = NO;
+        //cell.isCountryProgramTypeCell = NO;
+        //cell.isGenreCell = YES;
+        //cell.isGenreProgramTypeCell = NO;
     }
     else
     {
         ProgramType *programtype = [[_fillerProgramTypeData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
-        
-        if (programtype.Id == -1) {
-            [cell setIsBackButton:YES];
-            [cell.button setTitle:@"" forState:UIControlStateNormal];
-            UIImage *backButtonImage = [UIImage imageNamed:@"backward.png"];
-            [cell.button setBackgroundImage:backButtonImage forState:UIControlStateNormal];
-        }
-        else
-        {
-            [cell setIsBackButton:NO];
-            [cell.button setTitle:programtype.Title forState:UIControlStateNormal];
-        }
+        [cell setIsBackButton:NO];
+        [cell.button setTitle:programtype.Title forState:UIControlStateNormal];
+        //cell.isCountryCell = NO;
+        //cell.isCountryGenreCell = NO;
+        //cell.isCountryProgramTypeCell = NO;
+        //cell.isGenreCell = NO;
+        //cell.isGenreProgramTypeCell = YES;
     }
     
     cell.contentView.backgroundColor = [UIColor clearColor];
@@ -102,11 +110,6 @@
         
         if(genre != nil)
         {
-            ProgramType *pt = [ProgramType new];
-            [pt setId:-1];
-            [pt setTitle:@""];
-            //[array addObject:pt];
-            
             for (ProgramType *programtype in genre.programTypes) {
                 [array addObject:programtype];
             }
@@ -117,6 +120,11 @@
         
         [MBProgressHUD hideHUDForView:self.categoriesSubView animated:YES];
     }
+}
+
+- (void)fillGenres:(KKDemoCell *)cell;
+{
+    
 }
 
 -(void) fillGenres {

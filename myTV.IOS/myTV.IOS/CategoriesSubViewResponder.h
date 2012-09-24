@@ -13,7 +13,7 @@
 #import "RestService.h"
 #import "UIDevice+IdentifierAddition.h"
 
-@interface CategoriesSubViewResponder : SubViewResponder <MyKKDemoCellDelegate, KKGridViewDataSource, KKGridViewDelegate>
+@interface CategoriesSubViewResponder : UIViewController <MyKKDemoCellDelegate, KKGridViewDataSource, KKGridViewDelegate>
 {
     BOOL hasLoadedGenresData;
     BOOL IsLoadingProgramTypes;
