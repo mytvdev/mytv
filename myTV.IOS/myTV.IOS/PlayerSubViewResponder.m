@@ -13,6 +13,9 @@
 @synthesize controlsContainerView;
 @synthesize showControlsButton;
 @synthesize loadingLabel;
+@synthesize prevButton;
+@synthesize nextButton;
+@synthesize lblState;
 
 - (void) setPlayerView:(UIView *)view {
     [self.playerContainerView addSubview:view];
@@ -42,6 +45,25 @@
     }
     else {
         loadingLabel.text = @"";
+    }
+}
+
+- (void)setNextState:(BOOL)nextState andPreviousState:(BOOL)prevState {
+    [nextButton setHidden:!nextState];
+    [prevButton setHidden:!prevState];
+}
+
+- (IBAction)goToPrev:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NextVideo" object:nil userInfo:@{ @"index": @"-1" }];
+}
+
+- (IBAction)goToNext:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NextVideo" object:nil userInfo:@{ @"index": @"1" }];
+}
+
+- (void)setCurrentIndex:(NSInteger)index outOf:(NSInteger)total {
+    if (total > 1) {
+        lblState.text = [NSString stringWithFormat:@"%d / %d", index, total];
     }
 }
 

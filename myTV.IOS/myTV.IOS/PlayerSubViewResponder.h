@@ -13,7 +13,10 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *controlsContainerView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *showControlsButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *loadingLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *prevButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *nextButton;
 
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblState;
 
 @property UITapGestureRecognizer *displayControlsTap;
 
@@ -23,5 +26,11 @@
 - (IBAction)showControls:(id)sender;
 
 - (void) setIsLoading:(BOOL)status;
+- (void) setNextState:(BOOL)nextState andPreviousState:(BOOL)prevState;
+- (void) setCurrentIndex:(NSInteger)index outOf:(NSInteger)total;
+
+
+- (IBAction)goToPrev:(id)sender;
+- (IBAction)goToNext:(id)sender;
 
 @end

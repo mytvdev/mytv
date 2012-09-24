@@ -14,7 +14,12 @@
 {
     id PlayerObserver;
     id StopObserver;
+    id NextVideoObserver;
     UIView *PlayerView;
+    NSMutableArray *urls;
+    int videoIndex;
+    BOOL haltPlayback;
+    BOOL VideoStopCalled;
 }
 
 @property MPMoviePlayerController *movieController;
