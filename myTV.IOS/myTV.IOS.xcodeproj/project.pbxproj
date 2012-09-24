@@ -376,7 +376,6 @@
 		371AA08815F89FFE006FCC06 = {
 			isa = PBXGroup;
 			children = (
-				B2BCEA001609EF22000AE7F7 /* QuartzCore.framework */,
 				B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */,
 				37ABA89A16006BBC00F87280 /* MyTV.IOS.Framework */,
 				371AA0B515F89FFE006FCC06 /* myTV.IOS.AppTests */,
@@ -398,6 +397,7 @@
 		371AA09615F89FFE006FCC06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2BCEA001609EF22000AE7F7 /* QuartzCore.framework */,
 				37B1A9AB1602161E00687B3E /* CoreMedia.framework */,
 				37B1A9A81602160300687B3E /* MediaPlayer.framework */,
 				372990F915FF466E00C015C5 /* libKKGridView.a */,
