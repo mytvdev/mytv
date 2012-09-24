@@ -1518,7 +1518,7 @@
                         callback(NULL, NULL);
                     }
                     else {
-                        Genre *genre = [Genre new];
+                        Genre *genre;
                         
                         NSMutableArray* genres = [NSMutableArray new];
                         
@@ -1557,7 +1557,7 @@
 +(NSMutableArray *)FetchGenreProgramTypes:(TBXMLElement *)element
 {
     NSMutableArray* programtypes = [NSMutableArray new];
-    ProgramType *programtype = [ProgramType new];
+    ProgramType *programtype;
     
     if(element != NULL)
     {
@@ -1591,8 +1591,8 @@
 +(NSMutableArray *)FetchProgramTypePrograms:(TBXMLElement *)element
 {
     NSMutableArray* programs = [NSMutableArray new];
-    MyTVProgram *program = [MyTVProgram new];
-    Episode *episode = [Episode new];
+    MyTVProgram *program;
+    Episode *episode;
     
     if(element != NULL)
     {
@@ -1838,7 +1838,7 @@
 +(NSMutableArray *)FetchCountryGenres:(TBXMLElement *)element
 {
     NSMutableArray* genres = [NSMutableArray new];
-    Genre *genre = [Genre new];
+    Genre *genre;
     
     if(element != NULL)
     {
