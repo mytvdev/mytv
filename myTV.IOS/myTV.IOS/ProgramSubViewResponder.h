@@ -23,6 +23,7 @@
     BOOL hasLoadedRelatedData;
     MyTVProgram *currentprogram;
     BOOL isPurchased;
+    NSString *programId;
 }
 
 

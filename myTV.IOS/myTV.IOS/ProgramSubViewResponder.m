@@ -42,6 +42,7 @@
         [MBProgressHUD showHUDAddedTo:self.mainView animated:YES];
         programFetcher = [RestService RequestGetProgram:MyTV_RestServiceUrl ofId:idvalue withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(MyTVProgram *program, NSError *error){
             if(program != nil && error == nil) {
+                programId = idvalue;
                 [self.lblPriceOrExpiry setHidden:YES];
                 [self.btnPayOrPlay setHidden:YES];
                 [self.btnPayOrPlay setEnabled:YES];
@@ -176,9 +177,17 @@
 }
 
 - (IBAction)playOrBuyProgram:(id)sender {
+    if(!isPurchased) {
     [btnPayOrPlay setHidden:YES];
     [txtPinCode setHidden:NO];
     [txtPinCode becomeFirstResponder];
+    }
+    else
+    {
+        [RestService RequestGetProgramEpisodesUrls:MyTV_RestServiceUrl ofProgram:programId withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
+           [[NSNotificationCenter defaultCenter] postNotificationName:@"PlayVideo" object:nil userInfo:@{@"url": array}]; 
+        }];
+    }
 }
 
 -(void) textFieldDidEndEditing:(UITextField *)textField {
@@ -229,6 +238,10 @@
                         [self.btnPayOrPlay setImage:[UIImage imageNamed:@"playAll.png"] forState:UIControlStateNormal];
                         [self.btnPayOrPlay setImage:[UIImage imageNamed:@"playAll-Over.png"] forState:UIControlStateHighlighted];
                         [self.btnPayOrPlay setHidden:NO];
+                    }
+                    else {
+                        UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Attention" message:[NSString stringWithFormat:@"Purchase failed: %@", status] delegate:subview cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                        [view show];
                     }
                 }
                 [self.btnPayOrPlay setEnabled:YES];
