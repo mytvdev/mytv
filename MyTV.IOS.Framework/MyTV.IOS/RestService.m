@@ -716,6 +716,7 @@
     TBXMLElement *xmlProgramPurchased = [TBXML childElementNamed:@"PackagePurchased" parentElement:item];
     TBXMLElement *xmlCanBuyEpisode = [TBXML childElementNamed:@"CanBuyEpisode" parentElement:item];
     TBXMLElement *xmlProgramTitle = [TBXML childElementNamed:@"ProgramTitle" parentElement:item];
+    TBXMLElement *xmlProgramId = [TBXML childElementNamed:@"ProgramId" parentElement:item];
     
     NSString *type = [TBXML textForElement:[TBXML childElementNamed:@"type" parentElement:item]];
     
@@ -733,7 +734,7 @@
         video.Language = [TBXML textForElement:xmlLanguage];
         video.CanBuyEpisode = [TBXML textForElement:xmlCanBuyEpisode];
         video.ProgramTitle = [TBXML textForElement:xmlProgramTitle];
-        
+        if(xmlProgramId != nil) video.ProgramId = [TBXML textForElement:xmlProgramId];
         return video;
     }
     else if([type compare:@"program" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
