@@ -28,5 +28,6 @@
 - (void) addNavigationItem:(NavigationItem *)item;
 - (void) startHandlingNavigation;
 - (NSDictionary *) getNavigationItems;
+- (void) didReceiveMemoryWarning;
 
 @end

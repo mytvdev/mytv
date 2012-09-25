@@ -33,84 +33,8 @@
 - (void) startHandlingNavigation {
     if (!isListening) {
         isListening = YES;
-        NavigationLogic *logic = self;
         navigationObserver =[[NSNotificationCenter defaultCenter] addObserverForName:@"ChangeMainSubView" object:nil queue:nil usingBlock:^(NSNotification *note){
-            NSString *viewName = [note.userInfo valueForKey:@"view"];
-            if(viewName == nil) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Expected Observer Key" message:@"view key not found" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                [alert show];
-            }
-            else {
-                NSDictionary *navItems = [logic getNavigationItems];
-                NavigationItem *item = [navItems valueForKey:viewName];
-                if(item == nil) {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"View Navigation item not defined" message:[NSString stringWithFormat:@"define NavigationItem for %@", viewName]delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                    [alert show];
-                }
-                else {
-                    if([viewName compare:@"categories"] != NSOrderedSame) {
-                        [navigationData addObject:note.userInfo];
-                    }
-                    if(logic.activeItem != item) {
-                        if(item.viewInstance == nil) {
-                            item.responderInstance = [[item.subViewResponder alloc] init];
-                            NSArray *views = [[NSBundle mainBundle] loadNibNamed:item.nibFilename owner:item.responderInstance options:nil];
-                            UIView *view = [views objectAtIndex:0];
-                            item.viewInstance = view;
-                        }
-                        if(logic.activeItem != nil) {
-                            if(logic.activeItem.activationButton != nil && logic.activeItem.activeImage != nil) {
-                                [logic.activeItem.activationButton setImage:logic.activeItem.image forState:UIControlStateNormal];
-                            }
-                        }
-                        logic.activeItem = item;
-                        
-                        if ([viewName isEqualToString:@"categories"])
-                        {
-                            [logic.categoriesMainview setHidden:NO];
-                            
-                            if([[logic.categoriesMainview subviews] count] > 0) {
-                                [[[logic.categoriesMainview subviews] objectAtIndex:0] removeFromSuperview];
-                            }
-                            [logic.categoriesMainview addSubview:item.viewInstance];
-                            if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
-                                [item.responderInstance performSelector:@selector(viewDidLoad)];
-                            }
-                        }
-                        else if ([viewName isEqualToString:@"countries"])
-                        {
-                            [logic.countriesMainview setHidden:NO];
-                            
-                            if([[logic.countriesMainview subviews] count] > 0) {
-                                [[[logic.countriesMainview subviews] objectAtIndex:0] removeFromSuperview];
-                            }
-                            [logic.countriesMainview addSubview:item.viewInstance];
-                            if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
-                                [item.responderInstance performSelector:@selector(viewDidLoad)];
-                            }
-                        }
-                        else
-                        {
-                            
-                            if([[logic.mainview subviews] count] > 0) {
-                                [[[logic.mainview subviews] objectAtIndex:0] removeFromSuperview];
-                            }
-                            [logic.mainview addSubview:item.viewInstance];
-                            if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
-                                [item.responderInstance performSelector:@selector(viewDidLoad)];
-                            }
-                           
-                        }
-                        if(item.activationButton != nil) {
-                            [item.activationButton setImage:item.activeImage forState:UIControlStateNormal];
-                        }
-                    }
-                    if([note.userInfo count] > 1 && [item.responderInstance respondsToSelector:@selector(bindData:)]){
-                        [item.responderInstance performSelector:@selector(bindData:) withObject:note.userInfo];
-                    }
-                }
-            }
-            
+            [self handleChangeMainSubView:note];
         }];
         
         navBackObserver = [[NSNotificationCenter defaultCenter] addObserverForName:MyTV_Event_PopView object:nil queue:nil usingBlock:^(NSNotification *note){
@@ -127,6 +51,106 @@
         [[NSNotificationCenter defaultCenter] removeObserver:navigationObserver];
         [[NSNotificationCenter defaultCenter] removeObject:navBackObserver];
     }
+}
+
+-(void) handleChangeMainSubView:(NSNotification *)note {
+    NSString *viewName = [note.userInfo valueForKey:@"view"];
+    if(viewName == nil) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Expected Observer Key" message:@"view key not found" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
+    else {
+        NSDictionary *navItems = [self getNavigationItems];
+        NavigationItem *item = [navItems valueForKey:viewName];
+        if(item == nil) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"View Navigation item not defined" message:[NSString stringWithFormat:@"define NavigationItem for %@", viewName]delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+        }
+        else {
+            if([viewName compare:@"categories"] != NSOrderedSame) {
+                [navigationData addObject:note.userInfo];
+            }
+            if(self.activeItem != item) {
+                if(item.viewInstance == nil) {
+                    item.responderInstance = [[item.subViewResponder alloc] init];
+                    NSArray *views = [[NSBundle mainBundle] loadNibNamed:item.nibFilename owner:item.responderInstance options:nil];
+                    UIView *view = [views objectAtIndex:0];
+                    item.viewInstance = view;
+                }
+                if(self.activeItem != nil) {
+                    if(self.activeItem.activationButton != nil && self.activeItem.activeImage != nil) {
+                        [self.activeItem.activationButton setImage:self.activeItem.image forState:UIControlStateNormal];
+                    }
+                }
+                self.activeItem = item;
+                
+                if ([viewName isEqualToString:@"categories"])
+                {
+                    [self.categoriesMainview setHidden:NO];
+                    
+                    if([[self.categoriesMainview subviews] count] > 0) {
+                        [[[self.categoriesMainview subviews] objectAtIndex:0] removeFromSuperview];
+                    }
+                    [self.categoriesMainview addSubview:item.viewInstance];
+                    if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
+                        [item.responderInstance performSelector:@selector(viewDidLoad)];
+                    }
+                }
+                else if ([viewName isEqualToString:@"countries"])
+                {
+                    [self.countriesMainview setHidden:NO];
+                    
+                    if([[self.countriesMainview subviews] count] > 0) {
+                        [[[self.countriesMainview subviews] objectAtIndex:0] removeFromSuperview];
+                    }
+                    [self.countriesMainview addSubview:item.viewInstance];
+                    if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
+                        [item.responderInstance performSelector:@selector(viewDidLoad)];
+                    }
+                }
+                else
+                {
+                    
+                    if([[self.mainview subviews] count] > 0) {
+                        [[[self.mainview subviews] objectAtIndex:0] removeFromSuperview];
+                    }
+                    [self.mainview addSubview:item.viewInstance];
+                    if([item.responderInstance respondsToSelector:@selector(viewDidLoad)]) {
+                        [item.responderInstance performSelector:@selector(viewDidLoad)];
+                    }
+                    
+                }
+                if(item.activationButton != nil) {
+                    [item.activationButton setImage:item.activeImage forState:UIControlStateNormal];
+                }
+            }
+            if([note.userInfo count] > 1 && [item.responderInstance respondsToSelector:@selector(bindData:)]){
+                [item.responderInstance performSelector:@selector(bindData:) withObject:note.userInfo];
+            }
+        }
+    }
+}
+
+-(void) didReceiveMemoryWarning {
+    DLog(@"Cleaning up items");
+    NSDictionary *navItems = [self getNavigationItems];
+    for (NSString* obj in navItems) {
+        NavigationItem *item = [navItems valueForKey:obj];
+        if(item != self.activeItem) {
+            if(item.viewInstance != nil) {
+                [item.viewInstance removeFromSuperview];
+               // item.viewInstance dele
+                item.viewInstance = nil;
+            }
+            item.responderInstance = nil;
+        }
+    }
+    [[NSNotificationCenter defaultCenter] removeObserver:navigationObserver];
+    navigationObserver =[[NSNotificationCenter defaultCenter] addObserverForName:@"ChangeMainSubView" object:nil queue:nil usingBlock:^(NSNotification *note){
+        [self handleChangeMainSubView:note];
+    }];
+    
+    
 }
 
 @end

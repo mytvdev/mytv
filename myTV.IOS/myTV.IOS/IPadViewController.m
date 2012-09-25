@@ -209,6 +209,11 @@
     return NO;
 }
 
+- (void)didReceiveMemoryWarning {
+    [self.navigationLogic didReceiveMemoryWarning];
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+}
+
 
 
 @end
