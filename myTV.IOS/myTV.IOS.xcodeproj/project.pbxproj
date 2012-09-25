@@ -67,6 +67,7 @@
 		37886EBB160751FA0094F4E2 /* ProgramSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37886EBA160751F90094F4E2 /* ProgramSubViewResponder.m */; };
 		37886EBD1607520E0094F4E2 /* EpisodeSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37886EBC1607520E0094F4E2 /* EpisodeSubView.xib */; };
 		37886EC0160752200094F4E2 /* EpisodeSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37886EBF160752200094F4E2 /* EpisodeSubViewResponder.m */; };
+		379E56FD1611DC93002C905D /* RestCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 379E56FC1611DC93002C905D /* RestCache.m */; };
 		37ABA8BD16006BED00F87280 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA89D16006BED00F87280 /* Channel.m */; };
 		37ABA8BE16006BED00F87280 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA89F16006BED00F87280 /* DataFetcher.m */; };
 		37ABA8BF16006BED00F87280 /* Episode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ABA8A116006BED00F87280 /* Episode.m */; };
@@ -170,6 +171,8 @@
 		37886EBC1607520E0094F4E2 /* EpisodeSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EpisodeSubView.xib; sourceTree = "<group>"; };
 		37886EBE160752200094F4E2 /* EpisodeSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpisodeSubViewResponder.h; sourceTree = "<group>"; };
 		37886EBF160752200094F4E2 /* EpisodeSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpisodeSubViewResponder.m; sourceTree = "<group>"; };
+		379E56FB1611DC93002C905D /* RestCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestCache.h; sourceTree = "<group>"; };
+		379E56FC1611DC93002C905D /* RestCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestCache.m; sourceTree = "<group>"; };
 		37ABA89C16006BED00F87280 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = ../MyTV.IOS.Framework/MyTV.IOS/Channel.h; sourceTree = "<group>"; };
 		37ABA89D16006BED00F87280 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = ../MyTV.IOS.Framework/MyTV.IOS/Channel.m; sourceTree = "<group>"; };
 		37ABA89E16006BED00F87280 /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataFetcher.h; path = ../MyTV.IOS.Framework/MyTV.IOS/DataFetcher.h; sourceTree = "<group>"; };
@@ -502,6 +505,7 @@
 		37776E3515FF3EC900BB6AF8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				379E56F91611DB10002C905D /* RestCache */,
 				37886EAB160715BF0094F4E2 /* UDID */,
 				37776E3615FF3EE200BB6AF8 /* Logic */,
 				B2C79E7615FF2FD500A2EBE7 /* MyTVViewController.h */,
@@ -544,6 +548,15 @@
 				37886EAF160715DF0094F4E2 /* UIDevice+IdentifierAddition.m */,
 			);
 			name = UDID;
+			sourceTree = "<group>";
+		};
+		379E56F91611DB10002C905D /* RestCache */ = {
+			isa = PBXGroup;
+			children = (
+				379E56FB1611DC93002C905D /* RestCache.h */,
+				379E56FC1611DC93002C905D /* RestCache.m */,
+			);
+			name = RestCache;
 			sourceTree = "<group>";
 		};
 		37ABA89A16006BBC00F87280 /* MyTV.IOS.Framework */ = {
@@ -968,6 +981,7 @@
 				B2BCEA0C1609F8E3000AE7F7 /* MyVODControlResponder.m in Sources */,
 				B2630A1A160C533B00D56704 /* Country.m in Sources */,
 				B2E2A205160C7C0000AD13D0 /* CountriesSubViewResponder.m in Sources */,
+				379E56FD1611DC93002C905D /* RestCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

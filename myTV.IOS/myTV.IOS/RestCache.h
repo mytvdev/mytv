@@ -6,8 +6,16 @@
 //  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
 //
 
-#import "SubViewResponder.h"
+#import "RestService.h"
 
-@interface RestCache : SubViewResponder
+@interface RestCache : RestService {
+    NSArray *featuredVOD;
+}
+@property NSUInteger cacheDuration;
+
++(RestCache *) CommonProvider;
+
+-(DataFetcher *) RequestFeaturedVOD:(RSGetVOD)callback;;
+
 
 @end
