@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ItemBase.h"
 
-@interface Episode : ItemBase
+@interface Episode : ItemBase <NSCopying>
 
 
 @property NSString *Duration, *Duration2, *Director, *Guest, *Category, *Price, *ProgramPrice, *Rating, *ProgramId, *ReleaseDate, *ExpiresIn, *ProgramExpiresIn, *ProgramPurchased, *CanBuyEpisode, *TrailerFileName, *Presenter, *Thumbnail, *Language, *ProgramTitle;
