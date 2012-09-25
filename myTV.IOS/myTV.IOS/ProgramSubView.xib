@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1296</int>
+		<int key="IBDocument.SystemTarget">1536</int>
 		<string key="IBDocument.SystemVersion">12C54</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2840</string>
 		<string key="IBDocument.AppKitVersion">1187.34</string>
 		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1498</string>
+			<string key="NS.object.0">1926</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -148,7 +148,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{26, 258}, {146, 21}}</string>
 								<reference key="NSSuperview" ref="505758479"/>
-								<reference key="NSNextKeyView" ref="15120372"/>
+								<reference key="NSNextKeyView" ref="635470753"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -159,6 +159,7 @@
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
+									<string key="IBUIColorCocoaTouchKeyPath">darkTextColor</string>
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
@@ -201,6 +202,7 @@
 								<int key="NSvFlags">-2147483356</int>
 								<string key="NSFrame">{{191, 255}, {97, 31}}</string>
 								<reference key="NSSuperview" ref="505758479"/>
+								<reference key="NSNextKeyView" ref="15120372"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -250,6 +252,7 @@
 								<int key="IBUINumberOfLines">7</int>
 								<reference key="IBUIFontDescription" ref="51979264"/>
 								<reference key="IBUIFont" ref="244197548"/>
+								<double key="preferredMaxLayoutWidth">298</double>
 							</object>
 							<object class="IBUIView" id="117747300">
 								<reference key="NSNextResponder" ref="505758479"/>
@@ -557,6 +560,7 @@
 										<int key="IBUINumberOfLines">7</int>
 										<reference key="IBUIFontDescription" ref="570107085"/>
 										<reference key="IBUIFont" ref="1024570337"/>
+										<double key="preferredMaxLayoutWidth">162</double>
 									</object>
 									<object class="IBUILabel" id="260235317">
 										<reference key="NSNextResponder" ref="117747300"/>
@@ -664,6 +668,7 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 25}, {1000, 150}}</string>
 								<reference key="NSSuperview" ref="690285587"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -1142,7 +1147,7 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1296" key="NS.object.0"/>
+			<real value="1536" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
@@ -1150,6 +1155,6 @@
 			<string key="NS.key.0">frame.png</string>
 			<string key="NS.object.0">{267, 226}</string>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">1498</string>
+		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>
 </archive>
