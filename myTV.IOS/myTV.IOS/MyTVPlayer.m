@@ -143,6 +143,10 @@
         [[NSNotificationCenter defaultCenter] removeObserver:StopObserver];
         StopObserver = nil;
     }
+    if(NextVideoObserver != nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:NextVideoObserver];
+        NextVideoObserver = nil;
+    }
 }
 
 @end
