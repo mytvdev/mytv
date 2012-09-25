@@ -21,6 +21,14 @@ static RestCache *singleton;
     }
 }
 
+-(id)init {
+    self = [super init];
+    if(self) {
+        programVODCache = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
+
 + (RestCache *)CommonProvider {
     return singleton;
 }
@@ -48,6 +56,28 @@ static RestCache *singleton;
 
 - (void)ClearFeaturedVODCache {
     featuredVOD = nil;
+}
+
+- (DataFetcher *)RequestGetProgramVOD:(NSString *)programId usingCallback:(RSGetVOD)callback {
+    NSArray *items = [programVODCache objectForKey:programId];
+    if(items != nil) {
+        callback([[NSArray alloc] initWithArray:items copyItems:YES], nil);
+        return nil;
+    }
+    else {
+        return [RestService RequestGetVOD:MyTV_RestServiceUrl ofProgram:programId withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
+            if(array != nil && error == nil) {
+                [programVODCache setValue:array forKey:programId];
+                [self performSelector:@selector(ClearProgramVODCache:) withObject:programId afterDelay:self.cacheDuration];
+                NSArray *copy = [[NSArray alloc] initWithArray:array copyItems:YES];
+                callback(copy, nil);
+            }
+        }];
+    }
+}
+
+- (void) ClearProgramVODCache:(NSString *)programId {
+    [programVODCache removeObjectForKey:programId];
 }
 
 @end

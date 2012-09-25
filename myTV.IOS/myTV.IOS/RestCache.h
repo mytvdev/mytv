@@ -10,6 +10,7 @@
 
 @interface RestCache : RestService {
     NSArray *featuredVOD;
+    NSMutableDictionary *programVODCache;
 }
 @property NSUInteger cacheDuration;
 
@@ -17,5 +18,6 @@
 
 -(DataFetcher *) RequestFeaturedVOD:(RSGetVOD)callback;;
 
+-(DataFetcher *) RequestGetProgramVOD:(NSString *)programId usingCallback:(RSGetVOD)callback;
 
 @end

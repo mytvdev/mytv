@@ -126,7 +126,7 @@
         [view removeFromSuperview];
     }
     MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.episodeScrollView animated:YES];
-    programEpisodesFetcher = [RestService RequestGetVOD:MyTV_RestServiceUrl ofProgram:programId withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
+    programEpisodesFetcher = [[RestCache CommonProvider] RequestGetProgramVOD:programId usingCallback:^(NSArray *array, NSError *error){
         int xPos1 = VODControl_Space;
         int xPos2 = VODControl_Space;
         int pos = 0;
