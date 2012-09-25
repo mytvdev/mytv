@@ -11,6 +11,7 @@
 #import "RestService.h"
 #import "ChannelControlResponder.h"
 #import "VODControlResponder.h"
+#import "RestCache.h"
 
 @interface HomeSubViewResponder : SubViewResponder
 {

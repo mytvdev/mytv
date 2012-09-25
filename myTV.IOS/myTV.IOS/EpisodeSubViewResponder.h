@@ -9,6 +9,7 @@
 #import "SubViewResponder.h"
 #import "RestService.h"
 #import "VODControlResponder.h"
+#import "RestCache.h"
 
 @interface EpisodeSubViewResponder : SubViewResponder <
 UIScrollViewDelegate

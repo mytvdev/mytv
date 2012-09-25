@@ -125,7 +125,6 @@
 
 - (void) fillProgramEpisodes:(NSString *)programId {
     EpisodeSubViewResponder *subview = self;
-    
     for(UIView *view in[subview.episodeScrollView subviews]) {
         [view removeFromSuperview];
     }

@@ -52,6 +52,7 @@
             [subview cancelChannelFetcher];
         };
         
+        
         [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error){
             if(linking != nil && error == nil) {
                 _channelFetcher = [RestService RequestGetSubscribedChannels:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:channelCallback];
@@ -79,7 +80,8 @@
     if(!hasLoadedVODFeaturedData) {
         HomeSubViewResponder *subview = self;
         MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.vodFeaturedScrollView animated:YES];
-        _featuredVOdFetcher = [RestService RequestGetFeaturedVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
+        
+        _featuredVOdFetcher = [[RestCache CommonProvider] RequestFeaturedVOD:^(NSArray *array, NSError *error){
             int xPos = ChannelControl_Space;
             for (MyTVProgram *program in array) {
                 VODControlResponder *responder = [[VODControlResponder alloc] init];
@@ -97,6 +99,7 @@
             [loader hide:YES];
             hasLoadedVODFeaturedData = YES;
         }];
+        
     }
 }
 
