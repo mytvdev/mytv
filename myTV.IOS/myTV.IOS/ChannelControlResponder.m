@@ -48,12 +48,18 @@
 
 -(void) fireLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
     DLog(@"%@", [NSString stringWithFormat:@"%d", gestureRecognizer.state]);
+    if(gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        self.imgFrame.image = [UIImage imageNamed:@"frame-Highlight.png"];
+    }
+    else if(gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        self.imgFrame.image = [UIImage imageNamed:@"frame.png"];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSLog(@"button clicked of index %d", buttonIndex);
     if(buttonIndex > 0){
-        [RestService RequestGetChannelUrl:MyTV_RestServiceUrl ofChannel:[NSString stringWithFormat:@"%d", self.channel.Id] withDeviceId:@"iosdevice1" andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSString *url, NSError *error){
+        [RestService RequestGetChannelUrl:MyTV_RestServiceUrl ofChannel:[NSString stringWithFormat:@"%d", self.channel.Id] withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSString *url, NSError *error){
             if (url != nil && error == nil) {
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"PlayVideo" object:nil userInfo:@{@"url": url}];

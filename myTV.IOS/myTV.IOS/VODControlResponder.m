@@ -37,6 +37,8 @@
     UITapGestureRecognizer *taprecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fireEvent:)];
     self.recognizer = taprecognizer;
     [self.mainView addGestureRecognizer:taprecognizer];
+    self.longRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(fireLongPress:)];
+    [self.mainView addGestureRecognizer:self.longRecognizer];
 }
 
 -(void)viewDidUnload {
@@ -59,6 +61,7 @@
     
 }
 
+
 - (void) dealloc {
     self.vod = nil;
     self.recognizer = nil;
@@ -68,5 +71,14 @@
     }
 }
 
+-(void) fireLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
+    DLog(@"%@", [NSString stringWithFormat:@"%d", gestureRecognizer.state]);
+    if(gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        self.imgFrame.image = [UIImage imageNamed:@"frame-Highlight.png"];
+    }
+    else if(gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        self.imgFrame.image = [UIImage imageNamed:@"frame.png"];
+    }
+}
 
 @end

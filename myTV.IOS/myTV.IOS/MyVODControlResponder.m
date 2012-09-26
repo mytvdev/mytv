@@ -28,6 +28,8 @@
     UITapGestureRecognizer *taprecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fireEvent:)];
     self.recognizer = taprecognizer;
     [self.mainView addGestureRecognizer:taprecognizer];
+    self.longRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(fireLongPress:)];
+    [self.mainView addGestureRecognizer:self.longRecognizer];
 }
 
 -(void)viewDidUnload {
@@ -48,6 +50,16 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View: MyTV_View_Program, MyTV_ViewArgument_Id: [NSString stringWithFormat:@"%d", self.vod.Id] }];
     }
     
+}
+
+-(void) fireLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
+    DLog(@"%@", [NSString stringWithFormat:@"%d", gestureRecognizer.state]);
+    if(gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        self.imgFrame.image = [UIImage imageNamed:@"frame-Highlight.png"];
+    }
+    else if(gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        self.imgFrame.image = [UIImage imageNamed:@"frame.png"];
+    }
 }
 
 - (void) dealloc {

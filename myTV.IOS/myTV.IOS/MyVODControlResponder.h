@@ -15,7 +15,8 @@
 @property Episode *vod;
 
 @property DataFetcher *imageFetcher;
-
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imgFrame;
+@property UILongPressGestureRecognizer *longRecognizer;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imageDisplay;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelDisplay;
