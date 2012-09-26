@@ -334,10 +334,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{512, 724}, {132, 44}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-<<<<<<< HEAD
-						<reference key="NSWindow"/>
-=======
->>>>>>> 123
+
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -948,7 +945,6 @@
 			<string key="categoriesOpen.png">{123, 46}</string>
 			<string key="countriesClose.png">{245, 92}</string>
 			<string key="countriesOpen.png">{123, 46}</string>
-<<<<<<< HEAD
 			<string key="deals.jpg">{105, 45}</string>
 			<string key="footer.png">{1024, 44}</string>
 			<string key="header.jpg">{1024, 45}</string>
@@ -956,15 +952,7 @@
 			<string key="liveTV.jpg">{105, 45}</string>
 			<string key="login.png">{62, 26}</string>
 			<string key="logo.png">{35, 30}</string>
-=======
-			<string key="deals.jpg">{207, 89}</string>
-			<string key="footer.png">{1024, 44}</string>
-			<string key="header.jpg">{2048, 89}</string>
-			<string key="home.jpg">{104, 45}</string>
-			<string key="liveTV.jpg">{105, 45}</string>
-			<string key="login.png">{62, 26}</string>
-			<string key="logo.png">{145, 89}</string>
->>>>>>> 123
+
 			<string key="myvod.jpg">{105, 45}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1498</string>
