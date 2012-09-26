@@ -180,6 +180,7 @@
     if(!isPurchased) {
     [btnPayOrPlay setHidden:YES];
     [txtPinCode setHidden:NO];
+    txtPinCode.text = @"";
     [txtPinCode becomeFirstResponder];
     }
     else
@@ -260,6 +261,11 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@ { MyTV_ViewArgument_View: MyTV_View_Login }];
 }
  
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSUInteger newLength = [textField.text length] + [string length] - range.length;
+    return (newLength > 5) ? NO : YES;
+}
 
 
 @end
