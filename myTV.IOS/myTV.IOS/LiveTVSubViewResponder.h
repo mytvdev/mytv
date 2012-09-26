@@ -13,15 +13,13 @@
 #import "RestService.h"
 #import "UIDevice+IdentifierAddition.h"
 
-@interface LiveTVSubViewResponder : SubViewResponder <KKGridViewDataSource, KKGridViewDelegate>
+@interface LiveTVSubViewResponder : SubViewResponder 
 {
     BOOL hasLoadedChannelsData;
 }
 
+@property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *ChannelScrollView;
 @property (readonly) DataFetcher *channelFetcher;
-@property (nonatomic, strong) NSMutableArray *fillerData;
-@property (nonatomic, strong) KKGridView *channelsKKGridView;
-@property (nonatomic, strong) IBOutlet UIView *channelsView;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblChannelName;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblChannelDescripton;
 

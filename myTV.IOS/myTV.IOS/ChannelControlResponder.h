@@ -13,6 +13,7 @@
 
 #define ChannelControl_Space 14
 #define ChannelControl_Width 162
+#define ChannelControl_Height 166
 
 @interface ChannelControlResponder : SubViewResponder
 
