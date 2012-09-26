@@ -34,11 +34,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *liveButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *rootView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *categoriesButton;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *categoriesCloseButton;
-@property (unsafe_unretained, nonatomic) IBOutlet UIView *categoriesSubView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *countriesButton;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *countriesCloseButton;
-@property (unsafe_unretained, nonatomic) IBOutlet UIView *countriesSubView;
 
 - (IBAction)goHome:(id)sender;
 - (IBAction)goToVodCatalog:(id)sender;
@@ -48,8 +44,6 @@
 - (IBAction)goToSearch:(id)sender;
 - (IBAction)goToLive:(id)sender;
 - (IBAction)goToCategories:(id)sender;
-- (IBAction)goToCloseCategories:(id)sender;
 - (IBAction)goToCountries:(id)sender;
-- (IBAction)goToCloseCountries:(id)sender;
 
 @end

@@ -74,21 +74,12 @@
     {
         Genre *genre = [[_fillerData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
         [cell.button setTitle:genre.Title forState:UIControlStateNormal];
-        //cell.isCountryGenreCell = NO;
-        //cell.isCountryProgramTypeCell = NO;
-        //cell.isGenreCell = YES;
-        //cell.isGenreProgramTypeCell = NO;
     }
     else
     {
         ProgramType *programtype = [[_fillerProgramTypeData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
         [cell setIsBackButton:NO];
         [cell.button setTitle:programtype.Title forState:UIControlStateNormal];
-        //cell.isCountryCell = NO;
-        //cell.isCountryGenreCell = NO;
-        //cell.isCountryProgramTypeCell = NO;
-        //cell.isGenreCell = NO;
-        //cell.isGenreProgramTypeCell = YES;
     }
     
     cell.contentView.backgroundColor = [UIColor clearColor];

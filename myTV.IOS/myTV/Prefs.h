@@ -20,6 +20,7 @@ extern NSString * const MyTV_View_Login;
 extern NSString * const MyTV_View_Search;
 extern NSString * const MyTV_View_Program;
 extern NSString * const MyTV_View_Episode;
+extern NSString * const MyTV_View_VODPackage;
 extern NSString * const MyTV_ViewArgument_View;
 extern NSString * const MyTV_ViewArgument_Id;
 extern NSString * const MyTV_Event_ChangeView;

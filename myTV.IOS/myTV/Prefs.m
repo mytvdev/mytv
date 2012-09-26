@@ -19,6 +19,7 @@ NSString * const MyTV_View_Login = @"login";
 NSString * const MyTV_View_Search = @"search";
 NSString * const MyTV_View_Program = @"program";
 NSString * const MyTV_View_Episode = @"episode";
+NSString * const MyTV_View_VODPackage = @"vodpackage";
 NSString * const MyTV_ViewArgument_View = @"view";
 NSString * const MyTV_ViewArgument_Id = @"id";
 NSString * const MyTV_Event_ChangeView = @"ChangeMainSubView";

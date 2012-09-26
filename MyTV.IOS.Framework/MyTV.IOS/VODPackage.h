@@ -10,6 +10,7 @@
 
 @interface VODPackage : NSObject
 
-@property NSString *Id, *Title, *Description, *Price, *Thumbnail, *StartDate, *EndDate, *VODPackageTypeId;
+@property int Id;
+@property NSString *Title, *Description, *Price, *Thumbnail, *StartDate, *EndDate, *VODPackageTypeId;
 
 @end

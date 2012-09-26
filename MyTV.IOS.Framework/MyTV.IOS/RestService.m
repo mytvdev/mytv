@@ -608,7 +608,7 @@
                                 TBXMLElement *xmlEndDate = [TBXML childElementNamed:@"EndDate" parentElement:item];
                                 TBXMLElement *xmlVODPackageType = [TBXML childElementNamed:@"VODPackageTypeId" parentElement:item];
                                 
-                                [vodpackage setId:[TBXML textForElement:xmlId]];
+                                [vodpackage setId:[[TBXML textForElement:xmlId] intValue]];
                                 [vodpackage setTitle:[TBXML textForElement:xmlTitle]];
                                 [vodpackage setDescription:[TBXML textForElement:xmlDescription]];
                                 [vodpackage setPrice:[TBXML textForElement:xmlPrice]];
@@ -1758,7 +1758,7 @@
                                 }
                                 else {
                                     VODPackage *package = [VODPackage new];
-                                    [package setId:[TBXML textForElement:xmlId]];
+                                    [package setId:[[TBXML textForElement:xmlId] intValue]];
                                     [package setTitle:[TBXML textForElement:xmlTitle]];
                                     [package setDescription:[TBXML textForElement:xmlDescription]];
                                     if(xmlStartDate != NULL)[package setStartDate:[TBXML textForElement:xmlStartDate]];
