@@ -40,7 +40,7 @@
     NSString *idvalue = [dict objectForKey:MyTV_ViewArgument_Id];
     if(idvalue != nil) {
         [MBProgressHUD showHUDAddedTo:self.mainView animated:YES];
-        programFetcher = [RestService RequestGetProgram:MyTV_RestServiceUrl ofId:idvalue withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(MyTVProgram *program, NSError *error){
+        programFetcher = [[RestCache CommonProvider] RequestGetProgram:idvalue usingCallback:^(MyTVProgram *program, NSError *error){
             if(program != nil && error == nil) {
                 programId = idvalue;
                 [self.lblPriceOrExpiry setHidden:YES];

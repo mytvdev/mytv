@@ -43,7 +43,7 @@
     NSString *idvalue = [dict objectForKey:MyTV_ViewArgument_Id];
     if(idvalue != nil) {
         [MBProgressHUD showHUDAddedTo:self.mainView animated:YES];
-        episodeFetcher = [RestService RequestGetEpisode:MyTV_RestServiceUrl ofId:idvalue withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Episode *episode, NSError *error){
+        episodeFetcher = [[RestCache CommonProvider] RequestGetEpisode:idvalue usingCallback:^(Episode *episode, NSError *error){
             if(episode != nil && error == nil) {
                 episodeId = idvalue;
                 programId = episode.ProgramId;

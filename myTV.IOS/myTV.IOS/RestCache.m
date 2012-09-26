@@ -25,6 +25,8 @@ static RestCache *singleton;
     self = [super init];
     if(self) {
         programVODCache = [[NSMutableDictionary alloc] init];
+        episodeCache = [[NSMutableDictionary alloc] init];
+        programCache = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -78,6 +80,50 @@ static RestCache *singleton;
 
 - (void) ClearProgramVODCache:(NSString *)programId {
     [programVODCache removeObjectForKey:programId];
+}
+
+- (DataFetcher *)RequestGetProgram:(NSString *)programId usingCallback:(RSGetProgram)callback {
+    MyTVProgram *program = [programCache objectForKey:programId];
+    if(program != nil) {
+        callback([program copy], nil);
+        return nil;
+    }
+    else {
+        return [RestService RequestGetProgram:MyTV_RestServiceUrl ofId:programId withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(MyTVProgram *program, NSError *error){
+            if(program != nil && error == nil) {
+                [programCache setValue:program forKey:programId];
+                [self performSelector:@selector(ClearProgramVODCache:) withObject:programId afterDelay:self.cacheDuration];
+                MyTVProgram *copy = [program copy];
+                callback(copy, nil);
+            }
+        }];
+    }
+}
+
+- (void) ClearProgramCache:(NSString *)programId {
+        [programCache removeObjectForKey:programId];
+}
+
+- (DataFetcher *)RequestGetEpisode:(NSString *)episodeId usingCallback:(RSGetEpisode)callback {
+    Episode *episode = [episodeCache objectForKey:episodeId];
+    if(episode != nil) {
+        callback([episode copy], nil);
+        return nil;
+    }
+    else {
+        return [RestService RequestGetEpisode:MyTV_RestServiceUrl ofId:episodeId withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Episode *episode, NSError *error){
+            if(episode != nil && error == nil) {
+                [episodeCache setValue:episode forKey:episodeId];
+                [self performSelector:@selector(ClearProgramVODCache:) withObject:episodeId afterDelay:self.cacheDuration];
+                Episode *copy = [episode copy];
+                callback(copy, nil);
+            }
+        }];
+    }
+}
+
+- (void) ClearEpisodeCache:(NSString *)episodeId {
+    [episodeCache removeObjectForKey:episodeId];
 }
 
 @end
