@@ -25,15 +25,15 @@
 -(void)bindVODPackage:(VODPackage *)vodPackage
 {
     int xPos = 14;
-    /*ChannelControlResponder *responder = [[ChannelControlResponder alloc] init];
-    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
+    VODPackageControlResponder *responder = [[VODPackageControlResponder alloc] init];
+    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"VODPackageControl" owner:responder options:nil];
     UIView *view = [array objectAtIndex:0];
     view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
-    xPos  += view.frame.size.width + ChannelControl_Space;
+    xPos  += view.frame.size.width + 14;
     [self.contentView addSubview:view];
     if([responder respondsToSelector:@selector(bindData:)]) {
-        [responder performSelector:@selector(bindData:) withObject:channel];
-    }*/
+        [responder performSelector:@selector(bindData:) withObject:vodPackage];
+    }
 }
 
 @end

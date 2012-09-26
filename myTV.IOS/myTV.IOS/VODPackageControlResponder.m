@@ -41,7 +41,7 @@
 -(void) fireEvent:(UIGestureRecognizer *)gestureRecognizer {
     
     if([self.vodPackage isKindOfClass:[VODPackage class]]) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View: MyTV_View_VODPackage, MyTV_ViewArgument_Id: self.vodPackage.Id }];
+        [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View: MyTV_View_VODPackage, MyTV_ViewArgument_Id: [NSString stringWithFormat:@"%d", self.vodPackage.Id] }];
     }
 }
 

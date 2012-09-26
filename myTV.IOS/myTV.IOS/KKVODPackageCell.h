@@ -7,7 +7,7 @@
 //
 
 #import <KKGridView/KKGridView.h>
-#import "DealsSubViewResponder.h"
+#import "VODPackageControlResponder.h"
 
 @interface KKVODPackageCell : KKGridViewCell
 

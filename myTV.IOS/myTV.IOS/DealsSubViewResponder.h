@@ -11,6 +11,7 @@
 #import "DataFetcher.h"
 #import "RestService.h"
 #import "UIDevice+IdentifierAddition.h"
+#import "KKVODPackageCell.h"
 
 @interface DealsSubViewResponder : SubViewResponder <KKGridViewDataSource, KKGridViewDelegate>
 {

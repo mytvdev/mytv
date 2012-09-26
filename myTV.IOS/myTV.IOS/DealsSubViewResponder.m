@@ -53,12 +53,12 @@
 {
     KKVODPackageCell *cell = [KKVODPackageCell cellForGridView:gridView];
     VODPackage *vodPackage = [[_fillerData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
-    //cell.vodPackage = vodPackage;
+    cell.vodPackage = vodPackage;
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
-    if([cell respondsToSelector:@selector(bindChannel:)])
+    if([cell respondsToSelector:@selector(bindVODPackage:)])
     {
-        [cell performSelector:@selector(bindChannel:) withObject:vodPackage];
+        [cell performSelector:@selector(bindVODPackage:) withObject:vodPackage];
     }
     return cell;
     
@@ -69,7 +69,7 @@
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
     [MBProgressHUD showHUDAddedTo:self.vodPackagesView animated:YES];
-    [RestService RequestGetVODPackages:MyTV_RestServiceUrl ofBouquet:nil withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *vodPackages, NSError *error)
+    [RestService RequestGetVODPackages:MyTV_RestServiceUrl ofBouquet:@"1" withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *vodPackages, NSError *error)
      {
          if(vodPackages != nil && error == nil)
          {
