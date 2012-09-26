@@ -134,12 +134,13 @@
 		37E04D161612FF0300A73534 /* liveTV@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37E04CF51612FF0300A73534 /* liveTV@2x.jpg */; };
 		37E04D171612FF0300A73534 /* login-Over@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04CF61612FF0300A73534 /* login-Over@2x.png */; };
 		37E04D181612FF0300A73534 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04CF71612FF0300A73534 /* login@2x.png */; };
-		37E04D191612FF0300A73534 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04CF81612FF0300A73534 /* logo@2x.png */; };
 		37E04D1A1612FF0300A73534 /* myvod-Over@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37E04CF91612FF0300A73534 /* myvod-Over@2x.jpg */; };
 		37E04D1B1612FF0300A73534 /* myvod@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37E04CFA1612FF0300A73534 /* myvod@2x.jpg */; };
 		37E04D1C1612FF0300A73534 /* tray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04CFB1612FF0300A73534 /* tray@2x.png */; };
 		37E04D1D1612FF0300A73534 /* visitwebsite-Over@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04CFC1612FF0300A73534 /* visitwebsite-Over@2x.png */; };
 		37E04D1E1612FF0300A73534 /* visitwebsite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04CFD1612FF0300A73534 /* visitwebsite@2x.png */; };
+		37E04D291613194400A73534 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04D271613194400A73534 /* logo.png */; };
+		37E04D2A1613194400A73534 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04D281613194400A73534 /* logo@2x.png */; };
 		B203A4D5160382E1003D49D3 /* KKDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B203A4D4160382E1003D49D3 /* KKDemoCell.m */; };
 		B22A823416088C0B00B9F63C /* KKChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B22A823316088C0B00B9F63C /* KKChannelCell.m */; };
 		B2630A1A160C533B00D56704 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = B2630A19160C533B00D56704 /* Country.m */; };
@@ -278,12 +279,13 @@
 		37E04CF51612FF0300A73534 /* liveTV@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "liveTV@2x.jpg"; sourceTree = "<group>"; };
 		37E04CF61612FF0300A73534 /* login-Over@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-Over@2x.png"; sourceTree = "<group>"; };
 		37E04CF71612FF0300A73534 /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login@2x.png"; sourceTree = "<group>"; };
-		37E04CF81612FF0300A73534 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		37E04CF91612FF0300A73534 /* myvod-Over@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "myvod-Over@2x.jpg"; sourceTree = "<group>"; };
 		37E04CFA1612FF0300A73534 /* myvod@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "myvod@2x.jpg"; sourceTree = "<group>"; };
 		37E04CFB1612FF0300A73534 /* tray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tray@2x.png"; sourceTree = "<group>"; };
 		37E04CFC1612FF0300A73534 /* visitwebsite-Over@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visitwebsite-Over@2x.png"; sourceTree = "<group>"; };
 		37E04CFD1612FF0300A73534 /* visitwebsite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visitwebsite@2x.png"; sourceTree = "<group>"; };
+		37E04D271613194400A73534 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		37E04D281613194400A73534 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		B203A4D3160382E1003D49D3 /* KKDemoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDemoCell.h; sourceTree = "<group>"; };
 		B203A4D4160382E1003D49D3 /* KKDemoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDemoCell.m; sourceTree = "<group>"; };
 		B22A823216088C0B00B9F63C /* KKChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKChannelCell.h; sourceTree = "<group>"; };
@@ -661,6 +663,8 @@
 		B2C79E4615FF2FD500A2EBE7 /* ipadsd */ = {
 			isa = PBXGroup;
 			children = (
+				37E04D271613194400A73534 /* logo.png */,
+				37E04D281613194400A73534 /* logo@2x.png */,
 				37E04CDD1612FF0300A73534 /* back@2x.png */,
 				37E04CDE1612FF0300A73534 /* background@2x.jpg */,
 				37E04CDF1612FF0300A73534 /* backward@2x.png */,
@@ -688,7 +692,6 @@
 				37E04CF51612FF0300A73534 /* liveTV@2x.jpg */,
 				37E04CF61612FF0300A73534 /* login-Over@2x.png */,
 				37E04CF71612FF0300A73534 /* login@2x.png */,
-				37E04CF81612FF0300A73534 /* logo@2x.png */,
 				37E04CF91612FF0300A73534 /* myvod-Over@2x.jpg */,
 				37E04CFA1612FF0300A73534 /* myvod@2x.jpg */,
 				37E04CFB1612FF0300A73534 /* tray@2x.png */,
@@ -946,12 +949,13 @@
 				37E04D161612FF0300A73534 /* liveTV@2x.jpg in Resources */,
 				37E04D171612FF0300A73534 /* login-Over@2x.png in Resources */,
 				37E04D181612FF0300A73534 /* login@2x.png in Resources */,
-				37E04D191612FF0300A73534 /* logo@2x.png in Resources */,
 				37E04D1A1612FF0300A73534 /* myvod-Over@2x.jpg in Resources */,
 				37E04D1B1612FF0300A73534 /* myvod@2x.jpg in Resources */,
 				37E04D1C1612FF0300A73534 /* tray@2x.png in Resources */,
 				37E04D1D1612FF0300A73534 /* visitwebsite-Over@2x.png in Resources */,
 				37E04D1E1612FF0300A73534 /* visitwebsite@2x.png in Resources */,
+				37E04D291613194400A73534 /* logo.png in Resources */,
+				37E04D2A1613194400A73534 /* logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
