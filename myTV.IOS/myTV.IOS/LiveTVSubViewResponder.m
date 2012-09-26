@@ -22,6 +22,11 @@
 {
     if(!hasLoadedChannelsData) {
         [self fillChannels];
+        LiveTVObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"SelectChannel" object:nil queue:nil usingBlock:^(NSNotification *note) {
+            Channel *data = (Channel *)note.object;
+            self.lblChannelName.text = data.Name;
+            self.lblChannelDescripton.text = data.BigDescription;
+        }];
     }
 }
 
@@ -71,4 +76,9 @@
     } synchronous:NO];
 }
 
+-(void) dealloc {
+    if(LiveTVObserver != nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:LiveTVObserver];
+    }
+}
 @end

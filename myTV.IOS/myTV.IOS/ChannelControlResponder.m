@@ -41,6 +41,7 @@
 }
 
 -(void) fireEvent:(UIGestureRecognizer *)gestureRecognizer {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectChannel" object:self.channel];
     UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Play Channel" message:[NSString stringWithFormat:@"Do you want to play %@?", self.channel.Name] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     [view show];
 
@@ -50,6 +51,7 @@
     DLog(@"%@", [NSString stringWithFormat:@"%d", gestureRecognizer.state]);
     if(gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         self.imgFrame.image = [UIImage imageNamed:@"frame-Highlight.png"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectChannel" object:self.channel];
     }
     else if(gestureRecognizer.state == UIGestureRecognizerStateEnded) {
         self.imgFrame.image = [UIImage imageNamed:@"frame.png"];

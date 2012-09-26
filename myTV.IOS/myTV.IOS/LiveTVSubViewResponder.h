@@ -16,6 +16,7 @@
 @interface LiveTVSubViewResponder : SubViewResponder 
 {
     BOOL hasLoadedChannelsData;
+    id LiveTVObserver;
 }
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *ChannelScrollView;
