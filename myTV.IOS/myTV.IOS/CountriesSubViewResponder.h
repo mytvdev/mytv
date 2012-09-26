@@ -16,6 +16,8 @@
 @interface CountriesSubViewResponder : UIViewController <MyKKDemoCellDelegate, KKGridViewDataSource, KKGridViewDelegate>
 {
     BOOL hasLoadedCountriesData;
+    BOOL hasLoadedGenresData;
+    BOOL hasLoadedProgramTypesData;
     BOOL IsLoadingCountries;
     BOOL IsLoadingGenres;
     BOOL IsLoadingProgramTypes;

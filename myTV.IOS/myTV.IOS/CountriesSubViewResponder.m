@@ -53,12 +53,7 @@
 
 -(NSUInteger)numberOfSectionsInGridView:(KKGridView *)gridView
 {
-    if(IsLoadingCountries)
-        return _fillerData.count;
-    else if(IsLoadingGenres)
-        return _fillerGenreData.count;
-    else
-        return _fillerProgramTypeData.count;
+    return 1;
 }
 
 - (NSUInteger)gridView:(KKGridView *)gridView numberOfItemsInSection:(NSUInteger)section
@@ -67,8 +62,10 @@
         return [[_fillerData objectAtIndex:section] count];
     else if(IsLoadingGenres)
         return [[_fillerGenreData objectAtIndex:section] count];
-    else
+    else if(IsLoadingProgramTypes)
         return [[_fillerProgramTypeData objectAtIndex:section] count];
+    else
+        return 0;
 }
 
 - (KKGridViewCell *)gridView:(KKGridView *)gridView cellForItemAtIndexPath:(KKIndexPath *)indexPath
@@ -85,6 +82,7 @@
     {
         Genre *genre = [[_fillerGenreData objectAtIndex:0] objectAtIndex:(CGFloat)indexPath.index];
         cell = [[KKDemoCell cellForGridView:gridView] initWithCells:NO IsCountryGenreCell:YES IsCountryProgramTypeCell:NO IsGenreCell:NO SetIsGenreProgramTypeCell:NO];
+        [cell.button setTitle:@"" forState:UIControlStateNormal];
         [cell.button setTitle:genre.Title forState:UIControlStateNormal];
     }
     else
@@ -114,7 +112,10 @@
                  }
                  [_fillerData addObject:array];
              }
+             
              hasLoadedCountriesData = YES;
+             hasLoadedGenresData = NO;
+             hasLoadedProgramTypesData = NO;
              IsLoadingCountries = YES;
              IsLoadingGenres = NO;
              IsLoadingProgramTypes = NO;
@@ -137,7 +138,7 @@
 
 - (void)fillGenres:(KKDemoCell *)cell;
 {
-    if(hasLoadedCountriesData) {
+    if(!hasLoadedGenresData) {
         [MBProgressHUD showHUDAddedTo:self.countriesSubView animated:YES];
         
         _fillerGenreData = [[NSMutableArray alloc] init];
@@ -152,19 +153,14 @@
             }
             [_fillerGenreData addObject:array];
         }
+        
+        hasLoadedCountriesData = NO;
+        hasLoadedGenresData = YES;
+        hasLoadedProgramTypesData = NO;
         IsLoadingGenres = YES;
         IsLoadingCountries = NO;
         IsLoadingProgramTypes = NO;
-        if([[self.countriesSubView subviews] count] > 0)
-        {
-            for (UIView *subView in [self.countriesSubView subviews])
-            {
-                if ([subView isKindOfClass:[KKGridView class]])
-                {
-                    [subView removeFromSuperview];
-                }
-            }
-        }
+        
         [countriesKKGridView reloadData];
         [self.countriesSubView addSubview:countriesKKGridView];
         [MBProgressHUD hideHUDForView:self.countriesSubView animated:YES];
@@ -173,7 +169,7 @@
 
 - (void)fillProgramTypes:(KKDemoCell *)cell;
 {
-    if(hasLoadedCountriesData) {
+    if(!hasLoadedProgramTypesData) {
         [MBProgressHUD showHUDAddedTo:self.countriesSubView animated:YES];
         
         _fillerProgramTypeData = [[NSMutableArray alloc] init];
@@ -188,13 +184,14 @@
             }
             [_fillerProgramTypeData addObject:array];
         }
+        
+        hasLoadedCountriesData = NO;
+        hasLoadedGenresData = NO;
+        hasLoadedProgramTypesData = YES;
         IsLoadingGenres = NO;
         IsLoadingCountries = NO;
         IsLoadingProgramTypes = YES;
-        if([[self.countriesSubView subviews] count] > 0) {
-            [[[self.countriesSubView subviews] objectAtIndex:0] removeFromSuperview];
-            [[[self.countriesSubView subviews] objectAtIndex:1] removeFromSuperview];
-        }
+        
         [countriesKKGridView reloadData];
         [self.countriesSubView addSubview:countriesKKGridView];
         [MBProgressHUD hideHUDForView:self.countriesSubView animated:YES];
