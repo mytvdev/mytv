@@ -25,7 +25,10 @@
     labelDisplay.text = self.channel.Name;
     UITapGestureRecognizer *taprecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fireEvent:)];
     self.recognizer = taprecognizer;
+    self.longRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(fireLongPress:)];
+    [self.mainView addGestureRecognizer:self.longRecognizer];
     [self.mainView addGestureRecognizer:taprecognizer];
+    
 }
 
 -(void)viewDidUnload {
@@ -41,6 +44,10 @@
     UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Play Channel" message:[NSString stringWithFormat:@"Do you want to play %@?", self.channel.Name] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     [view show];
 
+}
+
+-(void) fireLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
+    DLog(@"%@", [NSString stringWithFormat:@"%d", gestureRecognizer.state]);
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
