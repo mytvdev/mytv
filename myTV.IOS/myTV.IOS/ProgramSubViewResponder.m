@@ -119,14 +119,14 @@
     }
 }
 
-- (void) fillProgramEpisodes:(NSString *)programId {
+- (void) fillProgramEpisodes:(NSString *)pId {
     ProgramSubViewResponder *subview = self;
     
     for(UIView *view in[subview.episodeScrollView subviews]) {
         [view removeFromSuperview];
     }
     MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.episodeScrollView animated:YES];
-    programEpisodesFetcher = [[RestCache CommonProvider] RequestGetProgramVOD:programId usingCallback:^(NSArray *array, NSError *error){
+    programEpisodesFetcher = [[RestCache CommonProvider] RequestGetProgramVOD:pId usingCallback:^(NSArray *array, NSError *error){
         int xPos1 = VODControl_Space;
         int xPos2 = VODControl_Space;
         int pos = 0;

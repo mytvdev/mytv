@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ItemBase.h"
 
-@interface VODPackage : NSObject
+@interface VODPackage : ItemBase <NSCopying>
 
-@property int Id;
-@property NSString *Title, *Description, *Price, *Thumbnail, *StartDate, *EndDate, *VODPackageTypeId;
+//@property int Id;
+//@property NSString *Title, *Description, *Price, *Thumbnail, *StartDate, *EndDate, *VODPackageTypeId;
+@property NSString *Price, *Thumbnail, *StartDate, *EndDate, *VODPackageTypeId;
 
 @end

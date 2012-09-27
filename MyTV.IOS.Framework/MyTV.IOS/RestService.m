@@ -633,6 +633,127 @@
     
 }
 
++(DataFetcher *)RequestGetVODPackageChannels:(NSString *)baseUrl ofVODPackageId:(NSString *)vodPackageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannel)callback
+{
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getvodpackagecontent&contenttypeid=3&deviceid=%@&devicetypeid=%@&vodpackageid=%@", deviceId, deviceTypeId, vodPackageId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    [RestService ProcessVideoItemsTags:root usingCallBack:callback onlyFirstElement:NO];
+                }
+            }
+        }
+    }];
+}
+
++(DataFetcher *)RequestGetVODPackagePrograms:(NSString *)baseUrl ofVODPackageId:(NSString *)vodPackageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback
+{
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getvodpackagecontent&contenttypeid=2&deviceid=%@&devicetypeid=%@&vodpackageid=%@", deviceId, deviceTypeId, vodPackageId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    [RestService ProcessVideoItemsTags:root usingCallBack:callback onlyFirstElement:NO];
+                }
+            }
+        }
+    }];}
+
++(DataFetcher *)RequestGetVODPackage:(NSString *)baseUrl withVODPackageId:(NSString *)vodPackageId ofBouquet:(NSString *)bouquetId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVODPackage)callback
+{
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getvodpackage&deviceid=%@&devicetypeid=%@&BouquetId=%@&vodpackageId=%@", deviceId, deviceTypeId, bouquetId, vodPackageId]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *channelRootEl = [TBXML childElementNamed:@"channel" parentElement:root];
+                    if(channelRootEl == NULL) {
+                        DLog(@"No channel element found in rss xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        
+                        //NSMutableArray* vodpackages = [NSMutableArray new];
+                        VODPackage *vodpackage = [VODPackage new];
+                        
+                        TBXMLElement *item = [TBXML childElementNamed:@"item" parentElement:channelRootEl];
+                        if(item != NULL) {
+                            do {
+                                TBXMLElement *xmlId = [TBXML childElementNamed:@"id" parentElement:item];
+                                TBXMLElement *xmlTitle = [TBXML childElementNamed:@"title" parentElement:item];
+                                TBXMLElement *xmlDescription = [TBXML childElementNamed:@"description" parentElement:item];
+                                TBXMLElement *xmlPrice = [TBXML childElementNamed:@"Price" parentElement:item];
+                                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"thumbnail" parentElement:item];
+                                TBXMLElement *xmlStartDate = [TBXML childElementNamed:@"StartDate" parentElement:item];
+                                TBXMLElement *xmlEndDate = [TBXML childElementNamed:@"EndDate" parentElement:item];
+                                TBXMLElement *xmlVODPackageType = [TBXML childElementNamed:@"VODPackageTypeId" parentElement:item];
+                                
+                                [vodpackage setId:[[TBXML textForElement:xmlId] intValue]];
+                                [vodpackage setTitle:[TBXML textForElement:xmlTitle]];
+                                [vodpackage setDescription:[TBXML textForElement:xmlDescription]];
+                                [vodpackage setPrice:[TBXML textForElement:xmlPrice]];
+                                [vodpackage setStartDate:[TBXML textForElement:xmlStartDate]];
+                                [vodpackage setEndDate:[TBXML textForElement:xmlEndDate]];
+                                [vodpackage setThumbnail:[TBXML valueOfAttributeNamed:@"url" forElement:xmlThumbnail]];
+                                [vodpackage setVODPackageTypeId:[TBXML textForElement:xmlVODPackageType]];
+                                
+                                //[vodpackages addObject:vodpackage];
+                                //item = [TBXML nextSiblingNamed:@"item" searchFromElement:item];
+                                item = NULL;
+                            } while (item != NULL);
+                        }
+                        
+                        callback(vodpackage, NULL);
+                    }
+                }
+            }
+        }
+    }];
+}
+
 +(DataFetcher *)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback {
     
     return [self RequestGetMyVOD:baseUrl withDeviceId:deviceId andDeviceTypeId:deviceTypeId usingCallback:callback synchronous:NO];

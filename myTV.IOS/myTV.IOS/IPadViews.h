@@ -18,6 +18,7 @@
 #import "ProgramSubViewResponder.h"
 #import "EpisodeSubViewResponder.h"
 #import "CountriesSubViewResponder.h"
+#import "VODPackageSubViewResponder.h"
 
 @protocol IPadViews <NSObject>
 @end

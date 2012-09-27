@@ -30,7 +30,9 @@ typedef void (^RSGetAllChannelCallBack) (NSArray /* Channel */ *, NSError*);
 typedef RSGetAllChannelCallBack RSGetChannelCallBack;
 typedef void (^RSGetPreregistrationCode) (NSString*, NSError*);
 typedef void (^RSGetVODPackages) (NSArray /* VODPackage */ *, NSError*);
+typedef void (^RSGetVODPackage) (VODPackage *, NSError *);
 typedef void (^RSGetVOD) (NSArray /* Video, Program */ *, NSError*);
+typedef void (^RSGetChannel) (NSArray /* Channel */ *, NSError*);
 typedef void (^RSGetBoolean) (BOOL, NSError*);
 typedef void (^RSGetPurchaseInforamtion) (PurchaseInformation*, NSError*);
 typedef void (^RSGetEpisode) (Episode*, NSError*);
@@ -68,6 +70,12 @@ typedef void (^RSGetGountries) (NSArray /* Country */ *, NSError*);
 +(DataFetcher *)RequestGetPreregistrationCode:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetPreregistrationCode)callback;
 
 +(DataFetcher *)RequestGetVODPackages:(NSString *)baseUrl ofBouquet:(NSString *)bouquetId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVODPackages)callback;
+
++(DataFetcher *)RequestGetVODPackageChannels:(NSString *)baseUrl ofVODPackageId:(NSString *)vodPackageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannel)callback;
+
++(DataFetcher *)RequestGetVODPackagePrograms:(NSString *)baseUrl ofVODPackageId:(NSString *)vodPackageId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback;
+
++(DataFetcher *)RequestGetVODPackage:(NSString *)baseUrl withVODPackageId:(NSString *)vodPackageId ofBouquet:(NSString *)bouquetId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVODPackage)callback;
 
 +(DataFetcher *)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback;
 

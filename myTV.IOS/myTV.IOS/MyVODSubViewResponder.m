@@ -56,9 +56,8 @@
     cell.episode = episode;             
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
-    if([cell respondsToSelector:@selector(bindEpisode:)]) {
+    if([cell respondsToSelector:@selector(bindEpisode:)])
         [cell performSelector:@selector(bindEpisode:) withObject:episode];
-    }
     return cell;
 }
 

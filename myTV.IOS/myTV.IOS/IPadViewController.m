@@ -75,6 +75,9 @@
     item = [[NavigationItem alloc] initWithKey:MyTV_View_Program forNib:@"ProgramSubView" usingClass:[ProgramSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_VODPackage forNib:@"VODPackageSubView" usingClass:[VODPackageSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
+    [self.navigationLogic addNavigationItem:item];
+    
     item = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[CategoriesSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"catgoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"catgoriesOpen-Over.png"]];
     [self.navigationLogic addNavigationItem:item];
     

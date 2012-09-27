@@ -126,4 +126,70 @@ static RestCache *singleton;
     [episodeCache removeObjectForKey:episodeId];
 }
 
+- (DataFetcher *)RequestGetVODPackage:(NSString *)vodPackageId usingCallback:(RSGetVODPackage)callback {
+    VODPackage *vodPackage = [vodPackageCache objectForKey:vodPackageId];
+    if(vodPackage != nil) {
+        callback([vodPackage copy], nil);
+        return nil;
+    }
+    else {
+        return [RestService RequestGetVODPackage:MyTV_RestServiceUrl withVODPackageId:vodPackageId ofBouquet:@"1" withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(VODPackage *vodpackage, NSError *error){
+            if(vodpackage != nil && error == nil) {
+                [vodPackageCache setValue:vodpackage forKey:vodPackageId];
+                [self performSelector:@selector(ClearProgramVODCache:) withObject:vodPackageId afterDelay:self.cacheDuration];
+                VODPackage *copy = [vodpackage copy];
+                callback(copy, nil);
+            }
+        }];
+    }
+}
+
+- (void) ClearVODPackageCache:(NSString *)vodPackageId {
+    [vodPackageCache removeObjectForKey:vodPackageId];
+}
+
+- (DataFetcher *)RequestGetVODPackageChannels:(NSString *)vodPackageId usingCallback:(RSGetChannel)callback {
+    NSArray *items = [vodPackageChannelCache objectForKey:vodPackageId];
+    if(items != nil) {
+        callback([[NSArray alloc] initWithArray:items copyItems:YES], nil);
+        return nil;
+    }
+    else {
+        return [RestService RequestGetVODPackageChannels:MyTV_RestServiceUrl ofVODPackageId:vodPackageId withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error) {
+            if(array != nil && error == nil) {
+                [vodPackageChannelCache setValue:array forKey:vodPackageId];
+                [self performSelector:@selector(ClearVODPackageChannelsCache:) withObject:vodPackageId afterDelay:self.cacheDuration];
+                NSArray *copy = [[NSArray alloc] initWithArray:array copyItems:YES];
+                callback(copy, nil);
+            }
+        }];
+    }
+}
+
+- (void) ClearVODPackageChannelsCache:(NSString *)vodPackageId {
+    [vodPackageChannelCache removeObjectForKey:vodPackageId];
+}
+
+- (DataFetcher *)RequestGetVODPackagePrograms:(NSString *)vodPackageId usingCallback:(RSGetChannel)callback {
+    NSArray *items = [vodPackageProgramCache objectForKey:vodPackageId];
+    if(items != nil) {
+        callback([[NSArray alloc] initWithArray:items copyItems:YES], nil);
+        return nil;
+    }
+    else {
+        return [RestService RequestGetVODPackagePrograms:MyTV_RestServiceUrl ofVODPackageId:vodPackageId withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error) {
+            if(array != nil && error == nil) {
+                [vodPackageChannelCache setValue:array forKey:vodPackageId];
+                [self performSelector:@selector(ClearVODPackageProgramsCache:) withObject:vodPackageId afterDelay:self.cacheDuration];
+                NSArray *copy = [[NSArray alloc] initWithArray:array copyItems:YES];
+                callback(copy, nil);
+            }
+        }];
+    }
+}
+
+- (void) ClearVODPackageProgramsCache:(NSString *)vodPackageId {
+    [vodPackageProgramCache removeObjectForKey:vodPackageId];
+}
+
 @end

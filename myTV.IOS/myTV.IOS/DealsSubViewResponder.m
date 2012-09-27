@@ -57,12 +57,8 @@
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
     if([cell respondsToSelector:@selector(bindVODPackage:)])
-    {
         [cell performSelector:@selector(bindVODPackage:) withObject:vodPackage];
-    }
     return cell;
-    
-    return nil;
 }
 
 -(void) fillVODPackages {
@@ -81,6 +77,7 @@
          [vodPackagesKKGridView reloadData];
          [self.vodPackagesView addSubview:vodPackagesKKGridView];
          hasLoadedVODPackagesData = YES;
+         [MBProgressHUD hideHUDForView:self.vodPackagesView animated:NO];
      }];
 }
 

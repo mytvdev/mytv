@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Channel : NSObject
+@interface Channel : NSObject<NSCopying>
 
 @property int Id;
 @property NSString *StartDate, *EndDate, *Name, *SmallDescription, *BigDescription, *SmallLogo, *BigLogo;
