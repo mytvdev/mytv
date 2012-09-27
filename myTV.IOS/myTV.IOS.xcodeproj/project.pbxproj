@@ -179,6 +179,8 @@
 		37E04D2A1613194400A73534 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04D281613194400A73534 /* logo@2x.png */; };
 		B203A4D5160382E1003D49D3 /* KKDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B203A4D4160382E1003D49D3 /* KKDemoCell.m */; };
 		B22A823416088C0B00B9F63C /* KKChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B22A823316088C0B00B9F63C /* KKChannelCell.m */; };
+		B23E803916149EB5001F5ECA /* VODPackageSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23E803616149EB5001F5ECA /* VODPackageSubView.xib */; };
+		B23E803A16149EB5001F5ECA /* VODPackageSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B23E803816149EB5001F5ECA /* VODPackageSubViewResponder.m */; };
 		B2630A1A160C533B00D56704 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = B2630A19160C533B00D56704 /* Country.m */; };
 		B2746CC216084E4C00C70126 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B2746CC116084E4C00C70126 /* MBProgressHUD.m */; };
 		B29BBCE216021F7600600B5E /* CategoriesSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B29BBCE016021F7600600B5E /* CategoriesSubViewResponder.m */; };
@@ -365,6 +367,9 @@
 		B203A4D4160382E1003D49D3 /* KKDemoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDemoCell.m; sourceTree = "<group>"; };
 		B22A823216088C0B00B9F63C /* KKChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKChannelCell.h; sourceTree = "<group>"; };
 		B22A823316088C0B00B9F63C /* KKChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKChannelCell.m; sourceTree = "<group>"; };
+		B23E803616149EB5001F5ECA /* VODPackageSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VODPackageSubView.xib; sourceTree = "<group>"; };
+		B23E803716149EB5001F5ECA /* VODPackageSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VODPackageSubViewResponder.h; sourceTree = "<group>"; };
+		B23E803816149EB5001F5ECA /* VODPackageSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VODPackageSubViewResponder.m; sourceTree = "<group>"; };
 		B2630A18160C533B00D56704 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
 		B2630A19160C533B00D56704 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
 		B2746CC016084E4C00C70126 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -863,6 +868,9 @@
 		B2D2BF7A160211620040B206 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				B23E803616149EB5001F5ECA /* VODPackageSubView.xib */,
+				B23E803716149EB5001F5ECA /* VODPackageSubViewResponder.h */,
+				B23E803816149EB5001F5ECA /* VODPackageSubViewResponder.m */,
 				B203A4D3160382E1003D49D3 /* KKDemoCell.h */,
 				B203A4D4160382E1003D49D3 /* KKDemoCell.m */,
 				B22A823216088C0B00B9F63C /* KKChannelCell.h */,
@@ -1114,6 +1122,7 @@
 				37ADE815161443560072A42C /* stop.png in Resources */,
 				37ADE816161443560072A42C /* stopover.png in Resources */,
 				37ADE817161443560072A42C /* timeline.png in Resources */,
+				B23E803916149EB5001F5ECA /* VODPackageSubView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1200,6 +1209,7 @@
 				379E56FD1611DC93002C905D /* RestCache.m in Sources */,
 				B2C527E31613622A0098AB23 /* KKVODPackageCell.m in Sources */,
 				B2C527E9161368670098AB23 /* VODPackageControlResponder.m in Sources */,
+				B23E803A16149EB5001F5ECA /* VODPackageSubViewResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

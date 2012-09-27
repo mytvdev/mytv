@@ -111,35 +111,24 @@
 - (void) fillVODPackagePrograms:(NSString *)vodPId {
     VODPackageSubViewResponder *subview = self;
     
-    for(UIView *view in[subview.channelScrollView subviews]) {
+    for(UIView *view in[subview.programScrollView subviews]) {
         [view removeFromSuperview];
     }
-    MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.channelScrollView animated:YES];
+    MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.programScrollView animated:YES];
     vodPackageProgramsFetcher = [[RestCache CommonProvider] RequestGetVODPackagePrograms:vodPId usingCallback:^(NSArray *array, NSError *error){
-        int xPos1 = 14;
-        int xPos2 = 14;
-        int pos = 0;
+        int xPos = 14;
         for (ItemBase *vod in array) {
             VODControlResponder *responder = [[VODControlResponder alloc] init];
             NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
             UIView *view = [array objectAtIndex:0];
-            if (pos % 2 == 0) {
-                view.frame = CGRectMake(xPos1, 0, view.frame.size.width, view.frame.size.height);
-                xPos1 = xPos1 + view.frame.size.width + 14;
-            }
-            else {
-                view.frame = CGRectMake(xPos2, 155, view.frame.size.width, view.frame.size.height);
-                xPos2 = xPos2 + view.frame.size.width + 14;
-            }
-            pos++;
-            [subview.channelScrollView addSubview:view];
+            view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
+            xPos = xPos + view.frame.size.width + VODControl_Space;
+            [subview.programScrollView addSubview:view];
             if([responder respondsToSelector:@selector(bindData:)]) {
                 [responder performSelector:@selector(bindData:) withObject:vod];
             }
-            
-            
         }
-        subview.channelScrollView.contentSize = CGSizeMake(xPos1, subview.relatedvodPackageScrollView.frame.size.height);
+        subview.channelScrollView.contentSize = CGSizeMake(xPos, subview.relatedvodPackageScrollView.frame.size.height);
         subview.channelScrollView.delegate = subview;
         [loader hide:YES];
     }];
