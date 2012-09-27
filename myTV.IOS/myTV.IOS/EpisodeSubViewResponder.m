@@ -102,7 +102,7 @@
         }
         MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.relatedVODScrollView animated:YES];
         
-        relatedVODFetcher = [RestService RequestGetFeaturedVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
+        relatedVODFetcher = [[RestCache CommonProvider] RequestFeaturedVOD:^(NSArray *array, NSError *error){
             int xPos = VODControl_Space;
             for (ItemBase *vod in array) {
                 VODControlResponder *responder = [[VODControlResponder alloc] init];
