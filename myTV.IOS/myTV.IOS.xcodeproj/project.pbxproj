@@ -885,9 +885,6 @@
 		B2D2BF7A160211620040B206 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				B23E803616149EB5001F5ECA /* VODPackageSubView.xib */,
-				B23E803716149EB5001F5ECA /* VODPackageSubViewResponder.h */,
-				B23E803816149EB5001F5ECA /* VODPackageSubViewResponder.m */,
 				B203A4D3160382E1003D49D3 /* KKDemoCell.h */,
 				B203A4D4160382E1003D49D3 /* KKDemoCell.m */,
 				B22A823216088C0B00B9F63C /* KKChannelCell.h */,
@@ -926,6 +923,9 @@
 				37886EB7160751DB0094F4E2 /* ProgramSubView.xib */,
 				37886EB9160751F90094F4E2 /* ProgramSubViewResponder.h */,
 				37886EBA160751F90094F4E2 /* ProgramSubViewResponder.m */,
+				B23E803616149EB5001F5ECA /* VODPackageSubView.xib */,
+				B23E803716149EB5001F5ECA /* VODPackageSubViewResponder.h */,
+				B23E803816149EB5001F5ECA /* VODPackageSubViewResponder.m */,
 				37886EBC1607520E0094F4E2 /* EpisodeSubView.xib */,
 				37886EBE160752200094F4E2 /* EpisodeSubViewResponder.h */,
 				37886EBF160752200094F4E2 /* EpisodeSubViewResponder.m */,

@@ -10,6 +10,7 @@
 #import "RestService.h"
 #import "VODControlResponder.h"
 #import "RestCache.h"
+#import "VODPackageControlResponder.h"
 
 @interface VODPackageSubViewResponder : SubViewResponder <
 UIScrollViewDelegate
@@ -28,7 +29,9 @@ UIScrollViewDelegate
     NSString *vodPackageId;
 }
 
+@property (unsafe_unretained, nonatomic) IBOutlet UITextField *txtPinCode;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblPriceOrExpiry;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *btnPurchase;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblvodPackageDescription;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblvodPackageName;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imgvodPackage;
@@ -38,5 +41,7 @@ UIScrollViewDelegate
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *programScrollView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *relatedvodPackageScrollView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainView;
+
+- (IBAction)BuyVODPackage:(id)sender;
 
 @end
