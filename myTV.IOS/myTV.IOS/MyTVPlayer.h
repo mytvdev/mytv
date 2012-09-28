@@ -20,6 +20,7 @@
     id NextVideoObserver;
     id TogglePlayObserver;
     id TimeObserver;
+    id ToggleModeObserver;
     UIView *PlayerView;
     NSMutableArray *urls;
     int videoIndex;

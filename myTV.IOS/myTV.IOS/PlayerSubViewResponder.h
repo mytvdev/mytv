@@ -12,6 +12,7 @@
 @interface PlayerSubViewResponder : SubViewResponder <MyTVPlayerUIHandler>
 {
     double videoDuration;
+    BOOL isLetterBox;
 }
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblDuration;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblElapsed;
@@ -26,6 +27,8 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *nextButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *togglePlayButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *simplePlayView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *btnChangeMode;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *btnSimpleChangeMode;
 
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblState;
 @property (unsafe_unretained, nonatomic) IBOutlet UISlider *timeSlider;
@@ -37,6 +40,7 @@
 - (IBAction)hideControls:(id)sender;
 - (IBAction)showControls:(id)sender;
 - (IBAction)togglePlay:(id)sender;
+- (IBAction)changeMode:(id)sender;
 
 - (IBAction)doRewind:(id)sender;
 - (IBAction)doFastForward:(id)sender;

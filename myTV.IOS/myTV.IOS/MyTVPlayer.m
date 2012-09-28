@@ -130,6 +130,16 @@
         }
     }];
     
+    ToggleModeObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"ChangeAspectVideo" object:nil queue:nil usingBlock:^(NSNotification *note) {
+        if(self.movieController.scalingMode == MPMovieScalingModeAspectFit) {
+            self.movieController.scalingMode = MPMovieScalingModeFill;
+        }
+        else {
+            self.movieController.scalingMode = MPMovieScalingModeAspectFit;
+        }
+        
+    }];
+    
     [[NSNotificationCenter defaultCenter] addObserverForName:MPMoviePlayerPlaybackStateDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         MPMoviePlaybackState state = [player.movieController playbackState];
         switch (state) {
@@ -222,6 +232,9 @@
     }
     if(TogglePlayObserver != nil) {
         [[NSNotificationCenter defaultCenter] removeObserver:TogglePlayObserver];
+    }
+    if(ToggleModeObserver != nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:ToggleModeObserver];
     }
 }
 

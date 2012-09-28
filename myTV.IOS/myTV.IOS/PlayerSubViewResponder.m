@@ -55,6 +55,20 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"TogglePlayVideo" object:nil];
 }
 
+- (IBAction)changeMode:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeAspectVideo" object:nil];
+    if(isLetterBox) {
+        [self.btnChangeMode setImage:[UIImage imageNamed:@"letterbox.png"] forState:UIControlStateNormal];
+        [self.btnSimpleChangeMode setImage:[UIImage imageNamed:@"letterbox.png"] forState:UIControlStateNormal];
+        isLetterBox = NO;
+    }
+    else {
+        [self.btnChangeMode setImage:[UIImage imageNamed:@"fullscreen.png"] forState:UIControlStateNormal];
+        [self.btnSimpleChangeMode setImage:[UIImage imageNamed:@"fullscreen.png"] forState:UIControlStateNormal];
+        isLetterBox = YES;
+    }
+}
+
 - (void) setIsLoading:(BOOL)status {
    [self.loaderView setHidden:!status];
 }
