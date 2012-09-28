@@ -32,6 +32,7 @@
                 player.movieController = [[MPMoviePlayerController alloc] initWithContentURL:vidUrl];
                 player.movieController.scalingMode = MPMovieScalingModeAspectFit;
                 [player.movieController play];
+                [self performSelector:@selector(setCurrentTime) withObject:nil afterDelay:1];
                 [[player.movieController view] setFrame:[self.mainView bounds]];
                 player.movieController.controlStyle = MPMovieControlStyleNone;
                 
@@ -42,6 +43,8 @@
                 [self.responder setPlayerView:player.movieController.view];
                 [self.mainView addSubview:view];
                 [self setNextPreviousStates];
+                [self.responder setIsPlaying:YES];
+                [self.responder setIsSimpleStream:YES];
             }
             else {
                 UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No Video Found" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -53,11 +56,10 @@
     }];
     StopObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"StopVideo" object:nil queue:nil usingBlock:^(NSNotification *note){
         haltPlayback = YES;
+        self.movieController.currentPlaybackRate = 1;
         [player.movieController stop];
-        
         if(haltPlayback == YES && PlayerView != nil) {
-            [PlayerView removeFromSuperview];
-            PlayerView = nil;
+            [self removePlayer];
         }
     }];
     
@@ -80,30 +82,75 @@
         }
     }];
     
+    TimeObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"ChangeTimeVideo" object:nil queue:nil usingBlock:^(NSNotification *note){
+        NSString *time = [note.userInfo valueForKey:@"time"];
+        float currentTime = [time floatValue];
+        if (currentTime >= 0 && currentTime <= self.movieController.duration) {
+            self.movieController.currentPlaybackTime = currentTime;
+        }
+        
+    }];
+    
+    FFObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"FastForwardVideo" object:nil queue:nil usingBlock:^(NSNotification *note){
+        float playbackrate = self.movieController.currentPlaybackRate;
+        if(self.movieController.currentPlaybackRate < 1) {
+            self.movieController.currentPlaybackRate = 2;
+        }
+        else {
+            if(self.movieController.currentPlaybackRate < 32) {
+                self.movieController.currentPlaybackRate = self.movieController.currentPlaybackRate * 2;
+            }
+        }
+         playbackrate = self.movieController.currentPlaybackRate;
+    }];
+    RewindObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"RewindVideo" object:nil queue:nil usingBlock:^(NSNotification *note){
+        float playbackrate = self.movieController.currentPlaybackRate;
+        if(self.movieController.currentPlaybackRate > -1) {
+            [self.movieController beginSeekingBackward];
+            self.movieController.currentPlaybackRate = -1;
+        }
+        else {
+            if(self.movieController.currentPlaybackRate > -32) {
+                [self.movieController beginSeekingForward];
+                self.movieController.currentPlaybackRate = self.movieController.currentPlaybackRate * 2;
+            }
+        }
+         playbackrate = self.movieController.currentPlaybackRate;
+    }];
+    
+    TogglePlayObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"TogglePlayVideo" object:nil queue:nil usingBlock:^(NSNotification *note){
+        if (self.movieController.playbackState == MPMoviePlaybackStatePlaying) {
+            [self.movieController pause];
+            [self.responder setIsPlaying:NO];
+        }
+        else {
+            self.movieController.currentPlaybackRate = 1;
+            [self.movieController play];
+            [self.responder setIsPlaying:YES];
+        }
+    }];
+    
     [[NSNotificationCenter defaultCenter] addObserverForName:MPMoviePlayerPlaybackStateDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         MPMoviePlaybackState state = [player.movieController playbackState];
         switch (state) {
-            case MPMoviePlaybackStatePlaying :
-                [player.responder setIsLoading:NO];
-                break;
-                
-            case MPMoviePlaybackStateInterrupted :
-                [player.responder setIsLoading:YES];
-                break;
-
             case MPMoviePlaybackStateStopped:
                 VideoStopCalled = YES;
                 if(haltPlayback == YES && PlayerView != nil) {
-                    [PlayerView removeFromSuperview];
-                    PlayerView = nil;
+                    [self removePlayer];
                 }
                 else {
                     [self playNextOrHalt];
                 }
                 break;
             default:
+                DLog(@"%d", state);
                 break;
         }
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:MPMovieDurationAvailableNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        [self.responder setIsSimpleStream:NO];
+        [self.responder setDuration:self.movieController.duration];
     }];
 
 }
@@ -117,12 +164,34 @@
         self.movieController.contentURL = vidUrl;
         [self.movieController prepareToPlay];
         [self.movieController play];
+        [self.responder setIsLoading:YES];
         [self setNextPreviousStates];
     }
     else {
-        [PlayerView removeFromSuperview];
-        PlayerView = nil;
+        [self removePlayer];
     }
+}
+
+- (void) setCurrentTime {
+    if(self.responder != nil && self.movieController != nil) {
+        [self.responder setCurrentTime:self.movieController.currentPlaybackTime];
+        [self performSelector:@selector(setCurrentTime) withObject:nil afterDelay:0.5];
+        if(self.movieController.loadState == MPMovieLoadStateStalled || self.movieController.loadState == MPMovieLoadStateUnknown || self.movieController.playbackState == MPMoviePlaybackStateInterrupted) {
+            [self.responder setIsLoading:YES];
+        }
+        else {
+            [self.responder setIsLoading:NO];
+        }
+    }
+
+}
+
+- (void) removePlayer {
+    [PlayerView removeFromSuperview];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self.responder];
+    PlayerView = nil;
+    self.responder = nil;
+    self.movieController = nil;
 }
 
 - (void) setNextPreviousStates {
@@ -135,18 +204,26 @@
 }
 
 - (void) dealloc {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     if (PlayerObserver != nil) {
         [[NSNotificationCenter defaultCenter] removeObserver:PlayerObserver];
-        PlayerObserver = nil;
     }
     if(StopObserver != nil) {
         [[NSNotificationCenter defaultCenter] removeObserver:StopObserver];
-        StopObserver = nil;
     }
     if(NextVideoObserver != nil) {
         [[NSNotificationCenter defaultCenter] removeObserver:NextVideoObserver];
-        NextVideoObserver = nil;
+    }
+    if(FFObserver != nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:FFObserver];
+    }
+    if(RewindObserver != nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:RewindObserver];
+    }
+    if(TogglePlayObserver != nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:TogglePlayObserver];
     }
 }
+
 
 @end

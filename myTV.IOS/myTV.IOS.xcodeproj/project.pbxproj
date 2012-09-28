@@ -319,6 +319,7 @@
 		37ADE7E1161443560072A42C /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		37ADE7E2161443560072A42C /* stopover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopover.png; sourceTree = "<group>"; };
 		37ADE7E3161443560072A42C /* timeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeline.png; sourceTree = "<group>"; };
+		37ADE818161471AB0072A42C /* MyTVPlayerUIHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTVPlayerUIHandler.h; sourceTree = "<group>"; };
 		37B1A9A81602160300687B3E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		37B1A9AB1602161E00687B3E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		37DBB2EA160B4EA60071F454 /* buyEpisode-Over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buyEpisode-Over.png"; sourceTree = "<group>"; };
@@ -558,6 +559,7 @@
 				37714A6116032D44004C71B1 /* UI */,
 				374D31EE1601E01C0018F52A /* MyTVPlayer.h */,
 				374D31EF1601E01C0018F52A /* MyTVPlayer.m */,
+				37ADE818161471AB0072A42C /* MyTVPlayerUIHandler.h */,
 			);
 			name = Player;
 			sourceTree = "<group>";

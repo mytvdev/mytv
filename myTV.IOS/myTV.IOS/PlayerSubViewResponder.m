@@ -30,6 +30,10 @@
         view.alpha = 0;
     }
     showControlsButton.alpha = 1;
+    for(UIView *view in self.simplePlayView.subviews) {
+        view.alpha = 0;
+    }
+    self.showControlsSimpleView.alpha = 1;
 }
 
 - (IBAction)showControls:(id)sender {
@@ -37,27 +41,38 @@
         view.alpha = 1;
     }
     showControlsButton.alpha = 0;
+    for(UIView *view in self.simplePlayView.subviews) {
+        view.alpha = 1;
+    }
+    self.showControlsSimpleView.alpha = 0;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:5];
+}
+
+- (IBAction)togglePlay:(id)sender {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:5];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"TogglePlayVideo" object:nil];
 }
 
 - (void) setIsLoading:(BOOL)status {
-    if(status == YES) {
-        loadingLabel.text = @"Loading";
-    }
-    else {
-        loadingLabel.text = @"";
-    }
+   [self.loaderView setHidden:!status];
 }
 
 - (void)setNextState:(BOOL)nextState andPreviousState:(BOOL)prevState {
-    [nextButton setHidden:!nextState];
-    [prevButton setHidden:!prevState];
+    [nextButton setEnabled:nextState];
+    [prevButton setEnabled:prevState];
 }
 
 - (IBAction)goToPrev:(id)sender {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:5];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NextVideo" object:nil userInfo:@{ @"index": @"-1" }];
 }
 
 - (IBAction)goToNext:(id)sender {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:5];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NextVideo" object:nil userInfo:@{ @"index": @"1" }];
 }
 
@@ -67,5 +82,80 @@
     }
 }
 
+- (IBAction)doRewind:(id)sender {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:5];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RewindVideo" object:nil];
+}
+
+- (IBAction)doFastForward:(id)sender {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:5];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FastForwardVideo" object:nil];
+}
+
+- (IBAction)sliderTouch:(id)sender {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:5];
+}
+
+- (IBAction)sliderValueChanged:(id)sender {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:5];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeTimeVideo" object:nil userInfo:@ {@"time": [NSString stringWithFormat:@"%f", self.timeSlider.value] }];
+}
+
+- (void)setIsPlaying:(BOOL)playing {
+    if (!playing) {
+        [self.togglePlayButton setImage:[UIImage imageNamed:@"playvid.png"] forState:UIControlStateNormal];
+        [self.togglePlayButton setImage:[UIImage imageNamed:@"playvidover.png"] forState:UIControlStateNormal];
+    }
+    else {
+        [self.togglePlayButton setImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
+        [self.togglePlayButton setImage:[UIImage imageNamed:@"pauseover.png"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)setIsSimpleStream:(BOOL)simple {
+    if(simple) {
+        [self.simplePlayView setHidden:NO];
+        [self.controlsContainerView setHidden:YES];
+    }
+    else {
+        [self.simplePlayView setHidden:YES];
+        [self.controlsContainerView setHidden:NO];
+    }
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:5];
+}
+
+- (void)setDuration:(double)duration {
+    videoDuration = duration;
+    self.timeSlider.maximumValue = videoDuration;
+    self.lblDuration.text = [self stringFromTimeInterval:duration];
+}
+
+- (void)setCurrentTime:(double)time {
+    self.lblElapsed.text = [self stringFromTimeInterval:time];
+    if(time >= 0) {
+        self.timeSlider.value = time;
+    }
+    else {
+        self.timeSlider.value = 0;
+    }
+}
+
+- (NSString *)stringFromTimeInterval:(NSTimeInterval)interval {
+    if(interval < 0) return @"00:00:00";
+    NSInteger ti = (NSInteger)interval;
+    NSInteger seconds = ti % 60;
+    NSInteger minutes = (ti / 60) % 60;
+    NSInteger hours = (ti / 3600);
+    return [NSString stringWithFormat:@"%02i:%02i:%02i", hours, minutes, seconds];
+}
+
+-(void) dealloc {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+}
 
 @end

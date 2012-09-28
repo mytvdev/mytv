@@ -9,12 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "PlayerSubViewResponder.h"
+#import "MyTVPlayerUIHandler.h"
 
 @interface MyTVPlayer : NSObject
 {
     id PlayerObserver;
     id StopObserver;
+    id FFObserver;
+    id RewindObserver;
     id NextVideoObserver;
+    id TogglePlayObserver;
+    id TimeObserver;
     UIView *PlayerView;
     NSMutableArray *urls;
     int videoIndex;
@@ -23,7 +28,7 @@
 }
 
 @property MPMoviePlayerController *movieController;
-@property PlayerSubViewResponder *responder;
+@property NSObject<MyTVPlayerUIHandler> *responder;
 @property (unsafe_unretained) UIView *mainView;
 
 - (void) startHandlingPlayerRequests;
