@@ -83,6 +83,8 @@
                             [self.btnPayOrPlay setImage:[UIImage imageNamed:@"buyEpisode.png"] forState:UIControlStateNormal];
                             [self.btnPayOrPlay setImage:[UIImage imageNamed:@"buyEpisode-Over.png"] forState:UIControlStateHighlighted];
                             [self.btnPayOrPlay setHidden:NO];
+                            [self.lblPriceOrExpiry setHidden:NO];
+                            [self.lblPriceOrExpiry setText:[NSString stringWithFormat:@"$%@", episode.Price]];
                         }
                     }
                     

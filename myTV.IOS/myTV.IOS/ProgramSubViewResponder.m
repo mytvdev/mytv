@@ -79,6 +79,8 @@
                             [self.btnPayOrPlay setImage:[UIImage imageNamed:@"buyProgram.png"] forState:UIControlStateNormal];
                             [self.btnPayOrPlay setImage:[UIImage imageNamed:@"buyProgram-Over.png"] forState:UIControlStateHighlighted];
                             [self.btnPayOrPlay setHidden:NO];
+                            [self.lblPriceOrExpiry setHidden:NO];
+                            [self.lblPriceOrExpiry setText:[NSString stringWithFormat:@"$%@", program.Price]];
                         }
                     }
                     
