@@ -27,31 +27,36 @@
 
 -(void) fillChannels {
     if(!hasLoadedChannelData) {
-        
         HomeSubViewResponder *subview = self;
         [MBProgressHUD showHUDAddedTo:subview.channelScrollView animated:YES];
         RSGetChannelCallBack channelCallback = ^(NSArray *channels, NSError *error){
             if(subview.channelScrollView != nil) {
                 int xPos = ChannelControl_Space;
-                for (Channel *channel in channels) {
-                    ChannelControlResponder *responder = [[ChannelControlResponder alloc] init];
-                    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
-                    UIView *view = [array objectAtIndex:0];
-                    view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
-                    xPos = xPos + view.frame.size.width + ChannelControl_Space;
-                    [subview.channelScrollView addSubview:view];
-                    if([responder respondsToSelector:@selector(bindData:)]) {
-                        [responder performSelector:@selector(bindData:) withObject:channel];
+                if (channels != nil && channels.count > 0)
+                {
+                    for (Channel *channel in channels) {
+                        ChannelControlResponder *responder = [[ChannelControlResponder alloc] init];
+                        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];
+                        UIView *view = [array objectAtIndex:0];
+                        view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
+                        xPos = xPos + view.frame.size.width + ChannelControl_Space;
+                        [subview.channelScrollView addSubview:view];
+                        if([responder respondsToSelector:@selector(bindData:)]) {
+                            [responder performSelector:@selector(bindData:) withObject:channel];
+                        }
                     }
+                    subview.channelScrollView.contentSize = CGSizeMake(xPos, subview.channelScrollView.frame.size.height);
+                    //[subview.channelScrollView setCanCancelContentTouches:YES];
+                    hasLoadedChannelData = YES;
                 }
-                subview.channelScrollView.contentSize = CGSizeMake(xPos, subview.channelScrollView.frame.size.height);
-                //[subview.channelScrollView setCanCancelContentTouches:YES];
-                hasLoadedChannelData = YES;
+                else
+                {
+                    
+                }
             }
             [MBProgressHUD hideHUDForView:subview.channelScrollView animated:YES];
             [subview cancelChannelFetcher];
         };
-        
         
         [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error){
             if(linking != nil && error == nil) {
@@ -61,10 +66,6 @@
                 _channelFetcher = [RestService RequestGetAllChannels:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:channelCallback];
             }
         }];
-        
-        
-
-        
     }
 }
 
