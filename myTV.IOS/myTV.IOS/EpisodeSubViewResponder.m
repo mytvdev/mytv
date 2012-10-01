@@ -75,6 +75,12 @@
                         [self.btnPayOrPlay setImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
                         [self.btnPayOrPlay setImage:[UIImage imageNamed:@"play-Over.png"] forState:UIControlStateHighlighted];
                         [self.btnPayOrPlay setHidden:NO];
+                        if(pi.expiryDate != nil) {
+                            [self.lblPriceOrExpiry setHidden:NO];
+                            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                            [formatter setDateFormat:@"yyyy-MM-dd"];
+                            [self.lblPriceOrExpiry setText:[formatter stringFromDate:pi.expiryDate]];
+                        }
                         isPurchased = YES;
                     }
                     else {
