@@ -162,7 +162,10 @@
         subview.episodeScrollView.delegate = subview;
         subview.txtPinCode.delegate = subview;
         float val = subview.episodeScrollView.contentSize.width / PageSize;
+        CGRect frame = CGRectMake(0, 0, subview.episodeScrollView.frame.size.width, subview.episodeScrollView.frame.size.height);
+        [subview.episodeScrollView scrollRectToVisible:frame animated:NO];
         subview.episodePager.numberOfPages = [[NSString stringWithFormat:@"%f",  val] integerValue];
+        [self scrollViewDidScroll:subview.episodeScrollView];
         [loader hide:YES];
     }];
 }

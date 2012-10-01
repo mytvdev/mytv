@@ -53,6 +53,11 @@
                 currentepisode = episode;
                 
                 lblEpisodeName.text = (episode.Title != nil && episode.Title != @"") ? episode.Title : @"-";
+                [[RestCache CommonProvider] RequestGetProgram:programId usingCallback:^(MyTVProgram *program, NSError *error){
+                    if(program != nil && error == nil) {
+                        lblEpisodeName.text = [NSString stringWithFormat:@"%@ - %@", program.Title, lblEpisodeName.text];
+                    }
+                }];
                 lblEpisodeDescription.text = (episode.Description != nil && episode.Description != @"") ? episode.Description : @"-";
                 lblDirector.text = (episode.Director != nil && episode.Director != @"") ? episode.Director : @"-";
                 lblCast.text = (episode.Guest != nil && episode.Guest != @"") ? episode.Guest : @"-";
@@ -164,8 +169,11 @@
         subview.episodeScrollView.contentSize = CGSizeMake(xPos1, subview.relatedVODScrollView.frame.size.height);
         subview.episodeScrollView.delegate = subview;
         subview.txtPinCode.delegate = subview;
+        CGRect frame = CGRectMake(0, 0, self.episodeScrollView.frame.size.width, self.episodeScrollView.frame.size.height);
+        [subview.episodeScrollView scrollRectToVisible:frame animated:NO];
         float val = subview.episodeScrollView.contentSize.width / PageSize;
         subview.episodePager.numberOfPages = [[NSString stringWithFormat:@"%f",  val] integerValue];
+        [self scrollViewDidScroll:subview.episodeScrollView];
         [loader hide:YES];
     }];
 }
