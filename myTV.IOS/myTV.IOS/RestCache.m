@@ -192,4 +192,29 @@ static RestCache *singleton;
     [vodPackageProgramCache removeObjectForKey:vodPackageId];
 }
 
+-(DataFetcher *) RequestGetMyTVPackages:(RSGetPackages)callback
+{
+    if(mytvPackages == nil) {
+        return [RestService RequestGetPackages:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
+            if(array != nil && error == nil) {
+                mytvPackages = array;
+                NSArray *copy = [[NSArray alloc] initWithArray:mytvPackages copyItems:YES];
+                callback(copy, nil);
+                [self performSelector:@selector(ClearMyTVPackagesCache) withObject:nil afterDelay:self.cacheDuration];
+            }
+            else {
+                callback(array, error);
+            }
+        }];
+    }
+    else {
+        callback([[NSArray alloc] initWithArray:mytvPackages copyItems:YES], nil);
+        return nil;
+    }
+}
+
+- (void) ClearMyTVPackagesCache{
+    mytvPackages = nil;
+}
+
 @end

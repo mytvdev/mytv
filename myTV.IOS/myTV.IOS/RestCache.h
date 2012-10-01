@@ -16,6 +16,7 @@
     NSMutableDictionary *vodPackageCache;
     NSMutableDictionary *vodPackageChannelCache;
     NSMutableDictionary *vodPackageProgramCache;
+    NSArray *mytvPackages;
 }
 @property NSUInteger cacheDuration;
 
@@ -28,6 +29,8 @@
 -(DataFetcher *) RequestGetProgram:(NSString *)programId usingCallback:(RSGetProgram)callback;
 
 -(DataFetcher *) RequestGetEpisode:(NSString *)episodeId usingCallback:(RSGetEpisode)callback;
+
+-(DataFetcher *) RequestGetMyTVPackages:(RSGetPackages)callback;
 
 -(DataFetcher *) RequestGetVODPackage:(NSString *)vodPackageId usingCallback:(RSGetVODPackage)callback;
 

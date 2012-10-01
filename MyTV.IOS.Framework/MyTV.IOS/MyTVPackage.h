@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MyTVPackage : NSObject
+@interface MyTVPackage : NSObject<NSCopying>
 
 @property NSString *Id, *Title, *Description, *Price, *Thumbnail, *StartDate, *EndDate;
 
