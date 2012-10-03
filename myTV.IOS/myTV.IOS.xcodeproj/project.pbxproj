@@ -65,6 +65,10 @@
 		3777B18A1615A9C500A1E66B /* fullscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 3777B1851615A9C500A1E66B /* fullscreen.png */; };
 		3777B18B1615A9C500A1E66B /* letterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3777B1861615A9C500A1E66B /* letterbox.png */; };
 		3777B18C1615A9C500A1E66B /* livechannelbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3777B1871615A9C500A1E66B /* livechannelbg.png */; };
+		3778E0C8161C304900358A6C /* newcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 3778E0C6161C304900358A6C /* newcode.png */; };
+		3778E0C9161C304900358A6C /* newcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3778E0C7161C304900358A6C /* newcode@2x.png */; };
+		3778E0CD161C307400358A6C /* code.png in Resources */ = {isa = PBXBuildFile; fileRef = 3778E0CB161C307400358A6C /* code.png */; };
+		3778E0CE161C307400358A6C /* code@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3778E0CC161C307400358A6C /* code@2x.png */; };
 		37886EB0160715DF0094F4E2 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37886EAD160715DF0094F4E2 /* NSString+MD5Addition.m */; };
 		37886EB1160715DF0094F4E2 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 37886EAF160715DF0094F4E2 /* UIDevice+IdentifierAddition.m */; };
 		37886EB4160717200094F4E2 /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 37886EB3160717200094F4E2 /* Prefs.m */; };
@@ -242,6 +246,10 @@
 		3777B1851615A9C500A1E66B /* fullscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fullscreen.png; sourceTree = "<group>"; };
 		3777B1861615A9C500A1E66B /* letterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = letterbox.png; sourceTree = "<group>"; };
 		3777B1871615A9C500A1E66B /* livechannelbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = livechannelbg.png; sourceTree = "<group>"; };
+		3778E0C6161C304900358A6C /* newcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newcode.png; sourceTree = "<group>"; };
+		3778E0C7161C304900358A6C /* newcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newcode@2x.png"; sourceTree = "<group>"; };
+		3778E0CB161C307400358A6C /* code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = code.png; sourceTree = "<group>"; };
+		3778E0CC161C307400358A6C /* code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "code@2x.png"; sourceTree = "<group>"; };
 		37886EAC160715DF0094F4E2 /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Addition.h"; sourceTree = "<group>"; };
 		37886EAD160715DF0094F4E2 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5Addition.m"; sourceTree = "<group>"; };
 		37886EAE160715DF0094F4E2 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
@@ -763,6 +771,10 @@
 		B2C79E4615FF2FD500A2EBE7 /* ipadsd */ = {
 			isa = PBXGroup;
 			children = (
+				3778E0CB161C307400358A6C /* code.png */,
+				3778E0CC161C307400358A6C /* code@2x.png */,
+				3778E0C6161C304900358A6C /* newcode.png */,
+				3778E0C7161C304900358A6C /* newcode@2x.png */,
 				3777B1831615A9C500A1E66B /* close.png */,
 				3777B1841615A9C500A1E66B /* closeover.png */,
 				3777B1851615A9C500A1E66B /* fullscreen.png */,
@@ -1145,6 +1157,10 @@
 				3777B18A1615A9C500A1E66B /* fullscreen.png in Resources */,
 				3777B18B1615A9C500A1E66B /* letterbox.png in Resources */,
 				3777B18C1615A9C500A1E66B /* livechannelbg.png in Resources */,
+				3778E0C8161C304900358A6C /* newcode.png in Resources */,
+				3778E0C9161C304900358A6C /* newcode@2x.png in Resources */,
+				3778E0CD161C307400358A6C /* code.png in Resources */,
+				3778E0CE161C307400358A6C /* code@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
