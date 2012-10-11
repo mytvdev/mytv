@@ -1,9 +1,9 @@
 //
 //  SearchSubViewResponder.m
-//  myTV.IOS.App
+//  myTV.IOS
 //
-//  Created by myTV Inc. on 9/6/12.
-//  Copyright (c) 2012 myTV Inc.. All rights reserved.
+//  Created by Johnny on 10/10/12.
+//  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
 //
 
 #import "SearchSubViewResponder.h"

@@ -1,13 +1,13 @@
 //
-//  SearchSubViewResponder.h
+//  SearchControlResponder.h
 //  myTV.IOS
 //
-//  Created by Johnny on 10/10/12.
+//  Created by Johnny on 10/5/12.
 //  Copyright (c) 2012 Omar Ayoub-Salloum. All rights reserved.
 //
 
 #import "SubViewResponder.h"
 
-@interface SearchSubViewResponder : SubViewResponder
+@interface SearchControlResponder : SubViewResponder
 
 @end
