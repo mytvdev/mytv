@@ -10,22 +10,30 @@
 
 @implementation KKSearchCell
 
-- (id)initWithFrame:(CGRect)frame
+@synthesize itemBase = _itemBase;
+
+- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+    if ((self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]))
+    {
+        
     }
+    
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+-(void)bindItemBase:(Episode *)itemBase
 {
-    // Drawing code
+    int xPos = 14;
+    SearchControlResponder *responder = [[SearchControlResponder alloc] init];
+    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"SearchControl" owner:responder options:nil];
+    UIView *view = [array objectAtIndex:0];
+    view.frame = CGRectMake(xPos, 0, view.frame.size.width, view.frame.size.height);
+    xPos  += view.frame.size.width + 14;
+    [self.contentView addSubview:view];
+    if([responder respondsToSelector:@selector(bindData:)]) {
+        [responder performSelector:@selector(bindData:) withObject:itemBase];
+    }
 }
-*/
 
 @end

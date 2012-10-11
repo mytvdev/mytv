@@ -27,4 +27,5 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelDisplay;
 @property UITapGestureRecognizer *recognizer;
 @property UILongPressGestureRecognizer *longRecognizer;
+
 @end

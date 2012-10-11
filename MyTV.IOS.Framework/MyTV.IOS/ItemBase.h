@@ -11,7 +11,7 @@
 @interface ItemBase : NSObject <NSCopying>
 
 @property int Id;
-@property NSString *Title, *Description, *Type, *Logo;
+@property NSString *Title, *Description, *Type, *Logo, *Duration, *Price, *ExpiresIn;
 
 
 @end

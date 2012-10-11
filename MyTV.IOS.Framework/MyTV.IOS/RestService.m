@@ -553,15 +553,12 @@
                                 NSString* regcodevalue =  [TBXML textForElement:regCode];
                                 callback(regcodevalue, NULL);
                             }
-                            
                         }
-                        
                     }
                 }
             }
         }
     }];
-    
 }
 
 +(DataFetcher *)RequestGetVODPackages:(NSString *)baseUrl ofBouquet:(NSString *)bouquetId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetChannelCallBack)callback {
@@ -2005,6 +2002,75 @@
             }
         }
     }];
+}
+
++(DataFetcher *)Search:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId andSearchCriteria:(NSString *)searchCriteria usingCallback:(RSGetGenres)callback
+{    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=search&deviceid=%@&devicetypeid=%@&episodetitle=%@", deviceId, deviceTypeId, searchCriteria]];
+    
+    return [DataFetcher Get:requestUrl usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *channelRootEl = [TBXML childElementNamed:@"episodes" parentElement:root];
+                    if(channelRootEl == NULL) {
+                        DLog(@"No channels element found in response xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        
+                        NSMutableArray* channels = [NSMutableArray new];
+                        
+                        TBXMLElement *item = [TBXML childElementNamed:@"episode" parentElement:channelRootEl];
+                        if(item != NULL) {
+                            do {
+                                Episode *itembase = [Episode new];
+                                TBXMLElement *xmlId = [TBXML childElementNamed:@"id" parentElement:item];
+                                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"thumbnail" parentElement:item];
+                                TBXMLElement *xmlTitle = [TBXML childElementNamed:@"title" parentElement:item];
+                                TBXMLElement *xmlDuration = [TBXML childElementNamed:@"duration" parentElement:item];
+                                TBXMLElement *xmlPrice = [TBXML childElementNamed:@"price" parentElement:item];
+                                TBXMLElement *xmlExpiresIn = [TBXML childElementNamed:@"expiresin" parentElement:item];
+                                TBXMLElement *xmlProgramId = [TBXML childElementNamed:@"programId" parentElement:item];
+                                TBXMLElement *xmlType = [TBXML childElementNamed:@"type" parentElement:item];
+                                
+                                [itembase setId:[[TBXML textForElement:xmlId] intValue]];
+                                itembase.Logo = [TBXML textForElement:xmlThumbnail];
+                                itembase.Title = [TBXML textForElement:xmlTitle];
+                                itembase.Duration = [TBXML textForElement:xmlDuration];
+                                itembase.Price = [TBXML textForElement:xmlPrice];
+                                itembase.ExpiresIn = [TBXML textForElement:xmlExpiresIn];
+                                itembase.Type = [TBXML textForElement:xmlType];
+                                itembase.ProgramId = [TBXML textForElement:xmlProgramId];
+                                [channels addObject:itembase];
+                                
+                                item = [TBXML nextSiblingNamed:@"episode" searchFromElement:item];
+                            } while (item != NULL);
+                        }
+                        
+                        callback([NSArray arrayWithArray:channels], NULL);
+                        
+                    }
+                    
+                }
+            }
+        }
+    }];
+    
 }
 
 +(NSMutableArray *)FetchCountryGenres:(TBXMLElement *)element

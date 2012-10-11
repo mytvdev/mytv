@@ -10,7 +10,7 @@
 
 @implementation ItemBase
 
-@synthesize Id, Description, Logo, Title, Type;
+@synthesize Id, Description, Logo, Title, Type, Price, Duration, ExpiresIn;
 
 - (id)copyWithZone:(NSZone *)zone {
     ItemBase *copy = [[[self class] allocWithZone:zone] init];
@@ -19,6 +19,9 @@
     copy.Logo = [self.Description copyWithZone:zone];
     copy.Title = [self.Title copyWithZone:zone];
     copy.Type = [self.Type copyWithZone:zone];
+    copy.Price = [self.Price copyWithZone:zone];
+    copy.Duration = [self.Duration copyWithZone:zone];
+    copy.ExpiresIn = [self.ExpiresIn copyWithZone:zone];
     return copy;
 }
 @end

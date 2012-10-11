@@ -1,4 +1,3 @@
-//
 //  MyVODSubViewResponder.m
 //  myTV.IOS.App
 //
@@ -17,9 +16,11 @@
 @synthesize myvodKKGridView;
 @synthesize myvodView;
 @synthesize myvodFetcher = _myvodFetcher;
+@synthesize imageDisplay;
 
 - (void)viewDidLoad
 {
+    [self.imageDisplay setHidden:YES];
     _fillerData = [[NSMutableArray alloc] init];
     
     if(!hasLoadedMyVODData) {
@@ -69,10 +70,20 @@
          {
              if(episodes != nil && error == nil)
              {
-                 for (ItemBase *episode in episodes) {
-                     [array addObject:episode];
+                 if (episodes.count > 0)
+                 {
+                     for (ItemBase *episode in episodes) {
+                         [array addObject:episode];
+                     }
+                     [_fillerData addObject:array];
+                     [self.imageDisplay setHidden:YES];
                  }
-                 [_fillerData addObject:array];
+                 else
+                     [self.imageDisplay setHidden:NO];
+             }
+             else
+             {
+                 [self.imageDisplay setHidden:NO];
              }
              [myvodKKGridView reloadData];
              [self.myvodView addSubview:myvodKKGridView];

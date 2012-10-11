@@ -19,17 +19,45 @@
 @synthesize featuredVOdFetcher = _featuredVOdFetcher;
 @synthesize recentVODFetcher = _recentVODFetcher;
 @synthesize mytvPackagesFetcher = _mytvPackagesFetcher;
+@synthesize labelChannel;
+@synthesize labelFeaturedVOD;
+@synthesize labelNewReleasesVOD;
+@synthesize viewFeaturedVODWidget;
+@synthesize viewNewReleasesVODWidget;
 
 -(void)viewDidLoad {
-    [self fillChannels];
-    [self fillFeaturedVOD];
-    [self fillRecentVOD];
+    HomeSubViewResponder *subview = self;
+    [MBProgressHUD showHUDAddedTo:subview.channelScrollView animated:YES];
+    [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error){
+        if(linking != nil && error == nil) {
+            for (UIView *subview in self.channelScrollView.subviews) {
+                [subview removeFromSuperview];
+            }
+            
+            [self fillChannels];
+            [self fillFeaturedVOD];
+            [self fillRecentVOD];
+            [self.labelFeaturedVOD setHidden:NO];
+            [self.labelNewReleasesVOD setHidden:NO];
+            [self.viewFeaturedVODWidget setHidden:NO];
+            [self.viewNewReleasesVODWidget setHidden:NO];
+        }
+        else
+        {
+            [self fillMyTVPackages];
+            [self.labelFeaturedVOD setHidden:YES];
+            [self.labelNewReleasesVOD setHidden:YES];
+            [self.viewFeaturedVODWidget setHidden:YES];
+            [self.viewNewReleasesVODWidget setHidden:YES];
+        }
+        [MBProgressHUD hideHUDForView:subview.channelScrollView animated:YES];
+    }];
 }
 
 -(void) fillChannels {
     if(!hasLoadedChannelData) {
-        [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error){
-            if(linking != nil && error == nil) {
+        //[RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error){
+            //if(linking != nil && error == nil) {
                 HomeSubViewResponder *subview = self;
                 [MBProgressHUD showHUDAddedTo:subview.channelScrollView animated:YES];
                 RSGetChannelCallBack channelCallback = ^(NSArray *channels, NSError *error){
@@ -62,12 +90,12 @@
                 };
                 
                 _channelFetcher = [RestService RequestGetSubscribedChannels:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:channelCallback];
-            }
-            else {
+            //}
+            //else {
                 //_channelFetcher = [RestService RequestGetAllChannels:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:channelCallback];
-                [self fillMyTVPackages];
-            }
-        }];
+            //    [self fillMyTVPackages];
+            //}
+        //}];
     }
 }
 
@@ -105,7 +133,6 @@
         
     }
 }
-
 
 -(void) fillFeaturedVOD {
     if(!hasLoadedVODFeaturedData) {

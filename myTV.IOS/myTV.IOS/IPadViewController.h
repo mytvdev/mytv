@@ -11,7 +11,8 @@
 #import "CategoriesSubViewResponder.h"
 #import "CountriesSubViewResponder.h"
 
-@interface IPadViewController : MyTVViewController {
+@interface IPadViewController : MyTVViewController
+{
     UIPopoverController *popoverController;
     IBOutlet UIBarButtonItem *popButton;
     CategoriesSubViewResponder *myCatPopOver;
@@ -29,12 +30,16 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *myVODButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *dealsButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *loginButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *searchButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *searchTextfield;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainSubView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *liveButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *rootView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *categoriesButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *countriesButton;
+
+@property (nonatomic, strong) NSMutableArray *fillerData;
+@property (nonatomic, retain) KKGridView *episodesKKGridView;
 
 - (IBAction)goHome:(id)sender;
 - (IBAction)goToVodCatalog:(id)sender;

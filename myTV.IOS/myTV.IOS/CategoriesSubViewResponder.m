@@ -1,4 +1,3 @@
-    //
 //  CategoriesSubViewResponder.m
 //  myTV.IOS
 //

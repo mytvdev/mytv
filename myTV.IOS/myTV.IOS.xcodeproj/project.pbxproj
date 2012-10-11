@@ -144,7 +144,6 @@
 		37DF9CD516037FC9004AD66E /* IPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C79E6B15FF2FD500A2EBE7 /* IPhoneViewController.xib */; };
 		37DF9CD616037FC9004AD66E /* CategoriesSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29BBCDE16021F7600600B5E /* CategoriesSubView.xib */; };
 		37DF9CD716037FC9004AD66E /* MyVODSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF8F160211AB0040B206 /* MyVODSubView.xib */; };
-		37DF9CD816037FC9004AD66E /* SearchSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF92160211AB0040B206 /* SearchSubView.xib */; };
 		37DF9CD916037FC9004AD66E /* VODSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF95160211AB0040B206 /* VODSubView.xib */; };
 		37DF9CDA16037FC9004AD66E /* LiveTVSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF85160211970040B206 /* LiveTVSubView.xib */; };
 		37DF9CDB16037FC9004AD66E /* LoginSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D2BF88160211970040B206 /* LoginSubView.xib */; };
@@ -187,6 +186,18 @@
 		37E04D291613194400A73534 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04D271613194400A73534 /* logo.png */; };
 		37E04D2A1613194400A73534 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E04D281613194400A73534 /* logo@2x.png */; };
 		B203A4D5160382E1003D49D3 /* KKDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B203A4D4160382E1003D49D3 /* KKDemoCell.m */; };
+		B205B52916241BCB0044312D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B205B51D16241BCB0044312D /* Icon@2x.png */; };
+		B205B52A16241BCB0044312D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B205B51E16241BCB0044312D /* Icon-72.png */; };
+		B205B52B16241BCB0044312D /* B1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B205B51F16241BCB0044312D /* B1.jpg */; };
+		B205B52C16241BCB0044312D /* B2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B205B52016241BCB0044312D /* B2.jpg */; };
+		B205B52D16241BCB0044312D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B205B52116241BCB0044312D /* Default.png */; };
+		B205B52E16241BCB0044312D /* C1-Portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B205B52216241BCB0044312D /* C1-Portrait.jpg */; };
+		B205B52F16241BCB0044312D /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = B205B52316241BCB0044312D /* Default-Landscape.png */; };
+		B205B53016241BCB0044312D /* C2-Portrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B205B52416241BCB0044312D /* C2-Portrait.jpg */; };
+		B205B53116241BCB0044312D /* D1-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B205B52516241BCB0044312D /* D1-1.jpg */; };
+		B205B53216241BCB0044312D /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B205B52616241BCB0044312D /* Icon-Small@2x.png */; };
+		B205B53316241BCB0044312D /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = B205B52716241BCB0044312D /* Icon-Small-50.png */; };
+		B205B53416241BCB0044312D /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = B205B52816241BCB0044312D /* Icon-Small.png */; };
 		B22A823416088C0B00B9F63C /* KKChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B22A823316088C0B00B9F63C /* KKChannelCell.m */; };
 		B23E803916149EB5001F5ECA /* VODPackageSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23E803616149EB5001F5ECA /* VODPackageSubView.xib */; };
 		B23E803A16149EB5001F5ECA /* VODPackageSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B23E803816149EB5001F5ECA /* VODPackageSubViewResponder.m */; };
@@ -194,13 +205,14 @@
 		B2746CC216084E4C00C70126 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B2746CC116084E4C00C70126 /* MBProgressHUD.m */; };
 		B29BBCE216021F7600600B5E /* CategoriesSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B29BBCE016021F7600600B5E /* CategoriesSubViewResponder.m */; };
 		B29BBCE416021FBD00600B5E /* MyVODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF91160211AB0040B206 /* MyVODSubViewResponder.m */; };
-		B29BBCE516021FBD00600B5E /* SearchSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF94160211AB0040B206 /* SearchSubViewResponder.m */; };
 		B29BBCE616021FBD00600B5E /* VODSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF97160211AB0040B206 /* VODSubViewResponder.m */; };
 		B29BBCE716021FBD00600B5E /* LiveTVSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF87160211970040B206 /* LiveTVSubViewResponder.m */; };
 		B29BBCE816021FBD00600B5E /* LoginSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF8A160211970040B206 /* LoginSubViewResponder.m */; };
 		B29BBCE916021FBD00600B5E /* DealsSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF7F1602118C0040B206 /* DealsSubViewResponder.m */; };
 		B29BBCEA16021FBD00600B5E /* HomeSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D2BF7B160211810040B206 /* HomeSubViewResponder.m */; };
 		B2AD45BD1609EB2600A4B240 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD45BC1609EB2500A4B240 /* LoadingView.m */; };
+		B2BC7EEE1625868F00915D34 /* SearchSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BC7EED1625868F00915D34 /* SearchSubViewResponder.m */; };
+		B2BC7EF1162586A200915D34 /* SearchSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2BC7EF0162586A200915D34 /* SearchSubView.xib */; };
 		B2BCEA011609EF22000AE7F7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BCEA001609EF22000AE7F7 /* QuartzCore.framework */; };
 		B2BCEA081609F50F000AE7F7 /* VODControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2BCEA071609F50F000AE7F7 /* VODControl.xib */; };
 		B2BCEA0C1609F8E3000AE7F7 /* MyVODControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BCEA0B1609F8E3000AE7F7 /* MyVODControlResponder.m */; };
@@ -209,9 +221,24 @@
 		B2C527E9161368670098AB23 /* VODPackageControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C527E8161368670098AB23 /* VODPackageControlResponder.m */; };
 		B2C5D01D1608D6D2008A27AB /* KKEpisodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C5D01C1608D6D2008A27AB /* KKEpisodeCell.m */; };
 		B2C83834160E4BF800BC32C5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C83833160E4BF800BC32C5 /* back.png */; };
+		B2CEA632161EEF250012D495 /* SearchControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA631161EEF250012D495 /* SearchControl.xib */; };
+		B2CEA635161EF1D30012D495 /* SearchControlResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CEA634161EF1D30012D495 /* SearchControlResponder.m */; };
+		B2CEA637161EFF070012D495 /* emptyLiveTV.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA636161EFF070012D495 /* emptyLiveTV.png */; };
+		B2CEA641161EFF400012D495 /* emptybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA638161EFF400012D495 /* emptybutton.png */; };
+		B2CEA642161EFF400012D495 /* episodes.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA639161EFF400012D495 /* episodes.png */; };
+		B2CEA643161EFF400012D495 /* episodeselected.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA63A161EFF400012D495 /* episodeselected.png */; };
+		B2CEA644161EFF400012D495 /* episodesover.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA63B161EFF400012D495 /* episodesover.png */; };
+		B2CEA645161EFF400012D495 /* programs.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA63C161EFF400012D495 /* programs.png */; };
+		B2CEA646161EFF400012D495 /* programselected.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA63D161EFF400012D495 /* programselected.png */; };
+		B2CEA647161EFF400012D495 /* programsover.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA63E161EFF400012D495 /* programsover.png */; };
+		B2CEA648161EFF400012D495 /* resultbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA63F161EFF400012D495 /* resultbg.png */; };
+		B2CEA649161EFF400012D495 /* seperator.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA640161EFF400012D495 /* seperator.png */; };
+		B2CEA64B161F08B50012D495 /* emptyMyVOD.png in Resources */ = {isa = PBXBuildFile; fileRef = B2CEA64A161F08B50012D495 /* emptyMyVOD.png */; };
+		B2CEA64E161F28820012D495 /* KKSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CEA64D161F28810012D495 /* KKSearchCell.m */; };
 		B2E2A205160C7C0000AD13D0 /* CountriesSubViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E2A204160C7C0000AD13D0 /* CountriesSubViewResponder.m */; };
 		B2E2A208160C7E8400AD13D0 /* CountriesSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E2A207160C7E8400AD13D0 /* CountriesSubView.xib */; };
 		B2EA2D3F160F1BBD00D2201D /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EA2D3E160F1BBD00D2201D /* backward.png */; };
+		B2FD4DA01626BB1B007A4EC2 /* find.png in Resources */ = {isa = PBXBuildFile; fileRef = B2FD4D9F1626BB1B007A4EC2 /* find.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -384,6 +411,18 @@
 		37E04D281613194400A73534 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		B203A4D3160382E1003D49D3 /* KKDemoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDemoCell.h; sourceTree = "<group>"; };
 		B203A4D4160382E1003D49D3 /* KKDemoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDemoCell.m; sourceTree = "<group>"; };
+		B205B51D16241BCB0044312D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "myTV.IOS/ipadsd/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		B205B51E16241BCB0044312D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "myTV.IOS/ipadsd/Icon-72.png"; sourceTree = SOURCE_ROOT; };
+		B205B51F16241BCB0044312D /* B1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = B1.jpg; path = myTV.IOS/ipadsd/B1.jpg; sourceTree = SOURCE_ROOT; };
+		B205B52016241BCB0044312D /* B2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = B2.jpg; path = myTV.IOS/ipadsd/B2.jpg; sourceTree = SOURCE_ROOT; };
+		B205B52116241BCB0044312D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = myTV.IOS/ipadsd/Default.png; sourceTree = SOURCE_ROOT; };
+		B205B52216241BCB0044312D /* C1-Portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "C1-Portrait.jpg"; path = "myTV.IOS/ipadsd/C1-Portrait.jpg"; sourceTree = SOURCE_ROOT; };
+		B205B52316241BCB0044312D /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "myTV.IOS/ipadsd/Default-Landscape.png"; sourceTree = SOURCE_ROOT; };
+		B205B52416241BCB0044312D /* C2-Portrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "C2-Portrait.jpg"; path = "myTV.IOS/ipadsd/C2-Portrait.jpg"; sourceTree = SOURCE_ROOT; };
+		B205B52516241BCB0044312D /* D1-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "D1-1.jpg"; path = "myTV.IOS/ipadsd/D1-1.jpg"; sourceTree = SOURCE_ROOT; };
+		B205B52616241BCB0044312D /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "myTV.IOS/ipadsd/Icon-Small@2x.png"; sourceTree = SOURCE_ROOT; };
+		B205B52716241BCB0044312D /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "myTV.IOS/ipadsd/Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
+		B205B52816241BCB0044312D /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "myTV.IOS/ipadsd/Icon-Small.png"; sourceTree = SOURCE_ROOT; };
 		B22A823216088C0B00B9F63C /* KKChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKChannelCell.h; sourceTree = "<group>"; };
 		B22A823316088C0B00B9F63C /* KKChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKChannelCell.m; sourceTree = "<group>"; };
 		B23E803616149EB5001F5ECA /* VODPackageSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VODPackageSubView.xib; sourceTree = "<group>"; };
@@ -398,6 +437,9 @@
 		B29BBCE016021F7600600B5E /* CategoriesSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesSubViewResponder.m; sourceTree = "<group>"; };
 		B2AD45BB1609EB2500A4B240 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		B2AD45BC1609EB2500A4B240 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		B2BC7EEC1625868F00915D34 /* SearchSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSubViewResponder.h; sourceTree = "<group>"; };
+		B2BC7EED1625868F00915D34 /* SearchSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchSubViewResponder.m; sourceTree = "<group>"; };
+		B2BC7EF0162586A200915D34 /* SearchSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchSubView.xib; sourceTree = "<group>"; };
 		B2BCEA001609EF22000AE7F7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B2BCEA071609F50F000AE7F7 /* VODControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VODControl.xib; sourceTree = "<group>"; };
 		B2BCEA0A1609F8E3000AE7F7 /* MyVODControlResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVODControlResponder.h; sourceTree = "<group>"; };
@@ -456,6 +498,22 @@
 		B2C79E8315FF2FD500A2EBE7 /* SubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubViewResponder.m; sourceTree = "<group>"; };
 		B2C79F9E15FF35AB00A2EBE7 /* libKKGridView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKKGridView.a; path = "../KKGridView/build/Release-iphoneos/libKKGridView.a"; sourceTree = "<group>"; };
 		B2C83833160E4BF800BC32C5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		B2CEA631161EEF250012D495 /* SearchControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchControl.xib; sourceTree = "<group>"; };
+		B2CEA633161EF1D30012D495 /* SearchControlResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchControlResponder.h; sourceTree = "<group>"; };
+		B2CEA634161EF1D30012D495 /* SearchControlResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchControlResponder.m; sourceTree = "<group>"; };
+		B2CEA636161EFF070012D495 /* emptyLiveTV.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyLiveTV.png; sourceTree = "<group>"; };
+		B2CEA638161EFF400012D495 /* emptybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptybutton.png; sourceTree = "<group>"; };
+		B2CEA639161EFF400012D495 /* episodes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = episodes.png; sourceTree = "<group>"; };
+		B2CEA63A161EFF400012D495 /* episodeselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = episodeselected.png; sourceTree = "<group>"; };
+		B2CEA63B161EFF400012D495 /* episodesover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = episodesover.png; sourceTree = "<group>"; };
+		B2CEA63C161EFF400012D495 /* programs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = programs.png; sourceTree = "<group>"; };
+		B2CEA63D161EFF400012D495 /* programselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = programselected.png; sourceTree = "<group>"; };
+		B2CEA63E161EFF400012D495 /* programsover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = programsover.png; sourceTree = "<group>"; };
+		B2CEA63F161EFF400012D495 /* resultbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resultbg.png; sourceTree = "<group>"; };
+		B2CEA640161EFF400012D495 /* seperator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seperator.png; sourceTree = "<group>"; };
+		B2CEA64A161F08B50012D495 /* emptyMyVOD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyMyVOD.png; sourceTree = "<group>"; };
+		B2CEA64C161F28810012D495 /* KKSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSearchCell.h; sourceTree = "<group>"; };
+		B2CEA64D161F28810012D495 /* KKSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSearchCell.m; sourceTree = "<group>"; };
 		B2D2BF7B160211810040B206 /* HomeSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeSubViewResponder.m; sourceTree = "<group>"; };
 		B2D2BF7D1602118C0040B206 /* DealsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealsSubView.xib; sourceTree = "<group>"; };
 		B2D2BF7E1602118C0040B206 /* DealsSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsSubViewResponder.h; sourceTree = "<group>"; };
@@ -471,9 +529,6 @@
 		B2D2BF8F160211AB0040B206 /* MyVODSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVODSubView.xib; sourceTree = "<group>"; };
 		B2D2BF90160211AB0040B206 /* MyVODSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVODSubViewResponder.h; sourceTree = "<group>"; };
 		B2D2BF91160211AB0040B206 /* MyVODSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVODSubViewResponder.m; sourceTree = "<group>"; };
-		B2D2BF92160211AB0040B206 /* SearchSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchSubView.xib; sourceTree = "<group>"; };
-		B2D2BF93160211AB0040B206 /* SearchSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSubViewResponder.h; sourceTree = "<group>"; };
-		B2D2BF94160211AB0040B206 /* SearchSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchSubViewResponder.m; sourceTree = "<group>"; };
 		B2D2BF95160211AB0040B206 /* VODSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VODSubView.xib; sourceTree = "<group>"; };
 		B2D2BF96160211AB0040B206 /* VODSubViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VODSubViewResponder.h; sourceTree = "<group>"; };
 		B2D2BF97160211AB0040B206 /* VODSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VODSubViewResponder.m; sourceTree = "<group>"; };
@@ -481,6 +536,7 @@
 		B2E2A204160C7C0000AD13D0 /* CountriesSubViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSubViewResponder.m; sourceTree = "<group>"; };
 		B2E2A207160C7E8400AD13D0 /* CountriesSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountriesSubView.xib; sourceTree = "<group>"; };
 		B2EA2D3E160F1BBD00D2201D /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
+		B2FD4D9F1626BB1B007A4EC2 /* find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -605,6 +661,18 @@
 		37776DE115FF3A3500BB6AF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B205B51D16241BCB0044312D /* Icon@2x.png */,
+				B205B51E16241BCB0044312D /* Icon-72.png */,
+				B205B51F16241BCB0044312D /* B1.jpg */,
+				B205B52016241BCB0044312D /* B2.jpg */,
+				B205B52116241BCB0044312D /* Default.png */,
+				B205B52216241BCB0044312D /* C1-Portrait.jpg */,
+				B205B52316241BCB0044312D /* Default-Landscape.png */,
+				B205B52416241BCB0044312D /* C2-Portrait.jpg */,
+				B205B52516241BCB0044312D /* D1-1.jpg */,
+				B205B52616241BCB0044312D /* Icon-Small@2x.png */,
+				B205B52716241BCB0044312D /* Icon-Small-50.png */,
+				B205B52816241BCB0044312D /* Icon-Small.png */,
 				37776DE215FF3A3500BB6AF8 /* myTV-Info.plist */,
 				37776DE315FF3A3500BB6AF8 /* InfoPlist.strings */,
 				37776DE615FF3A3500BB6AF8 /* main.m */,
@@ -753,8 +821,18 @@
 				B2C527E51613679A0098AB23 /* VODPackageControl.xib */,
 				B2C527E7161368670098AB23 /* VODPackageControlResponder.h */,
 				B2C527E8161368670098AB23 /* VODPackageControlResponder.m */,
+				B2CEA631161EEF250012D495 /* SearchControl.xib */,
+				B2CEA633161EF1D30012D495 /* SearchControlResponder.h */,
+				B2CEA634161EF1D30012D495 /* SearchControlResponder.m */,
 			);
 			name = Controls;
+			sourceTree = "<group>";
+		};
+		B205B51B16241BB40044312D /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 		B2C79E1715FF2FD500A2EBE7 /* myTV.IOS */ = {
@@ -771,6 +849,19 @@
 		B2C79E4615FF2FD500A2EBE7 /* ipadsd */ = {
 			isa = PBXGroup;
 			children = (
+				B2FD4D9F1626BB1B007A4EC2 /* find.png */,
+				B205B51B16241BB40044312D /* Icons */,
+				B2CEA64A161F08B50012D495 /* emptyMyVOD.png */,
+				B2CEA638161EFF400012D495 /* emptybutton.png */,
+				B2CEA639161EFF400012D495 /* episodes.png */,
+				B2CEA63A161EFF400012D495 /* episodeselected.png */,
+				B2CEA63B161EFF400012D495 /* episodesover.png */,
+				B2CEA63C161EFF400012D495 /* programs.png */,
+				B2CEA63D161EFF400012D495 /* programselected.png */,
+				B2CEA63E161EFF400012D495 /* programsover.png */,
+				B2CEA63F161EFF400012D495 /* resultbg.png */,
+				B2CEA640161EFF400012D495 /* seperator.png */,
+				B2CEA636161EFF070012D495 /* emptyLiveTV.png */,
 				3778E0CB161C307400358A6C /* code.png */,
 				3778E0CC161C307400358A6C /* code@2x.png */,
 				3778E0C6161C304900358A6C /* newcode.png */,
@@ -903,6 +994,8 @@
 				B22A823316088C0B00B9F63C /* KKChannelCell.m */,
 				B2C5D01B1608D6D2008A27AB /* KKEpisodeCell.h */,
 				B2C5D01C1608D6D2008A27AB /* KKEpisodeCell.m */,
+				B2CEA64C161F28810012D495 /* KKSearchCell.h */,
+				B2CEA64D161F28810012D495 /* KKSearchCell.m */,
 				B2C527E11613622A0098AB23 /* KKVODPackageCell.h */,
 				B2C527E21613622A0098AB23 /* KKVODPackageCell.m */,
 				B29BBCDE16021F7600600B5E /* CategoriesSubView.xib */,
@@ -914,8 +1007,9 @@
 				B2D2BF8F160211AB0040B206 /* MyVODSubView.xib */,
 				B2D2BF90160211AB0040B206 /* MyVODSubViewResponder.h */,
 				B2D2BF91160211AB0040B206 /* MyVODSubViewResponder.m */,
-				B2D2BF93160211AB0040B206 /* SearchSubViewResponder.h */,
-				B2D2BF94160211AB0040B206 /* SearchSubViewResponder.m */,
+				B2BC7EF0162586A200915D34 /* SearchSubView.xib */,
+				B2BC7EEC1625868F00915D34 /* SearchSubViewResponder.h */,
+				B2BC7EED1625868F00915D34 /* SearchSubViewResponder.m */,
 				B2D2BF95160211AB0040B206 /* VODSubView.xib */,
 				B2D2BF96160211AB0040B206 /* VODSubViewResponder.h */,
 				B2D2BF97160211AB0040B206 /* VODSubViewResponder.m */,
@@ -923,7 +1017,6 @@
 				B2D2BF86160211970040B206 /* LiveTVSubViewResponder.h */,
 				B2D2BF87160211970040B206 /* LiveTVSubViewResponder.m */,
 				B2D2BF88160211970040B206 /* LoginSubView.xib */,
-				B2D2BF92160211AB0040B206 /* SearchSubView.xib */,
 				B2D2BF89160211970040B206 /* LoginSubViewResponder.h */,
 				B2D2BF8A160211970040B206 /* LoginSubViewResponder.m */,
 				B2D2BF7D1602118C0040B206 /* DealsSubView.xib */,
@@ -1027,7 +1120,6 @@
 				37DF9CD516037FC9004AD66E /* IPhoneViewController.xib in Resources */,
 				37DF9CD616037FC9004AD66E /* CategoriesSubView.xib in Resources */,
 				37DF9CD716037FC9004AD66E /* MyVODSubView.xib in Resources */,
-				37DF9CD816037FC9004AD66E /* SearchSubView.xib in Resources */,
 				37DF9CD916037FC9004AD66E /* VODSubView.xib in Resources */,
 				37DF9CDA16037FC9004AD66E /* LiveTVSubView.xib in Resources */,
 				37DF9CDB16037FC9004AD66E /* LoginSubView.xib in Resources */,
@@ -1161,6 +1253,32 @@
 				3778E0C9161C304900358A6C /* newcode@2x.png in Resources */,
 				3778E0CD161C307400358A6C /* code.png in Resources */,
 				3778E0CE161C307400358A6C /* code@2x.png in Resources */,
+				B2CEA632161EEF250012D495 /* SearchControl.xib in Resources */,
+				B2CEA637161EFF070012D495 /* emptyLiveTV.png in Resources */,
+				B2CEA641161EFF400012D495 /* emptybutton.png in Resources */,
+				B2CEA642161EFF400012D495 /* episodes.png in Resources */,
+				B2CEA643161EFF400012D495 /* episodeselected.png in Resources */,
+				B2CEA644161EFF400012D495 /* episodesover.png in Resources */,
+				B2CEA645161EFF400012D495 /* programs.png in Resources */,
+				B2CEA646161EFF400012D495 /* programselected.png in Resources */,
+				B2CEA647161EFF400012D495 /* programsover.png in Resources */,
+				B2CEA648161EFF400012D495 /* resultbg.png in Resources */,
+				B2CEA649161EFF400012D495 /* seperator.png in Resources */,
+				B2CEA64B161F08B50012D495 /* emptyMyVOD.png in Resources */,
+				B205B52916241BCB0044312D /* Icon@2x.png in Resources */,
+				B205B52A16241BCB0044312D /* Icon-72.png in Resources */,
+				B205B52B16241BCB0044312D /* B1.jpg in Resources */,
+				B205B52C16241BCB0044312D /* B2.jpg in Resources */,
+				B205B52D16241BCB0044312D /* Default.png in Resources */,
+				B205B52E16241BCB0044312D /* C1-Portrait.jpg in Resources */,
+				B205B52F16241BCB0044312D /* Default-Landscape.png in Resources */,
+				B205B53016241BCB0044312D /* C2-Portrait.jpg in Resources */,
+				B205B53116241BCB0044312D /* D1-1.jpg in Resources */,
+				B205B53216241BCB0044312D /* Icon-Small@2x.png in Resources */,
+				B205B53316241BCB0044312D /* Icon-Small-50.png in Resources */,
+				B205B53416241BCB0044312D /* Icon-Small.png in Resources */,
+				B2BC7EF1162586A200915D34 /* SearchSubView.xib in Resources */,
+				B2FD4DA01626BB1B007A4EC2 /* find.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1196,7 +1314,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29BBCE416021FBD00600B5E /* MyVODSubViewResponder.m in Sources */,
-				B29BBCE516021FBD00600B5E /* SearchSubViewResponder.m in Sources */,
 				B29BBCE616021FBD00600B5E /* VODSubViewResponder.m in Sources */,
 				B29BBCE716021FBD00600B5E /* LiveTVSubViewResponder.m in Sources */,
 				B29BBCE816021FBD00600B5E /* LoginSubViewResponder.m in Sources */,
@@ -1248,6 +1365,9 @@
 				B2C527E31613622A0098AB23 /* KKVODPackageCell.m in Sources */,
 				B2C527E9161368670098AB23 /* VODPackageControlResponder.m in Sources */,
 				B23E803A16149EB5001F5ECA /* VODPackageSubViewResponder.m in Sources */,
+				B2CEA635161EF1D30012D495 /* SearchControlResponder.m in Sources */,
+				B2CEA64E161F28820012D495 /* KKSearchCell.m in Sources */,
+				B2BC7EEE1625868F00915D34 /* SearchSubViewResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

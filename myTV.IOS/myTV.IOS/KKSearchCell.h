@@ -7,7 +7,8 @@
 //
 
 #import <KKGridView/KKGridView.h>
+#import "SearchControlResponder.h"
 
 @interface KKSearchCell : KKGridViewCell
-
+@property (nonatomic, strong) Episode *itemBase;
 @end

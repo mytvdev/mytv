@@ -124,8 +124,18 @@
                     [item.activationButton setImage:item.activeImage forState:UIControlStateNormal];
                 }
             }
-            if([note.userInfo count] > 1 && [item.responderInstance respondsToSelector:@selector(bindData:)]){
-                [item.responderInstance performSelector:@selector(bindData:) withObject:note.userInfo];
+            
+            if ([viewName isEqualToString:@"search"])
+            {
+                if([item.responderInstance respondsToSelector:@selector(bindData:)]){
+                    [item.responderInstance performSelector:@selector(bindData:) withObject:note.object];
+                }
+            }
+            else
+            {
+                if([note.userInfo count] > 1 && [item.responderInstance respondsToSelector:@selector(bindData:)]){
+                    [item.responderInstance performSelector:@selector(bindData:) withObject:note.userInfo];
+                }
             }
         }
     }

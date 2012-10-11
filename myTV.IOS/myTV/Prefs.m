@@ -8,7 +8,7 @@
 
 #import "Prefs.h"
 
-NSString * const MyTV_RestServiceUrl = @"http://tfs.mytv.local:99/restservice.ashx?";
+NSString * const MyTV_RestServiceUrl = @"http://www.my-tv.us/mytv.restws.new/restservice.ashx?";
 NSString * const MyTV_DeviceTypeId = @"7";
 NSString * const MyTV_View_Home = @"home";
 NSString * const MyTV_View_LiveTV = @"livetv";
@@ -21,6 +21,7 @@ NSString * const MyTV_View_Program = @"program";
 NSString * const MyTV_View_Episode = @"episode";
 NSString * const MyTV_View_VODPackage = @"vodpackage";
 NSString * const MyTV_ViewArgument_View = @"view";
+NSString * const MyTV_ViewArgument_Search = @"";
 NSString * const MyTV_ViewArgument_Id = @"id";
 NSString * const MyTV_Event_ChangeView = @"ChangeMainSubView";
 NSString * const MyTV_Event_PopView = @"ChangeMainSubViewBack";

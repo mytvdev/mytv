@@ -22,5 +22,6 @@
 @property (nonatomic, strong) NSMutableArray *fillerData;
 @property (nonatomic, strong) KKGridView *myvodKKGridView;
 @property (nonatomic, strong) IBOutlet UIView *myvodView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *imageDisplay;
 
 @end

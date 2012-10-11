@@ -31,6 +31,12 @@
 @property (readonly) DataFetcher *recentVODFetcher;
 @property (readonly) DataFetcher *mytvPackagesFetcher;
 
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelChannel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelFeaturedVOD;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelNewReleasesVOD;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *viewFeaturedVODWidget;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *viewNewReleasesVODWidget;
+
 -(void)cancelChannelFetcher;
 
 @end

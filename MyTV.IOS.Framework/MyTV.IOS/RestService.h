@@ -91,7 +91,6 @@ typedef void (^RSGetGountries) (NSArray /* Country */ *, NSError*);
 
 +(DataFetcher *)RequestGetMyVOD:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetVOD)callback synchronous:(BOOL)sync;
 
-
 +(DataFetcher *)RequestGetProgram:(NSString *)baseUrl ofId:(NSString *)programId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgram)callback;
 
 +(DataFetcher *)RequestCanPlay:(NSString *)baseUrl thisEpisode:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetBoolean)callback;
@@ -123,5 +122,7 @@ typedef void (^RSGetGountries) (NSArray /* Country */ *, NSError*);
 +(DataFetcher *)RequestGetPackages:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgramTypes)callback;
 
 +(DataFetcher *)RequestCountries:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenres)callback;
+
++(DataFetcher *)Search:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId andSearchCriteria:(NSString *)searchCriteria usingCallback:(RSGetGenres)callback;
 
 @end

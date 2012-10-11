@@ -18,6 +18,7 @@ extern NSString * const MyTV_View_MyVOD;
 extern NSString * const MyTV_View_HotDeals;
 extern NSString * const MyTV_View_Login;
 extern NSString * const MyTV_View_Search;
+extern NSString * const MyTV_ViewArgument_Search;
 extern NSString * const MyTV_View_Program;
 extern NSString * const MyTV_View_Episode;
 extern NSString * const MyTV_View_VODPackage;

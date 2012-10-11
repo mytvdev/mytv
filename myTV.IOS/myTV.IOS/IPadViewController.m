@@ -30,6 +30,10 @@
 @synthesize navigationLogic;
 @synthesize categoriesButton;
 @synthesize countriesButton;
+@synthesize searchButton;
+
+@synthesize fillerData = _fillerData;
+@synthesize episodesKKGridView;
 
 @synthesize popoverController, popButton, myCatPopOver, myCountPopOver;
 
@@ -78,6 +82,9 @@
     item = [[NavigationItem alloc] initWithKey:MyTV_View_VODPackage forNib:@"VODPackageSubView" usingClass:[VODPackageSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
+    //item = [[NavigationItem alloc] initWithKey:MyTV_View_VODPackage forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
+    //[self.navigationLogic addNavigationItem:item];
+    
     item = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[CategoriesSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"catgoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"catgoriesOpen-Over.png"]];
     [self.navigationLogic addNavigationItem:item];
     
@@ -109,6 +116,7 @@
     [self setRootView:nil];
     [self setCategoriesButton:nil];
     [self setCountriesButton:nil];
+    [self setSearchButton:nil];
     [super viewDidUnload];
 }
 
@@ -137,9 +145,9 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_Login }];
 }
 
-- (void)goToSearch:(id)sender {
+- (IBAction)goToSearch:(id)sender {
     [self.searchTextfield resignFirstResponder];
-    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : MyTV_View_Search }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:self.searchTextfield.text userInfo:@{ MyTV_ViewArgument_View : MyTV_View_Search }];
 }
 
 - (IBAction)goToLive:(id)sender {
