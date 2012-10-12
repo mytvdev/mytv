@@ -157,7 +157,7 @@
 - (IBAction)goToCategories:(id)sender {
     myCatPopOver = [[CategoriesSubViewResponder alloc] initWithNibName:@"CategoriesSubView" bundle:nil];
     popoverController = [[UIPopoverController alloc] initWithContentViewController:myCatPopOver];
-    popoverController.popoverContentSize = CGSizeMake(543.f, 128.f);
+    popoverController.popoverContentSize = CGSizeMake(339.f, 416.f);
     
     //present the popover view non-modal with a
     //refrence to the button pressed within the current view
@@ -170,7 +170,7 @@
 - (IBAction)goToCountries:(id)sender {
     myCountPopOver = [[CountriesSubViewResponder alloc] initWithNibName:@"CountriesSubView" bundle:nil];
     popoverController = [[UIPopoverController alloc] initWithContentViewController:myCountPopOver];
-    popoverController.popoverContentSize = CGSizeMake(543.f, 128.f);
+    popoverController.popoverContentSize = CGSizeMake(339.f, 416.f);
     
     //present the popover view non-modal with a
     //refrence to the button pressed within the current view

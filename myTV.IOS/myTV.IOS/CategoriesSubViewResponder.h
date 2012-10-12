@@ -12,6 +12,7 @@
 #import "DataFetcher.h"
 #import "RestService.h"
 #import "UIDevice+IdentifierAddition.h"
+#import "TableGenres.h"
 
 @interface CategoriesSubViewResponder : UIViewController <MyKKDemoCellDelegate, KKGridViewDataSource, KKGridViewDelegate>
 {
@@ -23,5 +24,7 @@
 @property (nonatomic, strong) IBOutlet UIView *categoriesSubView;
 @property (nonatomic, strong) KKGridView *categoriesKKGridView;
 @property (readonly) DataFetcher *genreFetcher;
+
+@property (strong, nonatomic) TableGenres *tableVC;
 
 @end

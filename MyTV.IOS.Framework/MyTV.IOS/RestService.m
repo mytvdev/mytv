@@ -1723,6 +1723,68 @@
     }];
 }
 
++(DataFetcher *)RequestGenres:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenres)callback  synchronous:(BOOL)sync
+{
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getgenres2&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
+    return [DataFetcher Get:requestUrl Synchronously:sync usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        Genre *genre;
+                        
+                        NSMutableArray* genres = [NSMutableArray new];
+                        
+                        TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:root];
+                        if(item != NULL) {
+                            do {
+                                
+                                TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
+                                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
+                                TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
+                                TBXMLElement *xmlProgramTypes = [TBXML childElementNamed:@"category" parentElement:item];
+                                if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"genre"] == NSOrderedSame)
+                                {
+                                    genre = [Genre new];
+                                    
+                                    [genre setId:[[TBXML textForElement:xmlId] intValue]];
+                                    genre.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                                    genre.Logo = [TBXML textForElement:xmlThumbnail];
+                                    genre.Description = [TBXML textForElement:xmlProgramTypes];
+                                    genre.programTypes = [RestService FetchGenreProgramTypes:xmlProgramTypes];
+                                    [genres addObject:genre];
+                                }
+                                
+                                item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
+                            } while (item != NULL);
+                        }
+                        
+                        callback([NSArray arrayWithArray:genres], NULL);
+                    }
+                }
+            }
+        }
+    }];
+}
+
 +(NSMutableArray *)FetchGenreProgramTypes:(TBXMLElement *)element
 {
     NSMutableArray* programtypes = [NSMutableArray new];

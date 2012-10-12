@@ -14,7 +14,7 @@
 #import "UIDevice+IdentifierAddition.h"
 
 #define SearchControl_Space 1
-#define SearchControl_Width 337
+#define SearchControl_Width 450
 #define SearchControl_Height 115
 
 @interface SearchSubViewResponder : SubViewResponder

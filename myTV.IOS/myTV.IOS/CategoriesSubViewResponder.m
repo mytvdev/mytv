@@ -17,6 +17,8 @@
 @synthesize categoriesKKGridView;
 @synthesize genreFetcher = _genreFetcher;
 
+@synthesize tableVC;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,7 +30,7 @@
 
 - (void)viewDidLoad
 {
-    _fillerData = [[NSMutableArray alloc] init];
+    /*_fillerData = [[NSMutableArray alloc] init];
     
     if(!hasLoadedGenresData) {
         categoriesKKGridView = [[KKGridView alloc] initWithFrame:self.categoriesSubView.bounds];
@@ -44,7 +46,10 @@
         categoriesKKGridView.gridFooterView = nil;
         
         [self fillGenres];
-    }
+    }*/
+    
+    self.tableVC=[[TableGenres alloc]initWithStyle:UITableViewStylePlain];
+    [self.categoriesSubView addSubview:self.tableVC.view];
 }
 
 #pragma mark - KKGridViewDataSource
