@@ -19,6 +19,8 @@
 @synthesize featuredVOdFetcher = _featuredVOdFetcher;
 @synthesize recentVODFetcher = _recentVODFetcher;
 @synthesize mytvPackagesFetcher = _mytvPackagesFetcher;
+@synthesize genresFetcher = _genresFetcher;
+@synthesize countriesFetcher = _countriesFetcher;
 @synthesize labelChannel;
 @synthesize labelFeaturedVOD;
 @synthesize labelNewReleasesVOD;

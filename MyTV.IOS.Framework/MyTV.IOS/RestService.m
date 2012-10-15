@@ -2066,6 +2066,63 @@
     }];
 }
 
++(DataFetcher *)RequestCountries:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenres)callback synchronous:(BOOL)sync {
+    
+    NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=getvodcountries&deviceid=%@&devicetypeid=%@", deviceId, deviceTypeId]];
+    return [DataFetcher Get:requestUrl Synchronously:sync usingCallback:^(NSData *data, NSError *error) {
+        DLog(@"Processing Data inside Code Block");
+        if (error != NULL) {
+            callback(NULL, error);
+        }
+        else {
+            if(data == NULL) {
+                callback(NULL, NULL);
+            }
+            else {
+                NSError *error;
+                TBXML *document = [TBXML newTBXMLWithXMLData:data error:&error];
+                if(error != NULL) {
+                    callback(NULL, error);
+                }
+                else {
+                    TBXMLElement *root = document.rootXMLElement;
+                    TBXMLElement *statusEl = [TBXML childElementNamed:@"status" parentElement:root];
+                    if(statusEl == NULL) {
+                        DLog(@"No status element found in xml. Passing NULL parameters to callback");
+                        callback(NULL, NULL);
+                    }
+                    else {
+                        
+                        NSMutableArray* genres = [NSMutableArray new];
+                        
+                        TBXMLElement *item = [TBXML childElementNamed:@"poster" parentElement:root];
+                        if(item != NULL) {
+                            do {
+                                Country *country = [Country new];
+                                TBXMLElement *xmlId = [TBXML childElementNamed:@"playlist" parentElement:item];
+                                TBXMLElement *xmlThumbnail = [TBXML childElementNamed:@"sdposterurl" parentElement:item];
+                                TBXMLElement *xmlpostertype = [TBXML childElementNamed:@"postertype" parentElement:item];
+                                TBXMLElement *xmlGenres = [TBXML childElementNamed:@"category" parentElement:item];
+                                if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"country"] == NSOrderedSame) {
+                                    [country setId:[[TBXML textForElement:xmlId] intValue]];
+                                    country.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
+                                    country.Logo = [TBXML textForElement:xmlThumbnail];
+                                    country.genres = [RestService FetchCountryGenres:xmlGenres];
+                                    [genres addObject:country];
+                                }
+                                item = [TBXML nextSiblingNamed:@"poster" searchFromElement:item];
+                            } while (item != NULL);
+                        }
+                        
+                        callback([NSArray arrayWithArray:genres], NULL);
+                        
+                    }
+                }
+            }
+        }
+    }];
+}
+
 +(DataFetcher *)Search:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId andSearchCriteria:(NSString *)searchCriteria usingCallback:(RSGetGenres)callback
 {    
     NSString* requestUrl = [baseUrl stringByAppendingString:[NSString stringWithFormat:@"action=search&deviceid=%@&devicetypeid=%@&episodetitle=%@", deviceId, deviceTypeId, searchCriteria]];

@@ -19,6 +19,8 @@
 @synthesize countriesKKGridView;
 @synthesize countryFetcher = _countryFetcher;
 
+@synthesize tableVC;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,7 +32,7 @@
 
 - (void)viewDidLoad
 {
-    _fillerData = [[NSMutableArray alloc] init];
+    /*_fillerData = [[NSMutableArray alloc] init];
     
     if(!hasLoadedCountriesData) {
         countriesKKGridView = [[KKGridView alloc] initWithFrame:self.countriesSubView.bounds];
@@ -46,7 +48,11 @@
         countriesKKGridView.gridFooterView = nil;
         
         [self fillCountries];
-    }
+    }*/
+    
+    self.tableVC=[[TableCountries alloc]initWithStyle:UITableViewStylePlain];
+    [self.countriesSubView addSubview:self.tableVC.view];
+
 }
 
 #pragma mark - KKGridViewDataSource

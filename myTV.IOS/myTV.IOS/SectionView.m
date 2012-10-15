@@ -1,15 +1,13 @@
-
-
-#import "SectionHeaderView.h"
+#import "SectionView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation SectionHeaderView
-
+@implementation SectionView
 
 @synthesize titleLabel = _titleLabel;
 @synthesize disclosureButton = _disclosureButton;
 @synthesize delegate = _delegate;
-@synthesize section = _section;
+@synthesize sectionType;
+@synthesize sectionHeader, sectionRows, open, sectionHeaderView;
 
 
 + (Class)layerClass {
@@ -18,7 +16,7 @@
 }
 
 
--(id)initWithFrame:(CGRect)frame title:(NSString*)title section:(NSInteger)sectionNumber delegate:(id <SectionHeaderViewDelegate>)delegate {
+-(id)initWithFrame:(CGRect)frame title:(NSString*)title delegate:(id <SectionViewDelegate>)delegate {
     
     self = [super initWithFrame:frame];
     
@@ -33,15 +31,15 @@
         
         //Create the background
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 112, 26)];
-        NSString *imgFilepath = [[NSBundle mainBundle] pathForResource:@"bg" ofType:@"png"];
+        NSString *imgFilepath = [[NSBundle mainBundle] pathForResource:@"lightbg" ofType:@"png"];
         UIImage *img = [[UIImage alloc] initWithContentsOfFile:imgFilepath];
         [imgView setImage:img];
         [self addSubview:imgView];
         
         // Create and configure the title label.
-        _section = sectionNumber;
+        //_section = sectionNumber;
         CGRect titleLabelFrame = self.bounds;
-        titleLabelFrame.origin.x += 15.0;
+        titleLabelFrame.origin.x += 26.0;
         titleLabelFrame.size.width -= 26.0;
         CGRectInset(titleLabelFrame, 0.0, 5.0);
         UILabel *label = [[UILabel alloc] initWithFrame:titleLabelFrame];
@@ -55,7 +53,7 @@
         
         // Create and configure the disclosure button.
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(5.0, 10.0, 6.0, 6.0);
+        button.frame = CGRectMake(5.0, 5.0, 6.0, 6.0);
         [button setImage:[UIImage imageNamed:@"leftarrow.png"] forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"downarrow.png"] forState:UIControlStateSelected];
         [button addTarget:self action:@selector(toggleOpen:) forControlEvents:UIControlEventTouchUpInside];
@@ -79,18 +77,18 @@
     self.disclosureButton.selected = !self.disclosureButton.selected;
     
     // If this was a user action, send the delegate the appropriate message.
-    if (userAction) {
+    /*if (userAction) {
         if (self.disclosureButton.selected) {
-            if ([self.delegate respondsToSelector:@selector(sectionHeaderView:sectionOpened:)]) {
-                [self.delegate sectionHeaderView:self sectionOpened:self.section];
+            if ([self.delegate respondsToSelector:@selector(sectionView:sectionOpened:)]) {
+                [self.delegate sectionView:self sectionOpened:self.section];
             }
         }
         else {
-            if ([self.delegate respondsToSelector:@selector(sectionHeaderView:sectionClosed:)]) {
-                [self.delegate sectionHeaderView:self sectionClosed:self.section];
+            if ([self.delegate respondsToSelector:@selector(sectionView:sectionClosed:)]) {
+                [self.delegate sectionView:self sectionClosed:self.section];
             }
         }
-    }
+    }*/
 }
 
 @end

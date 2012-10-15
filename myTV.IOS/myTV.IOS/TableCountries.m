@@ -1,4 +1,4 @@
-#import "TableGenres.h"
+#import "TableCountries.h"
 #import "SectionHeaderView.h"
 #import "SectionView.h"
 #import "MBProgressHUD.h"
@@ -6,45 +6,50 @@
 #define DEFAULT_ROW_HEIGHT 26
 #define HEADER_HEIGHT 26
 
-
-@implementation TableGenres
+@implementation TableCountries
 
 @synthesize sectionArray, openSectionIndex;
 @synthesize fillerData = _fillerData;
-@synthesize genresFetcher = _genresFetcher;
+@synthesize countriesFetcher = _countriesFetcher;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        if(!hasLoadedGenresData) {
+        if(!hasLoadedCountriesData) {
             [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
-            [RestService RequestGenres:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *genres, NSError *error)
+            [RestService RequestCountries:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *countries, NSError *error)
              {
-                 if(genres != nil && error == nil)
+                 if(countries != nil && error == nil)
                  {
-                     _fillerData = genres;
+                     _fillerData = countries;
                      
                      self.sectionArray=[[NSMutableArray alloc]init];
-                     for (Genre *genre in genres) {
-                         SectionView *section = [[SectionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, DEFAULT_ROW_HEIGHT) title:@"" delegate:self];
-                         
-                         section.sectionHeader = genre.Title;
-                         section.sectionRows=[[NSMutableArray alloc]init];
-                         for (ProgramType *programtype in genre.programTypes) {
-                             UIImage *redButtonImage = [UIImage imageNamed:@"lightbg.png"];
-                             UIButton *redButton = [UIButton buttonWithType:UIButtonTypeCustom];
-                             redButton.frame = CGRectMake(0, 0, 112.0, 26.0);
-                             [redButton setBackgroundImage:redButtonImage forState:UIControlStateNormal];
-                             [redButton.titleLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
-                             [redButton setTitle:programtype.Title forState:UIControlStateNormal];
-                             [section.sectionRows addObject:redButton];
-                             //[section.sectionRows addObject:programtype.Title];
+                     for (Country *country in countries) {
+                         SectionView *sectionCountry = [[SectionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, DEFAULT_ROW_HEIGHT) title:@"" delegate:self];
+                         sectionCountry.sectionHeader = country.Title;
+                         sectionCountry.sectionRows=[[NSMutableArray alloc]init];
+                         sectionCountry.sectionType = @"country";
+                         for (Genre *genre in country.genres) {
+                             SectionView *sectionGenre = [[SectionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, DEFAULT_ROW_HEIGHT) title:@"" delegate:self];
+                             sectionGenre.sectionHeader = genre.Title;
+                             sectionGenre.sectionRows=[[NSMutableArray alloc]init];
+                             sectionGenre.sectionType = @"genre";
+                             for (ProgramType *programtype in genre.programTypes) {
+                                 UIImage *redButtonImage = [UIImage imageNamed:@"lightbg.png"];
+                                 UIButton *redButton = [UIButton buttonWithType:UIButtonTypeCustom];
+                                 redButton.frame = CGRectMake(0, 0, 112.0, 26.0);
+                                 [redButton setBackgroundImage:redButtonImage forState:UIControlStateNormal];
+                                 [redButton.titleLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
+                                 [redButton setTitle:programtype.Title forState:UIControlStateNormal];
+                                 [sectionGenre.sectionRows addObject:redButton];
+                             }
+                             [sectionCountry.sectionRows addObject:sectionGenre];
                          }
-                         [self.sectionArray addObject:section];
+                         [self.sectionArray addObject:sectionCountry];
                      }
                  }
-                 hasLoadedGenresData = YES;
+                 hasLoadedCountriesData = YES;
                  [MBProgressHUD hideHUDForView:self.tableView animated:YES];
              } synchronous:YES];
         }
@@ -114,10 +119,9 @@
     /*
      Create the section header views lazily.
      */
-	SectionView *aSection=[sectionArray objectAtIndex:section];
+	SectionView *aSection = [sectionArray objectAtIndex:section];
     if (!aSection.sectionHeaderView) {
         aSection.sectionHeaderView = [[SectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, HEADER_HEIGHT) title:aSection.sectionHeader section:section delegate:self];
-        
     }
     
     return aSection.sectionHeaderView;
@@ -125,7 +129,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    
     // Return the number of sections.
     
     return [self.sectionArray count];
@@ -142,23 +145,37 @@
 {
     //    NSLog(@"%@",indexPath);
     SectionView *aSection=[sectionArray objectAtIndex:indexPath.section];
+    UITableViewCell *cell = nil;
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell...
-    cell.textLabel.text = ((UIButton *)([aSection.sectionRows objectAtIndex:indexPath.row])).titleLabel.text;
-    [cell.textLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
+    if (aSection.sectionType == @"country") {
+        SectionView *secView = ((SectionView *)([aSection.sectionRows objectAtIndex:indexPath.row]));
+        SectionHeaderView *secHView =[[SectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, HEADER_HEIGHT) title:secView.sectionHeader section:indexPath.row delegate:self];
+        [cell.contentView addSubview:secHView];
+    }
+    else
+    {
+        // Configure the cell...
+        cell.textLabel.text = ((UIButton *)([aSection.sectionRows objectAtIndex:indexPath.row])).titleLabel.text;
+        [cell.textLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
     
-    UIImageView *brickAnim = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lightbg.png"]];
-    brickAnim.frame = cell.frame;
+        UIImageView *brickAnim = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lightbg.png"]];
+        brickAnim.frame = cell.frame;
     
-    cell.backgroundView = brickAnim;
-                 
+        cell.backgroundView = brickAnim;
+    }
+    
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return DEFAULT_ROW_HEIGHT;
 }
 
 -(void)sectionHeaderView:(SectionHeaderView*)sectionHeaderView sectionOpened:(NSInteger)sectionOpened {
@@ -240,7 +257,7 @@
 {
     SectionView *aSection=[sectionArray objectAtIndex:indexPath.section];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-
+    
     UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Play Channel" message:[NSString stringWithFormat:@"Do you want to check %@?", aSection.sectionHeader] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     [view show];
 }

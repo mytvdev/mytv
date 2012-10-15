@@ -12,6 +12,7 @@
 #import "DataFetcher.h"
 #import "RestService.h"
 #import "UIDevice+IdentifierAddition.h"
+#import "TableCountries.h"
 
 @interface CountriesSubViewResponder : UIViewController <MyKKDemoCellDelegate, KKGridViewDataSource, KKGridViewDelegate>
 {
@@ -28,5 +29,7 @@
 @property (nonatomic, strong) IBOutlet UIView *countriesSubView;
 @property (nonatomic, strong) KKGridView *countriesKKGridView;
 @property (readonly) DataFetcher *countryFetcher;
+
+@property (strong, nonatomic) TableCountries *tableVC;
 
 @end

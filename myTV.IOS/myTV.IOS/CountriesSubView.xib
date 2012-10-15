@@ -37,10 +37,11 @@
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIImageView" id="967077849">
 						<reference key="NSNextResponder" ref="179666162"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrameSize">{543, 128}</string>
 						<reference key="NSSuperview" ref="179666162"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -50,10 +51,10 @@
 						</object>
 					</object>
 				</array>
-				<string key="NSFrameSize">{543, 128}</string>
+				<string key="NSFrameSize">{112, 410}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
+				<reference key="NSNextKeyView" ref="967077849"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -162,7 +163,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">tray.png</string>
-			<string key="NS.object.0">{543, 99}</string>
+			<string key="NS.object.0">{1086, 198}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">1498</string>
 	</data>

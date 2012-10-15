@@ -30,6 +30,8 @@
 @property (readonly) DataFetcher *featuredVOdFetcher;
 @property (readonly) DataFetcher *recentVODFetcher;
 @property (readonly) DataFetcher *mytvPackagesFetcher;
+@property (readonly) DataFetcher *genresFetcher;
+@property (readonly) DataFetcher *countriesFetcher;
 
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelChannel;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelFeaturedVOD;

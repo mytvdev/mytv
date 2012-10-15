@@ -5,13 +5,13 @@
 #import "RestService.h"
 #import "UIDevice+IdentifierAddition.h"
 
-@interface TableGenres : UITableViewController<SectionHeaderViewDelegate, SectionViewDelegate> {
-    BOOL hasLoadedGenresData;
+@interface TableCountries : UITableViewController<SectionHeaderViewDelegate, SectionViewDelegate> {
+    BOOL hasLoadedCountriesData;
 }
 
 @property (nonatomic, strong) NSMutableArray *sectionArray;
 @property (nonatomic, assign) NSInteger openSectionIndex;
 @property (nonatomic, strong) NSArray *fillerData;
-@property (readonly) DataFetcher *genresFetcher;
+@property (readonly) DataFetcher *countriesFetcher;
 
 @end

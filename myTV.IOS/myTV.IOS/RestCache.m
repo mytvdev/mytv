@@ -217,4 +217,54 @@ static RestCache *singleton;
     mytvPackages = nil;
 }
 
+-(DataFetcher *) RequestGenres:(RSGetGenres)callback
+{
+    if(genresCache == nil) {
+        return [RestService RequestGenres:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
+            if(array != nil && error == nil) {
+                genresCache = array;
+                NSArray *copy = [[NSArray alloc] initWithArray:genresCache copyItems:YES];
+                callback(copy, nil);
+                [self performSelector:@selector(ClearGenresCache) withObject:nil afterDelay:self.cacheDuration];
+            }
+            else {
+                callback(array, error);
+            }
+        }];
+    }
+    else {
+        callback([[NSArray alloc] initWithArray:genresCache copyItems:YES], nil);
+        return nil;
+    }
+}
+
+- (void)ClearGenresCache {
+    genresCache = nil;
+}
+
+-(DataFetcher *) RequestCountries:(RSGetGenres)callback
+{
+    if(countriesCache == nil) {
+        return [RestService RequestCountries:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error){
+            if(array != nil && error == nil) {
+                countriesCache = array;
+                NSArray *copy = [[NSArray alloc] initWithArray:countriesCache copyItems:YES];
+                callback(copy, nil);
+                [self performSelector:@selector(ClearCountriesCache) withObject:nil afterDelay:self.cacheDuration];
+            }
+            else {
+                callback(array, error);
+            }
+        }];
+    }
+    else {
+        callback([[NSArray alloc] initWithArray:countriesCache copyItems:YES], nil);
+        return nil;
+    }
+}
+
+- (void)ClearCountriesCache {
+    countriesCache = nil;
+}
+
 @end

@@ -38,9 +38,11 @@ typedef void (^RSGetPurchaseInforamtion) (PurchaseInformation*, NSError*);
 typedef void (^RSGetEpisode) (Episode*, NSError*);
 typedef void (^RSGetProgram) (MyTVProgram*, NSError*);
 typedef void (^RSGetGenres) (NSArray /* Genre */ *, NSError*);
+typedef RSGetGenres RSGetGenresCallBack;
 typedef void (^RSGetProgramTypes) (NSArray /* ProgramType */ *, NSError*);
 typedef void (^RSGetPackages) (NSArray /* MyTVPackage, VODPackage */ *, NSError*);
-typedef void (^RSGetGountries) (NSArray /* Country */ *, NSError*);
+typedef void (^RSGetCountries) (NSArray /* Country */ *, NSError*);
+typedef RSGetCountries RSGetCountriesCallback;
 
 @interface RestService : NSObject
 
@@ -115,15 +117,17 @@ typedef void (^RSGetGountries) (NSArray /* Country */ *, NSError*);
 
 +(DataFetcher *)RequestGetEpisode:(NSString *)baseUrl ofId:(NSString *)episodeId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetEpisode)callback;
 
-+(DataFetcher *)RequestGenres:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenres)callback;
++(DataFetcher *)RequestGenres:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenresCallBack)callback;
 
-+(DataFetcher *)RequestGenres:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenres)callback  synchronous:(BOOL)sync;
++(DataFetcher *)RequestGenres:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenresCallBack)callback synchronous:(BOOL)sync;
 
 +(DataFetcher *)RequestProgramTypes:(NSString *)baseUrl ofGenre:(NSString *)genreId withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgramTypes)callback;
 
 +(DataFetcher *)RequestGetPackages:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetProgramTypes)callback;
 
-+(DataFetcher *)RequestCountries:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetGenres)callback;
++(DataFetcher *)RequestCountries:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetCountriesCallback)callback;
+
++(DataFetcher *)RequestCountries:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId usingCallback:(RSGetCountriesCallback)callback synchronous:(BOOL)sync;
 
 +(DataFetcher *)Search:(NSString *)baseUrl withDeviceId:(NSString *)deviceId andDeviceTypeId:(NSString *)deviceTypeId andSearchCriteria:(NSString *)searchCriteria usingCallback:(RSGetGenres)callback;
 
