@@ -30,6 +30,10 @@
 @property (nonatomic, strong) KKGridView *countriesKKGridView;
 @property (readonly) DataFetcher *countryFetcher;
 
+@property (nonatomic, strong) NSArray *countries;
+
 @property (strong, nonatomic) TableCountries *tableVC;
+
+- (id)initWithNibNameAndCountries:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil countries:(NSArray *)Countries;
 
 @end

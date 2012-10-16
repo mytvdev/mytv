@@ -16,14 +16,16 @@
 @synthesize categoriesSubView;
 @synthesize categoriesKKGridView;
 @synthesize genreFetcher = _genreFetcher;
+@synthesize genres;
 
 @synthesize tableVC;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibNameAndGenres:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil genres:(NSArray *)Genres
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.genres = Genres;
     }
     return self;
 }
@@ -48,7 +50,7 @@
         [self fillGenres];
     }*/
     
-    self.tableVC=[[TableGenres alloc]initWithStyle:UITableViewStylePlain];
+    self.tableVC=[[TableGenres alloc]initWithStyleAndGenres:UITableViewStylePlain genres:self.genres];
     [self.categoriesSubView addSubview:self.tableVC.view];
 }
 

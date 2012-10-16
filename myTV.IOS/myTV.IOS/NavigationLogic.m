@@ -131,6 +131,12 @@
                     [item.responderInstance performSelector:@selector(bindData:) withObject:note.object];
                 }
             }
+            else if ([viewName isEqualToString:@"programs"])
+            {
+                if([item.responderInstance respondsToSelector:@selector(bindData:)]){
+                    [item.responderInstance performSelector:@selector(bindData:) withObject:note.object];
+                }
+            }
             else
             {
                 if([note.userInfo count] > 1 && [item.responderInstance respondsToSelector:@selector(bindData:)]){

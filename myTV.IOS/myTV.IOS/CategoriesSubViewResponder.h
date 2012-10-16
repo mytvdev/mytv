@@ -25,6 +25,10 @@
 @property (nonatomic, strong) KKGridView *categoriesKKGridView;
 @property (readonly) DataFetcher *genreFetcher;
 
+@property (nonatomic, strong) NSArray *genres;
+
 @property (strong, nonatomic) TableGenres *tableVC;
+
+- (id)initWithNibNameAndGenres:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil genres:(NSArray *)Genres;
 
 @end

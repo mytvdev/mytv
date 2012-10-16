@@ -10,6 +10,7 @@
 #import "MyTVViewController.h"
 #import "CategoriesSubViewResponder.h"
 #import "CountriesSubViewResponder.h"
+#import "RestCache.h"
 
 @interface IPadViewController : MyTVViewController
 {
@@ -17,6 +18,8 @@
     IBOutlet UIBarButtonItem *popButton;
     CategoriesSubViewResponder *myCatPopOver;
     CountriesSubViewResponder *myCountPopOver;
+    NSArray *genres;
+    NSArray *countries;
 }
 
 @property (nonatomic, retain) UIPopoverController *popoverController;

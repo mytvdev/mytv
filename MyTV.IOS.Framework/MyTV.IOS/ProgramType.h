@@ -12,6 +12,6 @@
 @interface ProgramType : ItemBase
 
 @property NSString *genreId;
-@property (nonatomic, strong) NSArray *programs;
+@property (nonatomic, strong) NSMutableArray *programs;
 
 @end

@@ -1841,6 +1841,7 @@
                     [program setId:[[TBXML textForElement:xmlId] intValue]];
                     program.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
                     program.Logo = [TBXML textForElement:xmlThumbnail];
+                    program.Thumbnail = [TBXML textForElement:xmlThumbnail];
                     [programs addObject:program];
                 }
                 else if(xmlpostertype != NULL && [[TBXML textForElement:xmlpostertype] compare:@"episode"] == NSOrderedSame)
@@ -1849,6 +1850,7 @@
                     [episode setId:[[TBXML textForElement:xmlId] intValue]];
                     episode.Title = [TBXML valueOfAttributeNamed:@"bcright" forElement:item];
                     episode.Logo = [TBXML textForElement:xmlThumbnail];
+                    episode.Thumbnail = [TBXML textForElement:xmlThumbnail];
                     [programs addObject:episode];
                 }
                 

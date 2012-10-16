@@ -73,6 +73,9 @@
     item = [[NavigationItem alloc] initWithKey:MyTV_View_Search forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_Programs forNib:@"ProgramsSubView" usingClass:[ProgramsSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
+    [self.navigationLogic addNavigationItem:item];
+    
     item = [[NavigationItem alloc] initWithKey:MyTV_View_Episode forNib:@"EpisodeSubView" usingClass:[EpisodeSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
@@ -82,10 +85,10 @@
     item = [[NavigationItem alloc] initWithKey:MyTV_View_VODPackage forNib:@"VODPackageSubView" usingClass:[VODPackageSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
-    //item = [[NavigationItem alloc] initWithKey:MyTV_View_VODPackage forNib:@"SearchSubView" usingClass:[SearchSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
-    //[self.navigationLogic addNavigationItem:item];
-    
     item = [[NavigationItem alloc] initWithKey:@"categories" forNib:@"CategoriesSubView" usingClass:[CategoriesSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"catgoriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"catgoriesOpen-Over.png"]];
+    [self.navigationLogic addNavigationItem:item];
+    
+    item = [[NavigationItem alloc] initWithKey:MyTV_View_ProgramTypes forNib:@"ProgramTypesSubView" usingClass:[ProgramTypesSubViewResponder class] button:nil displayImage:nil displayActiveImage:nil];
     [self.navigationLogic addNavigationItem:item];
     
     item = [[NavigationItem alloc] initWithKey:@"countries" forNib:@"CountriesSubView" usingClass:[CountriesSubViewResponder class] button:dealsButton displayImage:[UIImage imageNamed:@"countriesOpen.png"] displayActiveImage:[UIImage imageNamed:@"countriesOpen-Over.png"]];
@@ -94,6 +97,22 @@
     self.navigationLogic.mainview = self.mainSubView;
     
     [self.navigationLogic startHandlingNavigation];
+    
+    [RestService RequestGenres:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error)
+     {
+         if(array != nil && error == nil)
+         {
+             genres = array;
+         }
+     } synchronous:NO];
+    
+    [RestService RequestCountries:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *array, NSError *error)
+     {
+         if(array != nil && error == nil)
+         {
+             countries = array;
+         }
+     } synchronous:NO];
     
     //load homeview by default
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"home" }];
@@ -155,7 +174,7 @@
 }
 
 - (IBAction)goToCategories:(id)sender {
-    myCatPopOver = [[CategoriesSubViewResponder alloc] initWithNibName:@"CategoriesSubView" bundle:nil];
+    myCatPopOver = [[CategoriesSubViewResponder alloc] initWithNibNameAndGenres:@"CategoriesSubView" bundle:nil genres:genres];
     popoverController = [[UIPopoverController alloc] initWithContentViewController:myCatPopOver];
     popoverController.popoverContentSize = CGSizeMake(112.f, 300.f);
     
@@ -168,7 +187,7 @@
 }
 
 - (IBAction)goToCountries:(id)sender {
-    myCountPopOver = [[CountriesSubViewResponder alloc] initWithNibName:@"CountriesSubView" bundle:nil];
+    myCountPopOver = [[CountriesSubViewResponder alloc] initWithNibNameAndCountries:@"CountriesSubView" bundle:nil countries:countries];
     popoverController = [[UIPopoverController alloc] initWithContentViewController:myCountPopOver];
     popoverController.popoverContentSize = CGSizeMake(112.f, 300.f);
     

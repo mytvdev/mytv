@@ -11,12 +11,13 @@
 @synthesize sectionArray, openSectionIndex;
 @synthesize fillerData = _fillerData;
 @synthesize countriesFetcher = _countriesFetcher;
+@synthesize popoverController, popButton, myCatPopOver;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithStyleAndCountries:(UITableViewStyle)style countries:(NSArray *)Countries
 {
     self = [super initWithStyle:style];
     if (self) {
-        if(!hasLoadedCountriesData) {
+        if(Countries == nil) {
             [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
             [RestService RequestCountries:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *countries, NSError *error)
              {
@@ -26,32 +27,39 @@
                      
                      self.sectionArray=[[NSMutableArray alloc]init];
                      for (Country *country in countries) {
-                         SectionView *sectionCountry = [[SectionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, DEFAULT_ROW_HEIGHT) title:@"" delegate:self];
-                         sectionCountry.sectionHeader = country.Title;
-                         sectionCountry.sectionRows=[[NSMutableArray alloc]init];
-                         sectionCountry.sectionType = @"country";
+                         SectionView *section = [[SectionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, DEFAULT_ROW_HEIGHT) title:@"" delegate:self];
+                         
+                         section.sectionHeader = country.Title;
+                         section.sectionRows=[[NSMutableArray alloc]init];
                          for (Genre *genre in country.genres) {
-                             SectionView *sectionGenre = [[SectionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, DEFAULT_ROW_HEIGHT) title:@"" delegate:self];
-                             sectionGenre.sectionHeader = genre.Title;
-                             sectionGenre.sectionRows=[[NSMutableArray alloc]init];
-                             sectionGenre.sectionType = @"genre";
-                             for (ProgramType *programtype in genre.programTypes) {
-                                 UIImage *redButtonImage = [UIImage imageNamed:@"lightbg.png"];
-                                 UIButton *redButton = [UIButton buttonWithType:UIButtonTypeCustom];
-                                 redButton.frame = CGRectMake(0, 0, 112.0, 26.0);
-                                 [redButton setBackgroundImage:redButtonImage forState:UIControlStateNormal];
-                                 [redButton.titleLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
-                                 [redButton setTitle:programtype.Title forState:UIControlStateNormal];
-                                 [sectionGenre.sectionRows addObject:redButton];
-                             }
-                             [sectionCountry.sectionRows addObject:sectionGenre];
+                             GenreProgramTypes *ptp = [[GenreProgramTypes alloc] init];
+                             ptp.genreTitle = genre.Title;
+                             ptp.arrayProgramTypes = genre.programTypes;
+                             [section.sectionRows addObject:ptp];
                          }
-                         [self.sectionArray addObject:sectionCountry];
+                         [self.sectionArray addObject:section];
                      }
                  }
                  hasLoadedCountriesData = YES;
                  [MBProgressHUD hideHUDForView:self.tableView animated:YES];
              } synchronous:YES];
+        }
+        else
+        {
+            self.sectionArray=[[NSMutableArray alloc]init];
+            for (Country *country in Countries) {
+                SectionView *section = [[SectionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, DEFAULT_ROW_HEIGHT) title:@"" delegate:self];
+                
+                section.sectionHeader = country.Title;
+                section.sectionRows=[[NSMutableArray alloc]init];
+                for (Genre *genre in country.genres) {
+                    GenreProgramTypes *ptp = [[GenreProgramTypes alloc] init];
+                    ptp.genreTitle = genre.Title;
+                    ptp.arrayProgramTypes = genre.programTypes;
+                    [section.sectionRows addObject:ptp];
+                }
+                [self.sectionArray addObject:section];
+            }
         }
     }
     return self;
@@ -145,30 +153,22 @@
 {
     //    NSLog(@"%@",indexPath);
     SectionView *aSection=[sectionArray objectAtIndex:indexPath.section];
-    UITableViewCell *cell = nil;
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"CustomCell";
     
-    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    if (aSection.sectionType == @"country") {
-        SectionView *secView = ((SectionView *)([aSection.sectionRows objectAtIndex:indexPath.row]));
-        SectionHeaderView *secHView =[[SectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, HEADER_HEIGHT) title:secView.sectionHeader section:indexPath.row delegate:self];
-        [cell.contentView addSubview:secHView];
-    }
-    else
-    {
-        // Configure the cell...
-        cell.textLabel.text = ((UIButton *)([aSection.sectionRows objectAtIndex:indexPath.row])).titleLabel.text;
-        [cell.textLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
+    // Configure the cell...
+    cell.arrayProgramTypes = ((GenreProgramTypes *)([aSection.sectionRows objectAtIndex:indexPath.row])).arrayProgramTypes;
+    cell.textLabel.text = ((GenreProgramTypes *)([aSection.sectionRows objectAtIndex:indexPath.row])).genreTitle;
+    [cell.textLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
     
-        UIImageView *brickAnim = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lightbg.png"]];
-        brickAnim.frame = cell.frame;
+    UIImageView *brickAnim = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lightbg.png"]];
+    brickAnim.frame = cell.frame;
     
-        cell.backgroundView = brickAnim;
-    }
+    cell.backgroundView = brickAnim;
     
     return cell;
 }
@@ -255,11 +255,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SectionView *aSection=[sectionArray objectAtIndex:indexPath.section];
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    CustomCell *cell = (CustomCell *)([tableView cellForRowAtIndexPath:indexPath]);
     
-    UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Play Channel" message:[NSString stringWithFormat:@"Do you want to check %@?", aSection.sectionHeader] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-    [view show];
+    myCatPopOver = [[ProgramTypesSubViewResponder alloc] initWithNibNameAndProgramTypes:@"ProgramTypesSubView" bundle:nil programtypes:cell.arrayProgramTypes];
+    popoverController = [[UIPopoverController alloc] initWithContentViewController:myCatPopOver];
+    popoverController.popoverContentSize = CGSizeMake(112.f, 300.f);
+    
+    //present the popover view non-modal with a
+    //refrence to the button pressed within the current view
+    [self.popoverController presentPopoverFromRect:cell.frame
+                                            inView:self.view
+                          permittedArrowDirections:UIPopoverArrowDirectionAny
+                                          animated:YES];
 }
 
 @end

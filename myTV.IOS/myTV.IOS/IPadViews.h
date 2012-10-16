@@ -11,6 +11,7 @@
 #import "LiveTVSubViewResponder.h"
 #import "VODSubViewResponder.h"
 #import "MyVODSubViewResponder.h"
+#import "ProgramsSubViewResponder.h"
 #import "DealsSubViewResponder.h"
 #import "LoginSubViewResponder.h"
 #import "SearchSubViewResponder.h"
@@ -19,6 +20,7 @@
 #import "EpisodeSubViewResponder.h"
 #import "CountriesSubViewResponder.h"
 #import "VODPackageSubViewResponder.h"
+#import "ProgramTypesSubViewResponder.h"
 
 @protocol IPadViews <NSObject>
 @end

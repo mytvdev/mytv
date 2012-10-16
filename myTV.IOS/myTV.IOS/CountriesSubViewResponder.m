@@ -18,14 +18,16 @@
 @synthesize countriesSubView;
 @synthesize countriesKKGridView;
 @synthesize countryFetcher = _countryFetcher;
+@synthesize countries;
 
 @synthesize tableVC;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibNameAndCountries:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil countries:(NSArray *)Countries
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.countries = Countries;
     }
     return self;
 }
@@ -50,7 +52,7 @@
         [self fillCountries];
     }*/
     
-    self.tableVC=[[TableCountries alloc]initWithStyle:UITableViewStylePlain];
+    self.tableVC=[[TableCountries alloc]initWithStyleAndCountries:UITableViewStylePlain countries:self.countries];
     [self.countriesSubView addSubview:self.tableVC.view];
 
 }
