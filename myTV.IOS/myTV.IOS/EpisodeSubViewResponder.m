@@ -33,10 +33,7 @@
 @synthesize lblRating;
 
 -(void) viewDidLoad {
-    
 }
-
-
 
 -(void)bindData:(NSObject *)data {
     NSDictionary *dict = (NSDictionary *)data;
@@ -61,11 +58,13 @@
                 lblEpisodeDescription.text = (episode.Description != nil && episode.Description != @"") ? episode.Description : @"-";
                 lblDirector.text = (episode.Director != nil && episode.Director != @"") ? episode.Director : @"-";
                 lblCast.text = (episode.Guest != nil && episode.Guest != @"") ? episode.Guest : @"-";
+                lblCast.numberOfLines = 0;
+                [lblCast sizeToFit];
                 lblPresenter.text = (episode.Presenter != nil && episode.Presenter != @"") ? episode.Presenter : @"-";
                 lblLanguage.text = (episode.Language != nil && episode.Language != @"") ? episode.Language : @"-";
-                //lblSeason.text = (episode.Season != nil && episode.Season != @"") ? episode.Season : @"-";
+                lblSeason.text = (episode.Season != nil && episode.Season != @"") ? episode.Season : @"-";
                 lblReleaseDate.text = (episode.ReleaseDate != nil && episode.ReleaseDate != @"") ? episode.ReleaseDate : @"-";
-                //lblAwards.text = (episode.Award != nil && episode.Award != @"") ? episode.Award : @"-";
+                lblAwards.text = (episode.Awards != nil && episode.Awards != @"") ? episode.Awards : @"-";
                 lblRating.text = (episode.Rating != nil && episode.Rating != @"") ? episode.Rating : @"-";
                 episodeImageFetcher = [DataFetcher Get:episode.Thumbnail usingCallback:^(NSData *data, NSError *error){
                     if(data != nil && error == nil) {
@@ -186,7 +185,6 @@
     
 }
 
-
 - (IBAction)changeEpisodePage:(id)sender {
     CGRect frame;
     frame.origin.x = PageSize * self.episodePager.currentPage;
@@ -220,6 +218,7 @@
         }
     }
 }
+
 -(BOOL) textFieldShouldEndEditing:(UITextField *)textField {
     if (textField == self.txtPinCode) {
         [txtPinCode setHidden:YES];
@@ -237,11 +236,24 @@
             //[self playcode]
         }
         else {
-            [self buyEpisode];
+            [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error) {
+                if(linking != nil && error == nil && [textField.text isEqualToString:[NSString stringWithFormat:@"%d", linking.PinCode]]) {
+                    [self buyEpisode];
+                    blnPurchased = YES;
+                }
+                else
+                {
+                    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"" message:@"Invalid PIN Code" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    [message show];
+                    blnPurchased = NO;
+                    [self.btnPayOrPlay setEnabled:YES];
+                }
+            } synchronous:YES];
         }
         
-        
-        return YES;
+        if (blnPurchased) {
+            return YES;
+        }
     }
     return NO;
 }
@@ -259,6 +271,8 @@
                         [self.btnPayOrPlay setImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
                         [self.btnPayOrPlay setImage:[UIImage imageNamed:@"play-Over.png"] forState:UIControlStateHighlighted];
                         [self.btnPayOrPlay setHidden:NO];
+                        
+                        [self.lblPriceOrExpiry setText:@""];
                     }
                     else {
                         UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Attention" message:[NSString stringWithFormat:@"Purchase failed: %@", status] delegate:subview cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -285,6 +299,5 @@
     NSUInteger newLength = [textField.text length] + [string length] - range.length;
     return (newLength > 5) ? NO : YES;
 }
-
 
 @end

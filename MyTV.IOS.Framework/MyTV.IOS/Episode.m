@@ -11,7 +11,7 @@
 
 @implementation Episode
 
-@synthesize ProgramPurchased, Rating, ReleaseDate, TrailerFileName, ProgramPrice, Price, ProgramExpiresIn, ProgramId, Presenter, ExpiresIn, Guest, Director, Duration, Duration2, CanBuyEpisode, Category, Language, Type, Description, Logo, Title, Id, Thumbnail, ProgramTitle;
+@synthesize ProgramPurchased, Rating, ReleaseDate, TrailerFileName, ProgramPrice, Price, ProgramExpiresIn, ProgramId, Presenter, ExpiresIn, Guest, Director, Duration, Duration2, CanBuyEpisode, Category, Language, Type, Description, Logo, Title, Id, Thumbnail, ProgramTitle, Season, Awards;
 
 -(id) copyWithZone:(NSZone *)zone {
     Episode *copy = [super copyWithZone:zone];
@@ -40,6 +40,8 @@
         copy.Logo = [self.Logo copyWithZone:zone];
         copy.Title = [self.Title copyWithZone:zone];
         copy.Price = [self.Price copyWithZone:zone];
+        copy.Awards = [self.Awards copyWithZone:zone];
+        copy.Season = [self.Season   copyWithZone:zone];
     }
     return copy;
 }

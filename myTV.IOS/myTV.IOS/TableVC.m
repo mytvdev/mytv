@@ -18,11 +18,14 @@
     self = [super initWithStyle:UITableViewStylePlain];
     if (self)
     {
+        self.tableView.bounces = NO;
+        self.tableView.scrollEnabled = NO;
+        
         self.arrayProgramTypes = ProgramTypes;
         // Custom initialization
         self.sectionArray=[[NSMutableArray alloc]init];
         Section *section=[[Section alloc]init];
-        section.sectionHeader=@"Expand types";
+        section.sectionHeader=@"Genres";
         section.sectionRows=[[NSMutableArray alloc]init];
         for (ProgramType *programtype in arrayProgramTypes)
         {
@@ -90,6 +93,11 @@
 {
     // Return YES for supported orientations
 	return YES;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return DEFAULT_ROW_HEIGHT;
 }
 
 #pragma mark - Table view data source

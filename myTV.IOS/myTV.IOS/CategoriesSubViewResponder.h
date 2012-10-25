@@ -14,7 +14,11 @@
 #import "UIDevice+IdentifierAddition.h"
 #import "TableGenres.h"
 
-@interface CategoriesSubViewResponder : UIViewController <MyKKDemoCellDelegate, KKGridViewDataSource, KKGridViewDelegate>
+#define Genres_Space 2
+#define Genres_Width 112
+#define Genres_Height 26
+
+@interface CategoriesSubViewResponder : UIViewController
 {
     BOOL hasLoadedGenresData;
     BOOL IsLoadingProgramTypes;
@@ -24,6 +28,7 @@
 @property (nonatomic, strong) IBOutlet UIView *categoriesSubView;
 @property (nonatomic, strong) KKGridView *categoriesKKGridView;
 @property (readonly) DataFetcher *genreFetcher;
+@property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *ScrollView;
 
 @property (nonatomic, strong) NSArray *genres;
 

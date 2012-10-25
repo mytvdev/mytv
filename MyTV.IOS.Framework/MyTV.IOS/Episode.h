@@ -12,7 +12,7 @@
 @interface Episode : ItemBase <NSCopying>
 
 
-@property NSString *Duration, *Duration2, *Director, *Guest, *Category, *Price, *ProgramPrice, *Rating, *ProgramId, *ReleaseDate, *ExpiresIn, *ProgramExpiresIn, *ProgramPurchased, *CanBuyEpisode, *TrailerFileName, *Presenter, *Thumbnail, *Language, *ProgramTitle;
+@property NSString *Duration, *Duration2, *Director, *Guest, *Category, *Price, *ProgramPrice, *Rating, *ProgramId, *ReleaseDate, *ExpiresIn, *ProgramExpiresIn, *ProgramPurchased, *CanBuyEpisode, *TrailerFileName, *Presenter, *Thumbnail, *Language, *ProgramTitle, *Season, *Awards;
 
 
 @end

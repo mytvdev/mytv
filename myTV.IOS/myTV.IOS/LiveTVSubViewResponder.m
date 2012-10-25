@@ -14,8 +14,6 @@
 @implementation LiveTVSubViewResponder
 
 @synthesize channelFetcher = _channelFetcher;
-@synthesize lblChannelName = _lblChannelName;
-@synthesize lblChannelDescripton = _lblChannelDescripton;
 @synthesize ChannelScrollView;
 
 - (void)viewDidLoad
@@ -24,10 +22,12 @@
         [self fillChannels];
         LiveTVObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"SelectChannel" object:nil queue:nil usingBlock:^(NSNotification *note) {
             Channel *data = (Channel *)note.object;
-            self.lblChannelName.text = data.Name;
-            self.lblChannelDescripton.text = data.BigDescription;
+            //self.lblChannelName.text = data.Name;
+            //self.lblChannelDescripton.text = data.BigDescription;
         }];
     }
+    
+    [self.ChannelScrollView setContentOffset:CGPointZero animated:YES];
 }
 
  
@@ -71,6 +71,8 @@
         else {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"You need to link your device to activate your subscription" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
+            [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"home" }];
+            
         }
         [MBProgressHUD hideHUDForView:self.ChannelScrollView animated:YES];
     } synchronous:NO];

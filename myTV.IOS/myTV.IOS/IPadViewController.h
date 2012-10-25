@@ -40,6 +40,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *rootView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *categoriesButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *countriesButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *backButton;
 
 @property (nonatomic, strong) NSMutableArray *fillerData;
 @property (nonatomic, retain) KKGridView *episodesKKGridView;
@@ -53,5 +54,6 @@
 - (IBAction)goToLive:(id)sender;
 - (IBAction)goToCategories:(id)sender;
 - (IBAction)goToCountries:(id)sender;
+- (IBAction)gotoBack:(id)sender;
 
 @end

@@ -26,6 +26,7 @@ UIScrollViewDelegate
     BOOL isPurchased;
     NSString *episodeId;
     NSString *programId;
+    BOOL blnPurchased;
 }
 
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *txtPinCode;

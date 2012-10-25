@@ -20,10 +20,20 @@
 
 - (void)viewDidLoad
 {
-    [self.imageDisplay setHidden:YES];
+    if([[self.myvodView subviews] count] > 0) {
+        for (UIView *view in [self.myvodView subviews])
+        {
+            if ([view isMemberOfClass:[KKGridView class]])
+            {
+                [view removeFromSuperview];
+            }
+        }
+    }
+    
     _fillerData = [[NSMutableArray alloc] init];
     
-    if(!hasLoadedMyVODData) {
+    //if(!hasLoadedMyVODData) {
+        [self.imageDisplay setHidden:YES];
         myvodKKGridView = [[KKGridView alloc] initWithFrame:self.myvodView.bounds];
         myvodKKGridView.dataSource = self;
         myvodKKGridView.delegate = self;
@@ -37,7 +47,7 @@
         myvodKKGridView.gridFooterView = nil;
         
         [self fillMyVOD];
-    }
+    //}
 }
 
 -(NSUInteger)numberOfSectionsInGridView:(KKGridView *)gridView
@@ -63,7 +73,7 @@
 }
 
 -(void) fillMyVOD {
-    if(!hasLoadedMyVODData) {
+    //if(!hasLoadedMyVODData) {
         [MBProgressHUD showHUDAddedTo:self.myvodView animated:YES];
         NSMutableArray *array = [[NSMutableArray alloc] init];
         [RestService RequestGetMyVOD:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *episodes, NSError *error)
@@ -90,7 +100,7 @@
              hasLoadedMyVODData = YES;
              [MBProgressHUD hideHUDForView:self.myvodView animated:NO];
          } synchronous:NO];
-    }
+    //}
 }
 
 -(void) cancelMyVODFetcher {

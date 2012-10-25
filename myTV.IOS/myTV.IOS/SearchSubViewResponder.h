@@ -20,6 +20,10 @@
 @interface SearchSubViewResponder : SubViewResponder
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *SearchScrollView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *ProgramSearchScrollView;
 @property (readonly) DataFetcher *searchFetcher;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelResults;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelEpisodes;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *labelPrograms;
 
 @end

@@ -25,6 +25,7 @@
     MyTVProgram *currentprogram;
     BOOL isPurchased;
     NSString *programId;
+    BOOL blnPurchased;
 }
 
 

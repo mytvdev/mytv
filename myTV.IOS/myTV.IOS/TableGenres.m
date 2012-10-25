@@ -13,24 +13,29 @@
 @synthesize sectionArray, openSectionIndex;
 //@synthesize fillerData = _fillerData;
 @synthesize genresFetcher = _genresFetcher;
+@synthesize popoverController, popButton, myCatPopOver;
+
+int startDeceleratingPosition;
 
 - (id)initWithStyleAndGenres:(UITableViewStyle)style genres:(NSArray *)Genres
 {
     self = [super initWithStyle:style];
     if (self) {
+        self.tableView.bounces = NO;
+        self.tableView.scrollEnabled = NO;
         if(Genres == nil) {
             [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
             [RestService RequestGenres:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *genres, NSError *error)
              {
-                 if(genres != nil && error == nil)
+                if(genres != nil && error == nil)
                  {
                      //_fillerData = genres;
-                     
+        
                      self.sectionArray=[[NSMutableArray alloc]init];
-                     for (Genre *genre in genres) {
+                     //for (Genre *genre in genres) {
                          SectionView *section = [[SectionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, DEFAULT_ROW_HEIGHT) title:@"" delegate:self];
-                         
-                         section.sectionHeader = genre.Title;
+        
+                         /*section.sectionHeader = genre.Title;
                          section.sectionRows=[[NSMutableArray alloc]init];
                          for (ProgramType *programtype in genre.programTypes) {
                              ProgramTypePrograms *ptp = [[ProgramTypePrograms alloc] init];
@@ -38,20 +43,30 @@
                              ptp.arrayPrograms = programtype.programs;
                              [section.sectionRows addObject:ptp];
                          }
-                         [self.sectionArray addObject:section];
+                         [self.sectionArray addObject:section];*/
+                     
+                     section.sectionHeader = @"Genres";
+                     section.sectionRows=[[NSMutableArray alloc]init];
+                     for (Genre *genre in Genres){
+                         GenreProgramTypes *ptp = [[GenreProgramTypes alloc] init];
+                         ptp.genreTitle = genre.Title;
+                         ptp.arrayProgramTypes = genre.programTypes;
+                         [section.sectionRows addObject:ptp];
                      }
+                     [self.sectionArray addObject:section];
+                     //}
                  }
                  hasLoadedGenresData = YES;
                  [MBProgressHUD hideHUDForView:self.tableView animated:YES];
              } synchronous:YES];
-        }
-        else
+       }
+       else
         {
             self.sectionArray=[[NSMutableArray alloc]init];
-            for (Genre *genre in Genres) {
+            //for (Genre *genre in Genres) {
                 SectionView *section = [[SectionView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, DEFAULT_ROW_HEIGHT) title:@"" delegate:self];
                 
-                section.sectionHeader = genre.Title;
+                /*section.sectionHeader = genre.Title;
                 section.sectionRows=[[NSMutableArray alloc]init];
                 for (ProgramType *programtype in genre.programTypes) {
                     ProgramTypePrograms *ptp = [[ProgramTypePrograms alloc] init];
@@ -59,8 +74,18 @@
                     ptp.arrayPrograms = programtype.programs;
                     [section.sectionRows addObject:ptp];
                 }
+                [self.sectionArray addObject:section];*/
+                
+                section.sectionHeader = @"Genres";
+                section.sectionRows=[[NSMutableArray alloc]init];
+                for (Genre *genre in Genres){
+                    GenreProgramTypes *ptp = [[GenreProgramTypes alloc] init];
+                    ptp.genreTitle = genre.Title;
+                    ptp.arrayProgramTypes = genre.programTypes;
+                    [section.sectionRows addObject:ptp];
+                }
                 [self.sectionArray addObject:section];
-            }
+            //}
         }
     }
     return self;
@@ -123,6 +148,49 @@
 	return YES;
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    //NSLog(@"Will begin dragging");
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //NSLog(@"Did Scroll");
+    //NSLog([NSString stringWithFormat:@"%d", scrollView.contentOffset.y]);
+}
+
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    startDeceleratingPosition = scrollView.contentOffset.y;
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    //NSLog(@"scrollViewWillEndDragging");
+    //CGFloat unguidedOffsetY = targetContentOffset->y;
+    //NSLog(@"Remainder: %d", scrollView.contentOffset.y);
+    
+    /*CGFloat guidedOffsetY;
+    
+    if (unguidedOffsetY > kFirstStateTableViewOffsetHeight) {
+        int remainder = lroundf(unguidedOffsetY) % lroundf(kStateTableCell_Height_Unrotated);
+        NSLog(@"Remainder: %d", remainder);
+        if (remainder < (kStateTableCell_Height_Unrotated/2)) {
+            guidedOffsetY = unguidedOffsetY - remainder;
+        }
+        else {
+            guidedOffsetY = unguidedOffsetY - remainder + kStateTableCell_Height_Unrotated;
+        }
+    }
+    else {11
+        guidedOffsetY = 0;
+    }*/
+    
+    //targetContentOffset->y = scrollView.contentOffset.y;
+
+}
+
+
 #pragma mark - Table view data source
 -(UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section {
     
@@ -134,7 +202,7 @@
         aSection.sectionHeaderView = [[SectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.bounds.size.width, HEADER_HEIGHT) title:aSection.sectionHeader section:section delegate:self];
         
     }
-    
+    [aSection.sectionHeaderView toggleOpenWithUserAction:YES];
     return aSection.sectionHeaderView;
 }
 
@@ -153,6 +221,11 @@
     return aSection.open ? [aSection.sectionRows count]:0;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return DEFAULT_ROW_HEIGHT;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //    NSLog(@"%@",indexPath);
@@ -165,8 +238,9 @@
     }
     
     // Configure the cell...
-    cell.arrayPrograms = ((ProgramTypePrograms *)([aSection.sectionRows objectAtIndex:indexPath.row])).arrayPrograms;
-    cell.textLabel.text = ((ProgramTypePrograms *)([aSection.sectionRows objectAtIndex:indexPath.row])).ProgramTypeTitle;
+    //cell.frame.size = CGSizeMake(Genres_Width, Genres_Height);
+    cell.arrayProgramTypes = ((GenreProgramTypes *)([aSection.sectionRows objectAtIndex:indexPath.row])).arrayProgramTypes;
+    cell.textLabel.text = ((GenreProgramTypes *)([aSection.sectionRows objectAtIndex:indexPath.row])).genreTitle;
     [cell.textLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
     
     UIImageView *brickAnim = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lightbg.png"]];
@@ -226,7 +300,13 @@
     [self.tableView endUpdates];
     self.openSectionIndex = sectionOpened;
     
+    CGRect frame = self.tableView.frame;
+    frame.size.height += (countOfRowsToInsert * DEFAULT_ROW_HEIGHT);
+    self.view.frame = frame;
     
+    CGPoint scrollPoint = frame.origin;
+    scrollPoint.y = (self.openSectionIndex * DEFAULT_ROW_HEIGHT);
+    [self.tableView setContentOffset:scrollPoint animated:YES];
 }
 
 -(void)sectionHeaderView:(SectionHeaderView*)sectionHeaderView sectionClosed:(NSInteger)sectionClosed {
@@ -248,15 +328,36 @@
         [self.tableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:UITableViewRowAnimationTop];
     }
     self.openSectionIndex = NSNotFound;
+    
+    CGRect frame = self.tableView.frame;
+    frame.size.height -= (countOfRowsToDelete * DEFAULT_ROW_HEIGHT);
+    self.view.frame = frame;
+    
+    CGPoint scrollPoint = frame.origin;
+    scrollPoint.y = 0;
+    [self.tableView setContentOffset:scrollPoint animated:YES];
 }
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //CustomCell *cell = (CustomCell *)([tableView cellForRowAtIndexPath:indexPath]);
+    
+    //[[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:cell.arrayPrograms userInfo:@{ MyTV_ViewArgument_View : MyTV_View_Programs }];
+    
     CustomCell *cell = (CustomCell *)([tableView cellForRowAtIndexPath:indexPath]);
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:cell.arrayPrograms userInfo:@{ MyTV_ViewArgument_View : MyTV_View_Programs }];
+    myCatPopOver = [[ProgramTypesSubViewResponder alloc] initWithNibNameAndProgramTypes:@"ProgramTypesSubView" bundle:nil programtypes:cell.arrayProgramTypes];
+    popoverController = [[UIPopoverController alloc] initWithContentViewController:myCatPopOver];
+    popoverController.popoverContentSize = CGSizeMake(112.f, 300.f);
+    
+    //present the popover view non-modal with a
+    //refrence to the button pressed within the current view
+    [self.popoverController presentPopoverFromRect:cell.frame
+                                            inView:self.view
+                          permittedArrowDirections:UIPopoverArrowDirectionAny
+                                          animated:YES];
 }
 
 @end

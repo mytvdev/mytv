@@ -31,6 +31,7 @@
 @synthesize categoriesButton;
 @synthesize countriesButton;
 @synthesize searchButton;
+@synthesize backButton;
 
 @synthesize fillerData = _fillerData;
 @synthesize episodesKKGridView;
@@ -114,6 +115,18 @@
          }
      } synchronous:NO];
     
+    [RestService RequestGetVODPackages:MyTV_RestServiceUrl ofBouquet:@"1" withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *vodPackages, NSError *error)
+     {
+         if(vodPackages != nil && error == nil && vodPackages.count > 0)
+         {
+             [self.dealsButton setHidden:NO];
+         }
+         else
+         {
+             [self.dealsButton setHidden:YES];
+         }
+     }];
+    
     //load homeview by default
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"home" }];
     
@@ -176,7 +189,7 @@
 - (IBAction)goToCategories:(id)sender {
     myCatPopOver = [[CategoriesSubViewResponder alloc] initWithNibNameAndGenres:@"CategoriesSubView" bundle:nil genres:genres];
     popoverController = [[UIPopoverController alloc] initWithContentViewController:myCatPopOver];
-    popoverController.popoverContentSize = CGSizeMake(112.f, 300.f);
+    popoverController.popoverContentSize = CGSizeMake(112.f, 350.f);
     
     //present the popover view non-modal with a
     //refrence to the button pressed within the current view
@@ -189,7 +202,7 @@
 - (IBAction)goToCountries:(id)sender {
     myCountPopOver = [[CountriesSubViewResponder alloc] initWithNibNameAndCountries:@"CountriesSubView" bundle:nil countries:countries];
     popoverController = [[UIPopoverController alloc] initWithContentViewController:myCountPopOver];
-    popoverController.popoverContentSize = CGSizeMake(112.f, 300.f);
+    popoverController.popoverContentSize = CGSizeMake(200.f, 350.f);
     
     //present the popover view non-modal with a
     //refrence to the button pressed within the current view
@@ -197,6 +210,11 @@
                                             inView:self.view
                           permittedArrowDirections:UIPopoverArrowDirectionAny
                                           animated:YES];
+}
+
+- (IBAction)gotoBack:(id)sender
+{
+    
 }
 
 -(BOOL) disablesAutomaticKeyboardDismissal {

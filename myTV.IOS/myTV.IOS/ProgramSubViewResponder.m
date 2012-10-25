@@ -32,7 +32,6 @@
 @synthesize lblRating;
 
 -(void) viewDidLoad {
-
 }
 
 -(void)bindData:(NSObject *)data {
@@ -52,6 +51,8 @@
                 lblProgramDescription.text = (program.Description != nil && program.Description != @"") ? program.Description : @"-";
                 lblDirector.text = (program.Director != nil && program.Director != @"") ? program.Director : @"-";
                 lblCast.text = (program.Guest != nil && program.Guest != @"") ? program.Guest : @"-";
+                lblCast.numberOfLines = 0;
+                [lblCast sizeToFit];
                 lblPresenter.text = (program.Presenter != nil && program.Presenter != @"") ? program.Presenter : @"-";
                 lblLanguage.text = (program.Language != nil && program.Language != @"") ? program.Language : @"-";
                 lblSeason.text = (program.Season != nil && program.Season != @"") ? program.Season : @"-";
@@ -227,12 +228,25 @@
         if(isPurchased) {
             //[self playcode]
         }
-        else {
-            [self buyProgram];
+        else 
+            {
+                [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error) {
+                    if(linking != nil && error == nil && [textField.text isEqualToString:[NSString stringWithFormat:@"%d", linking.PinCode]]) {
+                        [self buyProgram];
+                    }
+                    else
+                    {
+                        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"" message:@"Invalid PIN Code" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                        [message show];
+                        blnPurchased = NO;
+                        [self.btnPayOrPlay setEnabled:YES];
+                    }
+                } synchronous:YES];
+            }
+        
+        if (blnPurchased) {
+            return YES;
         }
-        
-        
-        return YES;
     }
     return NO;
 }
@@ -250,6 +264,8 @@
                         [self.btnPayOrPlay setImage:[UIImage imageNamed:@"playAll.png"] forState:UIControlStateNormal];
                         [self.btnPayOrPlay setImage:[UIImage imageNamed:@"playAll-Over.png"] forState:UIControlStateHighlighted];
                         [self.btnPayOrPlay setHidden:NO];
+                        
+                        [self.lblPriceOrExpiry setText:@""];
                     }
                     else {
                         UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Attention" message:[NSString stringWithFormat:@"Purchase failed: %@", status] delegate:subview cancelButtonTitle:@"Ok" otherButtonTitles:nil];

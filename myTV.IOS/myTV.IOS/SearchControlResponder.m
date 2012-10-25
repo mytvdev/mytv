@@ -23,7 +23,7 @@
     SearchControlResponder *parent = self;
     NSString *image = self.itemBase.Logo;
     if(image == nil) {
-        if([data isKindOfClass:[Episode class]]) {
+        if ([self.itemBase.Type isEqualToString:@"episode"]) {
             image = ((Episode *)data).Thumbnail;
         }
         else if([data isKindOfClass:[MyTVProgram class]]) {
@@ -60,7 +60,7 @@
 }
 
 -(void) fireEvent:(UIGestureRecognizer *)gestureRecognizer{
-    if([self.itemBase isKindOfClass:[Episode class]]) {
+    if ([self.itemBase.Type isEqualToString:@"episode"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View: MyTV_View_Episode, MyTV_ViewArgument_Id: [NSString stringWithFormat:@"%d", self.itemBase.Id] }];
     }
     else {

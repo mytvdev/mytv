@@ -8,7 +8,7 @@
 
 #import "Prefs.h"
 
-NSString * const MyTV_RestServiceUrl = @"http://tfs.mytv.local:99/restservice.ashx?";
+NSString * const MyTV_RestServiceUrl = @"http://192.168.0.9:99/restservice.ashx?";
 NSString * const MyTV_DeviceTypeId = @"7";
 NSString * const MyTV_View_Home = @"home";
 NSString * const MyTV_View_LiveTV = @"livetv";

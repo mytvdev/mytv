@@ -15,6 +15,7 @@
 @synthesize vodFeaturedScrollView = _vodFeaturedScrollView;
 @synthesize vodRecentScrollView = _vodRecentScrollView;
 @synthesize channelScrollView = _channelScrollView;
+@synthesize standardpackageScrollView = _standardpackageScrollView;
 @synthesize channelFetcher = _channelFetcher;
 @synthesize featuredVOdFetcher = _featuredVOdFetcher;
 @synthesize recentVODFetcher = _recentVODFetcher;
@@ -32,9 +33,9 @@
     [MBProgressHUD showHUDAddedTo:subview.channelScrollView animated:YES];
     [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error){
         if(linking != nil && error == nil) {
-            for (UIView *subview in self.channelScrollView.subviews) {
-                [subview removeFromSuperview];
-            }
+            //for (UIView *subview in self.channelScrollView.subviews) {
+            //    [subview removeFromSuperview];
+            //}
             
             [self fillChannels];
             [self fillFeaturedVOD];
@@ -43,6 +44,7 @@
             [self.labelNewReleasesVOD setHidden:NO];
             [self.viewFeaturedVODWidget setHidden:NO];
             [self.viewNewReleasesVODWidget setHidden:NO];
+            [self.labelChannel setText:@"Live Channels"];
         }
         else
         {
@@ -51,6 +53,7 @@
             [self.labelNewReleasesVOD setHidden:YES];
             [self.viewFeaturedVODWidget setHidden:YES];
             [self.viewNewReleasesVODWidget setHidden:YES];
+            [self.labelChannel setText:@"Standard Packages"];
         }
         [MBProgressHUD hideHUDForView:subview.channelScrollView animated:YES];
     }];
@@ -87,6 +90,7 @@
                             
                         }
                     }
+                    
                     [MBProgressHUD hideHUDForView:subview.channelScrollView animated:YES];
                     [subview cancelChannelFetcher];
                 };
@@ -99,6 +103,8 @@
             //}
         //}];
     }
+    
+    [self.channelScrollView setContentOffset:CGPointZero animated:YES];
 }
 
 -(void) cancelChannelFetcher {
@@ -134,6 +140,8 @@
         }];
         
     }
+    
+    [self.channelScrollView setContentOffset:CGPointZero animated:YES];
 }
 
 -(void) fillFeaturedVOD {
@@ -161,6 +169,8 @@
         }];
         
     }
+    
+    [self.vodFeaturedScrollView setContentOffset:CGPointZero animated:YES];
 }
 
 -(void) cancelVODFeaturedFetcher {
@@ -192,6 +202,8 @@
             hasLoadedVODRecentData = YES;
         }];
     }
+    
+    [self.vodRecentScrollView setContentOffset:CGPointZero animated:YES];
 }
 
 -(void) cancelVODRecentFetcher {

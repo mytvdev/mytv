@@ -44,6 +44,8 @@
             hasLoadedVODFeaturedData = YES;
         }];
     }
+    
+    [self.vodFeaturedScrollView setContentOffset:CGPointZero animated:YES];
 }
 
 
@@ -76,6 +78,8 @@
             hasLoadedVODRecentData = YES;
         }];
     }
+    
+    [self.vodRecentScrollView setContentOffset:CGPointZero animated:YES];
 }
 
 -(void) cancelVODRecentFetcher {

@@ -17,6 +17,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
+        //self.tableView.bounces = NO;
+        //self.tableView.scrollEnabled = NO;
         if(Countries == nil) {
             [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
             [RestService RequestCountries:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(NSArray *countries, NSError *error)
@@ -121,6 +123,11 @@
 	return YES;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return DEFAULT_ROW_HEIGHT;
+}
+
 #pragma mark - Table view data source
 -(UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section {
     
@@ -171,11 +178,6 @@
     cell.backgroundView = brickAnim;
     
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return DEFAULT_ROW_HEIGHT;
 }
 
 -(void)sectionHeaderView:(SectionHeaderView*)sectionHeaderView sectionOpened:(NSInteger)sectionOpened {

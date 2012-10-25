@@ -25,6 +25,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *vodFeaturedScrollView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *vodRecentScrollView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *channelScrollView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *standardpackageScrollView;
 
 @property (readonly) DataFetcher *channelFetcher;
 @property (readonly) DataFetcher *featuredVOdFetcher;

@@ -32,7 +32,7 @@
         self.userInteractionEnabled = YES;
         
         //Create the background
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 112, 26)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 26)];
         NSString *imgFilepath = [[NSBundle mainBundle] pathForResource:@"bg" ofType:@"png"];
         UIImage *img = [[UIImage alloc] initWithContentsOfFile:imgFilepath];
         [imgView setImage:img];

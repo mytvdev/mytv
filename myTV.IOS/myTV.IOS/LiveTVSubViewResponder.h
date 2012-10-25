@@ -21,7 +21,5 @@
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *ChannelScrollView;
 @property (readonly) DataFetcher *channelFetcher;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblChannelName;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *lblChannelDescripton;
 
 @end
