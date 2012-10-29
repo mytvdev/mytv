@@ -26,6 +26,8 @@
 
 -(void)bindData:(NSObject *)data
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"popoverShouldDismiss" object:nil];
+    
     if([[self.myvodView subviews] count] > 0) {
         [[[self.myvodView subviews] objectAtIndex:0] removeFromSuperview];
     }

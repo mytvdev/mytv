@@ -20,11 +20,11 @@
 - (void)viewDidLoad
 {
     //[super viewDidLoad];
-    [self.labelResults setHidden:YES];
 }
 
 -(void)bindData:(NSObject *)data
 {
+    [self.labelResults setHidden:YES];
     if([[self.SearchScrollView subviews] count] > 0) {
         for (UIView *view in [self.SearchScrollView subviews])
         {

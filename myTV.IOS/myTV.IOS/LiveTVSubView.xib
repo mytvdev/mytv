@@ -41,8 +41,11 @@
 						<string key="NSFrame">{{20, 20}, {984, 645}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
+						</object>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -129,25 +132,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">LiveTVSubViewResponder</string>
 					<string key="superclassName">SubViewResponder</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="ChannelScrollView">UIScrollView</string>
-						<string key="lblChannelDescripton">UILabel</string>
-						<string key="lblChannelName">UILabel</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="ChannelScrollView">
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">ChannelScrollView</string>
+						<string key="NS.object.0">UIScrollView</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">ChannelScrollView</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
 							<string key="name">ChannelScrollView</string>
 							<string key="candidateClassName">UIScrollView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="lblChannelDescripton">
-							<string key="name">lblChannelDescripton</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="lblChannelName">
-							<string key="name">lblChannelName</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-					</dictionary>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/LiveTVSubViewResponder.h</string>

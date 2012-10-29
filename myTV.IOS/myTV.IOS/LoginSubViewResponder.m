@@ -21,7 +21,7 @@
 - (void)checkForLinking {
     [linkingFetcher cancelPendingRequest];
     linkingFetcher = [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *data, NSError *error){
-        if (data != nil && error == nil) {
+        if (data != nil && data.CustomerId > 0 && error == nil) {
             alertSuccess = [[UIAlertView alloc] initWithTitle:@"Congrats" message:@"You have successfully linked your device." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alertSuccess show];
             

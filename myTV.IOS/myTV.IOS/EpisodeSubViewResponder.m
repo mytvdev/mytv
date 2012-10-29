@@ -49,23 +49,28 @@
                 [self.btnPayOrPlay setEnabled:YES];
                 currentepisode = episode;
                 
-                lblEpisodeName.text = (episode.Title != nil && episode.Title != @"") ? episode.Title : @"-";
+                lblEpisodeName.text = (episode.Title != nil && [episode.Title length] > 0) ? episode.Title : @"-";
                 [[RestCache CommonProvider] RequestGetProgram:programId usingCallback:^(MyTVProgram *program, NSError *error){
                     if(program != nil && error == nil) {
                         lblEpisodeName.text = [NSString stringWithFormat:@"%@ - %@", program.Title, lblEpisodeName.text];
                     }
                 }];
-                lblEpisodeDescription.text = (episode.Description != nil && episode.Description != @"") ? episode.Description : @"-";
-                lblDirector.text = (episode.Director != nil && episode.Director != @"") ? episode.Director : @"-";
-                lblCast.text = (episode.Guest != nil && episode.Guest != @"") ? episode.Guest : @"-";
-                lblCast.numberOfLines = 0;
-                [lblCast sizeToFit];
-                lblPresenter.text = (episode.Presenter != nil && episode.Presenter != @"") ? episode.Presenter : @"-";
-                lblLanguage.text = (episode.Language != nil && episode.Language != @"") ? episode.Language : @"-";
-                lblSeason.text = (episode.Season != nil && episode.Season != @"") ? episode.Season : @"-";
-                lblReleaseDate.text = (episode.ReleaseDate != nil && episode.ReleaseDate != @"") ? episode.ReleaseDate : @"-";
-                lblAwards.text = (episode.Awards != nil && episode.Awards != @"") ? episode.Awards : @"-";
-                lblRating.text = (episode.Rating != nil && episode.Rating != @"") ? episode.Rating : @"-";
+                lblEpisodeDescription.text = (episode.Description != nil && [episode.Description length] > 0) ? episode.Description : @"-";
+                lblDirector.text = (episode.Director != nil && [episode.Director length] > 0) ? episode.Director : @"-";
+                if (episode.Guest != nil && [episode.Guest length] > 0)
+                {
+                    lblCast.text = [[episode.Guest substringToIndex:25] stringByAppendingString:@"..."];
+                }
+                else
+                {
+                    lblCast.text = @"-";
+                }
+                lblPresenter.text = (episode.Presenter != nil && [episode.Presenter length] > 0) ? episode.Presenter : @"-";
+                lblLanguage.text = (episode.Language != nil && [episode.Language length] > 0) ? episode.Language : @"-";
+                lblSeason.text = (episode.Season != nil && [episode.Season length] > 0) ? episode.Season : @"-";
+                lblReleaseDate.text = (episode.ReleaseDate != nil && [episode.ReleaseDate length] > 0) ? episode.ReleaseDate : @"-";
+                lblAwards.text = (episode.Awards != nil && [episode.Awards length] > 0) ? episode.Awards : @"-";
+                lblRating.text = (episode.Rating != nil && [episode.Rating length] > 0) ? episode.Rating : @"-";
                 episodeImageFetcher = [DataFetcher Get:episode.Thumbnail usingCallback:^(NSData *data, NSError *error){
                     if(data != nil && error == nil) {
                         imgEpisode.image  = [[UIImage alloc] initWithData:data];

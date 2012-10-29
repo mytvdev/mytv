@@ -47,12 +47,12 @@
                         if(xPos == 0) {
                             xPos = ChannelControl_Space;
                         }
-                        else if ( (xPos + ChannelControl_Width + ChannelControl_Space + ChannelControl_Width) > maximumWidth) {
+                        else if ( (xPos + ChannelControl_Width + 30 + ChannelControl_Width) > maximumWidth) {
                             xPos = ChannelControl_Space;
                             yPos = yPos + ChannelControl_Height;
                         }
                         else {
-                            xPos = xPos + ChannelControl_Width + ChannelControl_Space;
+                            xPos = xPos + ChannelControl_Width + 30;
                         }
                         ChannelControlResponder *responder = [[ChannelControlResponder alloc] init];
                         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ChannelControl" owner:responder options:nil];

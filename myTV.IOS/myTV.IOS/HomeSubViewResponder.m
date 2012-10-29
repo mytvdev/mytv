@@ -32,7 +32,7 @@
     HomeSubViewResponder *subview = self;
     [MBProgressHUD showHUDAddedTo:subview.channelScrollView animated:YES];
     [RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error){
-        if(linking != nil && error == nil) {
+        if(linking != nil && linking.CustomerId > 0 && error == nil) {
             //for (UIView *subview in self.channelScrollView.subviews) {
             //    [subview removeFromSuperview];
             //}
@@ -60,10 +60,20 @@
 }
 
 -(void) fillChannels {
-    if(!hasLoadedChannelData) {
+    //if(!hasLoadedChannelData) {
+        
+        
         //[RestService SendLinkingRequest:MyTV_RestServiceUrl withDeviceId:[[UIDevice currentDevice] uniqueDeviceIdentifier] andDeviceTypeId:MyTV_DeviceTypeId usingCallback:^(Linking *linking, NSError *error){
             //if(linking != nil && error == nil) {
                 HomeSubViewResponder *subview = self;
+        
+        if([[subview.channelScrollView subviews] count] > 0) {
+            for (UIView *view in [subview.channelScrollView subviews])
+            {
+                [view removeFromSuperview];
+            }
+        }
+        
                 [MBProgressHUD showHUDAddedTo:subview.channelScrollView animated:YES];
                 RSGetChannelCallBack channelCallback = ^(NSArray *channels, NSError *error){
                     if(subview.channelScrollView != nil) {
@@ -102,7 +112,7 @@
             //    [self fillMyTVPackages];
             //}
         //}];
-    }
+    //}
     
     [self.channelScrollView setContentOffset:CGPointZero animated:YES];
 }
@@ -115,8 +125,18 @@
 }
 
 -(void) fillMyTVPackages {
-    if(!hasLoadedMyTVPackagesData) {
+    //if(!hasLoadedMyTVPackagesData) {
+        
+        
         HomeSubViewResponder *subview = self;
+        
+    if([[subview.channelScrollView subviews] count] > 0) {
+        for (UIView *view in [subview.channelScrollView subviews])
+        {
+            [view removeFromSuperview];
+        }
+    }
+    
         MBProgressHUD *loader = [MBProgressHUD showHUDAddedTo:subview.channelScrollView animated:YES];
         
         _mytvPackagesFetcher = [[RestCache CommonProvider] RequestGetMyTVPackages:^(NSArray *array, NSError *error){
@@ -139,7 +159,7 @@
             hasLoadedMyTVPackagesData = YES;
         }];
         
-    }
+    //}
     
     [self.channelScrollView setContentOffset:CGPointZero animated:YES];
 }

@@ -33,6 +33,7 @@
 
 - (void)viewDidLoad
 {
+    
     self.tableVC=[[TableGenres alloc]initWithStyleAndGenres:UITableViewStylePlain genres:self.genres];
     [self.ScrollView addSubview:self.tableVC.view];
     

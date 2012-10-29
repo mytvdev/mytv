@@ -256,6 +256,9 @@
 		D48FD7D51637E31400C2EF49 /* countriesOpen-Over.png in Resources */ = {isa = PBXBuildFile; fileRef = D48FD7CD1637E31400C2EF49 /* countriesOpen-Over.png */; };
 		D48FD7D61637E31400C2EF49 /* countriesOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = D48FD7CE1637E31400C2EF49 /* countriesOpen.png */; };
 		D48FD7D816382F7600C2EF49 /* footer copy.png in Resources */ = {isa = PBXBuildFile; fileRef = D48FD7D716382F7600C2EF49 /* footer copy.png */; };
+		D490B01016391CB900E3A03D /* left_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = D490B00F16391CB900E3A03D /* left_grey.png */; };
+		D490B01316391CF400E3A03D /* lightbrown_movies_old.png in Resources */ = {isa = PBXBuildFile; fileRef = D490B01216391CF400E3A03D /* lightbrown_movies_old.png */; };
+		D490B06516392C7100E3A03D /* package_network.png in Resources */ = {isa = PBXBuildFile; fileRef = D490B06416392C7100E3A03D /* package_network.png */; };
 		D4E17D061631765700581633 /* emptymyvodipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E17D051631765700581633 /* emptymyvodipad.png */; };
 /* End PBXBuildFile section */
 
@@ -584,6 +587,9 @@
 		D48FD7CD1637E31400C2EF49 /* countriesOpen-Over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "countriesOpen-Over.png"; sourceTree = "<group>"; };
 		D48FD7CE1637E31400C2EF49 /* countriesOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = countriesOpen.png; sourceTree = "<group>"; };
 		D48FD7D716382F7600C2EF49 /* footer copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "footer copy.png"; sourceTree = "<group>"; };
+		D490B00F16391CB900E3A03D /* left_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_grey.png; sourceTree = "<group>"; };
+		D490B01216391CF400E3A03D /* lightbrown_movies_old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbrown_movies_old.png; sourceTree = "<group>"; };
+		D490B06416392C7100E3A03D /* package_network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = package_network.png; sourceTree = "<group>"; };
 		D4E17D051631765700581633 /* emptymyvodipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptymyvodipad.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -908,6 +914,9 @@
 		B2C79E4615FF2FD500A2EBE7 /* ipadsd */ = {
 			isa = PBXGroup;
 			children = (
+				D490B06416392C7100E3A03D /* package_network.png */,
+				D490B01216391CF400E3A03D /* lightbrown_movies_old.png */,
+				D490B00F16391CB900E3A03D /* left_grey.png */,
 				D48FD7D716382F7600C2EF49 /* footer copy.png */,
 				D48FD7C71637E31200C2EF49 /* categoriesClose-Over.png */,
 				D48FD7C81637E31300C2EF49 /* categoriesClose.png */,
@@ -1363,6 +1372,9 @@
 				D48FD7D51637E31400C2EF49 /* countriesOpen-Over.png in Resources */,
 				D48FD7D61637E31400C2EF49 /* countriesOpen.png in Resources */,
 				D48FD7D816382F7600C2EF49 /* footer copy.png in Resources */,
+				D490B01016391CB900E3A03D /* left_grey.png in Resources */,
+				D490B01316391CF400E3A03D /* lightbrown_movies_old.png in Resources */,
+				D490B06516392C7100E3A03D /* package_network.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

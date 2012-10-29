@@ -38,6 +38,8 @@
 
 @synthesize popoverController, popButton, myCatPopOver, myCountPopOver;
 
+@synthesize tabBar;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -127,6 +129,8 @@
          }
      }];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissThePopover) name:@"popoverShouldDismiss" object:nil];
+    
     //load homeview by default
     [[NSNotificationCenter defaultCenter] postNotificationName:MyTV_Event_ChangeView object:nil userInfo:@{ MyTV_ViewArgument_View : @"home" }];
     
@@ -134,6 +138,11 @@
     self.player.mainView = self.rootView;
     
     [self.player startHandlingPlayerRequests];
+}
+
+- (void)dismissThePopover
+{
+    [self.popoverController dismissPopoverAnimated:YES];
 }
 
 - (void)viewDidUnload
@@ -150,6 +159,7 @@
     [self setCountriesButton:nil];
     [self setSearchButton:nil];
     [super viewDidUnload];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -224,6 +234,38 @@
 - (void)didReceiveMemoryWarning {
     [self.navigationLogic didReceiveMemoryWarning];
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    if (item.tag == 0)
+    {
+        //[self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else if (item.tag == 1) //Genre
+    {
+        myCatPopOver = [[CategoriesSubViewResponder alloc] initWithNibNameAndGenres:@"CategoriesSubView" bundle:nil genres:genres];
+        popoverController = [[UIPopoverController alloc] initWithContentViewController:myCatPopOver];
+        popoverController.popoverContentSize = CGSizeMake(112.f, 350.f);
+        
+        CGRect buttonFrame = [[[[self tabBar] subviews] objectAtIndex:2] frame];
+        [self.popoverController presentPopoverFromRect:buttonFrame
+                                                inView:self.tabBar
+                              permittedArrowDirections:UIPopoverArrowDirectionAny
+                                              animated:YES];
+    }
+    else if (item.tag == 2) //Country
+    {
+        myCountPopOver = [[CountriesSubViewResponder alloc] initWithNibNameAndCountries:@"CountriesSubView" bundle:nil countries:countries];
+        popoverController = [[UIPopoverController alloc] initWithContentViewController:myCountPopOver];
+        popoverController.popoverContentSize = CGSizeMake(200.f, 350.f);
+        
+        CGRect buttonFrame = [[[[self tabBar] subviews] objectAtIndex:3] frame];
+        [self.popoverController presentPopoverFromRect:buttonFrame
+                                                inView:self.tabBar
+                              permittedArrowDirections:UIPopoverArrowDirectionAny
+                                              animated:YES];
+    }
 }
 
 @end

@@ -12,8 +12,9 @@
 #import "CountriesSubViewResponder.h"
 #import "RestCache.h"
 
-@interface IPadViewController : MyTVViewController
+@interface IPadViewController : MyTVViewController <UIApplicationDelegate>
 {
+    UITabBar *tabBar;
     UIPopoverController *popoverController;
     IBOutlet UIBarButtonItem *popButton;
     CategoriesSubViewResponder *myCatPopOver;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *popButton;
 @property (nonatomic, retain) CategoriesSubViewResponder *myCatPopOver;
 @property (nonatomic, retain) CountriesSubViewResponder *myCountPopOver;
+@property (nonatomic, retain) IBOutlet UITabBar *tabBar;
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *mainView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *homeButton;

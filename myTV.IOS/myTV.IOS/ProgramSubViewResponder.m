@@ -47,18 +47,25 @@
                 [self.btnPayOrPlay setEnabled:YES];
                 currentprogram = program;
                 
-                lblProgramName.text = (program.Title != nil && program.Title != @"") ? program.Title : @"-";
-                lblProgramDescription.text = (program.Description != nil && program.Description != @"") ? program.Description : @"-";
-                lblDirector.text = (program.Director != nil && program.Director != @"") ? program.Director : @"-";
-                lblCast.text = (program.Guest != nil && program.Guest != @"") ? program.Guest : @"-";
-                lblCast.numberOfLines = 0;
-                [lblCast sizeToFit];
-                lblPresenter.text = (program.Presenter != nil && program.Presenter != @"") ? program.Presenter : @"-";
-                lblLanguage.text = (program.Language != nil && program.Language != @"") ? program.Language : @"-";
-                lblSeason.text = (program.Season != nil && program.Season != @"") ? program.Season : @"-";
-                lblReleaseDate.text = (program.ReleaseDate != nil && program.ReleaseDate != @"") ? program.ReleaseDate : @"-";
-                lblAwards.text = (program.Award != nil && program.Award != @"") ? program.Award : @"-";
-                lblRating.text = (program.Rating != nil && program.Rating != @"") ? program.Rating : @"-";
+                lblProgramName.text = (program.Title != nil && [program.Title length] > 0) ? program.Title : @"-";
+                lblProgramDescription.text = (program.Description != nil && [program.Description length] > 0) ? program.Description : @"-";
+                lblDirector.text = (program.Director != nil && [program.Director length] > 0) ? program.Director : @"-";
+                if (program.Guest != nil && [program.Guest length] > 0)
+                {
+                    NSString *strCast = [[program.Guest substringToIndex:25] stringByAppendingString:@"..."];
+                    lblCast.text = strCast;
+                }
+                else
+                {
+                    lblCast.text = @"-";
+                }
+
+                lblPresenter.text = (program.Presenter != nil && [program.Presenter length] > 0) ? program.Presenter : @"-";
+                lblLanguage.text = (program.Language != nil && [program.Language length] > 0) ? program.Language : @"-";
+                lblSeason.text = (program.Season != nil && [program.Season length] > 0) ? program.Season : @"-";
+                lblReleaseDate.text = (program.ReleaseDate != nil && [program.ReleaseDate length] > 0) ? program.ReleaseDate : @"-";
+                lblAwards.text = (program.Award != nil && [program.Award length] > 0) ? program.Award : @"-";
+                lblRating.text = (program.Rating != nil && [program.Rating length] > 0) ? program.Rating : @"-";
                 programImageFetcher = [DataFetcher Get:program.Thumbnail usingCallback:^(NSData *data, NSError *error){
                     if(data != nil && error == nil) {
                         imgProgram.image  = [[UIImage alloc] initWithData:data];
