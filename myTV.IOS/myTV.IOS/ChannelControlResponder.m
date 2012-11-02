@@ -16,7 +16,7 @@
 -(void)bindData:(NSObject *)data {
     self.channel = (Channel *)data;
     ChannelControlResponder *parent = self;
-    self.imageFetcher = [DataFetcher Get:self.channel.SmallLogo usingCallback:^(NSData *data, NSError *error){
+    self.imageFetcher = [DataFetcher Get:self.channel.BigLogo usingCallback:^(NSData *data, NSError *error){
         if(error == nil && data != nil) {
             parent.imageDisplay.image = [[UIImage alloc] initWithData:data];
         }

@@ -248,7 +248,7 @@
         popoverController = [[UIPopoverController alloc] initWithContentViewController:myCatPopOver];
         popoverController.popoverContentSize = CGSizeMake(112.f, 350.f);
         
-        CGRect buttonFrame = [[[[self tabBar] subviews] objectAtIndex:2] frame];
+        CGRect buttonFrame = [[[[self tabBar] subviews] objectAtIndex:1] frame];
         [self.popoverController presentPopoverFromRect:buttonFrame
                                                 inView:self.tabBar
                               permittedArrowDirections:UIPopoverArrowDirectionAny
@@ -260,7 +260,7 @@
         popoverController = [[UIPopoverController alloc] initWithContentViewController:myCountPopOver];
         popoverController.popoverContentSize = CGSizeMake(200.f, 350.f);
         
-        CGRect buttonFrame = [[[[self tabBar] subviews] objectAtIndex:3] frame];
+        CGRect buttonFrame = [[[[self tabBar] subviews] objectAtIndex:2] frame];
         [self.popoverController presentPopoverFromRect:buttonFrame
                                                 inView:self.tabBar
                               permittedArrowDirections:UIPopoverArrowDirectionAny

@@ -14,11 +14,7 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Icon@2x.png</string>
 		<string>Icon-72.png</string>
-		<string>Icon-Small@2x.png</string>
-		<string>Icon-Small-50.png</string>
-		<string>Icon-Small.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>myTVInc.${PRODUCT_NAME:rfc1034identifier}</string>

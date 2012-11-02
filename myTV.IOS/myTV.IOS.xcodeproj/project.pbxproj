@@ -472,10 +472,10 @@
 		B2BCEA071609F50F000AE7F7 /* VODControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VODControl.xib; sourceTree = "<group>"; };
 		B2BCEA0A1609F8E3000AE7F7 /* MyVODControlResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVODControlResponder.h; sourceTree = "<group>"; };
 		B2BCEA0B1609F8E3000AE7F7 /* MyVODControlResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVODControlResponder.m; sourceTree = "<group>"; };
-		B2C362F716280CF200A8DAC1 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		B2C362F816280CF200A8DAC1 /* Default@2~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2~ipad.png"; sourceTree = "<group>"; };
-		B2C362FC16280E5100A8DAC1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
-		B2C362FE16280E8700A8DAC1 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		B2C362F716280CF200A8DAC1 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "myTV.IOS/ipadsd/Default-Landscape~ipad.png"; sourceTree = SOURCE_ROOT; };
+		B2C362F816280CF200A8DAC1 /* Default@2~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2~ipad.png"; path = "myTV.IOS/ipadsd/Default@2~ipad.png"; sourceTree = SOURCE_ROOT; };
+		B2C362FC16280E5100A8DAC1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "myTV.IOS/ipadsd/Icon-72.png"; sourceTree = SOURCE_ROOT; };
+		B2C362FE16280E8700A8DAC1 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "myTV.IOS/ipadsd/Icon-Small.png"; sourceTree = SOURCE_ROOT; };
 		B2C3630916281DB100A8DAC1 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		B2C3630A16281DB100A8DAC1 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
 		B2C3630C16281E4C00A8DAC1 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
@@ -914,6 +914,10 @@
 		B2C79E4615FF2FD500A2EBE7 /* ipadsd */ = {
 			isa = PBXGroup;
 			children = (
+				B2C362FE16280E8700A8DAC1 /* Icon-Small.png */,
+				B2C362FC16280E5100A8DAC1 /* Icon-72.png */,
+				B2C362F716280CF200A8DAC1 /* Default-Landscape~ipad.png */,
+				B2C362F816280CF200A8DAC1 /* Default@2~ipad.png */,
 				D490B06416392C7100E3A03D /* package_network.png */,
 				D490B01216391CF400E3A03D /* lightbrown_movies_old.png */,
 				D490B00F16391CB900E3A03D /* left_grey.png */,
@@ -933,10 +937,6 @@
 				B2012F16162BE4210013CC1D /* lightbg.png */,
 				B2C363161628462B00A8DAC1 /* black.png */,
 				B2C363171628462B00A8DAC1 /* white.png */,
-				B2C362FE16280E8700A8DAC1 /* Icon-Small.png */,
-				B2C362FC16280E5100A8DAC1 /* Icon-72.png */,
-				B2C362F716280CF200A8DAC1 /* Default-Landscape~ipad.png */,
-				B2C362F816280CF200A8DAC1 /* Default@2~ipad.png */,
 				B2FD4D9F1626BB1B007A4EC2 /* find.png */,
 				B2CEA64A161F08B50012D495 /* emptyMyVOD.png */,
 				B2CEA638161EFF400012D495 /* emptybutton.png */,
@@ -1546,6 +1546,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1598,6 +1599,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1614,6 +1616,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
