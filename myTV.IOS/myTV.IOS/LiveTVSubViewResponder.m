@@ -18,14 +18,14 @@
 
 - (void)viewDidLoad
 {
-    if(!hasLoadedChannelsData) {
+    //if(!hasLoadedChannelsData) {
         [self fillChannels];
         LiveTVObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"SelectChannel" object:nil queue:nil usingBlock:^(NSNotification *note) {
             Channel *data = (Channel *)note.object;
             //self.lblChannelName.text = data.Name;
             //self.lblChannelDescripton.text = data.BigDescription;
         }];
-    }
+    //}
     
     [self.ChannelScrollView setContentOffset:CGPointZero animated:YES];
 }
